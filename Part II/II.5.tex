@@ -1,0 +1,98 @@
+\documentclass[main.tex]{subfiles}
+% 基变换与坐标变换
+\begin{document}
+不管是向量还是线性变换，它们的本质都独立于它们在选定基下的坐标矩阵。同一个向量或线性变换，在不同基下将对应为不同的坐标矩阵。下面我们讨论同一个向量或线性变换在不同基下的矩阵之间的关系——基变换与坐标变换公式。
+
+考虑数域$\mathbb{F}$上的$N$维向量空间$\mathcal{V}_N$中的两组基$\left\{\mathbf{e}_i\right\},\left\{\mathbf{e}^\prime_j\right\}$。用第一组基表示第二组基的每个基向量，可列出如下的$N$个等式：
+\[\mathbf{e}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{e}_i,j=1,\cdots,N\]
+称为从基$\left\{\mathbf{e}_i\right\}$到基$\left\{\mathbf{e}^\prime_j\right\}$的基变换公式。矩阵$\left(S_{ij}\right)$称为从基$\left\{\mathbf{e}_i\right\}$到基$\left\{\mathbf{e}^\prime_j\right\}$的过渡矩阵。如果我们把基向量$\left\{\mathbf{e}_i\right\}$排成一个行向量（$1\times N$矩阵），则基变换关系可表示为
+\[
+\left(\mathbf{e}_1^\prime,\cdots,\mathbf{e}_N^\prime\right)=\left(\mathbf{e}_1,\cdots,\mathbf{e}_N\right)S
+\]
+以下定理告诉我们，反过来从$\left\{\mathbf{e}_i^\prime\right\}$到$\left\{\mathbf{e}_i\right\}$的过渡矩阵就是矩阵$S$的逆（$S$可逆的证明见\cite[p.~52,例题4.4]{周胜林2012线性代数}。）
+
+\begin{theorem}\label{thm:II.5.1}
+设$\mathcal{V}_N$是数域$\mathbb{F}$上的$N$维向量空间，$\left\{\mathbf{e}_i\right\},\left\{\mathbf{e}^\prime_j\right\}$是$\mathcal{V}_N$的两组基，则从基$\left\{\mathbf{e}_i\right\}$到基$\left\{\mathbf{e}^\prime_j\right\}$的过渡矩阵是从基$\left\{\mathbf{e}^\prime_j\right\}$到基$\left\{\mathbf{e}_i\right\}$的过渡矩阵的逆矩阵。具体地，若$\mathbf{e}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{e}_i$，则$\mathbf{e}_i=\sum_{j=1}^NS^\mathrm{inv}_{ji}\mathbf{e}^\prime_j$\footnote{由于矩阵的分量是标量，为防与倒数的记法混淆，矩阵$S$的逆矩阵$S^{-1}$的分量记为$S^\mathrm{inv}_{ij}$，矩阵$S$的分量的倒数记为$S^{-1}_{ij}$。}。
+\end{theorem}
+\begin{proof}
+两边同乘$S^{-1}$立刻得证，略。
+\end{proof}
+
+特别地，由$n$维向量空间的一组基到它自身的过渡矩阵是单位矩阵$I_n$。
+
+我们通过基的过渡矩阵，可以写出一个向量$\mathbf{v}\in\mathcal{V}_N$在两组基$\left\{\mathbf{e}_i\right\},\left\{\mathbf{e}^\prime_j\right\}$下的坐标之间的关系：
+
+\begin{align*}
+\mathbf{v}&=\sum_{j=1}^Nv^\prime_j\mathbf{e}^\prime_j\\
+&=\sum_{j=1}^Nv^\prime_j\left(\sum_{i=1}^NS_{ij}\mathbf{e}_i\right)\\
+&=\sum_{i=1}^N\left(\sum_{j=1}^N S_{ij}v^\prime_j\right)\mathbf{e}_i\\
+&=\sum_{i=1}^Nv_i\mathbf{e}_i\\
+\Leftrightarrow v_i&=\sum_{j=1}^NS_{ij}v^\prime_j,i=1,\cdots,N
+\end{align*}
+这$N$个式子称为向量$\mathbf{v}$从基$\left\{\mathbf{e}^\prime_j\right\}$到$\left\{\mathbf{e}_i\right\}$的坐标变换公式，也可以写成矩阵乘：
+\[\left(\begin{array}{c}v_1\\\vdots\\v_N\end{array}\right)=\left(\begin{array}{ccc}S_{11}&\cdots&S_{1N}\\\vdots&&\vdots\\S_{N1}&\cdots&S_{NN}\end{array}\right)\left(\begin{array}{c}v^\prime_1\\\vdots\\v^\prime_N\end{array}\right)\]
+
+注意到，对于同一个矩阵$S_{ij}$，它是从$\left\{\mathbf{e}^\prime_j\right\}$到$\left\{\mathbf{e}_i\right\}$的过渡矩阵，但却用于向量$\mathbf{v}$从$\left\{\mathbf{e}_i\right\}$下的坐标到$\left\{\mathbf{e}^\prime_j\right\}$下的坐标的变换公式中。按照相同的推算方法还可以得到，向量$\mathbf{v}$从$\left\{\mathbf{e}^\prime_j\right\}$到$\left\{\mathbf{e}_i\right\}$的坐标变换公式是$v^\prime_j=\sum_{i=1}^NS^\mathrm{inv}_{ji}v_i,j=1,\cdots,N$。
+
+接下来，我们讨论线性变换在给定不同基下的坐标矩阵之间的变换公式。
+
+\begin{theorem}\label{thm:II.5.2}
+设$\mathcal{V}_N$、$\mathcal{W}_M$分别是数域$\mathbb{F}$上的$N$、$M$维向量空间，$\left\{\mathbf{a}_i\right\},\left\{\mathbf{a}^\prime_i\right\}\in\mathcal{V}_N$是$\mathcal{V}_N$的两组基，基变换公式为$\mathbf{a}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{a}_i$；$\left\{\mathbf{b}_j\right\},\left\{\mathbf{b}^\prime_j\right\}$是$\mathcal{W}_M$的两组基，基变换公式为$\mathbf{b}^\prime_j=\sum_{i=1}^MT_{ij}\mathbf{b}_i$。线性变换$\mathbf{A}:\mathcal{V}_N\rightarrow\mathcal{W}_M$在$\left\{\mathbf{a}_i\right\},\left\{\mathbf{b}_i\right\}$下的矩阵表示为$\left(\mathbf{A}\right)$，在$\left\{\mathbf{a}^\prime_i\right\},\left\{\mathbf{b}^\prime_i\right\}$下的矩阵表示为$\left(\mathbf{A}\right)^\prime$。则有
+\begin{align*}
+    \left(\mathbf{A}\right)&=T\left(\mathbf{A}\right)^\prime S^{-1}\\
+    \left(\mathbf{A}\right)^\prime&=T^{-1}\left(\mathbf{A}\right)S
+\end{align*}
+\end{theorem}
+\begin{proof}
+对于任一向量$\mathbf{v}\in\mathcal{V}_N$，记$\mathbf{w}=\mathbf{Av}\in\mathcal{W}_M$。我们从向量$\mathbf{w}$的坐标变换出发：
+\begin{align*}
+    w_i&=\sum_{j=1}^MT_{ij}w^\prime_j\\
+    &=\sum_{j=1}^MT_{ij}\left(\sum_{k=1}^NA^\prime_{jk}v^\prime_k\right)\\
+    &=\sum_{j=1}^M\sum_{k=1}^NT_{ij}A^\prime_{jk}\left(\sum_{l=1}^NS^\mathrm{inv}_{kl}v_l\right)\\
+    &=\sum_{j=1}^M\sum_{k=1}^N\sum_{l=1}^NT_{ij}A^\prime_{jk}S^\mathrm{inv}_{kl}v_l\\
+    &=\sum_{j=1}^N\sum_{l=1}^M\sum_{k=1}^NT_{il}A^\prime_{lk}S^\mathrm{inv}_{kl}v_j,\quad i=1,\cdots,M
+\end{align*}
+其中$A_{ij},A^\prime_{ij}$分别是$\left(\mathbf{A}\right),\left(\mathbf{A}\right)^\prime$的坐标。
+
+另一方面，$w_i=\sum_{j=1}^NA_{ij}v_j,i=1,\cdots,M$，与上面的结果比较可得：
+\[
+A_{ij}=\sum_{l=1}^M\sum_{k=1}^NT_{il}A^\prime_{lk}S^\mathrm{inv}_{kj}
+\Leftrightarrow \left(\mathbf{A}\right)=T\left(\mathbf{A}\right)^\prime S^{-1}
+\]
+由$T^{-1}\left(\mathbf{A}\right)S=T^{-1}T\left(\mathbf{A}\right)^\prime S^{-1}S=\left(\mathbf{A}\right)^\prime$，可得$\left(\mathbf{A}\right)^\prime=T^{-1}\left(\mathbf{A}\right)S$。
+\end{proof}
+
+有了基变换和坐标变换公式，我们可以验证任何基于抽象的向量和线性变换的运算结果是否依赖基的选择。以下定理及其证明可作为一个示例。
+
+\begin{theorem}\label{thm:II.5.3}
+设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，则$\mathcal{V}$上的内积不依赖基的选择。
+\end{theorem}
+\begin{proof}
+设$\left\{\mathbf{e}\right\},\left\{\mathbf{e}^\prime\right\}$是$\mathcal{V}$的任意两组基，任意两个向量$\mathbf{u},\mathbf{v}\in\mathcal{V}$在这两组基下的坐标表示为：$\mathbf{u}=\sum_{i=1}^nu\mathbf{e}_i=\sum_{i=1}^nu^\prime\mathbf{e}^\prime_i,\mathbf{v}=\sum_{i=1}^nv\mathbf{e}_i=\sum_{i=1}^nv^\prime\mathbf{e}^\prime_i$。设由基$\left\{\mathbf{e}\right\}$到$\left\{\mathbf{e}^\prime\right\}$的过度矩阵坐标是$S_{ij}$，即
+\[
+\mathbf{e}_j^\prime=\sum_{i=1}^nS_{ij}\mathbf{e}_i,j=1,\cdots,n\]
+则有：
+\[u_i=\sum_{i=1}^nS_{ij}u^\prime_j,v_i=\sum_{i=1}^nS_{ij}v^\prime_j,i=1,\cdots,n\]
+记$G_{ij}=\left(\mathbf{e}_i|\mathbf{e}_j\right),G_{ij}^\prime=\left(\mathbf{e}^\prime_i|\mathbf{e}^\prime_j\right),i,j=1,\cdots,n$，分别是基$\left\{\mathbf{e}_i\right\},\left\{\mathbf{e}^\prime_i\right\}$的格拉姆矩阵的分量，则两组基之间的格拉姆矩阵变换关系为：
+\begin{align*}
+    G^\prime_{ij}&=\left(\mathbf{e}^\prime_i|\mathbf{e}^\prime_j\right)\\
+    &=\left(\sum_{k=1}^n S_{ki}\mathbf{e}_k\right|\left.\sum_{l=1}^n S_{lj}\mathbf{e}_l\right)\\
+    &=\sum_{k=1}^n\sum_{l=1}^nS_{ki}\overline{S_{lj}}\left(\mathbf{e}_k|\mathbf{e}_l\right)\\
+    &=\sum_{k=1}^n\sum_{l=1}^nS_{ki}\overline{S_{lj}}G_{kl}
+\end{align*}
+故$\mathbf{u},\mathbf{v}\in\mathcal{V}$的内积
+\begin{align*}
+    \left(\mathbf{u}|\mathbf{v}\right)&=\sum_{i=1}^n\sum_{j=1}^nu_i\overline{v_j}G_{ij}\\
+    &=\sum_{i=1}^n\sum_{j=1}^n\left(\sum_{k=1}^nS_{ik}u_k^\prime\right)\overline{\left(\sum_{l=1}^nS_{jl}v_l^\prime\right)}G_{ij}\quad\text{（利用了坐标变换公式。）}\\
+    &=\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n\sum_{l=1}^nu_k^\prime\overline{v_k^\prime}S_{ik}\overline{S_{jl}}G_{ij}\\
+    &=\sum_{k=1}^n\sum_{l=1}^nu_k^\prime\overline{v_l^\prime}G_{kl}^\prime\quad\text{（利用格拉姆矩阵的坐标变换公式。）}
+\end{align*}
+可见两向量内积在任意两组基下的计算结果是相等的。
+\end{proof}
+\begin{corollary}
+设$\mathcal{V}$是数域$\mathbb{F}$上的有限维赋范向量空间，则$\mathcal{V}$上的范不依赖基的选择。
+\end{corollary}
+\begin{proof}
+由$\mathcal{V}$上的内积不依赖基的选择易证$\mathcal{V}$上的欧几里得范不依赖基的选择。再由范的等价性（定理\ref{thm:VI.1.1}）易证该命题。
+\end{proof}
+\end{document}

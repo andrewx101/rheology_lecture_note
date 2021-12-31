@@ -1,0 +1,89 @@
+\documentclass[main.tex]{subfiles}
+% 函数的极限与连续性
+\begin{document}
+\subsection{向量函数的极限与连续性}
+我们用“$\epsilon-\delta$语言”来定义函数极限
+
+\begin{definition}[函数的极限]\label{def:II.11.1}
+给定函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$，如果对任意正实数$\epsilon$总存在正实数$\delta$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta,\mathbf{r},\mathbf{r}_0\in\mathbb{R}^n$总有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{y}_0\right\|<\epsilon,\mathbf{y}_0\in\mathbb{R}^m$，则称$\mathbf{y}_0$是函数$\mathbf{f}\left(\mathbf{r}\right)$在$\mathbf{r}_0$处的极限（limit），记为
+\[\lim_{\mathbf{r} \to\mathbf{r}_0} \mathbf{f}\left(\mathbf{r}\right)=\mathbf{y}_0\]
+\end{definition}
+
+\begin{theorem}\label{thm:II.11.1}
+函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in\mathbb{R}^n$处存在极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}$的充要条件是其坐标函数的极限$\lim_{\mathbf{r}\to\mathbf{r}_0}f_i\left(\mathbf{r}\right)=a_i,\forall i=1,\cdots,m$都存在。
+\end{theorem}
+\begin{proof}
+由向量函数定义，$\mathbf{f}$与$f_i,i=1,\cdots,m$的定义域都相同。
+
+若已知$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}$，即对任一实数$\epsilon>0$都存在实数$\delta>0$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta$就有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{a}\right\|<\epsilon$。那么，给定任一$\mathbb{R}^m$的标准基$\left\{\mathbf{\hat{u}}_i\right\}$，对任一$i\in\left\{1,\cdots,m\right\}$都有
+\begin{align*}
+    \left|f_i\left(\mathbf{r}\right)-\alpha_i\right|&\leq\sum_{i=1}^m\left|f_i\left(\mathbf{r}\right)-\alpha_i\right|\left\|\mathbf{\hat{u}}_i\right\|\quad\text{（当且仅当}m=1\text{时取等号。）}\\
+    &=\sum_{i=1}^m\left\|\left(f_i\left(\mathbf{r}\right)-\alpha_i\right)\mathbf{\hat{u}}_i\right\|\\
+    &\leq\left\|\sum_{i=1}^m\left(f_i\left(\mathbf{r}\right)-\alpha_i\right)\mathbf{\hat{u}}_i\right\|\quad\text{（三角不等式。）}\\
+    &=\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{a}\right\|<\epsilon
+\end{align*}
+故$\lim_{\mathbf{r}\to\mathbf{r}_0}f_i\left(\mathbf{r}\right)=\alpha_i,i=1,\cdots,m$，其中$\alpha_i,i=1,\cdots,n$是$\mathbf{a}$的坐标。
+
+反之，若极限$\lim_{\mathbf{r}\to\mathbf{r}_0}f_i\left(\mathbf{r}\right)=a_i,i=1,\cdots,m$都存在，即对任一实数$\epsilon>0$都能找到实数$\delta_i>0,i=1,\cdots,m$使得只要$f_i$的定义域内一向量$\mathbf{r}$到$\mathbf{r}_0$的距离$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta_i$便有$\left|f_i\left(\mathbf{r}\right)-a_i\right|<\frac{\epsilon}{\sqrt{m}}$。令$\delta=\mathrm{min}\left\{\delta_1,\cdots,\delta_m\right\}$，则当$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta$则有$\mathrm{max}\left\{\left|f_i\left(\mathbf{r}\right)-a_i\right|\right\}<\frac{\epsilon}{\sqrt{m}}$。
+
+利用事实\footnote{
+由$\left\|\mathbf{x}\right\|^2=\sum_{i=1}^nx_i^2\leq n\mathrm{max}\left\{x_1^2,\cdots,x_n^2\right\}$得到。
+}
+\[\left\|\mathbf{x}\right\|\leq\sqrt{n}\mathrm{max}\left\{\left|x_1\right|,\cdots,\left|x_n\right|\right\},\forall\mathbf{x}\in\mathbb{R}^n\]
+可得
+\[\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{a}\right\|\leq\sqrt{m}\mathrm{max}\left\{\left|f_i\left(\mathbf{r}\right)-a_i\right|\right\}<\epsilon\]
+\end{proof}
+
+\begin{definition}[函数的连续性]\label{II.11.2}
+给定函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$，如果极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{f}\left(\mathbf{r}_0\right)$存在，则称$\mathbf{f}\left(\mathbf{r}\right)$在$\mathbf{r}_0$处连续（continuous）。
+\end{definition}
+
+\begin{theorem}\label{thm:II.11.2}
+函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in\mathbb{R}^n$处连续的充要条件是其坐标函数在$\mathbf{r}_0$处都连续。
+\end{theorem}
+\begin{proof}
+由定理\ref{thm:II.11.1}直接得证。
+\end{proof}
+
+如果一个函数在其定义域内处处都连续，我们就直接称该函数在其定义域内是连续的，或称该函数是连续函数。以下给出的定理及其推论，既是一个例子，也是一个重要结论。
+
+\begin{theorem}\label{thm:II.11.3}
+设$\mathcal{V}$、$\mathcal{W}$分别是数域$\mathbb{F}$上的$n,m$维赋范向量空间，$\mathbf{L}:\mathcal{V}\rightarrow\mathcal{W}$是一个线性变换，则总存在正实数$k>0$使得$\left\|\mathbf{Lx}\right\|\leq k\left\|\mathbf{x}\right\|,\forall\mathbf{x}\in\mathcal{V}$。
+\end{theorem}
+\begin{proof}
+设$\left\{\mathbf{e}_i\right\}$是$\mathcal{V}$的一组基，则任一向量$\mathbf{x}\in\mathcal{V}$可表示为$\mathbf{x}=\sum_{i=1}^nx_i\mathbf{e}_i$。设$\left\|\cdot\right\|_\mathrm{E}$是欧几里德范，即$\left\|\mathbf{x}\right\|_\mathrm{E}\equiv\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}$。由定理\ref{thm:II.5.3}及其推论，包括欧几里得范在内的任意范都不依赖基的选择。故在任一基下总有$\left|x_i\right|\leq\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}=\left\|\mathbf{x}\right\|_\mathrm{E}$。
+
+由定理\ref{thm:II.11.3}及其引理，对$\mathcal{V}$上的任一范的定义$\left\|\cdot\right\|$，总存在$K>0$使得$\left\|\cdot\right\|_\mathrm{E}\leq K\left\|\cdot\right\|$。故
+\begin{align*}
+    \left\|\mathbf{Lx}\right\|&=\left\|\sum_{i=1}^nx_i\mathbf{Le}_i\right\|\\
+    &\leq\sum_{i=1}^n\left|x_i\right|\sum_{i=1}^n\left\|\mathbf{Le}_i\right\|\\
+    &\leq K\left\|\mathbf{x}\right\|\sum_{i-1}^n\left\|\mathbf{Le}_i\right\|=k\left\|\mathbf{x}\right\|
+\end{align*}
+其中$k=K\sum_{i=1}^n\left\|\mathbf{Le}_i\right\|$。
+\end{proof}
+
+\begin{corollary}
+线性变换是连续函数。
+\end{corollary}
+\begin{proof}
+由定理\ref{thm:II.11.3}，对任意$\mathbf{x},\mathbf{x}_0\in\mathcal{V}$有$\left\|\mathbf{Lx}-\mathbf{Lx}_0\right\|=\left\|\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)\right\|\leq k\left\|\mathbf{x}-\mathbf{x}_0\right\|$，故对任一$\epsilon>0$总可取$\delta=\frac{\epsilon}{k}$使得只要$\left\|\mathbf{x}-\mathbf{x}_0\right\|<\delta$就有$\left\|\mathbf{Lx}-\mathbf{Lx}_0\right\|\leq k\left\|\mathbf{x}-\mathbf{x}_0\right\|<k\delta=\epsilon$。
+\end{proof}
+
+\subsection{极限的一些性质}
+\begin{theorem}[极限基本性质]
+在实数域内，以下命题成立:
+\begin{enumerate}
+    \item 设$a,b$是常数，则$\lim_{x\to a}b=b$。
+    \item 若$a$是常数，则$\lim_{x\to a} x=a$。
+    \item 设$\lim_{x\to a}f\left(x\right)=L$，$c$是常数，则$\lim_{x\to a}cf\left(x\right)=c\lim_{x\to a}f\left(x\right)=cL$。
+    \item 设$\lim_{x\to c}f\left(x\right)=L,\lim_{x\to c}g\left(x\right)=M$，则$\lim_{x\to c}\left[f\left(x\right)+g\left(x\right)\right]=L+M$。
+    \item 设$\lim_{x\to c}f\left(x\right)=L,\lim_{x\to c}g\left(x\right)=M$，则$\lim_{x\to c}\left[f\left(x\right)g\left(x\right)\right]=LM$。
+    \item （夹逼定理）若$c$是常数，$g\left(x\right)\leq f\left(x\right)\leq h\left(x\right)$至少在点$x=c$之外都成立，且$\lim_{x\to c}g\left(x\right)=\lim_{x\to c}h\left(x\right)=L$，则$\lim_{x\to c}f\left(x\right)=L$。
+    \item 设$\lim_{x\to c}f\left(x\right)=L$，则$\left|\lim_{x\to c}f\left(x\right)\right|=\left|L\right|=\lim_{x\to c}\left|f\left(x\right)\right|$。
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+留作练习或者待补充。
+\end{proof}
+
+\end{document}
