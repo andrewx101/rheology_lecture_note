@@ -63,16 +63,29 @@
 \begin{proof}
 存在性的证明，只需找出这一线性变换。任一$\mathbf{a}\in\mathcal{V}_N$可用基$B_\mathcal{V}$表示成
 \[\mathbf{a}=\sum_{i=1}^N\alpha_i\mathbf{e}_i,\alpha_i\in\mathbb{F},i=1,\cdots,N\]
-定义映射$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W}，\mathbf{Ta}\equiv\sum_{i=1}^N\alpha_i\mathbf{b}_i$，则有$\mathbf{Te}_i=\mathbf{b}_i,i=1,\cdots,N$。我们还需验证$\mathbf{T}$是否线性变换，按定义\ref{def:II.4.1}只需验证$T\left(\alpha\mathbf{a}+\beta\mathbf{b}\right)=\alpha\left(\mathbf{Ta}\right)+\beta\left(\mathbf{Tb}\right)$即可。此略。
+特别地，
+\[\mathbf{e}_i=\sum_{j=1}^N\delta_{ij}\mathbf{e}_j,i=1,\cdots,N\]
+定义映射$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W},\mathbf{Ta}\equiv\sum_{i=1}^N\alpha_i\mathbf{b}_i$，则易验$\mathbf{Te}_i=\mathbf{b}_i,i=1,\cdots,N$。我们还需验证映射$\mathbf{T}$是线性变换，按定义\ref{def:II.4.1}只需验证$T\left(\alpha\mathbf{a}+\beta\mathbf{b}\right)=\alpha\left(\mathbf{Ta}\right)+\beta\left(\mathbf{Tb}\right)$即可。给定任意$\mathbf{b}\in\mathcal{V}_N$和标量$\gamma\in\mathbb{F}$，其中$\mathbf{b}$可表示为$\mathbf{b}=\sum_{i=1}^N\beta_i\mathbf{e}_i$，且有
+\[\gamma\mathbf{a}+\mathbf{b}=\sum_{i=1}^N\left(\gamma\alpha_i+\beta_i\right)\mathbf{e}_i\]
+由$\mathbf{T}$的定义有
+\begin{align}
+\mathbf{T}\left(\gamma\mathbf{a}+\mathbf{b}\right)&=\sum_{i=1}^N\left(\gamma\alpha_i+\beta_i\right)\mathbf{b}_i\\
+\gamma\left(\mathbf{Ta}\right)+\mathbf{Tb}&=\gamma\sum_{i=1}^N\alpha_i\mathbf{b}_i+\sum_{i=1}^N\beta_i\mathbf{b}_i\\
+&=\sum_{i=1}^N\left(\gamma\alpha_i+\beta_i\right)\mathbf{b}_i
+\end{align}
+所以$\mathbf{T}\left(\gamma\mathbf{a}+\mathbf{b}\right)=\gamma\left(\mathbf{Ta}\right)+\mathbf{Tb}$对任意向量$\mathbf{a},\mathbf{b}\in\mathcal{V}_N$和标题$\gamma\in\mathbb{F}$均成立，即$\mathbf{T}$是一个线性变换。存在性证毕。
 
-唯一性的证明，设另有一线性变换$\mathbf{U}:\mathcal{V}_N\rightarrow\mathcal{W}$也满足$\mathbf{Ue}_i=\mathbf{b}_i$，然后只需显示$\mathbf{Ua}=\mathbf{Ta}$即$\mathbf{U}=\mathbf{T}$即可。此略。
+唯一性的证明，设另有一线性变换$\mathbf{U}:\mathcal{V}_N\rightarrow\mathcal{W}$也满足$\mathbf{Ue}_i=\mathbf{b}_i$，则对任一$\mathbf{a}\in\mathcal{V}_N$，
+\[
+\mathbf{Ua}=\mathbf{U}\left(\sum_{i=1}^N\alpha_i\mathbf{e}_i\right)=\sum_{i=1}^N\alpha_i\mathbf{Ue}_i=\sum_{i=1}^N\alpha_i\mathbf{b}_i\]
+即$\mathbf{U}$就是$\mathbf{T}$。
 \end{proof}
 
 \begin{theorem}\label{thm:II.4.2}
 若$\mathcal{V}_N,\mathcal{W}_M$分别为数域$\mathbb{F}$上的$N,M$维向量空间，则$\mathcal{L}\left(\mathcal{V}_N,\mathcal{V}_M\right)$的维数是$N\times M$。
 \end{theorem}
 \begin{proof}
-证明的过程，相当于找出$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基。
+证明的过和，相当于找出$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基。
 
 设$B_\mathcal{V}=\left\{\mathbf{e}_i\right\}_{i=1}^N,B_\mathcal{W}=\left\{\mathbf{f}_j\right\}_{j=1}^M$分别为$\mathcal{V}_N,\mathcal{W}_M$的基。对于每一对整数$\left(p,q\right),1\leq p\leq N,1\leq q\leq M$，定义一个线性变换$\mathbf{E}^{pq}:\mathcal{V}_N\rightarrow\mathcal{W}_M$\footnote{这一线性变换与例\ref{exp:II.3.2}中的矩阵很类似，可以比较理解。},
 \[
@@ -81,11 +94,11 @@
      \mathbf{f}_q,&i=p 
 \end{array}\right.
 \]
-则对于每对$\left(p,q\right)$，$\mathbf{E}^{pq}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$均唯一存在。给定一线性变换$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，且令
+给定任一线性变换$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，且令
 \[\mathbf{Te}_i=\sum_{q=1}^MA_{qi}\mathbf{f}_q\]
-由引理\ref{lem:II.4.1}，对$\left\{\mathbf{f}_j\right\}_{j=1}^M$，$\mathbf{T}$是维一的。且上式中的$A_{qi}$就是向量$\mathbf{Te}_i$的坐标。
+由引理\ref{lem:II.4.1}，对$\left\{\mathbf{f}_j\right\}_{j=1}^M$，$\mathbf{T}$是唯一的。且上式中的$A_{qi}$就是向量$\mathbf{Te}_i$在基$B_\mathcal{W}$下的坐标。
 
-定义$\mathbf{U}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，$\mathbf{Ue}_i=\sum_p\sum_qA_{qp}\mathbf{E}^{pq}\mathbf{e}_i$，则
+下面我们证明$\mathbf{T}$能被$\left\{\mathbf{E}^{pq}\right\}$线性表出。定义$\mathbf{U}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，$\mathbf{Ue}_i=\sum_p\sum_qA_{qp}\mathbf{E}^{pq}\mathbf{e}_i$，则
 \begin{align*}
     \mathbf{Ue}_i&=\sum_p\sum_qA_{qp}\mathbf{E}^{pq}\mathbf{e}_i\\
     &=\sum_p\sum_qA_{qp}\delta_{ip}\mathbf{f}_q\\
@@ -94,16 +107,14 @@
 \end{align*}
 则可见$\mathbf{U}=\mathbf{T}$，同时有
 \[\mathbf{T}=\sum_{p=1}^N\sum_{q=1}^MA_{qp}\mathbf{E}^{pq}\]
-即$\mathbf{T}$可由$\left\{\mathbf{E}^{pq}\right\}$线性表出，换句话说$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$是$\left\{\mathbf{E}^{pq}\right\}$的线性生成空间。由基的定义\ref{def:II.2.5}，现在我们只需再证$\left\{\mathbf{E}^{pq}\right\}$是线性无关的，它们就是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基了。按照线性无关的定义，设$\mathbf{T}$是零变换，由于$\left\{\mathbf{f}_j\right\}_{j=1}^M$是线性无关的，
-\[\mathbf{Te}_i=\sum_q A_{qi}\mathbf{f}_q=\mathbf{0}_\mathcal{W}\Leftrightarrow A_{qi}=0\forall q=1,\cdots,M,i=1,\cdots,N\]
+由于$\mathbf{T}$是$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$中的任意一个线性变换，故$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$是$\left\{\mathbf{E}^{pq}\right\}$的线性生成空间。由基的定义\ref{def:II.2.5}，现在我们只需再证$\left\{\mathbf{E}^{pq}\right\}$是线性无关的，它们就是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基了。按照线性无关的定义，设$\mathbf{T}$是零变换，由于$\left\{\mathbf{f}_j\right\}_{j=1}^M$是线性无关的，
+\[\mathbf{T}=\mathbf{0}=\sum_{p=1}^N\sum_{q=1}^MA_{qp}\mathbf{E}^{pq}\Leftrightarrow\mathbf{Te}_i=\sum_q A_{qi}\mathbf{f}_q=\mathbf{0}_\mathcal{W}\Leftrightarrow A_{qi}=0\forall q=1,\cdots,M,i=1,\cdots,N\]
 即$\left\{\mathbf{E}^{pq}\right\}$线性无关。故$\left\{\mathbf{E}^{pq}\right\}$是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的一组基，$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的维数就是$N\times M$。
 \end{proof}
 
 注意，给定两个有限维向量空间$\mathcal{V},\mathcal{W}$，$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$中的线性变换和$\mathcal{L}\left(\mathcal{W},\mathcal{V}\right)$中的线性变换是不同空间的元素，没有一般关系——虽然它们的维数无非只是$N\times M$和$M\times N$差别。在本讲义中我们会注意线性变换维数写法的顺序。
 
-讨论完线性变换本身作为向量的性质，我们接下来考虑线性变换作为映射的性质：单射、满射、双射……。
-
-线性变换作为映射的性质又与它所映射的两个向量空间的维数有关，这是线性代数最重要的定理之一，下面先给出这一定理。
+讨论完线性变换本身作为向量的性质，我们接下来考虑线性变换作为映射的性质：单射、满射、双射……。线性变换作为映射的性质与它所映射的两个向量空间的维数有关，这是线性代数最重要的定理之一，下面先给出这一定理。
 
 \begin{definition}[零空间、零化度、秩]\label{def:II.4.2}
 设$\mathcal{V}$和$\mathcal{W}$是数域$\mathbb{F}$上的向量空间。线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$的零空间（null space）或核空间（kernel），记作$\mathrm{ker}\mathbf{T}$，是所有满足$\mathbf{Ta}=\mathbf{0}_\mathcal{W}$的向量$\mathbf{a}$的集合。零空间的维数称为该线性变换的零化度（nullity），记作$\mathrm{nullity}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ker}\mathbf{T}\right)$。如果$\mathcal{V}$是有限维向量空间，则$\mathbf{T}$的秩（rank）是$\mathbf{T}$的值域的维数，记作$\mathrm{rank}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ran}\mathbf{T}\right)$。特别地，如果$\mathrm{nullity}\mathbf{T}=0$，即$\mathbf{T}$的零空间只有零向量$\mathbf{0}_\mathcal{V}$一个元素，则称$\mathbf{T}$是非奇异的（non-singular）。
@@ -111,16 +122,16 @@
 
 上述定义默认了两个易验事实的成立：$\mathrm{ker}\mathbf{T}$是$\mathcal{V}$的子空间，$\mathrm{ran}\mathbf{T}$是$\mathcal{W}$的子空间（否则不能直接谈它这两个子集的“维数”），证明从略\cite[\S7.3“2.线性变换的简单性质(4)”p.~177]{周胜林2012线性代数}。基于定义\ref{def:II.4.2}的概念，我们给出线性代数中非常重要的定理——线性变换的维数定理（\S7.3“2.线性变换的简单性质(5)”\cite[p.~178]{周胜林2012线性代数}）。
 
-\begin{theorem}\label{thm:II.4.3}
+\begin{theorem}[秩--零化度定理]\label{thm:II.4.3}
 设$\mathcal{V}$和$\mathcal{W}$是数域$\mathbb{F}$上的向量空间，其中$\mathcal{V}$是有限维向量空间，则对线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$有
 \[
 \mathrm{rank}\mathbf{T}+\mathrm{nullity}\mathbf{T}=\mathrm{dim}\mathcal{V}
 \]
 \end{theorem}
 \begin{proof}
-设$\mathrm{dim}\mathcal{V}=n$，$\mathcal{N}$是$\mathbf{T}$的零空间，$\mathrm{nullity}\mathbf{T}=\mathrm{dim}\mathcal{N}=k$，$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$是$\mathcal{N}$的一组基。则可在$\mathcal{V}$中继续找到$\left\{\mathbf{a}_{k+1},\cdots,\mathbf{a}_{n}\right\}$与$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$合并成线性无关向量组，从而成为$\mathcal{V}$的基。
+设$\mathrm{dim}\mathcal{V}=n$，$\mathrm{nullity}\mathbf{T}=\mathrm{dim}\left(\mathrm{ker}\mathbf{T}\right)=k$，$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$是$\mathrm{ker}\mathbf{T}$的一组基。则可在$\mathcal{V}$中继续找到$\left\{\mathbf{a}_{k+1},\cdots,\mathbf{a}_{n}\right\}$与$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$合并成线性无关向量组，从而成为$\mathcal{V}$的基。
 
-由于$\left\{\mathbf{Ta}_1,\cdots,\mathbf{Ta}_n\right\}$线性生成$\mathbf{T}$的值域$\mathrm{ran}\mathbf{T}$（由线性变换性质易证），其中由于$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}\in\mathcal{N}$，故有$\mathbf{Ta}_j=\mathbf{0}_\mathcal{W}\forall j\leq k$，所以实际上仅$\left\{\mathbf{Ta}_{k+1},\cdots,\mathbf{Ta}_n\right\}$就线性生成$\mathrm{ran}\mathbf{T}$了。我们进一步验证它们是线性无关的。设标量$\gamma_i$满足$\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_\mathcal{W}$，即
+由于$\left\{\mathbf{Ta}_1,\cdots,\mathbf{Ta}_n\right\}$线性生成$\mathbf{T}$的值域$\mathrm{ran}\mathbf{T}$（由线性变换性质易证），其中由于$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}\in\mathrm{ker}\mathbf{T}$，故有$\mathbf{Ta}_j=\mathbf{0}_\mathcal{W}\forall j\leq k$，所以实际上仅$\left\{\mathbf{Ta}_{k+1},\cdots,\mathbf{Ta}_n\right\}$就线性生成$\mathrm{ran}\mathbf{T}$了。我们进一步验证它们是线性无关的。设标量$\gamma_i$满足$\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_\mathcal{W}$，即
 \[\mathbf{T}\left(\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\right)=\mathbf{0}_\mathcal{W}\]
 即$\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\equiv\mathbf{a}\in\mathcal{N}$。向量$\mathbf{a}$在$\mathcal{N}$的基$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$下表示为$\mathbf{a}=\sum_{i=1}^k\alpha_i\mathbf{a}i$。故
 \[
@@ -152,7 +163,7 @@ $1\Leftrightarrow 3$：设$\mathbf{T}$是非奇异的。令$S$是$\mathcal{V}$�
 $1\Leftrightarrow 4$：由定理\ref{thm:II.4.3}可直接得到。
 \end{proof}
 
-定理\ref{thm:II.4.4}联系了线性变换的非奇异性与其单射性。下面的推论进一步说明，如果在此基础上再加上一个条件：$\mathrm{dim}\mathcal{V}=\mathrm{dim}\mathcal{W}$，那么$\mathbf{T}$就是双射。
+定理\ref{thm:II.4.4}联系了线性变换的非奇异性与其单射性。下面的推论进一步说明，如果在此基础上再加上一个条件：$\mathrm{dim}\mathcal{V}=\mathrm{dim}\mathcal{W}$，那么$\mathbf{T}$要么是双射，要么是非单射非满射。
 
 \begin{corollary}
 设$\mathcal{V},\mathcal{W}$是数域$\mathbb{F}$上的有限维向量空间且$\mathrm{dim}\mathcal{V}=\mathrm{dim}\mathcal{W}$，$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$是一个线性变换，则以下命题相互等价：
@@ -216,16 +227,16 @@ $1\Leftrightarrow 3$：留作练习。
 设$\mathcal{V},\mathcal{W}$是数域$\mathbb{F}$上的向量空间，$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$是同构线性变换。则$\mathbf{T}^{-1}\mathbf{T}=\mathbf{I}_\mathcal{V},\mathbf{TT}^{-1}=\mathbf{I}_\mathcal{W}$。
 \end{example}
 
-如果一个同构线性变换是从一个向量空间到其自己的映射，则称该线性变换是自同构线性变换（endomorphic linear transformation）。由于维数相等的任意两个向量空间同构，对同构线性变换的研究总能等价于对自同构线性变换的研究。我们给自同构线性变换以另一个名字。
-
 \begin{definition}[线性算符]\label{def:II.4.3}
 设$\mathcal{V}$是数域$\mathbb{F}$上的向量空间，由$\mathcal{V}$到其自身的线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{V}$称为线性算符（linear operator）。
 \end{definition}
 
-显然，线性算符都可逆。而且线性算符与其逆映射都同属同一个线性变换的空间$\mathcal{L}\left(\mathcal{V},\mathcal{V}\right)$（简写为$\mathcal{L}\left(\mathcal{V}\right)$），故线性算符等义于自同构线性变换。对于一般的线性变换，本节开头介绍了其向量代数。现在我们可以通过复合变换的定义，为线性算符引入乘法的代数\footnote{代数（algebra）的定义此略，此处只强调，要成为代数的运算，其中一个必要条件是要具有封闭性，既域上的运算结果还在域内。一般的线性变换的复合操作不满足此条件。}。此时恒等变换记号$\mathbf{I}$无需指明作用空间。
+线性变换是向量空间之间的同态映射，故线性算符又可称为自同态（automorphic）线性变换。同态的双射叫同构映射（isomorphism），前面也提到过双射的线性变换叫同构线性变换，故双射的线性算符又称自同构（endomorphic）线性算符。由定理\ref{thm:II.4.4}的推论，线性算符要么是非单射非满射，要么是双射。也就是说，并非所有线性算符都是可逆映射，只有是双射（自同构）的线性算符才是可逆映射。自同构线性算符与其逆映射同属于同一个线性变换的空间$\mathcal{L}\left(\mathcal{V},\mathcal{V}\right)$（简写为$\mathcal{L}\left(\mathcal{V}\right)$）。
+
+对于一般的线性变换，本节开头介绍了其作为向量的线性代数。现在我们可以通过复合变换的定义，为线性算符引入“乘法”的代数\footnote{代数（algebra）的定义此略，此处只强调，要成为代数的运算，其中一个必要条件是要具有封闭性。一般的线性变换的复合操作不满足此条件。}。此时恒等变换记号$\mathbf{I}$无需指明作用空间。
 
 \begin{theorem}\label{thm:II.4.8}
-设$\mathcal{V}$是数域$\mathbb{F}$上的线性变换，$\mathbf{U},\mathbf{T}_1,\mathbf{T}_2\in\mathcal{L}\left(\mathcal{V}\right)$，$\gamma\in\mathbb{F}$，则有：
+设$\mathcal{V}$是数域$\mathbb{F}$上的向量空间，$\mathbf{U},\mathbf{T}_1,\mathbf{T}_2\in\mathcal{L}\left(\mathcal{V}\right)$，$\gamma\in\mathbb{F}$，则有：
 \begin{enumerate}
     \item $\mathbf{IU}=\mathbf{UI}=\mathbf{U}$
     \item $\mathbf{U}\left(\mathbf{T}_1+\mathbf{T}_2\right)=\mathbf{UT}_1+\mathbf{UT}_2$，$\left(\mathbf{T}_1+\mathbf{T}_2\right)\mathbf{U}=\mathbf{T}_1\mathbf{U}+\mathbf{T}_2\mathbf{U}$

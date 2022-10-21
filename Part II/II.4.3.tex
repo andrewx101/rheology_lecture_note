@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+ \documentclass[main.tex]{subfiles}
 % 线性变换的转置
 \begin{document}
 我们首先引入线性泛函的概念，以便定义线性变换的转置。
@@ -18,33 +18,24 @@
 \end{itemize}
 \end{example}
 
-虽然一个向量空间$\mathcal{V}$的对偶空间$\mathcal{V}^*$是$\mathcal{V}$上的一种线性变换——线性泛函本身的空间，但由于，$\mathrm{dim}\mathcal{V}^*=\mathrm{dim}\mathcal{V}$，实际上$\mathcal{V}^*$与$\mathcal{V}$更像是一对并列概念。下面我们考察$\mathcal{V}$的基与$\mathcal{V}^*$的基的关系，通过一系列定理的证明找到两者之间的唯一对应性。我们先介绍一个关于线性变换的一般定理，然后介绍它关于线性泛函这一特例上的推论，最终支持我们给出“对偶基”的定义。
+从概念上可以说，线性泛函是$\mathcal{V}$上的线性变换，$\mathcal{V}$的对偶空间是$\mathcal{V}$上的线性变换的空间。但我们没有用$\mathcal{L}\left(\mathcal{V},\mathbb{F}\right)$这种记号，而是用$\mathcal{V}^*$，是因为考虑到$\mathrm{dim}\mathcal{V}=\mathrm{dim}\mathcal{V}^*$，$\mathcal{V}$与$\mathcal{V}^*$更像是并列的概念。下面我们考察$\mathcal{V}$的基与$\mathcal{V}^*$的基的关系，通过一系列定理的证明找到两者之间的唯一对应性。
 
-\begin{theorem}\label{thm:II.4.16}
-设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_n\right\}$是$\mathcal{V}$的一组有序基（$\mathrm{dim}\mathcal{V}=n$），$\mathcal{W}$是相同数域上的向量空间。给定$n$个$\mathcal{W}$的向量$\left\{\mathbf{b}_1,\cdots,\mathbf{b}_n\right\}$，有且只有一个线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$使得$\mathbf{Ta}_i=\mathbf{b}_i,\forall i=1,\cdots,n$。
+\begin{theorem}\label{thm:II.4.13}
+设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$\left\{\mathbf{a}_i\right\}$是$\mathcal{V}$的一组基，则对每个$i=1,\cdots,n$，有且只有一个$\mathcal{V}$上的线性泛函$f_i$满足$f_i\left(\mathbf{a}_j\right)=\delta_{ij},i,j=1,\cdots,n$。且$\left\{f_i\right\}$线性无关。
 \end{theorem}
 \begin{proof}
-首先证明存在性。在所给定的基下，$\mathcal{V}$的向量$\mathbf{x}$与其坐标$\left(\xi_1,\cdots,\xi_n\right)^\intercal$是一一对应的；任一$\mathcal{V}$中的向量$\mathbf{x}$都可表示为$\mathbf{x}=\sum_{i=1}^n\xi\mathbf{a}_i$。我们将线性变换$\mathcal{T}$具体定义为$\mathbf{Tx}=\sum_{i=1}^n\xi_i\mathbf{b}_i$，即该线性变换效果是把$\mathcal{V}$的向量$\mathbf{x}$对应到用$\mathbf{x}$的坐标与所给定的$\mathcal{W}$的$n$个向量来表出的一个向量。我们可以验证$\mathbf{T}$确实是一个线性变换。且这一线性变换满足定理的要求。
-
-然后我们证明唯一性。设另有一个线性变换$\mathbf{U}:\mathcal{V}\rightarrow\mathcal{W}$满足定理的要求，则$\mathbf{Ux}=\mathbf{U}\left(\sum_{i=1}^n\xi_i\mathbf{a}_i\right)=\sum_{i=1}^n\xi_i\left(\mathbf{Ua}_i\right)=\sum_{i=1}^n\xi_i\mathbf{b}_i=\mathbf{T}$。
-\end{proof}
-
-\begin{corollary}
-设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$\left\{\mathbf{a}_i\right\}$是$\mathcal{V}$的一组基，则对每个$i=1,\cdots,n$，有且只有一个$\mathcal{V}$上的线性泛函$f_i$满足$f_i\left(\mathbf{a}_j\right)=\delta_{ij},i,j=1,\cdots,n$。且$\left\{f_i\right\}$线性无关。
-\end{corollary}
-\begin{proof}
-“有且只有”由原定理易证，略。下面证明“线性无关”。
+“有且只有”由定理\ref{lem:II.4.1}易证，略。下面证明“线性无关”。
 
 设$f=\sum_{i=1}^n\gamma_if_i$，则$f\left(\mathbf{a}_j\right)=\sum_{i=1}^n\gamma_if_i\left(\mathbf{a}_j\right)=\sum_{i=1}^n\delta_{ij}=c_j,j=1,\cdots,n$。特别地，$f=0$（这里的$0$是$\mathcal{V}^*$的零向量）$\Leftrightarrow c_j=0\forall j=1,\cdots,n$。
 \end{proof}
 
-由于$\dim\mathcal{V}^*=\dim\mathcal{V}$，故$\mathrm{dim}\mathcal{V}$个$\mathcal{V}^*$中的线性无关向量就是$\mathcal{V}^*$的一组基，因而上面的定理和推论告诉我们，给定向量空间$\mathcal{V}$上的一组有序基，总能在其对偶空间$\mathcal{V}^*$中找到唯一对应的一组有序基，且后者的基向量作为线性泛函作用于前者的基向量等于克劳内克符号。我们因此可以定义对偶基的概念。
+由于$\dim\mathcal{V}^*=\dim\mathcal{V}=n$，故$n$个$\mathcal{V}^*$中的线性无关向量就是$\mathcal{V}^*$的一组基，因而上面的定理和推论告诉我们，给定向量空间$\mathcal{V}$上的一组有序基，总能在其对偶空间$\mathcal{V}^*$中找到唯一对应的一组有序基，且后者的基向量作为线性泛函作用于前者的基向量等于克劳内克符号。我们因此可以定义对偶基的概念。
 
 \begin{definition}[对偶基]\label{def:II.4.5}
 设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间。给定$\mathcal{V}$的一组基$B=\left\{\mathbf{a}_i\right\}$，$\mathcal{V}$的对偶空间$\mathcal{V}^*$中的（唯一一组）满足$f_i\left(\mathbf{a}_j\right)=\delta_{ij},i,j=1,\cdots,\mathrm{dim}\mathcal{V}$的基$\left\{f_i\right\}$称为$\left\{\mathbf{a}_i\right\}$的对偶基（dual basis）。
 \end{definition}
 
-由基的概念，$\mathcal{V}^*$中的任一线性泛函$f\in\mathcal{V}^*$都可以用$\mathcal{V}^*$的任一组基$\left\{f_i\right\}$表出，$f=\sum_{i=1}^nc_if_i,c_i\in\mathbb{F}$。如果已知$\left\{f_i\right\}$是$\mathcal{V}$的一组基$B=\left\{\mathbf{a}_i\right\}$的对偶基，那么通过与定理\ref{thm:II.4.16}的推论的证明过程类似的方法，可知$c_i=f\left(\mathbf{a}_i\right),i=1,\cdots,n$，故$f=\sum_{i=1}^nf\left(\mathbf{a}_i\right)f_i$，即$f$的第$i$个坐标可通过用$f$作用于有序基$B$的第$i$个向量来获得。同时，任一$\mathcal{V}$中的向量$\mathbf{x}\in\mathcal{V}$都可表示为$\mathbf{x}=\sum_{i=1}^n\xi_i\mathbf{a}_i$。若用$B$对偶基向量一一作用于$\mathbf{x}$，$f_i\left(\mathbf{x}\right)=\sum_{i=1}^n\xi_if_i\left(\mathbf{a}_i\right)=\sum_{i=1}^n\xi_i\delta_{ij}=\xi_i,i=1,\cdots,n$，即得到$\mathbf{x}$在$B$下的相应坐标，故$\mathbf{x}=\sum_{i=1}^nf_i\left(\mathbf{x}\right)\mathbf{a}_i$，即$\mathbf{x}$的第$i$个坐标可通过用$f_i$作用于向量$\mathbf{x}$来获得。作为线性泛函的对偶基向量其实就是一种“取坐标的函数”。
+由基的概念，$\mathcal{V}^*$中的任一线性泛函$f\in\mathcal{V}^*$都可以用$\mathcal{V}^*$的任一组基$\left\{f_i\right\}$表出，$f=\sum_{i=1}^nc_if_i,c_i\in\mathbb{F}$。如果已知$\left\{f_i\right\}$是$\mathcal{V}$的一组基$B=\left\{\mathbf{a}_i\right\}$的对偶基，那么通过与定理\ref{thm:II.4.13}的证明过程类似的方法，可知$c_i=f\left(\mathbf{a}_i\right),i=1,\cdots,n$，故$f=\sum_{i=1}^nf\left(\mathbf{a}_i\right)f_i$，即$f$的第$i$个坐标可通过用$f$作用于有序基$B$的第$i$个向量来获得。同时，任一$\mathcal{V}$中的向量$\mathbf{x}\in\mathcal{V}$都可表示为$\mathbf{x}=\sum_{i=1}^n\xi_i\mathbf{a}_i$。若用$B$的对偶基向量一一作用于$\mathbf{x}$，$f_i\left(\mathbf{x}\right)=\sum_{i=1}^n\xi_if_i\left(\mathbf{a}_i\right)=\sum_{i=1}^n\xi_i\delta_{ij}=\xi_i,i=1,\cdots,n$，即得到$\mathbf{x}$在$B$下的相应坐标，故$\mathbf{x}=\sum_{i=1}^nf_i\left(\mathbf{x}\right)\mathbf{a}_i$，即$\mathbf{x}$的第$i$个坐标可通过用$f_i$作用于向量$\mathbf{x}$来获得。作为线性泛函的对偶基向量其实就是一种“取坐标的函数”。
 
 接下来我们完成定义线性变换的转置的任务。
 

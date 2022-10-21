@@ -14,7 +14,7 @@
 带有内积运算规定的向量空间叫做内积空间（inner product space）。
 \end{definition}
 
-由内积运算可推出以下性质：$\forall\mathbf{a},\mathbf{b},\mathbf{c}\in\mathcal{V},\alpha\in\mathbb{F}$
+由内积运算要求的第3条易知$\left(\mathbf{a}|\mathbf{0}\right)=0\forall\mathbf{a}\in\mathcal{V}$。因为$\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$均有$\left(\mathbf{a}|\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{0}+\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{0}\right)+\left(\mathbf{a}|\mathbf{b}\right)\Rightarrow\left(\mathbf{a}|\mathbf{0}\right)=0$。由内积定义还可以推出：$\forall\mathbf{a},\mathbf{b},\mathbf{c}\in\mathcal{V},\alpha\in\mathbb{F}$
 \[\left(\mathbf{a}|\alpha\mathbf{b}+\mathbf{c}\right)=\overline{\alpha}\left(\mathbf{a}|\mathbf{b}\right)+\left(\mathbf{a}|\mathbf{c}\right)\]
 即从内积的后一个向量提出标量到内积之外时，这一标量要取复数共轭。
 
@@ -24,10 +24,10 @@
 
 \begin{example}
 \quad
-\begin{itemize}
+\begin{enumerate}
 \item 在$\mathbb{F}^n$上可定义这样的内积：对于$\mathbf{a}=\left(\alpha_1,\cdots,\alpha_n\right)^\intercal,\mathbf{b}=\left(\beta_1,\cdots,\beta_n\right)^\intercal\in\mathbb{F}$，$\left(\mathbf{a}|\mathbf{b}\right)\equiv\sum_j\alpha_j\overline{\beta_j}$，称为$\mathbb{F}^n$上的标准内积（standard inner product）。$\mathbb{R}^n$上的标准内积又可记为点乘（dot product）$\mathbf{a}\cdot\mathbf{b}$。
 \item 记$\mathbb{C}\left(a,b\right)$为所有定义在实开区间$\left(a,b\right)$上的复数值一元函数的集合，若通过$\left(a,b\right)$上的恒正函数$w\left(x\right)$定义内积运算$\left(f|g\right)=\int_{a}^{b}w\left(x\right)f\left(x\right)\overline{g\left(x\right)}dx,\forall f,g\in\mathbb{C}\left(a,b\right)$，验证$\mathbb{C}\left(a,b\right)$是一个内积空间。
-\end{itemize}
+\end{enumerate}
 \end{example}
 
 由内积的一般定义可直接证明柯西--施瓦茨不等式（Cauchy--Schwarz inequality），故该不等式在任一内积空间上都成立。
@@ -35,7 +35,7 @@
 \begin{theorem}\label{thm:II.3.1}
 设$\mathcal{V}$是数域$\mathbb{F}$上的一个内积空间，则有$\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$，
 \begin{enumerate}
-    \item 柯西--施瓦茨不等式：$\left|\left(\mathbf{a}|\mathbf{b}\right)\right|\leq\left(\mathbf{a}|\mathbf{a}\right)\left(\mathbf{b}|\mathbf{b}\right)$
+    \item 柯西--施瓦茨不等式：$\left|\left(\mathbf{a}|\mathbf{b}\right)\right|^2\leq\left(\mathbf{a}|\mathbf{a}\right)\left(\mathbf{b}|\mathbf{b}\right)$
     \item $\left(\mathbf{a}|\mathbf{b}\right)=\mathrm{Re}\left(\mathbf{a}|\mathbf{b}\right)+\mathrm{Re}\left(\mathbf{a}|i\mathbf{b}\right)$
 \end{enumerate}
 \end{theorem}
@@ -48,7 +48,7 @@
 \begin{align*}
 0\leq\left(\mathbf{c}|\mathbf{c}\right)&=\left(\mathbf{b}-\frac{\left(\mathbf{b}|\mathbf{a}\right)}{\left(\mathbf{a}|\mathbf{a}\right)}\mathbf{a}\right|\left.\mathbf{b}-\frac{\left(\mathbf{b}|\mathbf{a}\right)}{\left(\mathbf{a}|\mathbf{a}\right)}\mathbf{a}\right)\\
 &=\left(\mathbf{b}|\mathbf{b}\right)-\frac{\left|\left(\mathbf{b}|\mathbf{a}\right)\right|^2}{\left(\mathbf{a}|\mathbf{a}\right)}\\
-\Leftrightarrow \left|\left(\mathbf{a}|\mathbf{b}\right)\right|&\leq\left(\mathbf{a}|\mathbf{a}\right)\left(\mathbf{b}|\mathbf{b}\right)
+\Leftrightarrow \left|\left(\mathbf{a}|\mathbf{b}\right)\right|^2&\leq\left(\mathbf{a}|\mathbf{a}\right)\left(\mathbf{b}|\mathbf{b}\right)
 \end{align*}
 
 由$\left(\mathbf{a}|\mathbf{b}\right)=\mathrm{Re}\left(\mathbf{a}|\mathbf{b}\right)+i\mathrm{Im}\left(\mathbf{a}|\mathbf{b}\right)$和$\mathrm{Im}\left(\alpha\right)=\mathrm{Re}\left(-i\alpha\right)\forall\alpha\in\mathbb{F}$，有$\mathrm{Im}\left(\mathbf{a}|\mathbf{b}\right)=\mathrm{Re}\left(-i\left(\mathbf{a}|\mathbf{b}\right)\right)=\mathrm{Re}\left(\mathbf{a}|i\mathbf{b}\right)$，故$\left(\mathbf{a}|\mathbf{b}\right)=\mathrm{Re}\left(\mathbf{a}|\mathbf{b}\right)+i\mathrm{Re}\left(\mathbf{a}|i\mathbf{b}\right)$。
@@ -66,13 +66,13 @@
 带有范的定义的向量空间叫赋范向量空间（normed vector space）。
 \end{definition}
 
-我们注意到，赋范向量空间也有一个总成立的不等式——三角不等式。与内积空间的柯西--施瓦茨不等式不同，赋范向量空间的三角不等式是在范的定义中直接规定的，而无法作为定理由之前两个规定证明出来。这说明我们主观上就希望向量的范满足这样的性质。这是因为，“范”是我们给于向量以“长度”的概念，并希望它能与欧几里得几何公设规定的性质相兼容。
+我们注意到，赋范向量空间也有一个总成立的不等式——三角不等式。与内积空间的柯西--施瓦茨不等式不同，赋范向量空间的三角不等式是在范的定义中直接规定的，而无法作为定理由之前两个规定证明出来。我们主观上就希望向量的范满足这样的性质，因为“范”是我们为向量定义的一种“长度”的概念，所以希望它能与欧几里得几何公设规定的性质相兼容。
 
-一个赋范向量空间$\mathcal{V}$中，范为1的向量称为单位向量（unit vector），在本讲义中单位向量会加一个小帽子来特别表示：$\left\|\hat{\mathbf{a}}\right\|=1,\hat{\mathbf{a}}\in\mathcal{V}$。赋范向量空间$\mathcal{V}$的任一向量$\mathbf{x}$均可通过$\hat{\mathbf{x}}=\mathbf{x}/\left\|\mathbf{x}\right\|$归一化为一个单位向量（由范的定义易验）。
+一个赋范向量空间$\mathcal{V}$中，范为1的向量称为单位向量（unit vector），在本讲义中单位向量会加一个小帽子来特别表示：$\left\|\hat{\mathbf{a}}\right\|=1,\hat{\mathbf{a}}\in\mathcal{V}$。赋范向量空间$\mathcal{V}$的任一向量$\mathbf{x}$均可通过$\hat{\mathbf{x}}=\mathbf{x}/\left\|\mathbf{x}\right\|$归一化为一个单位向量（由范的调和性易验）。
 
 不管是内积的定义、还是范的定义，都没有具体规定计算方法。只要满足定义的一般要求，我们可以为同一个向量空间赋予不同内积或范的规定。向量的范的其中一种常用的定义是：设$\mathcal{V}$是内积空间，向量$\mathbf{a}\in\mathcal{V}$的范$\left\|\mathbf{a}\right\|\equiv\left(\mathbf{a}|\mathbf{a}\right)^{\frac{1}{2}}$。我们把这一定义称为欧几里得范（Euclidean norm）。其他范的定义则为非欧几里得范，例如在$\mathbb{R}^n$上，还可以有如下范的定义。对任一$\mathbf{x}=\left(x_1,\cdots,x_n\right)$，$\left\|\mathbf{x}\right\|=\mathrm{max}\left\{\left|x_1\right|,\cdots,\left|x_n\right|\right\}$\footnote{请验证它满足定义\ref{def:II.3.2}。}。一般地，由于给一个向量空间引入内积定义的方式本身就可以有多种，依赖内积的范的定义也会有多种。对于有些向量空间，范的定义可以不依赖内积。
 
-由于有限维向量空间上定义的不同的范之间是等价的（见\S\ref{sec:VI.1}），故我们实际只需以欧几里得范为代表进行后续的讨论，未经说明的话，一般提到有限维向量空间上的范都指欧几里得范。
+由于有限维向量空间上定义的不同的范之间是等价的（见\S\ref{sec:IV.1.1}），故我们实际只需以欧几里得范为代表进行后续的讨论，未经说明的话，一般提到有限维向量空间上的范都指欧几里得范。
 
 以下定理说明，在一定条件下，我们能够用范的一般定义构造一个内积，使任何一个尚未定义内积的赋范空间成为一个内积空间。而且特别地，这一种范就是欧几里得范。
 
@@ -91,7 +91,7 @@
 
 上面的等式在几何上等价于平行四边形法则（parallelogram law）。特别地，对于$\mathbf{a},\mathbf{b}\in\mathbb{R}^n$则有$\mathbf{a}\cdot\mathbf{b}=\frac{1}{4}\left\|\mathbf{a}+\mathbf{b}\right\|^2-\frac{1}{4}\left\|\mathbf{a}-\mathbf{b}\right\|^2$。
 
-柯西--施瓦茨不等式、三角不等式和极化恒等式在很多定理的证明中经常用到，但它们的含义及适用范围需要区分清楚。由定理\ref{thm:II.3.1}，柯西--施瓦茨不等式是对任一内积空间均成立的。由定义\ref{def:II.3.2}，三角不等式是对任一赋范向量空间均成立的。而由定理\ref{thm:II.3.2}可知，满足极化恒等式的赋范空间必然也是一个内积空间从而把两种空间统一起来。特别地，欧几里得范即是同时满足三角不等式和极化恒等式的范。
+柯西--施瓦茨不等式、三角不等式和极化恒等式在很多定理的证明中经常用到，但它们的含义及适用范围需要区分清楚。由定理\ref{thm:II.3.1}，柯西--施瓦茨不等式是对任一内积空间均成立的。由定义\ref{def:II.3.2}，三角不等式是对任一赋范向量空间均成立的。而由定理\ref{thm:II.3.2}可知，满足极化恒等式的赋范空间必然也是一个内积空间，从而两种空间得到了统一。特别地，欧几里得范是同时满足三角不等式和极化恒等式的范。
 
 下面我们由内积空间的性质引入正交（orthogonal）及相关的概念。
 
@@ -99,11 +99,13 @@
 内积空间$\mathcal{V}$中的向量$\mathbf{a},\mathbf{b}\in\mathcal{V}$，若$\left(\mathbf{a}|\mathbf{b}\right)=0$，则称$\mathbf{a}$与$\mathbf{b}$是正交的（orthogonal）。若$S$是$\mathcal{V}$的一个子集，且$S$中的向量两两正交，则称$S$是$\mathcal{V}$的一个正交集（orthogonal set）。若$\mathcal{V}$还是一个赋范向量空间，且$\mathcal{V}$的一个正交集$S$中的向量均满足$\left\|\hat{\mathbf{e}}\right\|=1\forall\hat{\mathbf{e}}\in S$则称$S$是规范正交集（orthonormal set）。
 \end{definition}
 
+易验零向量与同一内积空间的任意向量都正交。
+
 \begin{example}\label{exp:II.3.2}\cite[“例题2.2”,p.~174]{周胜林2012线性代数}
-数域$\mathbb{F}$上的$n\times n$矩阵的空间$\mathbb{F}^{n\times n}$中，记$E^{pq}$为仅第$p$行、第$q$列为1，其余为0的$n\times n$矩阵。则由$E^{pq},p=1,\cdots,n,q=1,\cdots,n$组成的集合是规范正交集。其中$\mathbb{F}^{n\times n}$上的内积定义是$\left(A|B\right)\equiv\sum_{j,k}A_{jk}\overline{B}_{jk},\forall A, B\in\mathbb{F}^{n\times n}$，$\overline{B}$表示矩阵$B$的每个分量均取复数共轭后的矩阵。
+数域$\mathbb{F}$上的$n\times n$矩阵的空间$\mathbb{F}^{n\times n}$中，记$E^{pq}$为仅第$p$行、第$q$列为1，其余为0的$n\times n$矩阵。则由$E^{pq},p=1,\cdots,n,q=1,\cdots,n$组成的集合是规范正交集。其中$\mathbb{F}^{n\times n}$上的内积定义是$\left(A|B\right)\equiv\sum_{j,k}A_{jk}\overline{B_{jk}},\forall A, B\in\mathbb{F}^{n\times n}$。
 \end{example}
 
-以下定理证明任意一组两两正交的向量线性无关，但需注意的是线性无关向量组却未必两两正交。
+以下定理证明任意一组两两正交的非零向量线性无关。限定“非零”是因为，含零向量的任何向量组线性相关，但零向量又与任一向量正交。还需注意的是线性无关向量组却未必都是两两正交的。
 
 \begin{theorem}\label{thm:II.3.3}
 正交集中的所有非零向量线性无关。

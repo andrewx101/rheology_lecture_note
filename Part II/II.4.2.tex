@@ -1,14 +1,14 @@
 \documentclass[main.tex]{subfiles}
 % 线性变换的坐标矩阵
 \begin{document}
-在之前的内容里，我们主要介绍了向量和线性变换的代数定义。在以往的《线性代数》课里我们主要学习的“向量”都是$n\times 1$矩阵（列向量）或$1\times n$矩阵（行向量），实际上这些只是3维实坐标空间$\mathbb{R}^3$空间的向量。在\S\ref{sec:II.2}中我们明确了，要在一个数域$\mathbb{F}$上的$n$维向量空间$\mathcal{V}$与$n$维坐标空间$\mathbb{F}^n$之间建立一一对应关系，可以通过选定$\mathcal{V}$的某组基，把$\mathcal{V}$中的向量表示成该基下的坐标——$\mathbb{F}^n$中的一个$n$元组。于是，这一一一对应关系是依赖$\mathcal{V}$的基的选择的。在未指定基的时候，不能直接用$\mathbb{F}^n$中的一个$n$元数组指代$\mathcal{V}$中的一个向量。
+在之前的内容里，我们主要介绍了向量和线性变换的代数定义。在以往的《线性代数》课里我们主要学习的“向量”都是$n\times 1$矩阵（“列向量”）或$1\times n$矩阵（“行向量”），实际上这些只是3维实坐标空间$\mathbb{R}^3$空间的向量。在\S\ref{sec:II.2}中我们明确了，要在一个数域$\mathbb{F}$上的$n$维向量空间$\mathcal{V}$与$n$维坐标空间$\mathbb{F}^n$之间建立一一对应关系，可以通过选定$\mathcal{V}$的某组基，把$\mathcal{V}$中的向量表示成该基下的坐标——$\mathbb{F}^n$中的一个$n$元组。于是，这一一一对应关系是依赖$\mathcal{V}$的基的选择的。在未指定基的时候，不能直接用$\mathbb{F}^n$中的一个$n$元数组指代$\mathcal{V}$中的一个向量。
 
 我们还知道，线性变换本身也是一个向量；线性变换的空间也有基和维数，因此相应地也应该有选定基下的坐标。下面我们将会看到，线性变换在选定基下的坐标可以表示为一个矩阵\cite[\S7.3“3”,p.~178]{周胜林2012线性代数}。
 
-考虑数域$\mathbb{F}$上的$N$维向量空间$\mathcal{V}_N$的一组基$B=\{\mathbf{a}_i\}_{i=1}^n$，任一向量$\mathbf{x}\in\mathcal{V}$可表示成$\mathbf{x}=\sum_{i=1}^n\xi_i\mathbf{a}_i,\xi_i\in\mathbb{F},i=1,\cdots,n$。我们在\S\ref{sec:II.2}中说明过，向量$\mathbf{x}$在基$B$下的坐标可表示为由$\left\{\xi_i\right\}$组成的$n\times 1$矩阵$\left(\xi_1,\cdots,\xi_n\right)^\intercal$。
+考虑数域$\mathbb{F}$上的$n$维向量空间$\mathcal{V}_n$的一组基$B=\{\mathbf{a}_i\}_{i=1}^n$，任一向量$\mathbf{x}\in\mathcal{V}$可表示成$\mathbf{x}=\sum_{i=1}^n\xi_i\mathbf{a}_i,\xi_i\in\mathbb{F},i=1,\cdots,n$。我们在\S\ref{sec:II.2}中说明过，向量$\mathbf{x}$在基$B$下的坐标可表示为由$\left\{\xi_i\right\}$组成的$n\times 1$矩阵$\left(\xi_1,\cdots,\xi_n\right)^\intercal$。
 
 设$\mathcal{V}_n,\mathcal{W}_m$分别是数域$\mathbb{F}$上的$n$、$m$维向量空间，线性变换$\mathbf{A}\in\mathcal{L}\left(\mathcal{V}_n,\mathcal{W}_m\right)$将$\mathcal{V}_n$的一组基$B_\mathcal{V}=\{\mathbf{a}_i\}_{i=1}^n$映射到$\mathcal{W}_m$中的$n$个向量$\mathbf{w}_k=\mathbf{Aa}_k,k=1,\cdots,n$。如果我们选取$\mathcal{W}_m$的一组基$B_\mathcal{W}=\{\mathbf{b}_j\}_{j=1}^m$，则$\mathbf{w}_k$又可表示为$\mathbf{w}_k=\sum_{j=1}^m\alpha_{jk}\mathbf{b}_j,k=1,\cdots,n$。此时，向量$\mathbf{w}_k$的坐标$\alpha_{jk}$需要两个下标来统一表示，它们构成一个$m\times n$矩阵
-\[\left(\mathbf{A}\right)=\left(\begin{array}{ccc}\alpha_{11}&\cdots&\alpha_{1N}\\\vdots&&\vdots\\\alpha_{M1}&\cdots&\alpha_{MN}\end{array}\right)\]
+\[\left(\mathbf{A}\right)=\left(\begin{array}{ccc}\alpha_{11}&\cdots&\alpha_{1n}\\\vdots&&\vdots\\\alpha_{m1}&\cdots&\alpha_{mn}\end{array}\right)\]
 我们称矩阵$\left(\mathbf{A}\right)$是线性变换$\mathbf{A}$在基$B_\mathcal{V}$与$B_\mathcal{W}$下的坐标矩阵（coordinate matrix）。$\alpha_{jk}$称为$\mathbf{A}$的在基$B_\mathcal{V}$与$B_\mathcal{W}$下的坐标。
 
 由于向量和线性变换是抽象的一般概念，但基和坐标又是向量空间和线性变换的一般属性，故不管以什么具体数学对象作向量和线性变换，都可以在给定基下变成矩阵运算\footnote{像例\ref{exp:II.2.1}和例\ref{exp:II.4.2}中的那种$\mathcal{C}^\infty$空间的维数是无穷，$\mathcal{C}^\infty$空间的任一组基都有无穷个基向量。把$\mathcal{C}^\infty$空间的向量（函数）用一组基向量（函数）来表出，将得到一个无穷级数。因此这种空间上的向量和线性变换无法表示有限维矩阵。更多关于函数空间作为无穷维向量空间的知识可参见其他数学资料\cite{Hassani1999}。本讲义不再涉及，默认只讨论有限维向量空间。}。若给定线性变换$\mathbf{A}:\mathcal{V}_n\rightarrow\mathcal{W}_m$、向量$\mathbf{x}\in\mathcal{V}_n$、$\mathbf{y}\in\mathcal{W}_m$和基向量$\{\mathbf{a}_i\}_{i=1}^n\subset\mathcal{V}_n,\{\mathbf{b}_j\}_{j=1}^m\subset\mathcal{W}_m$，则$\mathbf{x}$和$\mathbf{y}$可分别表示为$\mathbf{x}=\sum_{i=1}^n\xi_i\mathbf{a}_i$、$\mathbf{y}=\sum_{j=1}^m\eta_j\mathbf{b}_j$。若$\mathbf{A}$在基$\left\{\mathbf{a}_i\right\},\left\{\mathbf{b}_j\right\}$下的表示矩阵为$\left(\alpha_{ji}\right)$，则线性关系式$\mathbf{y}=\mathbf{Ax}$恰好可以写成关于$\mathbf{x}$、$\mathbf{y}$和$\mathbf{A}$的矩阵之间的乘法关系，推算如下：
@@ -30,7 +30,7 @@
 \[
 \mathbf{A}\left(\sum_{i=1}^n\xi_i\mathbf{a}_i\right)=\sum_{i=1}^m\left(\sum_{j=1}^n\alpha_{ji}\xi_i\right)\mathbf{b}_j
 \]
-定唯一确定了一个线性变换$\mathbf{A}:\mathcal{V}_n\rightarrow\mathcal{W}_m,\mathbf{A}\in\mathcal{L}\left(\mathcal{V}_n,\mathcal{W}_m\right)$，使后者在$\mathcal{V}_n$的某组基$\{\mathbf{a}_i\}_{i=1}^n$和$\mathcal{W}_n$的某组基$\{\mathbf{b}_j\}_{j=1}^m$下的矩阵表示恰为矩阵$A$。总结成定理如下。
+唯一确定了一个线性变换$\mathbf{A}:\mathcal{V}_n\rightarrow\mathcal{W}_m,\mathbf{A}\in\mathcal{L}\left(\mathcal{V}_n,\mathcal{W}_m\right)$，使后者在$\mathcal{V}_n$的某组基$\{\mathbf{a}_i\}_{i=1}^n$和$\mathcal{W}_n$的某组基$\{\mathbf{b}_j\}_{j=1}^m$下的矩阵表示恰为矩阵$A$。总结成定理如下。
 
 \begin{theorem}\label{thm:II.4.9}
 设$\mathcal{V}_n$和$\mathcal{W}_m$是数域$\mathbb{F}$上的有限维向量空间。$B_\mathcal{V}$和$B_\mathcal{W}$分别是$\mathcal{V}_n$和$\mathcal{W}_m$的一组基。对每个线性变换$\mathbf{T}:\mathcal{V}_n\rightarrow\mathcal{W}_m$都存在唯一一个$\mathbb{F}$上的$m\times n$矩阵$T$使得$\left(\mathbf{Ta}\right)_{B_\mathcal{W}}=T\left(\mathbf{a}\right)_{B_\mathcal{V}}\forall\mathbf{a}\in\mathcal{V}_n$。其中$\left(\cdot\right)_B$表示以$B$为基的矩阵表示。
