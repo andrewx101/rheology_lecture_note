@@ -48,18 +48,19 @@
 如果一个函数在其定义域内处处都连续，我们就直接称该函数在其定义域内是连续的，或称该函数是连续函数。以下给出的定理及其推论，既是一个例子，也是一个重要结论。
 
 \begin{theorem}\label{thm:II.11.3}
-设$\mathcal{V}$、$\mathcal{W}$分别是数域$\mathbb{F}$上的$n,m$维赋范向量空间，$\mathbf{L}:\mathcal{V}\rightarrow\mathcal{W}$是一个线性变换，则总存在正实数$k>0$使得$\left\|\mathbf{Lx}\right\|\leq k\left\|\mathbf{x}\right\|,\forall\mathbf{x}\in\mathcal{V}$。
+设$\mathcal{V}$、$\mathcal{W}$分别是数域$\mathbb{F}$上的$n,m$维赋范向量空间，$\mathbf{L}:\mathcal{V}\rightarrow\mathcal{W}$是一个线性变换，则总存在正实数$k>0$使得$\left\|\mathbf{Lx}\right\|\leq k\left\|\mathbf{x}\right\|,\forall\mathbf{x}\in\mathcal{V}$，当且仅当$n=1$时取等号。
 \end{theorem}
 \begin{proof}
-设$\left\{\mathbf{e}_i\right\}$是$\mathcal{V}$的一组基，则任一向量$\mathbf{x}\in\mathcal{V}$可表示为$\mathbf{x}=\sum_{i=1}^nx_i\mathbf{e}_i$。设$\left\|\cdot\right\|_\mathrm{E}$是欧几里德范，即$\left\|\mathbf{x}\right\|_\mathrm{E}\equiv\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}$。由定理\ref{thm:II.5.3}及其推论，包括欧几里得范在内的任意范都不依赖基的选择。故在任一基下总有$\left|x_i\right|\leq\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}=\left\|\mathbf{x}\right\|_\mathrm{E}$。
+设$\left\{\mathbf{e}_i\right\}$是$\mathcal{V}$的一组基，则任一向量$\mathbf{x}\in\mathcal{V}$可表示为$\mathbf{x}=\sum_{i=1}^nx_i\mathbf{e}_i$。设$\left\|\cdot\right\|_\mathrm{E}$是欧几里得范，即$\left\|\mathbf{x}\right\|_\mathrm{E}\equiv\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}$。由定理\ref{thm:II.5.3}及其推论，包括欧几里得范在内的任意范都不依赖基的选择。故在任一基下总有$\left|x_i\right|\leq\left(\sum_{i=1}^nx_i^2\right)^\frac{1}{2}=\left\|\mathbf{x}\right\|_\mathrm{E}$。
 
-由定理\ref{thm:II.11.3}及其引理，对$\mathcal{V}$上的任一范的定义$\left\|\cdot\right\|$，总存在$K>0$使得$\left\|\cdot\right\|_\mathrm{E}\leq K\left\|\cdot\right\|$。故
+由引理\ref{lem:IV.1.1}，对$\mathcal{V}$上的任一范的定义$\left\|\cdot\right\|$，总存在$K>0$使得$\left\|\cdot\right\|_\mathrm{E}\leq K\left\|\cdot\right\|$。故
 \begin{align*}
     \left\|\mathbf{Lx}\right\|&=\left\|\sum_{i=1}^nx_i\mathbf{Le}_i\right\|\\
-    &\leq\sum_{i=1}^n\left|x_i\right|\sum_{i=1}^n\left\|\mathbf{Le}_i\right\|\\
-    &\leq K\left\|\mathbf{x}\right\|\sum_{i-1}^n\left\|\mathbf{Le}_i\right\|=k\left\|\mathbf{x}\right\|
+    &\leq\sum_{i=1}^n\left|x_i\right|\left\|\mathbf{Le}_i\right\|\\
+    &\leq\sum_{i=1}^n\left\|\mathbf{x}\right\|_\mathrm{E}\left\|\mathbf{Le}_i\right\|\\
+    &\leq\sum_{i=1} K\left\|\mathbf{x}\right\|\left\|\mathbf{Le}_i\right\|=k\left\|\mathbf{x}\right\|
 \end{align*}
-其中$k=K\sum_{i=1}^n\left\|\mathbf{Le}_i\right\|$。
+其中$k=K\sum_{i=1}^n\left\|\mathbf{Le}_i\right\|$。上面的第2个不等号用到范的三角不等式和范的调和性，第三个不等号用到证明开头提到的事实，第四个不等号用到引理\ref{lem:IV.1.1}。由于引理\ref{lem:IV.1.1}的等号当且仅当$n=1$时成立，这一条件已经强于其余两个不等号的取等充要条件，故整个不等式的取等充要条件就是$n=1$
 \end{proof}
 
 \begin{corollary}

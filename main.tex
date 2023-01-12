@@ -13,10 +13,13 @@ top=25.4mm,
 % package for colors
 \usepackage{xcolor}
 
-% packages for fonts
+% packages for fonts and symbols
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{bm}
+\usepackage{calrsfs}
+\usepackage{stmaryrd}
+
 
 % packages for graphics
 \usepackage{graphicx}
@@ -49,8 +52,6 @@ top=25.4mm,
 \usepackage{enumitem}% http://ctan.org/pkg/enumitem
 \setlist{nosep}
 
-
-
 % package for hyperlinks
 \usepackage{hyperref}
 \hypersetup{colorlinks=true}
@@ -71,15 +72,19 @@ sorting=none
 
 % packages for definitions, theorems, proofs.
 \usepackage{amsthm}
+\theoremstyle{definition}
 \newtheorem{definition}{定义}
 \newtheorem*{definition*}{定义}
 \newtheorem{theorem}{定理}
 \newtheorem*{theorem*}{定理}
 \newtheorem{lemma}{引理}
 \newtheorem{corollary}{推论}[theorem]
-\newtheorem{example}{例}
 \let\oldproof\proof
 \renewcommand{\proof}{\color{gray}\oldproof}
+\newtheorem{example}{例}
+
+
+
 
 % counter controlling
 \usepackage{chngcntr}
@@ -90,7 +95,7 @@ sorting=none
 \counterwithin{lemma}{section}
 \counterwithin{example}{section}
 \counterwithin{section}{part}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 % package for subfiles
 \usepackage{subfiles}
@@ -109,9 +114,10 @@ sorting=none
 
 \newpage\part{引言}
 
-\newpage\part{数学准备}
+\newpage\part{数学部分}
 \section{集合与映射}\label{sec:II.1}
-\subfile{Part II/II.1.tex}
+\subfile{Part II/II.1.1.tex}
+\subfile{Part II/II.1.2.tex}
 
 \section{向量空间}\label{sec:II.2}
 \subfile{Part II/II.2.tex}
@@ -129,7 +135,7 @@ sorting=none
 \subsection{线性变换的转置}\label{sec:II.4.3}
 \subfile{Part II/II.4.3.tex}
 
-\section{基变换与坐标变换}\label{sec:II.5}
+\section{基变换与坐标变换公式}\label{sec:II.5}
 \subfile{Part II/II.5.tex}
 
 \section{内积空间上的线性算符}\label{sec:II.6}

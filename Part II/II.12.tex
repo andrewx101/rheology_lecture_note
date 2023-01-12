@@ -145,7 +145,7 @@ dy=f^\prime\left(x_0\right)\Delta x\text{。}
 
 \begin{definition}[函数的微分（向量函数）]\label{def:II.12.7}
 若函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在其定义域内某点$\mathbf{x}_0\in D$处，存在一个线性变换$\mathbf{L}:\mathbb{R}^n\rightarrow\mathbb{R}^m$使得对任意$\mathbf{x}_0$的邻域$N\left(\mathbf{x}_0\right)$中的点$\mathbf{x}\in N\left(\mathbf{x}_0\right)$，
-\[\lim_{\mathbf{x}\rightarrow\mathbf{x}_0}\frac{\mathbf{f}\left(\mathbf{x}\right)-\mathbf{x}\left(\mathbf{x}_0\right)-\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)}{\left\|\mathbf{x}-\mathbf{x}_0\right\|}=\mathbf{0}\]
+\[\lim_{\mathbf{x}\rightarrow\mathbf{x}_0}\frac{\mathbf{f}\left(\mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)}{\left\|\mathbf{x}-\mathbf{x}_0\right\|}=\mathbf{0}\]
 则称函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable）。记$d\mathbf{f}_{\mathbf{x}_0}=\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)$是函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（differential）。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是$S$上的可微函数（differentiable function）。
 \end{definition}
 
@@ -162,7 +162,7 @@ dy=f^\prime\left(x_0\right)\Delta x\text{。}
 \[
 f_i\left(x_1,\cdots,x_n\right)-f_i\left(x_{01},\cdots,x_{0n}\right)=\sum_{j=1}^n L_{ji}\left(x_j-x_{0j}\right)+o\left(\rho\right),i=1,\cdots,m
 \]
-其中，$\rho=\left(\sum_{j=1}^n\left(x_j-x_{0j}\right)^2\right)^{1/2}=\left\|\mathbf{x}-\mathbf{x}_0\right\|$，$o\left(\rho\right)$是当$\rho\to 0$时$\rho$的高阶无穷小。这等价于如下极限式
+其中，$L_{ij}$是“线性主部”的系数，只与$\left(x_{01},\cdots,x_{0n}\right)$有关，$\rho=\left(\sum_{j=1}^n\left(x_j-x_{0j}\right)^2\right)^{1/2}=\left\|\mathbf{x}-\mathbf{x}_0\right\|$，$o\left(\rho\right)$是当$\rho\to 0$时$\rho$的高阶无穷小。这等价于如下极限式
 \[
 \lim_{\rho\to 0}\frac{1}{\left\|\mathbf{x}-\mathbf{x}_0\right\|}\left(\begin{array}{c}
 f_1\left(x_1,\cdots,x_n\right)-f_1\left(x_{01},\cdots,x_{0n}\right)-\sum_{j-1}^nL_{1j}\left(x_j-x_{0j}\right)\\
@@ -170,7 +170,7 @@ f_1\left(x_1,\cdots,x_n\right)-f_1\left(x_{01},\cdots,x_{0n}\right)-\sum_{j-1}^n
 f_m\left(x_1,\cdots,x_n\right)-f_m\left(x_{01},\cdots,x_{0n}\right)-\sum_{j-1}^nL_{mj}\left(x_j-x_{0j}\right)
 \end{array}\right)=\left(\begin{array}{c}0\\\vdots\\0\end{array}\right)
 \]
-若线性变换$\mathbf{L}$在标准基下的矩阵坐标就是$L_{ij}$，则上式等价于\ref{def:II.12.7}的极限式。
+若线性变换$\mathbf{L}$在标准基下的矩阵坐标就是$L_{ij}$，则上式等价于定义\ref{def:II.12.7}的极限式。
 
 我们接下来考察函数可微与可导的关系，即函数可微的充分和必要条件\footnote{这部分内容可以与本科高等数学课上的相应内容对比学习，特别是关于必要非充份条件和充份非必要条件的例子（“二、全微分存在的条件”\cite[p.~20]{华工高数2009下}。）}。首先，以下定理是函数在某点处可微分的必要条件，它同时也给出了$\mathbf{L}$或其坐标矩阵$L_{ij}$的计算方法。
 
@@ -312,7 +312,7 @@ d\mathbf{f}\left(\mathbf{x}\right)=\frac{d\mathbf{f}}{d\mathbf{x}}d\mathbf{x}\]
 \begin{definition}[对向量的导数、方向导数]
 函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$对向量$\mathbf{y}\in\mathbb{R}^n$的导数是
 \[\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}=\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)}{t}\]
-其中作为导函数的$\frac{\partial \mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}$的定义域是原函数$\mathbf{f}$的定义域的使该导数存在的子集。特别地，函数对单位向量$\mathbf{u},\left\|\mathbf{u}\right\|=1$的导数称为方向导数。
+其中作为导函数的$\frac{\partial \mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}$的定义域是原函数$\mathbf{f}$的定义域的使该导数存在的子集。特别地，函数对单位向量$\mathbf{u},\left\|\mathbf{u}\right\|=1$的导数称为方向导数（directional derivative）。
 \end{definition}
 
 以下定理使得函数对任意向量的导数可用该函数的全导数来计算。
@@ -346,7 +346,7 @@ d\mathbf{f}\left(\mathbf{x}\right)=\frac{d\mathbf{f}}{d\mathbf{x}}d\mathbf{x}\]
 \end{proof}
 
 \begin{theorem}[反函数定理]\label{thm:II.12.8}
-设函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^n$是连续可微函数，且在$\mathbf{x}_0$处其导数$\mathbf{L}\left(\mathbf{x}_0\right)$可逆。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的逆函数$\mathbf{f}^{-1}$；$N$的像集$\mathbf{f}\left(\mathbf{N}\right)$是开集；且$\mathbf{f}^{-1}$在$\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}$在$\mathbf{x}_0$的导数的逆变换，即
+设函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^n$是连续可微函数，且在$\mathbf{x}_0$处其导数$\mathbf{L}\left(\mathbf{x}_0\right)$可逆。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的逆函数$\mathbf{f}^{-1}$；$N$的像集$\mathbf{f}\left(N\right)$是开集；且$\mathbf{f}^{-1}$在$\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}$在$\mathbf{x}_0$的导数的逆变换，即
 \[\left.\frac{d\mathbf{f}^{-1}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}=\mathbf{L}^{-1}\left(\mathbf{x}_0\right)\]
 \end{theorem}
 \begin{proof}

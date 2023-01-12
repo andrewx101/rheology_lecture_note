@@ -11,7 +11,7 @@
 \end{itemize}
 \end{definition}
 
-我们已经学习过，集合的表示方式有列举法和描述法。
+我们已经学习过，集合的表示方式有列举法和描述法，故应能看懂下例中的表示。
 
 \begin{example}
 \begin{align*}
@@ -78,24 +78,26 @@
 若$a\in A$且$a\in B,\forall a,A,B$，则$a\in A\cap B$，称$A$与$B$的交集。
 \end{definition}
 
+我们经常涉及到若干个集合之间的笛卡尔集的表述方式，以下是其定义。
+
 \begin{definition}[笛卡尔积]
-两个集合$A$和$B$的笛卡尔积是所有有序对$\left(a,b\right),a\in A,b\in B$的集合，即 $A\times B=\{\left(a,b\right)|a\in A\text{且}b\in B\}$
+两个集合$A$和$B$的笛卡尔积（Cartesian product）是所有有序对$\left(a,b\right),a\in A,b\in B$的集合，即 $A\times B=\{\left(a,b\right)|a\in A\text{且}b\in B\}$
 \end{definition}
 
-我们可以推广这一定义至任意个集合的笛卡尔积。集合$A_1,A_2,\cdots,A_n$的笛卡尔积是$A_1\times A_2\times\cdots\times A_n=\left\{\left(a_1,a_2,\cdots,a_n\right)|a_i\in A_i\right\}$，一个有序$n$元组的集合。如果$A_1=A_2=\cdots=A_n=A$，则记$A_1\times A_2\times\cdots\times A_n=A^n$。例如，$\mathbb{R}$是实数集，$\mathbb{R}^n$是$n$元有序实数组的集合，在解析几何中常用以表示$n$维欧几里德空间中一个点的坐标。
+我们可以推广这一定义至任意个集合的笛卡尔积。集合$A_1,A_2,\cdots,A_n$的笛卡尔积是$A_1\times A_2\times\cdots\times A_n=\left\{\left(a_1,a_2,\cdots,a_n\right)|a_i\in A_i\right\}$，一个有序$n$元组的集合。如果$A_1=A_2=\cdots=A_n=A$，则记$A_1\times A_2\times\cdots\times A_n=A^n$。例如，$\mathbb{R}$是实数集，$\mathbb{R}^n$是$n$元有序实数组的集合，在解析几何中常用以表示$n$维欧几里得空间中一个点的坐标。
 
 一个集合的元素可以与另一个集合的元素建立对应关系。我们主要关心的是满足某种规定的对应关系，称为映射，定义如下。
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.25\textwidth]{images/II.1.1.eps}
-\caption{映射}
-\label{fig:II.1.1}
-\end{figure}
 
 \begin{definition}[映射]
 （如图\ref{fig:II.1.1}所示）从集合$X$到集合$Y$的映射（mapping）$f$，记为$f:X\rightarrow Y$，是$X$的所有元素与$Y$的部分或所有元素之间的对应关系，且每个$X$的元素只对应$Y$的一个元素。如果$y\in Y$是$x\in X$通过映射$f$的对应，则可写成$y=f\left(x\right)$，并称$f\left(x\right)$是$x$的像（image）。按上述定义，$x$只有一个像。$X$称为该映射$f$的定义域（domain），记为$\mathrm{dom}f$，$Y$称为该映射$f$的陪域（codomain）或到达域（target domain）。$x$的像$f\left(x\right)$是$Y$的子集，称为该映射$f$的值域（range），记为$\mathrm{ran}f$。
 \end{definition}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{images/II.1.1.pdf}
+\caption{映射的定义}
+\label{fig:II.1.1}
+\end{figure}
 
 当映射的陪域是实数集$\mathbb{R}^n$或复数集$\mathbb{C}^n$时，我们常常也称其为函数（function）。
 
@@ -115,37 +117,35 @@
 \end{figure}
 
 \begin{definition}[单射、双射、满射]
-（如图\ref{fig:II.1.2}所示）对于映射$f:X\rightarrow Y$，若$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则映射$f$是单射（injective mapping）。若$f\left(X\right)=Y$，则称$f$是满射（surjective mapping）。既是单射又是满射的映射叫双射（bijective mapping）。
+对于映射$f:X\rightarrow Y$，若$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则映射$f$是单射（injective mapping）。若$\forall y\in Y\exists x\in X:f\left(x\right)=y$，则称$f$是满射（surjective mapping）。既是单射又是满射的映射叫双射（bijective mapping）。
 \end{definition}
 
-读者可自行画图表示非满射非单射的情况。
+图\ref{fig:II.1.1}是一个非满射非单射的一般映射。图\ref{fig:II.1.2}给出的分而是满射非单射、单射非满射和双射的情况。
 
 \begin{definition}[复合映射]
-令$f:X\rightarrow Y$和$g:Y\rightarrow Z$是两个映射。则$f$和$g$的复合映射（composite mapping），记为$g\circ f$，是从$X$到$Z$的映射：
+设$f:X\rightarrow Y$和$g:Y\rightarrow Z$是两个映射。则$f$和$g$的复合映射（composite mapping），记为$g\circ f$，是从$X$到$Z$的映射：
 \[g\circ f\left(x\right)=g\left(f\left(x\right)\right),\forall x\in X\]
 \end{definition}
 
 \begin{theorem}
 对于映射$f:X\rightarrow Y$和$g: Y\rightarrow Z$，
-\begin{itemize}
+\begin{enumerate}
     \item 如果$f$和$g$都是满射，则$g\circ f$是满射
     \item 如果$g\circ f$是满射，则$g$是满射
-\end{itemize}
+    \item 如果$f$和$g$都是单射，则$g\circ f$是单射
+    \item 如果$g\circ f$是单射，则$f$是单射
+\end{enumerate}
 \end{theorem}
 \begin{proof}
-留作练习。
+“1”的证明：$g$是满射$\Leftrightarrow\forall z\in Z\exists y\in Y:g\left(y\right)=z$，$f$是满射$\Leftrightarrow\forall y\in Y\exists x\in X:f\left(x\right)=y$，所以$\forall z\in Z\exists x\in X:g\left(f\left(x\right)\right)=z$。
+
+“2”的证明：$g\circ f$是满射$\Leftrightarrow\forall z\in Z\exists x\in X:g\circ f\left(x\right)=z$，故对于$g$，$\forall z\in Z\exists y=f\left(x\right):g\left(y\right)=z$，即$g$是满射。
+
+“3”的证明：$g\left(f\left(x_1\right)\right)=g\left(f\left(x_2\right)\right)\Rightarrow f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$。
+
+“4”的证明：$\because g\circ f$是单射，$\therefore g\left(f\left(x_1\right)\right)=g\left(f\left(x_2\right)\right)\Rightarrow x_1=x_2$。由映射的基本定义又有$f\left(x_1\right)=f\left(x_2\right)\Rightarrow g\left(f\left(x_1\right)\right)=g\left(f\left(x_2\right)\right)$。故$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$。
 \end{proof}
 
-\begin{theorem}
-对于映射$f:X\rightarrow Y$和$g: Y\rightarrow Z$，
-\begin{itemize}
-    \item 如果$f$和$g$都是单射，则$g\circ f$是单射
-    \item 如果$g\circ f$是满射，则$f$是单射
-\end{itemize}
-\end{theorem}
-\begin{proof}
-留作练习。
-\end{proof}
 
 \begin{definition}[逆映射]\label{def:II.1.14}
 对于映射$f:X\rightarrow Y$，如果存在一个映射$g:Y\rightarrow X$，使得复合映射$g\circ f$是恒等映射$\mathrm{id}_X$，则称映射$f$是可逆的（invertible)，映射$g$是$f$的逆映射（inverse mapping）。

@@ -8,7 +8,7 @@
 \begin{enumerate}
     \item $\left(\mathbf{a}|\mathbf{b}\right)=\overline{\left(\mathbf{b}|\mathbf{a}\right)}$
     \item $\left(\alpha\mathbf{a}|\mathbf{b}\right)=\alpha\left(\mathbf{a}|\mathbf{b}\right)$
-    \item $\left(\mathbf{a}+\mathbf{b}|\mathbf{c}\right)=\left(\mathbf{a}|\mathbf{b}\right)+\left(\mathbf{a}|\mathbf{c}\right)$
+    \item $\left(\mathbf{a}+\mathbf{b}|\mathbf{c}\right)=\left(\mathbf{a}|\mathbf{c}\right)+\left(\mathbf{b}|\mathbf{c}\right)$
     \item $\left(\mathbf{a}|\mathbf{a}\right)\in\mathbb{R}$且$\left(\mathbf{a}|\mathbf{a}\right)\geq0$，当且仅当$\mathbf{a}=\mathbf{0}$时取等号。
 \end{enumerate}
 带有内积运算规定的向量空间叫做内积空间（inner product space）。
@@ -89,7 +89,7 @@
 可验证上式满足内积定义，且$\left\|\mathbf{a}\right\|^2=\left(\mathbf{a}|\mathbf{a}\right)^{\frac{1}{2}}$，即该范就是欧几里德范。
 \end{proof}
 
-上面的等式在几何上等价于平行四边形法则（parallelogram law）。特别地，对于$\mathbf{a},\mathbf{b}\in\mathbb{R}^n$则有$\mathbf{a}\cdot\mathbf{b}=\frac{1}{4}\left\|\mathbf{a}+\mathbf{b}\right\|^2-\frac{1}{4}\left\|\mathbf{a}-\mathbf{b}\right\|^2$。
+上面的等式在几何上等价于平行四边形法则（parallelogram law）。特别地，对于$\mathbf{a},\mathbf{b}\in\mathbb{R}^n$有$\mathbf{a}\cdot\mathbf{b}=\frac{1}{4}\left\|\mathbf{a}+\mathbf{b}\right\|^2-\frac{1}{4}\left\|\mathbf{a}-\mathbf{b}\right\|^2$。
 
 柯西--施瓦茨不等式、三角不等式和极化恒等式在很多定理的证明中经常用到，但它们的含义及适用范围需要区分清楚。由定理\ref{thm:II.3.1}，柯西--施瓦茨不等式是对任一内积空间均成立的。由定义\ref{def:II.3.2}，三角不等式是对任一赋范向量空间均成立的。而由定理\ref{thm:II.3.2}可知，满足极化恒等式的赋范空间必然也是一个内积空间，从而两种空间得到了统一。特别地，欧几里得范是同时满足三角不等式和极化恒等式的范。
 
@@ -105,7 +105,7 @@
 数域$\mathbb{F}$上的$n\times n$矩阵的空间$\mathbb{F}^{n\times n}$中，记$E^{pq}$为仅第$p$行、第$q$列为1，其余为0的$n\times n$矩阵。则由$E^{pq},p=1,\cdots,n,q=1,\cdots,n$组成的集合是规范正交集。其中$\mathbb{F}^{n\times n}$上的内积定义是$\left(A|B\right)\equiv\sum_{j,k}A_{jk}\overline{B_{jk}},\forall A, B\in\mathbb{F}^{n\times n}$。
 \end{example}
 
-以下定理证明任意一组两两正交的非零向量线性无关。限定“非零”是因为，含零向量的任何向量组线性相关，但零向量又与任一向量正交。还需注意的是线性无关向量组却未必都是两两正交的。
+以下定理证明任意一组两两正交的非零向量线性无关。限定“非零”是因为，含零向量的任何向量组线性相关，但零向量又与任一向量正交。还需注意的是线性无关向量组未必都是两两正交的。
 
 \begin{theorem}\label{thm:II.3.3}
 正交集中的所有非零向量线性无关。
@@ -172,7 +172,7 @@
 通过格拉姆--斯密特正交化过程可由$\mathbf{b}_1,\mathbf{b}_2,\mathbf{b}_3$得到$\mathbf{R}^3$的一组正交基：
 \begin{align*}
     \mathbf{a}_1&=\left(3,0,4\right)^\intercal\\
-    \mathbf{a}_2&=\left(1,0,7\right)^\intercal-\frac{\left(-1,0,7\right)^\intercal\cdot\left(3,0,4\right)^\intercal}{\left(3,0,4\right)^\intercal\cdot\left(3,0,4\right)^\intercal}\left(3,0,4\right)^\intercal\\
+    \mathbf{a}_2&=\left(-1,0,7\right)^\intercal-\frac{\left(-1,0,7\right)^\intercal\cdot\left(3,0,4\right)^\intercal}{\left(3,0,4\right)^\intercal\cdot\left(3,0,4\right)^\intercal}\left(3,0,4\right)^\intercal\\
     &=\left(-1,0,7\right)^\intercal-\left(3,0,4\right)^\intercal\\
     &=\left(-4,0,3\right)^\intercal\\
     \mathbf{a}_3&=\left(2,9,11\right)^\intercal-\frac{\left(2,9,11\right)^\intercal\cdot\left(3,0,4\right)^\intercal}{\left(3,0,4\right)^\intercal\cdot\left(3,0,4\right)^\intercal}\left(3,0,4\right)^\intercal-\frac{\left(2,9,11\right)^\intercal\cdot\left(-4,0,5\right)^\intercal}{\left(-4,0,3\right)^\intercal\cdot\left(-4,0,3\right)^\intercal}\left(-4,0,3\right)^\intercal\\
