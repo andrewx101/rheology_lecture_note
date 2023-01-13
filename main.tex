@@ -1,15 +1,15 @@
-\documentclass[zihao=-4,linespread=1.5,heading=true,a4paper,twoside]{ctexart}
-\usepackage[utf8]{inputenc}
+\documentclass[zihao=-4,linespread=1.5,a4paper,heading=true,twoside]{ctexbook}
+%\usepackage[utf8]{inputenc}
 \pagestyle{empty}
 % packages for page layout
 \usepackage{geometry}
 \geometry{
 a4paper,
-total={171.8mm,246.2mm},
-left=19.1mm,
-top=25.4mm,
+%total={171.8mm,246.2mm},
+%left=19.1mm,
+%top=25.4mm,
 }
-
+\setlength{\headheight}{14.5pt}
 % package for colors
 \usepackage{xcolor}
 
@@ -41,6 +41,7 @@ top=25.4mm,
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[LE,RO]{\leftmark}
+\fancyhead[LO,RE]{\rightmark}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO,RE]{更新至\today}
@@ -60,7 +61,7 @@ top=25.4mm,
 % \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 % \usepackage{perpage}
 % \MakePerPage{footnote} 
-\usepackage[perpage]{footmisc}
+\usepackage[perpage,symbol*]{footmisc}
 
 % packages for bibliography
 \usepackage[
@@ -93,13 +94,13 @@ sorting=none
 
 % counter controlling
 \usepackage{chngcntr}
-\counterwithin{figure}{section}
-\counterwithin{equation}{section}
-\counterwithin{definition}{section}
-\counterwithin{theorem}{section}
-\counterwithin{lemma}{section}
-\counterwithin{example}{section}
-\counterwithin{section}{part}
+\counterwithin{figure}{chapter}
+\counterwithin{equation}{chapter}
+\counterwithin{definition}{chapter}
+\counterwithin{theorem}{chapter}
+\counterwithin{lemma}{chapter}
+\counterwithin{example}{chapter}
+%\counterwithin{chapter}{part}
 \setcounter{tocdepth}{2}
 
 % package for subfiles
@@ -112,19 +113,20 @@ sorting=none
 %=====================================================================================================================
 \begin{document}
 
-\part*{前言}\label{sec:preface}
+\pagenumbering{roman}
+\section*{前言}\label{sec:preface}
 \subfile{preface.tex}
+\addcontentsline{toc}{section}{\nameref{sec:preface}}
+\tableofcontents
 
-\newpage\tableofcontents
-
-\newpage\part{引言}
-
-\newpage\part{数学部分}
-\section{集合与映射}\label{sec:II.1}
+\pagenumbering{arabic}
+\part{数学部分}
+\chapter{集合与映射}\label{sec:II.1}
 \subfile{Part II/II.1.1.tex}
 \subfile{Part II/II.1.2.tex}
 \subfile{Part II/II.1.3.tex}
 
+\chapter{线性代数}
 \section{向量空间}\label{sec:II.2}
 \subfile{Part II/II.2.tex}
 
@@ -153,6 +155,7 @@ sorting=none
 \section{正规算符及其谱分解}\label{sec:II.8}
 \subfile{Part II/II.8.tex}
 
+\chapter{向量函数微积分}
 \section{欧几里得空间}
 \subfile{Part II/II.9.tex}
 
@@ -168,7 +171,8 @@ sorting=none
 \section{曲线、曲面和积分定理}
 \subfile{Part II/II.13.tex}
 
-\newpage\part{连续介质力学基础}
+\part{连续介质力学基础}
+\chapter{新经典时空}
 \section{标架与参考系}
 \subfile{Part III/III.1.tex}
 
