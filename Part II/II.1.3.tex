@@ -1,27 +1,35 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \subsection{映射}
-
-设$X$和$Y$是集合，如果由$X$到$Y$的关系$f$同时满足：
-\begin{enumerate}
-    \item $\mathrm{dom}f=X$；
-    \item 对每一$X$的元素$x\in X$，\emph{有且只有一个}$Y$的元素$y\in Y$满足$\left(x,y\right)\in f$，
-\end{enumerate}
-则称$f$是由$X$到$Y$的\emph{映射（mapping）}，记作$f:X\rightarrow Y$\footnote{记号$f:X\rightarrow Y$包含的信息是：
+\begin{definition}
+    设$X$和$Y$是集合，如果由$X$到$Y$的关系$f$同时满足：
     \begin{enumerate}
-        \item $X$、$Y$是集合；
-        \item $f$是由$X$到$Y$的映射。
+        \item $\mathrm{dom}f=X$；
+        \item 对每一$X$的元素$x\in X$，\emph{有且只有一个}$Y$的元素$y\in Y$满足$\left(x,y\right)\in f$，
     \end{enumerate}
-}。对应于每一$x\in X$的满足$\left(x,y\right)\in f$的那唯一的$y\in Y$，记作$y=f\left(x\right)$，称$x$在映射$f$下的\emph{值（value）}。
+    则称$f$是由$X$到$Y$的\emph{映射（mapping）}，记作$f:X\rightarrow Y$\footnote{记号$f:X\rightarrow Y$包含的信息是：
+        \begin{enumerate}
+            \item $X$、$Y$是集合；
+            \item $f$是由$X$到$Y$的映射。
+        \end{enumerate}
+    }。对每一$\left(x,y\right)\in f$，称$y$是$x$在映射$f$下的\emph{值（value）}，记作$f\left(x\right)$。
+\end{definition}
 
-（加一个例子，列出不是映射的关系。）
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{../images/mapping.pdf}
+    \caption{映射的定义}
+    \label{fig:II.1.3}
+\end{figure}
+
+映射定义的第1条要求如果违反了，可通过对集合$X$的改动得到满足，而无需改动关系$f$本身。例如若$\mathrm{dom}f\subsetneqq X$，则令$X^\prime=\mathrm{dom}f$并改为讨论由$X^\prime$到$Y$的关系$f$，就可通过映射定义的第1条。然而映射定义的第2条，则图\ref{fig:II.1.3}中的第一个例子只是一个关系，而不是一个映射。
 
 给定映射$f:X\rightarrow Y$，我们继续以下讨论：
 \begin{itemize}
     \item 一般地，$Y$未必等于$\mathrm{ran}f$，集合$Y$称映射$f$的\emph{陪域（codomain）}。
-    \item 若$\mathrm{ran}f=Y$则称映射$f$是\emph{满射（surjective mapping）}。
+    \item 若$\mathrm{ran}f=Y$则称映射$f$是\emph{满射（surjective mapping）}。图\ref{fig:II.1.3}中的第4和第5个例子都是满射。
     \item 若$A\subset X$，则集合$\left\{y|y\in Y\wedge\left(\forall x\in A,y=f\left(x\right)\right)\right\}$称集合$A$在映射$f$下的\emph{像（image）}。常见但易产生歧义的记法是$f\left(A\right)$。这一集合可用语言描述为：由集合$A$的所有元素在映射$f$下的值组成的集合。易证它是$Y$的子集。
-    \item 若对任意$x_1,x_2\in X$，$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则称$f$是\emph{单射（injective mapping）}。可用语言描述为，“单射输出唯一地确定其输入”。
+    \item 若对任意$x_1,x_2\in X$，$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则称$f$是\emph{单射（injective mapping）}。可用语言描述为，“单射输出唯一地确定其输入”。图\ref{fig:II.1.3}中的第3和第5个例子都是满射。
 \end{itemize}
 
 
@@ -30,15 +38,10 @@
 我们在上节已了解过一个集合的元素可以与另一个集合的元素建立对应关系。本节我们主要关心的是满足某种规定的对应关系，称为映射，定义如下。
 
 \begin{definition}[映射]
-    （如图\ref{fig:II.1.1}所示）从集合$X$到集合$Y$的映射（mapping）$f$，记为$f:X\rightarrow Y$，是$X$的所有元素与$Y$的部分或所有元素之间的对应关系，且每个$X$的元素只对应$Y$的一个元素。如果$y\in Y$是$x\in X$通过映射$f$的对应，则可写成$y=f\left(x\right)$，并称$f\left(x\right)$是$x$的像（image）。按上述定义，$x$只有一个像。$X$称为该映射$f$的定义域（domain），记为$\mathrm{dom}f$，$Y$称为该映射$f$的陪域（codomain）或到达域（target domain）。$x$的像$f\left(x\right)$是$Y$的子集，称为该映射$f$的值域（range），记为$\mathrm{ran}f$。
+    从集合$X$到集合$Y$的映射（mapping）$f$，记为$f:X\rightarrow Y$，是$X$的所有元素与$Y$的部分或所有元素之间的对应关系，且每个$X$的元素只对应$Y$的一个元素。如果$y\in Y$是$x\in X$通过映射$f$的对应，则可写成$y=f\left(x\right)$，并称$f\left(x\right)$是$x$的像（image）。按上述定义，$x$只有一个像。$X$称为该映射$f$的定义域（domain），记为$\mathrm{dom}f$，$Y$称为该映射$f$的陪域（codomain）或到达域（target domain）。$x$的像$f\left(x\right)$是$Y$的子集，称为该映射$f$的值域（range），记为$\mathrm{ran}f$。
 \end{definition}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{../images/II.1.1.pdf}
-    \caption{映射的定义}
-    \label{fig:II.1.1}
-\end{figure}
+
 
 当映射的陪域是实数集$\mathbb{R}^n$或复数集$\mathbb{C}^n$时，我们常常也称其为函数（function）。
 
