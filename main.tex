@@ -49,7 +49,7 @@ top=25.4mm,
 \usepackage{csquotes}
 
 % redefine itemize
-\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+\usepackage{enumitem} % http://ctan.org/pkg/enumitem
 \setlist{nosep}
 
 % package for hyperlinks
@@ -57,9 +57,10 @@ top=25.4mm,
 \hypersetup{colorlinks=true}
 
 % packages for footnotes
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\usepackage{perpage}
-\MakePerPage{footnote} 
+% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% \usepackage{perpage}
+% \MakePerPage{footnote} 
+\usepackage[perpage,symbol*]{footmisc}
 
 % packages for bibliography
 \usepackage[
@@ -72,6 +73,8 @@ sorting=none
 
 % packages for definitions, theorems, proofs.
 \usepackage{amsthm}
+
+% set styles for definitions, lemmata, theorems, proofs, examples
 \theoremstyle{definition}
 \newtheorem{definition}{定义}
 \newtheorem*{definition*}{定义}
@@ -81,6 +84,8 @@ sorting=none
 \newtheorem{corollary}{推论}[theorem]
 \let\oldproof\proof
 \renewcommand{\proof}{\color{gray}\oldproof}
+
+\theoremstyle{plain}
 \newtheorem{example}{例}
 
 
@@ -118,6 +123,7 @@ sorting=none
 \section{集合与映射}\label{sec:II.1}
 \subfile{Part II/II.1.1.tex}
 \subfile{Part II/II.1.2.tex}
+\subfile{Part II/II.1.3.tex}
 
 \section{向量空间}\label{sec:II.2}
 \subfile{Part II/II.2.tex}

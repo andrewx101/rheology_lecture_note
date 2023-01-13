@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 \begin{document}
 \subsection{集合的基础概念}
 集合是近代数学的基本语言。用集合与映射重述人的直观经验，是近世数学和基于其构建的理论物理的普遍特点。连续介质力学中的大量概念都依赖集合和映射来引入的。如果不熟悉集合和映射的语言和符号，就很难读懂后面的内容。
@@ -16,7 +16,7 @@
 
 如果只要有$x\in A$就有$x\in B$，则称$A$是$B$的\emph{子集（subset）}，或称$A$包含于$B$、$B$包含$A$，记为$A\subset B$。显然，任一集合都是它自己的子集。
 
-如果$A\subset B$且$B\subset A$，则集合$A$就是$B$，记为$A=B$\footnote{此处等号“$=$”的意义应理解为：等号两边的字母是同一集合的代号。相应地，不等号“$\neq$”两边的字母是不同集合的代号。}。换言之，如果集合$A$与$B$的元素都相同，则$A$与$B$就是同一个集合。再换言之，一个集合由其所有元素\emph{唯一}确定。这是集合论的\emph{外延公理（axiom of extension）}。
+如果$A\subset B$且$B\subset A$，则集合$A$就是$B$，记为$A=B$\footnote{此处等号“$=$”的意义应理解为：等号两边的字母是同一集合的不同代号。若写$A=B$，那么$A$\emph{就是}$B$。相应地，不等号“$\neq$”两边的字母是不同集合的代号。若写$A\neq B$，那么$A$\emph{不是}$B$。}。换言之，如果集合$A$与$B$的元素都相同，则$A$与$B$就是同一个集合。再换言之，一个集合由其所有元素\emph{唯一}确定。这是集合论的\emph{外延公理（axiom of extension）}。
 
 如果$A\subset B$且$A\neq B$，则称$A$是$B$的\emph{真子集（proper subset）}，或称$A$真包含于$B$、$B$真包含$A$，记作$A\subsetneqq B$。
 
@@ -24,21 +24,21 @@
 
 给定一个集合$A$，我们可以根据$A$的元素所需要满足的附加要求，构建出$A$的子集。例如，设$A$是所有偶数的集合，附加的要求是“比1大、比9小”，我们就从$A$中找出了2、4、6、8这四个元素组成的集合$B$。一般地，我们将此记作：
 \[
-\left\{x|x\in A\text{且（$x$需要满足的条件）}\right\}
+\left\{x|x\in A\wedge\left(\text{$x$需要满足的条件}\right)\right\}
 \]
-注意，预先给定一个基本集合$A$这一步原则上是不可省略的；“且”后的语句形式是对$A$的元素$x$的规定，而不能是其他形式。这是集合论的\emph{分类公理（axiom of specification）}。
+其中符号$\wedge$表示“且”的意思。注意，预先给定一个基本集合$A$这一步原则上是不可省略的；“$\wedge$”后的语句形式是对$A$的元素$x$的规定，而不能是其他形式。这是集合论的\emph{分类公理（axiom of specification）}。
 
 给定两个集合$A$和$B$，总存在唯一一个这样的集合$V$：只要$x\in V$，就有$x\in A$且$x\in B$；反之，若$x\in A$且$x\in B$，则有$x\in V$。集合$V$的存在性来自分类公理；$V$可表示成：
 \[
-V=\left\{x|x\in A\text{且}x\in B\right\}
+V=\left\{x|x\in A\wedge x\in B\right\}
 \]
-$V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\text{且}x\in B\right\}$且$V^\prime\neq V$，则必存在$x\in V^\prime$且$x\notin V$。$x\in V^\prime\Rightarrow x\in A$且$x\in B$；$x\notin V\Rightarrow x\notin A$或$x\notin B$，两推论矛盾\footnote{由集合定义\ref{def:II.1.1}中的“确定性”。}。因此$V^\prime=V$或$V^\prime$不存在，即$V$是唯一的。我们把这样的集合$V$称作集合$A$与$B$的\emph{交集（interset）}，记作$V=A\cap B$。
+$V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B\right\}$且$V^\prime\neq V$，则必存在$x\in V^\prime$且$x\notin V$。若$x\in V^\prime$，则$x\in A$且$x\in B$；若$x\notin V$，则$x\notin A$或$x\notin B$，这两个推论相互矛盾\footnote{由集合定义\ref{def:II.1.1}中的“确定性”。}。因此$V^\prime=V$或$V^\prime$不存在，即$V$是唯一的。我们把这样的集合$V$称作集合$A$与$B$的\emph{交集（interset）}，记作$V=A\cap B$。
 
 设$\mathcal{C}$是集合的集合，且$\mathcal{C}\neq\emptyset$。设$A\in\mathcal{C}$，则由分类公理存在以下集合
 \[
-V=\left\{x|x\in A\text{且}x\in X\text{当且仅当}X\in\mathcal{C}\right\}
+    V=\left\{x|x\in A\wedge \left(x\in X\Leftrightarrow X\in\mathcal{C}\right)\right\}
 \]
-这一集合$V$的唯一性可类似上一段那样得证，此略\footnote{下文构建的集合的唯一性，不作说明时，都由外延公理保证。}。此时称$V$是$\mathcal{C}$的元素的交集，记作
+其中$\Leftrightarrow$是“当且仅当”的意思。这一集合$V$的唯一性可类似上一段那样得证，此略\footnote{下文构建的集合的唯一性，不作说明时，都由外延公理保证。}。此时称$V$是$\mathcal{C}$的元素的交集，记作
 \[
 V=\bigcap_{X\in\mathcal{C}}X
 \]
@@ -101,15 +101,15 @@ U=\bigcup_{X\in\mathcal{C}}X
 \item $A\subset B\Leftrightarrow B^\complement\subset A^\complement$
 \end{enumerate}
 
-关于集合的并集、交集，以及给定全集下的补集还有一套重要定律——\emph{德摩根定律（De Morgan's Laws）}：对任意集合$A$、$B$，
+关于集合的并集、交集，以及给定全集下的补集还有一条重要定律——\emph{德摩根定律（De Morgan's Laws）}：对任意集合$A$、$B$，
 \begin{align*}
 \left(A\cup B\right)^\complement&=A^\complement\cap B^\complement\\
 \left(A\cap B\right)^\complement&=A^\complement\cup B^\complement
 \end{align*}
 
-给定一个集合$A$，我们\emph{规定}存在一个集合$\mathcal{P}^\prime\left(A\right)$包含所有$A$的子集。这是集合论的\emph{幂集公理（axiom of powers）}。我们于是可遵守分类公设给出恰好包括$A$的所有子集（包括空集和集合$A$本身），而不包括其他元素的集合：
+给定一个集合$A$，我们\emph{规定}存在一个集合，暂记作$\mathcal{P}^\prime\left(A\right)$，包含所有$A$的子集。这是集合论的\emph{幂集公理（axiom of powers）}。我们于是可遵守分类公设给出恰好包括$A$的所有子集（包括空集和集合$A$本身），而不包括其他元素的集合：
 \[
-\mathcal{P}\left(A\right)=\left\{X|X\in\mathcal{P}^\prime\left(A\right)\text{且}X\subset A\right\}
+\mathcal{P}\left(A\right)=\left\{X|X\in\mathcal{P}^\prime\left(A\right)\wedge X\subset A\right\}
 \]
 我们称$\mathcal{P}\left(A\right)$为集合$A$的\emph{幂集（power set）}。
 
@@ -117,7 +117,7 @@ U=\bigcup_{X\in\mathcal{C}}X
 
 注意到，若$X\in\mathcal{P}\left(E\right)$，则有$X^\complement\in\mathcal{P}\left(E\right)$。于是，默认以$E$为全集时，我们不必逐个讨论$E$的子集的补集。设$\mathcal{C}\subset\mathcal{P}\left(E\right)$，则$\mathcal{C}$中的元素的补集的集合为
 \[
-\mathcal{D}=\left\{X|X\in\mathcal{P}\left(E\right)\text{且}X^\complement\in\mathcal{C}\right\}
+\mathcal{D}=\left\{X|X\in\mathcal{P}\left(E\right)\wedge X^\complement\in\mathcal{C}\right\}
 \]
 这时，德摩根定律有如下更一般的形式：
 \begin{align*}
@@ -135,14 +135,15 @@ U=\bigcup_{X\in\mathcal{C}}X
 用分类公理、并集公理、配对公理和幂集构建集合$A$与$B$的笛卡尔集的过程，用自然语言描述将十分繁琐。以下是采用\emph{合式公式（well-formed formula）}表达的结果，仅供熟悉此知识的读者参考。
 \[A\times B=\left\{X|X\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)\vee\varphi\left(X\right)\right\}
 \]
-其中
+其中，$\varphi\left(X\right)$表示关于$X$的语句，
 \[
 \varphi\left(X\right)=\exists U\exists V\exists W \exists Y\left(U\in A \wedge V\in B\wedge \phi\left(W,U,U\right)\wedge\phi\left(Y,U,V\right)\wedge\phi\left(X,W,Y\right)\right)
 \]
+而关于$X$、$U$和$V$的语句
 \[
 \phi\left(X,U,V\right)=\forall Z\left(Z\in X\leftrightarrow\left(\left(X=U\right)\vee\left(X=V\right)\right)\right)
 \]
-注意到，语句$\phi\left(X,U,V\right)$表示的就是$X=\left\{U,V\right\}$这件事，故语句$\varphi\left(X\right)$就是让$X=\left\{\left\{U\right\},\left\{U,V\right\}\right\}$。
+其中，记号$\forall a\left(\text{关于$a$的语句}\right)$表示“对每一/任一满足关于$a$的语句规定的$a$”。注意到，语句$\phi\left(X,U,V\right)$表示的就是$X=\left\{U,V\right\}$这件事，故语句$\varphi\left(X\right)$就是让$X=\left\{\left\{U\right\},\left\{U,V\right\}\right\}$。
 }。故我们可定义由集合$A$和$B$形成的所有满足$a\in A$且$b\in B$的有序对的集合为$A$与$B$的\emph{笛卡尔积（Cartesian product）}，记为$A\times B$。
 
 以下是与笛卡尔集有关的一些性质：
@@ -151,7 +152,7 @@ U=\bigcup_{X\in\mathcal{C}}X
 \item $\left(A\cap B\right)\times \left(X\cap Y\right)=\left(A\times X\right)\cap\left(B\times Y\right)$
 \item $\left(A\setminus B\right)\times X=\left(A\times X\right)\setminus \left(B\times X\right)$
 \item $A=\emptyset\text{或}B=\emptyset\Leftrightarrow A\times B=\emptyset$
-\item $A\subset X\text{且}B\subset Y\Rightarrow A\times B\subset X\times Y$
+\item $A\subset X\text{且}B\subset Y\Rightarrow A\times B\subset X\times Y$\footnote{符号$\Rightarrow$的意义：（语句1）$\Rightarrow$（语句2）表示“若（语句1 ），则（语句2）。”}
 \item $A\times B\subset X\times Y\text{且}A\times B\neq\emptyset\Rightarrow A\subset X\text{且}B\subset Y$
 \end{enumerate}
 
