@@ -11,3 +11,4 @@
 *.xdv
 *.out
 *.fdb*
+*.sync*
