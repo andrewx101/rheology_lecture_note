@@ -1,5 +1,6 @@
-
+.gitignore
 *.log
+*.fls
 *.aux
 *.bbl
 *.bcf
@@ -8,3 +9,5 @@
 *.gz
 *.toc
 *.xdv
+*.out
+*.fdb*
