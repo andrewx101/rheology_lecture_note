@@ -1,0 +1,13 @@
+.gitignore
+*.log
+*.fls
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.xml
+*.gz
+*.toc
+*.xdv
+*.out
+*.fdb*
