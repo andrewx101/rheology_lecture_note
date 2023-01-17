@@ -16,7 +16,7 @@
     \item 关系$\sim$是一个有序对的集合。图\ref{fig:II.1.1}的箭头表示法可协助我们把“有序对的集合”联系到“关系”一词的日常意义。
     \item 任一关系$\sim$总可以写成两个集合的笛卡尔积的子集。证明的方法：验证关系$\sim$至少可以是下列笛卡尔积
           \[
-              \bigcup_{X\in\bigcup_{X^\prime\in\sim}X^\prime}X \times\bigcup_{X\in\bigcup_{X^\prime\in\sim}X^\prime}X
+              \left(\bigcup_{X\in\bigcup_{X^\prime\in\sim}X^\prime}X\right) \times\left(\bigcup_{X\in\bigcup_{X^\prime\in\sim}X^\prime}X\right)
           \]
           的子集\footnote{提示：回顾有序对的定义$\left(a,b\right)\equiv\left\{\left\{a\right\},\left\{a,b\right\}\right\}$，把表达式
               \[
@@ -46,7 +46,7 @@
 \[
     \left\{b|b\in U_\sim\wedge \left(\exists a,a\in U_\sim\wedge a\sim b\right)\right\}
 \]
-为关系$\sim$的\emph{值域（range）}，记作$\mathrm{ran}\sim$。图\ref{fig:II.1.1}给出了所示关系的定义域和值域。不难留意到，对任一关系$\sim$有$\sim\equiv\left(\mathrm{dom}\sim\right)\times\left(\mathrm{ran}\sim\right)$；对于任一集合上的等于关系，有$\left(\mathrm{dom}=\right)=\left(\mathrm{ran}=\right)$；对于任一集合上的属于关系，若$\left(\mathrm{dom}\in\right)=X$，则$\left(\mathrm{ran}\in\right)=\mathcal{P}\left(X\right)\setminus\left\{\emptyset\right\}$\footnote{因为$\emptyset\in\mathcal{P}\left(X\right)$，但没有元素能够属于$\emptyset$。}。
+为关系$\sim$的\emph{值域（range）}，记作$\mathrm{ran}\sim$。图\ref{fig:II.1.1}给出了所示关系的定义域和值域。不难留意到，对于任一集合上的等于关系，有$\left(\mathrm{dom}=\right)=\left(\mathrm{ran}=\right)$；对于任一集合上的属于关系，若$\left(\mathrm{dom}\in\right)=X$，则$\left(\mathrm{ran}\in\right)=\mathcal{P}\left(X\right)\setminus\left\{\emptyset\right\}$\footnote{因为$\emptyset\in\mathcal{P}\left(X\right)$，但没有元素能够属于$\emptyset$。}。
 
 \begin{definition}\label{def:II.1.2}
     设$\sim$是集合$X$上的一个关系。若
@@ -58,21 +58,25 @@
     若集合$X$上的一个关系$\sim$同时满足上述3个性质，则称$\sim$是$X$上的一个\emph{等价关系（equivalent relation）}。
 \end{definition}
 
-以图\ref{fig:II.1.1}为例，如果图\ref{fig:II.1.1}中的每个元素都有一个从自己回到自己的箭头，那么图中的关系就是自反的；如果图\ref{fig:II.1.1}中的所有箭头都是双向箭头，那么图中的关系就是对称的；。读者可尝试把图\ref{fig:II.1.1}的关系修改成非自反、非对称，但传递的关系\footnote{注意这几条定义所要求的“对任意……”，只要有一个例外就可以失效。}。
+以图\ref{fig:II.1.1}为例，如果图\ref{fig:II.1.1}中的每个元素都有一个从自己回到自己的箭头，那么图中的关系就是自反的；如果图\ref{fig:II.1.1}中的所有箭头都是双向箭头，那么图中的关系就是对称的。读者可尝试把图\ref{fig:II.1.1}的关系修改成非自反、非对称，但传递的关系\footnote{注意这几条定义所要求的“对任意……”，只要有一个例外就可以失效。}。
 
 \begin{example}
-    设$X=\left\{a,b,c\right\}$。请验证，$X$上的等于关系是集合
+    设$X=\left\{a,b,c\right\}$。$X$上的等于关系是$X$上的等价关系。它是集合
     \[
         \left\{\left(a,a\right),\left(b,b\right),\left(c,c\right)\right\}
     \]
-    共有3个元素；$X\times X$也是$X$上的等价关系，它有$2^3=8$个元素。
+    这一集合共有3个元素。同时，$X\times X$也是$X$上的等价关系，它有$2^3=8$个元素。
 
     一般地，任一非空集合$X$上的等于关系是$X$上的（除空集外）“最小”的等价关系，$X\times X$是$X$上的最大等价关系。
+
+    不等于$\neq$只满足对称性。
+
+    任意集合的包含关系具有自反性和传递性，但集合的包含关系没有对任意集合均成立的对称性。事实上，在上一节关于外延公理的段落中已经介绍过，具有对称性的包含关系就是集合的等于关系。
 
     显然，“婚姻”不是“全体成年公民”集合上的等价关系。“婚姻”只满足对称性。
 \end{example}
 
-如果集合$X$的非空子集的集合$\mathcal{C}$满足$\bigcup_{Y\in\mathcal{C}}Y=X$且$\mathcal{C}$的元素两两不相交，则称集合$\mathcal{C}$是$X$的一个\emph{划分（partition）}。换言之，如果$X$的若干个非空子集两两不相交，但它们的并集又恰好得到$X$，那么这些子集就好像对集合$X$进行“切蛋糕”所得到结果（如图\ref{fig:II.1.2}右下的情况）。不难留意到$\mathcal{C}\subset\mathcal{P}\left(X\right)$。
+此时我们回过头讨论集合论最基本的关系——从属关系的自反性、对称性和传递性。从属关系的自反性是指，一个集合$A$属于它自己，$A\in A$。从属关系的对称性是指，若$A\in B\equiv B\in A$。从属关系的传递性是指，$A\in B \wedge B\in C\Rightarrow A\in C$。直觉上，这三种性质都不令人舒适。但它们未必需要被禁止。若想禁止上述性质，需要\emph{正则公理（axiom of regularity）}：给定任一非空集合$X$，则$X$中必含有一个元素$y\in x$满足$y\cup X=\emptyset$，用符号表述为$X\neq \emptyset\Rightarrow\exists y\left(y\in X\wedge y\cup X=\emptyset\right)$。正则公理同时禁止了三种性质（证明从略）。本讲义所使用的集合论遵循正则公理。
 
 \begin{figure}[htbp]
     \centering
@@ -81,20 +85,36 @@
     \label{fig:II.1.2}
 \end{figure}
 
+回到等价关系的讨论。如果集合$X$的非空子集的集合$\mathcal{C}$满足$\bigcup_{Y\in\mathcal{C}}Y=X$且$\mathcal{C}$的元素两两不相交，则称集合$\mathcal{C}$是$X$的一个\emph{划分（partition）}。换言之，如果$X$的若干个非空子集两两不相交，但它们的并集又恰好得到$X$，那么这些子集就好像对集合$X$进行“切蛋糕”所得到结果（如图\ref{fig:II.1.2}右下的情况）。
+
+若集合$\mathcal{C}$是集合$X$的一个划分，我们可以由此定义一个关系$\sim\equiv X/\mathcal{C}$\footnote{该记法与刚刚介绍完的$X/\sim$无关，是符号“$/$”的滥用。}，使得当且仅当$X$的元素$x,y$属于$\mathcal{C}$的同一个元素时，$x\sim y$。正式地，
+\begin{equation}\label{eq:relation_induced_by_partition}
+    X/\mathcal{C}=\left\{\left(x,y\right)|\left(x,y\right)\in X\times X\wedge\left(\exists A\in \mathcal{C},\left\{x,y\right\}\subset A\right)\right\}
+\end{equation}
+图\ref{fig:II.1.2}中，将右下所示的集合的划分中同属一个子集的元素两两连线，就能得到左上所示的关系。这一关系在给定划分$\mathcal{C}$下的唯一性由外延公理保证。
+
+可以证明，这一关系是等价关系：
+\begin{proof}
+    验证关系$\sim\equiv X/\mathcal{C}$是等价关系，需一一验证其自反性、对称性和传递性。
+    \begin{enumerate}
+        \item 自反性：需证明对任意$x\in X$，有序对$\left(x,x\right)\in\sim$。这需要：
+              \begin{enumerate}
+                  \item $\left(x,x\right)\in X\times x$。由$x\in X$这显然满足。
+                  \item $\exists A\in\mathcal{C},x\in A$。由并集的定义（式\eqref{eq:set_union}），$\mathcal{C}$作为一个集合的集合，对任一$x\in\bigcup_{A\in\mathcal{C}}A$必存在$A\in\mathcal{C}$满足$x\in A$。现在$\mathcal{C}$是集合$X$的一个划分，即$\bigcup_{A\in\mathcal{C}}A=X$，故对任一$x\in X$必存在$A\in\mathcal{C}$满足$x\in A$。自反性证毕。
+              \end{enumerate}
+        \item 对称性：需证明$\left(x,y\right)\in\sim\Leftrightarrow\left(y,x\right)\in\sim$，其中$x,y\in X,x\neq y$。显然，由于$x,y\in X$，$\left(x,y\right)\in X\times X$且$\left(Y,x\right)\in X\times X$。若$\left(x,y\right)\in\sim$，则由$\sim$的定义$\exists A\in\mathcal{C}\left\{x,y\right\}\subset A$，故自然有$\left(y,x\right)\in\sim$；反之亦然。对称性证毕。
+        \item 传递性：需证明$\left(x,y\right)\in\sim\wedge\left(y,z\right)\in\sim\Rightarrow\left(x,z\right)\in\sim$，其中$x,y,z\in X,x\neq y,x\neq z,y\neq z$。显然，由于$x,z\in X$，$\left(x,z\right)\in X\times X$。由$\sim$的定义，$x\sim y\Rightarrow\exists A\in\mathcal{C},\left\{x,y\right\}\subset A$，$y\sim z\Rightarrow\exists A^\prime\mathcal{C},\left\{y,z\right\}\subset A^\prime$。由于$\mathcal{C}$是$X$的一个划分，由划分的定义，要么$A=A^\prime$，要么$A\cap A^\prime=\emptyset$，故$A=A^\prime$，即$\left\{x,y,z\right\}\subset A$。再由关系$\sim$的定义有$x\sim z$。传递性证毕。
+    \end{enumerate}
+\end{proof}
+因此我们称式\eqref{eq:relation_induced_by_partition}定义的等价关系是\emph{由集合$X$的划分$\mathcal{C}$引出的等价关系（equivalent relation induced by the partition $\mathcal{C}$ of $X$）}。
+
+上一段介绍的是图\ref{fig:II.1.2}右下到左上的定理，下面我们将介绍相当于图\ref{fig:II.1.2}中从左上到右下的定理。
+
 设关系$\sim$是集合$X$上的一个等价关系，则集合$\left\llbracket x\right\rrbracket_\sim\equiv\left\{y|y\in X\wedge\left(\exists x\in X,y\sim x\right)\right\}$称$x$关于$\sim$的\emph{等价类（equivalent class）}\footnote{“类”与“集合”在概念上无实质区别。}。$X$的元素关于$\sim$的所有等价类的集合，记作$X/\sim$\footnote{注意与相对补集的符号相区别。}，称为集合$X$在等价关系$\sim$下的\emph{商集（quotient set）}\footnote{正式地，
     \[
         X/\sim\equiv\left\{A|A\in\mathcal{P}\left(X\right)\wedge\left(\forall x\in A,\left\llbracket x\right\rrbracket_\sim = A\right)\right\}
     \]
 }。如图\ref{fig:II.1.2}左上的情况所示，在一个集合上定义了等价关系。每个元素，都能通过这一等价关系的传递性联系若干个共同关联的元素，而形成$X$的一个子集。每个这样的子集，都是$X$关于这一等价关系的等价类。
-
-若集合$\mathcal{C}$是集合$X$的一个划分，我们可以由此定义一个关系$\sim\equiv X/\mathcal{C}$\footnote{该记法与刚刚介绍完的$X/\sim$无关，是符号“$/$”的滥用。}，使得当且仅当$X$的元素$x,y$属于$\mathcal{C}$的同一个元素时，$x\sim y$\footnote{理解此句时注意$X$的划分是$X$的子集的集合，其元素是$X$的子集。}。图\ref{fig:II.1.2}中，将右下所示的集合的划分中同属一个子集的元素两两连线，就能得到左上所示的关系。容易验证，这种关系是等价关系。我们称该等价关系$\sim$是\emph{由集合$X$的划分$\mathcal{C}$引出的等价关系（equivalent relation induced by the partition $\mathcal{C}$ of $X$）}。\footnote{正式地，
-    \[
-        X/\mathcal{C}=\left\{\left(x,y\right)|\left(x,y\right)\in X\times X\wedge\left(\exists A\in \mathcal{C},\left\{x,y\right\}\subset A\right)\right\}
-    \]
-}
-可以证明，\emph{集合$X$上的任一划分都唯一地引出一个$X$上的等价关系}\footnote{\href{https://proofwiki.org/wiki/Relation_Induced_by_Partition_is_Equivalence}{证明过程}}。这里的“唯一”意思是说，从集合的同一个划分，不会引出多于一个不同的等价关系\footnote{注意，划分和等价关系都是集合。故它们“相同”即集合的相等；“不同”既集合的不相等。而集合的相等概念已经在上一节定义过了。}。
-
-上一段介绍的是图\ref{fig:II.1.2}右下到左上的定理，下一定理则是图\ref{fig:II.1.2}从左上到右下的定理。
 
 \begin{theorem}[等价关系基本定理]
     设$\sim\subset X\times X$是集合$X$上的一个等价关系，则$X$在$\sim$下的商集$S/\sim$是$S$的一个划分。
@@ -108,10 +128,16 @@
     \end{enumerate}
     具体证明过程暂略\footnote{\href{https://proofwiki.org/wiki/Fundamental_Theorem_on_Equivalence_Relations}{证明过程}}。
 \end{proof}
+\begin{corollary}
+    由$X/\sim$引出的等价关系就是$\sim$。
+\end{corollary}
+\begin{proof}
+    证明过程是十分直接的，暂略。提示：利用外延公理，即集合相等的概念。
+\end{proof}
 
-由等价关系基本定理，我们可以写
+由等价关系基本定理及其推论，我们可以写
 \[
     \sim=X/\mathcal{C}\Leftrightarrow \mathcal{C}=X/\sim
 \]
-这使得等价关系、划分和商集有类似“集合的除法”的意义。
+可见，符号$/$的用法使得等价关系、划分和商集之间有类似“集合的除法”的意义（故称“商集）。
 \end{document}
