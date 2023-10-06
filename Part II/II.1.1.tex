@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{集合}
-集合是近代数学的基本语言。用集合与映射重述人的直观经验，是近世数学和基于其构建的理论物理的普遍特点。连续介质力学中的大量概念都依赖集合和映射来引入的。如果不熟悉集合和映射的语言和符号，就很难读懂后面的内容。
+集合是近代数学的基本语言。用集合与映射重述人的直观经验，是近世数学和基于其构建的理论物理的普遍特点。连续介质力学中的大量概念都是依赖集合和映射来引入的。如果不熟悉集合和映射的语言和符号，就很难读懂后面的内容。
 
 一般资料中常见的对集合的定义方式如下：
 
@@ -14,11 +14,11 @@
     \end{itemize}
 \end{definition}
 
-具体地，若$A$是集合，$x$是$A$的一个元素，则记$x\in A$；若$y$不是$A$的元素，则记为$y\notin A$。记号“$x\in A$”规定了“$A$是集合且$x$是$A$的元素”。
+定义\ref{def:II.1.1}的“确定性”，其实是逻辑学的排中律。具体地，若$A$是集合，$x$是$A$的一个元素，则记$x\in A$；若$y$不是$A$的元素，则记为$y\notin A$。记号“$x\in A$”规定了“$A$是集合且$x$是$A$的元素”。
 
 如果只要有$x\in A$就有$x\in B$，则称$A$是$B$的\emph{子集（subset）}，或称$A$包含于$B$、$B$包含$A$，记为$A\subset B$。显然，任一集合都是它自己的子集。
 
-如果$A\subset B$且$B\subset A$，则集合$A$就是$B$，记为$A=B$\footnote{此处等号“$=$”的意义应理解为：等号两边的字母是同一集合的不同代号。若写$A=B$，那么$A$\emph{就是}$B$。相应地，不等号“$\neq$”两边的字母是不同集合的代号。若写$A\neq B$，那么$A$\emph{不是}$B$。}。换言之，如果集合$A$与$B$的元素都相同，则$A$与$B$就是同一个集合。再换言之，一个集合由其所有元素\emph{唯一}确定。这是集合论的\emph{外延公理（axiom of extension）}。
+如果$A\subset B$且$B\subset A$，则集合$A$\emph{就是（is identical to）}B，记为$A=B$\footnote{此处等号“$=$”的意义应理解为：等号两边的字母是同一集合的不同代号。若写$A=B$，那么$A$\emph{就是}$B$。相应地，不等号“$\neq$”两边的字母是不同集合的代号。若写$A\neq B$，那么$A$\emph{不是}$B$。}。如果集合$A$与$B$的元素都相同，则$A$与$B$就是同一个集合。一个集合由其所有元素\emph{唯一}确定。这是集合论的\emph{外延公理（axiom of extension）}。
 
 如果$A\subset B$且$A\neq B$，则称$A$是$B$的\emph{真子集（proper subset）}，或称$A$真包含于$B$、$B$真包含$A$，记作$A\subsetneqq B$。
 
@@ -62,11 +62,11 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 
 我们可以把任意两个集合$a$、$b$组成一对，变成一个新的集合，记作$\left\{a,b\right\}$，并\emph{规定}这样的集合可以存在。这是集合论的\emph{配对公理（axiom of paring）}。于是有$a\in \left\{a,b\right\}$和$b\in \left\{a,b\right\}$。特别地，一个集合$a$可与其自身“成对”，得到“$\left\{a,a\right\}$”，但由于集合的元素要满足互异性，故实际所得到的集合应是$\left\{a\right\}$。这种只有一个元素的集合，称为\emph{单元素集（singleton）}。注意理解以下事实：$\emptyset\in\left\{\emptyset\right\}$，$\left\{\emptyset\right\}\neq\emptyset$。
 
-我们可以让若干个集合形成并集。具体地，我们\emph{规定}对任意集合的集合$\mathcal{C}$，总存在一个集合$U$，它含有$\mathcal{C}$的至少一个元素的所有元素\footnote{$\mathcal{C}$的元素是集合。}。这是集合论的\emph{并集公理（axiom of unions）}。但是，由并集公理所保证存在的这个$U$，还可能包含不属于$\mathcal{C}$中任一集合的元素。我们可以再利用分类公理，把$U$收窄为恰好只包含$\mathcal{C}$中的所有元素的所有元素。具体地，给定一个集合的集合$\mathcal{C}$，由并集公理必存在上述的$U$，利用分类公理构建以下集合
-\begin{equation}\label{eq:set_union}
+我们可以让若干个集合形成并集。具体地，我们\emph{规定}对任意集合的集合$\mathcal{C}$，总存在一个集合$U$，它含有$\mathcal{C}$的至少一个元素的所有元素\footnote{$\mathcal{C}$的元素是集合。}。这是集合论的\emph{并集公理（axiom of unions）}。但是，由并集公理所保证存在的这个$U$，还可能包含不属于$\mathcal{C}$中任一集合的元素。我们可以再利用分类公理，把$U$收窄为恰好只包含$\mathcal{C}$中的所有元素的所有元素。具体地，给定一个集合的集合$\mathcal{C}$，由并集公理必存在上述的$U$，利用分类公理构建以下集合\footnote{符号$\exists$表示“存在”或“给定”的意思。}
+\begin{equation*}\label{eq:set_union}
     \left\{x|x\in U \wedge \exists X\in\mathcal{C},x\in X\right\}
-\end{equation}
-对每一$x\in U$，当且仅当$x$属于$\mathcal{C}$的某个元素，$x$才属于上列集合。因此上列集合包括且只包括$\mathcal{C}$中的集合的所有元素。我们称上列集合为$\mathcal{C}$的所有元素的\emph{并集（union）}，记作
+\end{equation*}
+使得对每一$x\in U$，当且仅当$x$属于$\mathcal{C}$的某个元素，$x$才属于上列集合。因此上列集合包括且只包括$\mathcal{C}$中的集合的所有元素。我们称上列集合为$\mathcal{C}$的所有元素的\emph{并集（union）}，记作
 \[
     \bigcup_{X\in\mathcal{C}}X
 \]
@@ -93,8 +93,6 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 \]
 依此类推，任意有限个元素的集合都可由此方法构建\footnote{至此，我们可以回过头来重新理解集合的定义\ref{def:II.1.1}中的“无序性”、“互异性”和“确定性”。头两个规定，其实是外延公理的推论。例如，若集合$A=\left\{a,b,c\right\}$，$B=\left\{c,b,a\right\}$，则由外延公理$A=B$（无序性）。若集合$A=\left\{a,a\right\}$，$B=\left\{a\right\}$，则由外延公理$A=B$（互异性）。最后，定义\ref{def:II.1.1}中的“确定性”，只是逻辑上排中律的要求。}。
 
-
-
 给定集合$A$和$B$，集合$C=\left\{x|x\in A\text{且}x\notin B\right\}$称$B$在$A$中的\emph{相对补集（relative complement of $B$ in $A$）}，记为$C=A\setminus B$。注意，此处$B$不必包含于$A$。
 
 我们常在给定一个全集$E$之下讨论其子集在$E$中的相对补集。如果默认这一前提，则可简称任一$E$的子集$A\subset E$在$E$中的相对补集为$A$的补集，记为$A^\complement\equiv E\setminus A$\footnote{有时，我们使用恒等号“$\equiv$”来表示新引入的符号或者记法代表什么表达式。}。
@@ -109,7 +107,7 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
     \item $A\subset B\Leftrightarrow B^\complement\subset A^\complement$
 \end{enumerate}
 
-关于集合的并集、交集，以及给定全集下的补集还有一条重要定律——\emph{德摩根定律（De Morgan's Laws）}：对任意集合$A$、$B$，
+关于集合的并集、交集，以及给定全集下的补集还有一条重要定律——\emph{德摩根定律（De Morgan's Laws）}：对任意集合$A$、$B$，有
 \begin{align*}
     \left(A\cup B\right)^\complement & =A^\complement\cap B^\complement \\
     \left(A\cap B\right)^\complement & =A^\complement\cup B^\complement
@@ -139,7 +137,7 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 
 由集合的定义\ref{def:II.1.1}所要求的无序性，给定两个集合$a$、$b$，它们的配对集合$\left\{a,b\right\}$是不表示顺序的。我们可以用$a$的单元素集$\left\{a\right\}$和$\left\{a,b\right\}$这两个集合，配对得到集合$\left\{\left\{a\right\},\left\{a,b\right\}\right\}\equiv\left(a,b\right)$，来表示\emph{有序对（ordered pair）}。在$\left(a,b\right)$的元素中，$\left\{a,b\right\}$表明我们讨论哪两个元素的有序对，而$\left\{a\right\}$表明哪一个元素放在前面。所以，$\left(a,b\right)\neq\left(b,a\right)$。
 
-给定两个集合$A$、$B$，是否可以给出所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合？我们留意到，对任意$a\in A$和$b\in B$有$\left\{a\right\}\subset A$，$\left\{b\right\}\subset B$，$\left\{a,b\right\}\subset A\cup B$，$\left\{a\right\}\subset A\cup B$。可见，$\left\{a\right\}$和$\left\{a,b\right\}$都是集合$A\cup B$的子集，故$\left(a,b\right)\in\mathcal{P}\left(A\cup B\right)$，$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。换言之，只要$a\in A$且$b\in B$，就有$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。于是我们可以遵守分类公理，把所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合规定出来，且其唯一性由外延公理保证\footnote{
+给定两个集合$A$、$B$，是否可以给出所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合？我们留意到，对任意$a\in A$和$b\in B$有$\left\{a\right\}\subset A$，$\left\{b\right\}\subset B$，$\left\{a,b\right\}\subset A\cup B$，$\left\{a\right\}\subset A\cup B$。可见，$\left\{a\right\}$和$\left\{a,b\right\}$都是集合$A\cup B$的子集，故$\left(a,b\right)\in\mathcal{P}\left(A\cup B\right)$，$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。换言之，只要$a\in A$且$b\in B$，就有$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。于是我们可以遵循分类公理，把所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合规定出来，且其唯一性由外延公理保证\footnote{
     用分类公理、并集公理、配对公理和幂集构建集合$A$与$B$的笛卡尔集的过程，用自然语言描述将十分繁琐。以下是采用\emph{合式公式（well-formed formula）}表达的结果，仅供熟悉此知识的读者参考。
     \[A\times B=\left\{X|X\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)\vee\varphi\left(X\right)\right\}
     \]

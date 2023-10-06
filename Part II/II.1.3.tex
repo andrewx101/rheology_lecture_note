@@ -42,7 +42,7 @@
 
 关于逆映射，有一条重要的定理——
 
-\begin{theorem}\label{thm:II.1.7}
+\begin{theorem}\label{thm:II.1.2}
     双射必存在唯一逆映射。双射的逆映射也是双射。
 \end{theorem}
 \begin{proof}
@@ -69,7 +69,7 @@
     \end{enumerate}
     该引理证毕。
 
-    现在正式证定理\ref{thm:II.1.7}。从上面定义的这个$g$继续，如果$g$是双射，则$g$不仅是满射，还是单射。由刚刚证完的引理，可用类似方法给$g$找一个逆映射$f^\prime:X\rightarrow Y$。而且，由于$\mathrm{ran}g\equiv X$，我们无需像定义$g$那样为$f^\prime$分出$x\notin\mathrm{ran}g,x\in X$的情况，因为不存在这种情况。故
+    现在正式证定理\ref{thm:II.1.2}。从上面定义的这个$g$继续，如果$g$是双射，则$g$不仅是满射，还是单射。由刚刚证完的引理，可用类似方法给$g$找一个逆映射$f^\prime:X\rightarrow Y$。而且，由于$\mathrm{ran}g\equiv X$，我们无需像定义$g$那样为$f^\prime$分出$x\notin\mathrm{ran}g,x\in X$的情况，因为不存在这种情况。故
     \[
         f^\prime\left(x\right)=\left.y\right|_{g\left(y\right)=x}
     \]
@@ -77,7 +77,7 @@
 \end{proof}
 
 % 需要增加“族”的概念。这至少是多于2个集合的笛卡尔积的基础。
-我们常把映射写成另一种形式，并给以另一个名称。具体地，当我们把由$I$到$X$的映射$x:I\rightarrow X$改称为\emph{索引族（indexed family）}时，定义域$I$就称为\emph{索引集（indexing set）}，其元素$i\in I$称为\emph{索引（indexes）}。映射$x$的关于$i\in I$的值，记作$x_i$，称为该索引族的一\emph{项（term）}。映射$x$的值域，称作\emph{由$I$索引的集合（set indexed by $I$）}，或笼统地称其为一个\emph{索引集（indexed set）}。我们经常不加分辨地直接把$\left\{x_i\right\}_{i\in I}$称为一个\emph{由$I$索引的族（$I$-indexed family）}。可见，我们无非把映射原有概念的名称换了一套新的名称。我们经常讨论的是以集合项的族，称为\emph{集合的索引族（indexed family of sets）}。
+我们常把映射写成另一种形式，并给以另一个名称。具体地，当我们把由$I$到$X$的映射$x:I\rightarrow X$改称为\emph{索引族（indexed family）}时，定义域$I$就称为\emph{索引集（indexing set）}，其元素$i\in I$称为\emph{索引（indexes）}。映射$x$的关于$i\in I$的值，记作$x_i$，称为该索引族的一\emph{项（term）}。映射$x$的值域，称作\emph{由$I$索引的集合（set indexed by $I$）}，或笼统地称其为一个\emph{索引集（indexed set）}。我们经常不加分辨地直接把$\left\{x_i\right\}_{i\in I}$称为一个\emph{由$I$索引的族（$I$-indexed family）}。可见，我们无非把映射原有概念的名称换了一套新的名称。我们经常讨论的是以集合为项的族，称为\emph{集合的索引族（indexed family of sets）}。
 
 设$\mathcal{C}$是集合的集合。如果有$\mathcal{C}$恰好还是一个由集合$I$索引的集合，$\mathcal{C}=\left\{X_i\right\}_{i\in I}$，那么第一节介绍的$\mathcal{C}$的元素的交集和并集就相应有新的表示方式：
 \[
@@ -87,12 +87,15 @@
 下面我们介绍多于两个集合的笛卡尔集的定义\footnote{第一节中引入的两个集合的笛卡尔集定义，无法推广至不可数无穷多个集合间的笛卡尔积。所以，我们在介绍了映射之后，在族的基础上可重新定义笛卡尔集。这个新的定义，在集合个数为两个的情况下，也导致一种与老定义不同的“有序对”，但是新定义和老定义得出有序对之间总是一一对应的，因此无所谓从哪种定义去理解有序对。虽然笛卡尔积的新定义既兼容两个集合间的情况（甚至把“一个集合的笛卡尔集”也定义了），又能够推广到不可数无穷个集合间的笛卡尔集，但是它却不能在一开始就采用，因为它依赖映射的定义，而映射是一种关系，关系的定义依赖有序对的定义。所以我们至少需要先以老定义获得有序对的概念，才能走到现在这一步。}
 
 \begin{definition}[笛卡尔积]\label{def:Cartesian_product_family}
-    设$\left\{S_i\right\}_{i\in I}$是由$I$索引的族，且它是集合的索引族，$\left\{s_i\right\}_{i\in I}$也是由$I$索引的族，且$s_i\in S_i,\forall i\in I$。我们称$\left\{S_i\right\}_{i\in I}$的笛卡尔积是由$\left\{S_i\right\}_{i\in I}$得出的所有族$\left\{s_i\right\}_{i/in I}$的集合，记为
+    设$\left\{S_i\right\}_{i\in I}$是由$I$索引的族，且它是集合的索引族，$\left\{s_i\right\}_{i\in I}$也是由$I$索引的族，且$s_i\in S_i,\forall i\in I$。我们称$\left\{S_i\right\}_{i\in I}$的笛卡尔积是由$\left\{S_i\right\}_{i\in I}$得出的所有族$\left\{s_i\right\}_{i\in I}$的集合，记为
     \[
         \prod_{i\in I}S_i
     \]
     若$S_i=S,\forall i\in I$，则记$\prod_{i\in I}S_i\equiv S^I$。
 \end{definition}
+
+
+% 这个例子的功能是让读者理解这个定义。因此需要更加step-by-step，也许要使用图形。
 \begin{example}
     设$I=\left\{a,b\right\},X_a=\left\{a_\alpha,a_\beta\right\},X_b=\left\{b_\alpha,b_\beta\right\}$，则按照笛卡尔积的老定义，
     \[
@@ -106,7 +109,15 @@
     \]
 \end{example}
 
-一般地，老定义下的笛卡尔积$X_a\times X_b$和新定义下的笛卡尔集$\prod_{i\in\left\{a,b\right\}}X_i$之间可定义一个映射$f:\prod_{i\in\left\{a,b\right\}}X_i\rightarrow X_a\times X_b,f\left(z\right)=\left(z_a,z_b\right),\forall z\equiv\left\{z_i\right\}_{i\in\left\{a,b\right\}}\in\prod_{i\in I}X_i$。记$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}}$，则按定义\ref{def:Cartesian_product_family}有$z_i\in X_i,\forall i\in\left\{a,b\right\}$。可以证明$f$是双射：
+% 这里要加一段设问：
+% 1. 为啥要新定义？
+% 2. 新定义和老定义得出的东西是不一样的。那老定义怎么办？
+% 3. 为什么不一开始就按新定义？
+% 4. 新老定义总是要同时写在书上。
+% 5. 那在同一文本中，同一概念新老定义会冲突？
+% 6. 在二元的情况下两个定义得到的东西虽然不一样，但是元素一一对应。因此不造成问题。
+
+笛卡尔积的老定义与新定义是不冲突的。一般地，老定义下的笛卡尔积$X_a\times X_b$和新定义下的笛卡尔集$\prod_{i\in\left\{a,b\right\}}X_i$之间可定义一个映射$f:\prod_{i\in\left\{a,b\right\}}X_i\rightarrow X_a\times X_b,f\left(z\right)=\left(z_a,z_b\right),\forall z\equiv\left\{z_i\right\}_{i\in\left\{a,b\right\}}\in\prod_{i\in I}X_i$。记$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}}$，则按定义\ref{def:Cartesian_product_family}有$z_i\in X_i,\forall i\in\left\{a,b\right\}$。可以证明$f$是双射：
 \begin{proof}
     设$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}},z^\prime=\left\{z^\prime_i\right\}_{i\in\left\{a,b\right\}}$且$z_a,z^\prime_a\in X_a,z_b,z^\prime_b\in X_b$。若$z\neq z^\prime$。由映射$f$的定义，$f\left(z\right)=\left(z_a,z_b\right),f\left(z^\prime\right)=\left(z^\prime_a,z^\prime_b\right)$。由集合相等的定义，$z\neq z^\prime\Rightarrow\left(z_a,z_B\right)\neq\left(z^\prime_a,z^\prime_b\right)$，即$f\left(z\right)\neq f\left(z^\prime\right)$，即$f$是非单射。
 
@@ -114,6 +125,11 @@
 
     由双射的定义，$f$是双射。
 \end{proof}
+
+% 以下需要讨论的是：
+% 1. 我们从此以后就只用新定义。
+% 2. 这将限制了允许我们进行笛卡尔积的情况。当我们无法为我们想要作的笛卡积设计一个映射把所要作笛卡尔积的集合转化成它们的簇，那么我们在数学上就不被允许作这种笛卡尔积，或说这样的笛卡尔积没有意义。所幸的是，这样的情况很难想象（以作者有限的知识，还未见关于这种情况不存在的证明）。
+% 应该举几种例子。一是：一个一集合的集合上的笛卡尔积；几个集合之间，有重复的笛卡尔焦；X^R；……
 
 因此，笛卡尔集的新定义\ref{def:Cartesian_product_family}在集合数为2的情况下所得到的集合，跟笛卡尔集的老定义所得到的集合，它们的元素之间是一一对应的。在此情况下老定义和新定义没有本质差别。根据笛卡尔积的新定义，“有序对”又可以定义成索引集有两个元素的族。即$\left(x,y\right)=\left\{z_i\right\}_{i\in\left\{a,b\right\}},z_a=x,z_b=y$。这时“序”的性质仍被保留，因为$\left(y,x\right)=\left\{z_i\right\}_{i\in\left\{a,b\right\}},z_a=y,z_b=x$是不同的族，故有$\left(x,y\right)\neq\left(y,x\right)$。而且，按照新定义，仅通过改变索引集元素的个数，就可方便地推广出“有序三元组”、“有序四元组”……的定义，这是比老定义更有利的地方。从今以后，笛卡尔积就不再采用老定义，而采用定义\ref{def:Cartesian_product_family}。就算若干个两两不同的集合$X,Y,\cdots$尚未成为一个索引族，由于易验任一集合的非空集合$\mathcal{C}$均可充当其自己的索引集而成为一个索引族，故由$X,Y,\cdots$组成的集合$\left\{X,Y,\cdots\right\}$总能成为一个索引族，从而它们的笛卡尔集仍可通过定义\ref{def:Cartesian_product_family}得到定义。更一般地，给定任一集合的集合$\mathcal{C}$，若$\mathcal{C}\neq\emptyset$，则它的元素的笛卡尔积可由定义\ref{def:Cartesian_product_family}记为
 \[

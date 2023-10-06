@@ -40,8 +40,8 @@ top=25.4mm,
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[LE,RO]{\leftmark}
-\fancyhead[LO,RE]{\rightmark}
+\fancyhead[LE,RO]{\rightmark}
+\fancyhead[LO,RE]{\leftmark}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[LO,RE]{更新至\today}
@@ -122,38 +122,41 @@ sorting=none
 \pagenumbering{arabic}
 \part{数学部分}
 \chapter{集合与映射}\label{sec:II.1}
-\subfile{Part II/II.1.1.tex}
-\subfile{Part II/II.1.2.tex}
-\subfile{Part II/II.1.3.tex}
+\subfile{Part II/II.1.1.tex}\label{sec:II.1.1}
+\subfile{Part II/II.1.2.tex}\label{sec:II.1.2}
+\subfile{Part II/II.1.3.tex}\label{sec:II.1.3}
 
-\chapter{线性代数}
-\section{向量空间}\label{sec:II.2}
-\subfile{Part II/II.2.tex}
+\chapter{线性代数}\label{sec:II.2}
+\section{向量空间}\label{sec:II.2.1}
+\subfile{Part II/II.2.1.tex}
 
-\section{内积空间与赋范向量空间}\label{sec:II.3}
-\subfile{Part II/II.3.tex}
+\section{线性变换}\label{sec:II.2.2}
+\subsection{线性变换的定义和基本性质}\label{sec:II.2.2.1}
+\subfile{Part II/II.2.2.1.tex}
 
-\section{线性变换}\label{sec:II.4}
-\subsection{线性变换的定义和基本性质}\label{sec:II.4.1}
-\subfile{Part II/II.4.1.tex}
+\subsection{线性变换的坐标矩阵}\label{sec:II.2.2.2}
+\subfile{Part II/II.2.2.2.tex}
 
-\subsection{线性变换的坐标矩阵}\label{sec:II.4.2}
-\subfile{Part II/II.4.2.tex}
+\subsection{线性变换的转置}\label{sec:II.2.2.3}
+\subfile{Part II/II.2.2.3.tex}
 
-\subsection{线性变换的转置}\label{sec:II.4.3}
-\subfile{Part II/II.4.3.tex}
+\section{基变换与坐标变换公式}\label{sec:II.2.3}
+\subfile{Part II/II.2.3.tex}
 
-\section{基变换与坐标变换公式}\label{sec:II.5}
-\subfile{Part II/II.5.tex}
+\section{线性算符}\label{sec:II.2.4}
+在线性变换的章节中，我们已经了解线性算符的定义（\ref{def:II.2.13}）。除了满足所有线性变换的性质外，由于线性算符的定义域和值域都是同一个向量空间，所以在线性算符之上能够定义比较符合直觉的“乘法”，从而使得其求逆运算也更普遍。线性算符的可逆性是十分重要的性质。在大学一年级的线性代数课程中我们知道，矩阵的可逆性对应于线性方程组是否有非全零解的问题。在例\ref{exp:II.2.9}中我们知道求导和积分运算也是线性变换。它们所对应的方程是微分方程和积分方程。它们是否可逆，对应的是微分方程和积分方程的解的存在性问题。线性代数的研究者很早就发现，线性算符的可逆性与其行列式、对角化、特征值等性质密切相关，这些也是我们已经在大学一年级的线性代数课程中以矩阵为例有所了解的。在第\ref{sec:II.2.4.1}节，我们将从给出行线性算符的行列式、迹和特征值的不依赖基的选择的抽象定义，但是它们在给定有序基下的坐标运算，跟以往我们所学过的知识无异。
 
-\section{内积空间上的线性算符}\label{sec:II.6}
-\subfile{Part II/II.6.tex}
+当我们为一个向量空间赋予了内积定义，这个空间上的线性算符的性质也相应增加了。由于向量的内积与“投影”、“正交”等几何概念密切相关，向量的范与“长度”这一几何概念概念密切相关，欧几里得范与内积之间也密切相关，因此内积空间上的线性算符也富有几何意义。我们先分别介绍伴随算符（\S \ref{sec:II.2.4.2}）和幺正算符（\S \ref{sec:II.2.4.3}）。它们都属于正规算符（\S \ref{sec:II.2.4.4}）。正规算符有若干个重要性质。比如，通过定义正规算符的谱分解，我们可以建立“算符$\mathbf{A}$的函数$f\left(\mathbf{A}\right)$”这种概念。再比如，在实数域上，各种正规算符可对应于不同的几何操作（\S \ref{sec:II.2.4.5}）；大学一年级的线性代数中所介绍的“叉乘”，也将被更恰当地定义。
 
-\section{线性算符的行列式、迹和特征值}\label{sec:II.7}
-\subfile{Part II/II.7.tex}
-
-\section{正规算符及其谱分解}\label{sec:II.8}
-\subfile{Part II/II.8.tex}
+\subsection{线性算符的行列式、迹和特征值}\label{sec:II.2.4.1}
+\subfile{Part II/II.2.4.1.tex}
+\subsection{伴随算符}\label{sec:II.2.4.2}
+\subfile{Part II/II.2.4.2.tex}
+\subsection{幺正算符}\label{sec:II.2.4.3}
+\subfile{Part II/II.2.4.3.tex}
+\subsection{正规算符及其谱分解}\label{sec:II.2.4.4}
+\subfile{Part II/II.2.4.4.tex}
+\subsection{实数域上的正规算符}\label{sec:II.2.4.5}
 
 \chapter{向量函数微积分}
 \section{欧几里得空间}
