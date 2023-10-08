@@ -9,7 +9,7 @@
 \[\mathbf{e}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{e}_i,\quad j=1,\cdots,N\]
 它们称为从有序基$\left(\mathbf{e}_i\right)$到有序基$\left(\mathbf{e}^\prime_j\right)$的\emph{基变换公式（change of basis formula）}，其中矩阵$\left(S_{ij}\right)$称为从有序基$\left(\mathbf{e}_i\right)$到有序基$\left(\mathbf{e}^\prime_j\right)$的\emph{过渡矩阵（change-of-basis matrix）}。以下定理告诉我们，反过来从$\left(\mathbf{e}_i^\prime\right)$到$\left(\mathbf{e}_i\right)$的过渡矩阵就是矩阵$S$的逆（$S$可逆的证明见\cite[\S 2.4 例题4.4]{周胜林2012线性代数}。）
 
-\begin{theorem}\label{thm:II.2.20}
+\begin{theorem}\label{thm:II.2.21}
     设$\mathcal{V}_N$是数域$\mathbb{F}$上的$N$维向量空间，$\left\{\mathbf{e}_i\right\},\left\{\mathbf{e}^\prime_j\right\}$是$\mathcal{V}_N$的两组基，则从有序基$\left(\mathbf{e}_i\right)$到有序基$\left(\mathbf{e}^\prime_j\right)$的过渡矩阵是从$\left(\mathbf{e}^\prime_j\right)$到$\left(\mathbf{e}_i\right)$的过渡矩阵的逆矩阵。具体地，若$\mathbf{e}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{e}_i$，则$\mathbf{e}_i=\sum_{j=1}^NS^\mathrm{inv}_{ji}\mathbf{e}^\prime_j$\footnote{由于矩阵的分量是标量，为防与倒数的记法混淆，矩阵$S$的逆矩阵$S^{-1}$的分量记为$S^\mathrm{inv}_{ij}$，矩阵$S$的分量的倒数记为$S^{-1}_{ij}$。}。
 \end{theorem}
 \begin{proof}
@@ -34,7 +34,7 @@
 
 接下来，我们讨论线性变换在给定不同有序基下的坐标矩阵之间的变换公式。
 
-\begin{theorem}\label{thm:II.2.21}
+\begin{theorem}\label{thm:II.2.22}
     设$\mathcal{V}_N$、$\mathcal{W}_M$分别是数域$\mathbb{F}$上的$N$、$M$维向量空间，$\left\{\mathbf{a}_i\right\},\left\{\mathbf{a}^\prime_i\right\}\in\mathcal{V}_N$是$\mathcal{V}_N$的两组基，基变换公式为$\mathbf{a}^\prime_j=\sum_{i=1}^NS_{ij}\mathbf{a}_i$；$\left\{\mathbf{b}_j\right\},\left\{\mathbf{b}^\prime_j\right\}$是$\mathcal{W}_M$的两组基，基变换公式为$\mathbf{b}^\prime_j=\sum_{i=1}^MT_{ij}\mathbf{b}_i$。线性变换$\mathbf{A}:\mathcal{V}_N\rightarrow\mathcal{W}_M$在$\left(\mathbf{a}_i\right),\left(\mathbf{b}_i\right)$下的矩阵表示为$\left(\mathbf{A}\right)$，在$\left(\mathbf{a}^\prime_i\right),\left(\mathbf{b}^\prime_i\right)$下的矩阵表示为$\left(\mathbf{A}\right)^\prime$。则有
     \begin{align*}
         \left(\mathbf{A}\right)        & =T\left(\mathbf{A}\right)^\prime S^{-1} \\
@@ -62,7 +62,7 @@
 
 有了基变换和坐标变换公式，我们可以验证任何关于抽象的向量和线性变换的运算结果是否依赖基的选择。以下定理及其证明可作为一个示例。
 
-\begin{theorem}\label{thm:II.2.22}
+\begin{theorem}\label{thm:II.2.23}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，则$\mathcal{V}$上的内积运算结果不依赖基的选择。
 \end{theorem}
 \begin{proof}

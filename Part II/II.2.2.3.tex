@@ -47,6 +47,21 @@
     由例\ref{exp:II.2.11}最后一例的启发，我们发现$E^{i\intercal}$与任一$\mathcal{F}^{n\times 1}$中的列向量进行矩阵乘，可得到该列向量的第$i$个坐标，可见$E^{i\intercal}$是$E^i$的对偶基。诚然，$E^{i\intercal}E^j=\delta_{ij}$。
 \end{example}
 
+我们在以往的线性代数课中知道，两个$n\times 1$“列向量”的点乘$\mathbf{a}\cdot\mathbf{b}$等于第一个向量转置成一个$1\times n$“行向量”之后再与第二个向量作矩阵乘。在前面的段落中我们暗示了向量和线性泛函的概念与“列/行向量”类似。那么，我们能否再找出线性泛函与内积的联系呢？以下定理提供了具体的答案。
+
+\begin{theorem}[有限维里斯（Riesz）表示定理]\label{thm:II.2.19}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，给定$\mathcal{V}$上的任意一个线性泛函$f\in\mathcal{V}^*$，必存在唯一一个向量$\mathbf{b}\in\mathcal{V}$满足$f\left(\mathbf{a}\right)=\left(\mathbf{a}|\mathbf{b}\right),\forall\mathbf{a}\in\mathcal{V}$。
+\end{theorem}
+\begin{proof}
+    设$\left\{\mathbf{\hat{e}}_i\right\}$是$\mathcal{V}$的一个规范正交基，$\mathbf{a}=\sum_i\alpha_i\mathbf{\hat{e}}_i$是$\mathcal{V}$中的任一向量，$f$是$\mathcal{V}^*$中的任一线性变换，则$f\left(\mathbf{a}\right)=\sum_i\alpha_if\left(\mathbf{\hat{e}}_i\right)$。若要找到一个向量$\mathbf{b}\in\mathcal{V}$满足$\left(\mathbf{a}|\mathbf{b}\right)=f\left(\mathbf{a}\right)$，则要求等号左边
+    $\left(\mathbf{a}|\mathbf{b}\right)=\sum_i\alpha_i\overline{\beta_i}$等于等号右边$f\left(\mathbf{a}\right)=\sum_i\alpha_if\left(\mathbf{\hat{e}}_i\right)$，且需对任意$\mathbf{a}\in\mathbf{V}$成立。这相当于要求$\overline{\beta_j}=f\left(\mathbf{\hat{e}}_j\right)$，即$\mathbf{b}=\sum_j\overline{f\left(\mathbf{\hat{e}}_j\right)}\mathbf{\hat{e}}_j$。这就证明了$\mathbf{b}$的存在性。
+
+    设$\mathbf{c}\in\mathcal{V}$也满足$\left(\mathbf{a}|\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{c}\right),\forall\mathbf{a}\in\mathcal{V}$，则$\left(\mathbf{a}|\mathbf{b}-\mathbf{c}\right)=0,\forall\mathbf{a}\in\mathcal{V}\Leftrightarrow\mathbf{b}=\mathbf{c}$，故$\mathbf{b}$是唯一的。
+\end{proof}
+
+这就是说，在内积运算这件事情上，可以说向量空间$\mathcal{V}$中的向量与它的对偶空间$\mathcal{V}^*$中的线性泛函是一一对应的。基于内积的定义，内积空间$\mathcal{V}$中的一个向量在对偶空间$\mathcal{V}^*$中唯一对应的那个线性泛函，称为这个向量的\emph{对偶（adjoint）}。在内积定义的讨论中，我们介绍过本讲义的内积与量子力学惯例（狄拉克bra-ket标记）的区别：$\left(\mathbf{x}|\mathbf{y}\right)\equiv\left\langle\mathbf{y}|\mathbf{x}\right\rangle$。如果按照狄拉克bra-ket标记的规定，那么向量表示为$\left|\mathbf{x}\right\rangle$，其对偶则直接表示为$\left\langle\mathbf{x}\right|$，形象更加直接。
+
+
 接下来我们完成定义线性变换的转置的任务。如图\ref{fig:II.2.2}所示，设数域$\mathbb{F}$上的向量空间$\mathcal{V}$上有一个线性变换$\mathbf{T}$。给定任意向量$\mathbf{a}\in\mathcal{V}$，线性变换后的向量是$\mathbf{Ta}$。如果有一个线性泛函$g$把向量$\mathbf{Ta}$对应为一个数，我们想知道，有没有一个线性泛函$f$能直接作用于$\mathbf{a}$得到相同的数？$f$与$g$的关系是什么？线性变换$\mathbf{T}$的转置$\mathbf{T}^\intercal$就是充当这一问题的答案的一种概念。你想问什么样的$f$能满足$f\left(\mathbf{a}\right)=g\left(\mathbf{Ta}\right),\forall\mathbf{a}\in\mathcal{V}$？答案是$f=\mathbf{T}^\intercal g$。用严格语言的定义如下——
 
 \begin{figure}[htbp]
@@ -64,7 +79,7 @@
 
 下面的定理告诉我们，一个线性变换$\mathbf{T}$与其转置$\mathbf{T}^\intercal$在给定基和对偶基下的矩阵之间的关系就是矩阵转置。
 
-\begin{theorem}\label{thm:II.2.19}
+\begin{theorem}\label{thm:II.2.20}
     设$\mathcal{V},\mathcal{W}$分别是数域$\mathbb{F}$上的$n,m$维有限维向量空间，给定以下基及其对偶基：$B=\left\{\mathbf{a}_i\right\}\subset\mathcal{V},B^*=\left\{f_i\right\}\subset\mathcal{V}^*,B^\prime=\left\{\mathbf{b}_i\right\}\subset\mathcal{W},B^{\prime *}=\left\{g_i\right\}\subset\mathcal{W}^*$，且令$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$是线性变换，$A$是$\mathbf{T}$在$B,B^\prime$下的坐标矩阵，$B$是$\mathbf{T}^\intercal$在$B^*,B^{\prime *}$下的坐标矩阵，则$B_{ij}=A_{ji},i=1,\cdots,m,j=1,\cdots,n$。
 \end{theorem}
 \begin{proof}
@@ -88,5 +103,7 @@
     \end{align*}
     与之前的结果比较可得$A_{ij}=B_{ji},i=1,\cdots,m,j=1,\cdots,n$。
 \end{proof}
+
+在后面的讨论中，我们还会了解伴随算符的知识。在那里，我们就线性变换的转置作更多讨论。
 \end{document}
 

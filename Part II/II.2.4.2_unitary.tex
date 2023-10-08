@@ -1,0 +1,68 @@
+\documentclass[main.tex]{subfiles}
+% 内积空间上的线性算符
+\begin{document}
+幺正算符有许多相互等价的性质，选择哪一个作为其定义在数学上也都是等价的。本讲义仍倾向于从其在内积运算中扮演的角色来定义。
+
+\begin{definition}[幺正算符]\label{def:II.2.23}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间，若线性算符$\mathbf{Q}\in\mathcal{L}\left(\mathcal{V}\right)$\emph{保持内积}，即$\left(\mathbf{Qa}|\mathbf{Qb}\right)=\left(\mathbf{a}|\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$，则称$\mathbf{Q}$是一个\emph{幺正算符（unitary operator）}。
+\end{definition}
+
+之前我们介绍过，保持运算结构的映射叫同态映射。因此定义\ref{def:II.2.23}又可以简洁地表述为：幺正算符是内积空间到其自身的同态映射。
+
+幺正算符的其他等价的定义，可见以下定理
+
+\begin{theorem}\label{thm:II.2.33}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{Q}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则以下命题相互等价：
+    \begin{enumerate}
+        \item $\mathbf{Q}$保持内积（即$\mathbf{Q}$是幺正算符）
+        \item $\mathbf{Q}$是双射
+        \item $\mathbf{Q}$把$\mathcal{V}$的某个规范正交基映射为另一个规范正交基
+        \item $\mathbf{Q}$把$\mathcal{V}$的每个规范正交基映射为一个规范正交基
+        \item $\mathbf{QQ}^*=\mathbf{I}$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    1)$\Rightarrow$2)：由1)，$\left(\mathbf{Qa}|\mathbf{Qa}\right)=\left(\mathbf{a}|\mathbf{a}\right)\geq0\forall\mathbf{a}\in\mathcal{V}$，当且仅当$\mathbf{a}=\mathbf{0}$时取等号。故$\mathbf{Q}$是非奇异的。由于$\mathbf{Q}:\mathcal{V}\rightarrow\mathcal{V}$，故$\mathbf{Q}$是双射\footnote{这里用到了线性变换的维数定理及其推论。}。
+
+    2)$\Rightarrow$3)：由于$\mathbf{Q}$是内积空间上的同构映射，令$\left\{\mathbf{\hat{e}}_i\right\}$是$\mathcal{V}$的一组规范正交基，则由向量空间上的同构映射性质，$\left\{\mathbf{Q\hat{e}}_i\right\}$是$\mathcal{V}$的一组基，且有$\left(\mathbf{Q\hat{e}}_i|\mathbf{Q\hat{e}}_j\right)=\left(\mathbf{\hat{e}}_i|\mathbf{\hat{e}}_j\right)=\delta_{ij},i,j=1,\cdots,\mathrm{dim}\mathcal{V}$，故$\left\{\mathbf{Q\hat{e}}_i\right\}$是$\mathcal{V}$的一组规范正交基。
+
+    3)$\Rightarrow$4)：显然易证；
+
+    4)$\Rightarrow$1)：由4)，若已知$\left\{\mathbf{\hat{e}}_i\right\}$是$\mathcal{V}$的一组规范正交基，且$\left\{\mathbf{Q\hat{e}}_i\right\}$也是规范正交基，则有$\left(\mathbf{Q\hat{e}}_i|\mathbf{Q\hat{e}}_j\right)=\delta_{ij}=\left(\mathbf{\hat{e}}_i|\mathbf{\hat{e}}_j\right)$。对任意$\mathbf{a},\mathbf{b}\in\mathcal{V}$，又有$\mathbf{a}=\sum_{i=1}^{n}\alpha_i\mathbf{\hat{e}}_i,\mathbf{b}=\sum_{i=1}^{n}\beta_i\mathbf{\hat{e}}_i,n\equiv\mathrm{dim}\mathcal{V}$，则$\left(\mathbf{a}|\mathbf{b}\right)=\sum_{i=1}^n\alpha_i\overline{\beta_j},\left(\mathbf{Qa}|\mathbf{Qb}\right)=\left(\sum_{i=1}^n\mathbf{Q\hat{e}}_i|\sum_{j=1}^n\mathbf{Q\hat{e}}_j\right)=\sum_{i=1}^n\alpha_i\overline{\beta_j}=\left(\mathbf{a}|\mathbf{b}\right)$，故$\mathbf{Q}$保持内积。
+    1)$\Rightarrow$5)：设$\mathbf{Q}$是幺正算符，则$\mathbf{Q}$可逆，且$\left(\mathbf{Qa}|\mathbf{b}\right)=\left(\mathbf{Qa}|\mathbf{QQ}^{-1}\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{Q}^{-1}\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$。因此$\mathbf{Q}^{-1}=\mathbf{Q}^*$即$\mathbf{QQ}^*=\mathbf{I}=\mathbf{Q}^*\mathbf{Q}$。
+
+    设$\mathbf{Q}^*\mathbf{Q}=\mathbf{QQ}^*=\mathbf{I}$，则$\mathbf{Q}^{-1}=\mathbf{Q}^*,\left(\mathbf{Qa}|\mathbf{Qb}\right)=\left(\mathbf{a}|\mathbf{Q}^*\mathbf{Qb}\right)=\left(\mathbf{a}|\mathbf{Ib}\right)=\left(\mathbf{a}|\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$。
+\end{proof}
+
+上述定理告诉我们，幺正算符必可逆，且幺正算符的逆算符也是幺正算符。
+
+如果在内积空间$\mathcal{V}$上还定义了欧几里得范$\left\|\mathbf{a}\right\|^2\equiv\left(\mathbf{a}|\mathbf{a}\right),\forall\mathbf{a}\in\mathcal{V}$，那么当$\mathbf{Q}\in\mathcal{L}\left(\mathcal{V}\right)$是一个幺正算符时，就有$\left\|\mathbf{Qa}\right\|=\left\|\mathbf{a}\right\|,\forall\mathbf{a}\in\mathcal{V}$，即幺正算符不改变向量的“长度”。如果一个算符作用于一个向量后，不改变其“长度”，那就只剩改变其“方向”的效果了。这强烈地暗示了幺正算符的几何意义，将在后面正式介绍。
+
+此外还易证，两个幺正算符的复合也是幺正算符。特别地，恒等算符$\mathbf{I}$本身就是一个幺正算符。
+
+定理\ref{thm:II.2.33}的第5条，常被作为幺正算符的定义。在以往所学习的矩阵代数中，有“正交矩阵”的概念。如果数域$\mathbb{F}$上的$n\times n$矩阵$A\in\mathbb{F}^{n\times n}$满足$A^\intercal A=I$，其中$I$是$n\times n$单位矩阵，则称矩阵$A$是\emph{正交矩阵（orthogonal matrix）}。对于抽象的线性算符，我们知道一个线性算符与其伴随算符在给定基下的坐标矩阵之间的关系，在实数域上，就是矩阵转置。因此\ref{thm:II.2.33}的第5条在实数域上相当于说幺正算符在给定基下的坐标矩阵是一个正交矩阵。因此，我们又把实数域上的幺正算符称为\emph{正交算符（orthogonal operator）}。
+
+现在我们说说定理\ref{thm:II.2.33}的第3、4条。回顾线性变换的坐标变换公式（定理\ref{thm:II.2.22}）。在那里，我们只考虑在两组一般的基之间的变换公式。现设$B=\left\{\mathbf{\hat{e}}_i\right\}$、$B^\prime=\left\{\mathbf{\hat{e}}^\prime_i\right\}$是数域$\mathbb{F}$上的$n$维内积空间$\mathcal{V}$的两组\emph{规范正交基}。$Q$是由$B$到$B^\prime$的过渡矩阵，即$Q$满足$\mathbf{\hat{e}}^\prime_j=\sum_{i=1}^nQ_{ij}\mathbf{\hat{e}}_i,\quad j=1,\cdots,n$。如果$Q$是某线性算符$\mathbf{Q}$在基$\mathbf{B}$下的坐标矩阵，那么$\mathbf{Q}$满足定理\ref{thm:II.2.33}的第3条，于是$\mathbf{Q}$是幺正算符且满足定理\ref{thm:II.2.33}的其他几条命题。对于$\mathcal{V}$上的另一任意线性算符$\mathbf{T}$，我们有坐标变换公式：$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^{-1}$。但由于$\mathbf{Q}$是幺正算符，$QQ^*=I$，因此有$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^*$。
+
+我们再联系定理\ref{thm:II.2.32}的第4条：若$\mathbf{T}$是厄米算符，则$\mathcal{V}$中存在一组规范正交基——不妨记为$B$——恰为$\mathbf{T}$的特征向量。因此，任一厄米矩阵$T\equiv\left(\mathbf{T}\right)_{B^\prime}$与它的对角矩阵$D\equiv\mathrm{diag}\left(\lambda_1,\cdots,\lambda_n\right)$之间就相差一个形如$T=QDQ^*$的形式，其中$Q$是一个幺正矩阵\cite[\S 5.3 定理3.6]{周胜林2012线性代数}。我们把对某一矩阵进行对角化时所使用的可逆矩阵同时是幺正矩阵的情况称作\emph{幺正地对角化（unitarily diagonalization）}。因此可以说，可逆厄米算符跟一般可对角化的算符的区别是：与后者相比，前者不仅是可对角化的，还是可幺正地对角化的。
+
+最后我们关心一下幺正算符在特征值分解时的性质\footnote{在大一的线性代数课中只介绍了考虑实数域上的正交矩阵的对角化\cite[§5.3 定理 3.7]{周胜林2012线性代数}，得到一系列性质。但是这些性
+    质需要在复数域的更一般情况下得到确认。}——
+\begin{theorem}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维内积空间，$\mathbf{Q}$是$\mathcal{V}$上的一个线性算符，$\left\{\lambda_1,\cdots,\lambda_n\right\}$是其特征值。若$\mathbf{Q}$是幺正算符，则$\left|\lambda_i\right|=1, i=1,\cdots,n$。
+\end{theorem}
+\begin{proof}
+    设$\lambda$是$\mathbf{Q}$的任一特征值，且$\mathbf{c}$是$\mathbf{Q}$关于这一特征值的任一特征向量。由幺正算符定义有
+
+    \[
+        \left(\mathbf{c}|\mathbf{c}\right)=\left(\mathbf{Qc}|\mathbf{Qc}\right)=\lambda\overline{\lambda}\left(\mathbf{c}|\mathbf{c}\right)
+    \]
+    由于特征向量都是非零向量，故$\left(\mathbf{c}|\mathbf{c}\right)>0$，上式成立只需$\lambda\overline{\lambda}=1\Leftrightarrow\left|\lambda\right|=1$。
+\end{proof}
+
+幺正算符可对角化。但这一命题的证明在引入了\emph{正规算符（normal operator）}之后再证明更加直接。本讲义不打算详细介绍正规算符。在此简要提及其定义和最重要的性质之一。
+
+
+
+\end{document}
+
