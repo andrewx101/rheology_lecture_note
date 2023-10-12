@@ -31,15 +31,15 @@
 \begin{definition}[向量空间]\label{def:II.2.1}
     给定一个数域$\mathbb{F}$和一个非空集合$\mathcal{V}$，如果它们满足：
     \begin{enumerate}
-        \item $\mathcal{V}$的元素的加法运算。$\forall\mathbf{a},\mathbf{b},\mathbf{c}\in \mathcal{V}$：
+        \item $\mathcal{V}$的元素的\emph{二元运算（binary operation）}规则，称为加法，记为$\mathbf{a}+\mathbf{b},\quad\mathbf{a},\mathbf{b}\in\mathcal{V}$。该运算满足以下规定：$\forall\mathbf{a},\mathbf{b},\mathbf{c}\in \mathcal{V}$：
               \begin{enumerate}
-                  \item 封闭性：$\mathbf{a}+\mathbf{b}\in\mathcal{V}$
-                  \item 交换律：$\mathbf{a}+\mathbf{b}=\mathbf{b}+\mathbf{a}$
-                  \item 结合律：$\left(\mathbf{a}+\mathbf{b}\right)+\mathbf{c}=\mathbf{a}+\left(\mathbf{b}+\mathbf{c}\right)$
-                  \item 恒等元素：$\exists \bm{0}\in\mathcal{V}:\mathbf{a}+\bm{0}=\mathbf{a}$
-                  \item 逆：$\forall \mathbf{a}\in\mathcal{V},\exists -\mathbf{a}:\mathbf{a}+\left(-\mathbf{a}\right)=\bm{0}$
+                  \item \emph{封闭性（closure）}：$\mathbf{a}+\mathbf{b}\in\mathcal{V}$
+                  \item \emph{交换律（commutative）}\footnote{对应的英文单词是形容词。}：$\mathbf{a}+\mathbf{b}=\mathbf{b}+\mathbf{a}$
+                  \item \emph{结合律（associative）}\footnote{对应的英文单词是形容词。}$\left(\mathbf{a}+\mathbf{b}\right)+\mathbf{c}=\mathbf{a}+\left(\mathbf{b}+\mathbf{c}\right)$
+                  \item \emph{单位元（identity elemnet）}：$\exists \bm{0}\in\mathcal{V}:\mathbf{a}+\bm{0}=\mathbf{a}$
+                  \item \emph{逆元（inverse element）}：$\forall \mathbf{a}\in\mathcal{V},\exists -\mathbf{a}:\mathbf{a}+\left(-\mathbf{a}\right)=\bm{0}$
               \end{enumerate}
-        \item $\mathbb{F}$与$\mathcal{V}$的元素间的乘法运算。$\forall\alpha,\beta\in\mathbb{F},\mathbf{a},\mathbf{b}\in\mathcal{V}$：
+        \item 数域$\mathbb{F}$与$\mathcal{V}$的元素间的二元运算规则，称为标量乘法，记为$\alpha\mathbf{a},\quad\alpha\in\mathbb{F},\mathbf{a}\in\mathcal{V}$。该运算满足以下规定：$\forall\alpha,\beta\in\mathbb{F},\mathbf{a},\mathbf{b}\in\mathcal{V}$：
               \begin{enumerate}
                   \item $\alpha\mathbf{a}\in\mathcal{V}$
                   \item $\alpha\left(\beta\mathbf{a}\right)=\left(\alpha\beta\right)\mathbf{a}$
@@ -55,7 +55,7 @@
 
 在定义\ref{def:II.2.1}中，数域$\mathbb{F}$是关于标量乘的运算规定(2-a)中的标量所属的数域。任何非空集合，只要配备了定义\ref{def:II.2.1}所规定的运算法则，就是一个向量空间，其元素就是向量。因此，向量是抽象的一般概念。大一的《线性代数与解析几何》课本中的“行/列向量”和“矩阵”，都只是特例。例\ref{exp:II.2.1}给出了更多向量空间的例子。这种抽象的定义方式，使得只要是在抽象的层面上论证得到的性质和定理，就必然适用于所有具体的例子当中，使我们学习和发展数学事半功倍。
 
-定义\ref{def:II.2.1}中还有若干需要注意的细节。比如，(1-d)和(1-e)都只规定了存在性，而没有规定唯一性。其实恒等元素是唯一的；相对于一个向量的逆元素也是唯一的。这两个命题可以由定义\ref{def:II.2.1}证明出来，故无需添加到定义中作为规定。请回顾《线性代数与解析几何》第七章“2. 线性空间的性质”下的所有内容。
+定义\ref{def:II.2.1}中还有若干需要注意的细节。比如，(1-d)和(1-e)都只规定了存在性，而没有规定唯一性。其实单位元是唯一的；相对于一个向量的逆元也是唯一的。这两个命题可以由定义\ref{def:II.2.1}证明出来，故无需添加到定义中作为规定。请回顾《线性代数与解析几何》第七章“2. 线性空间的性质”下的所有内容。
 
 \begin{example}\label{exp:II.2.1}
     以下是一些向量空间的例子。
@@ -277,7 +277,7 @@
 
 下面我们由内积空间的性质引入正交（orthogonal）及相关的概念。
 
-\begin{definition}[正交]\label{def:II.3.3}
+\begin{definition}[正交]\label{def:II.2.10}
     给定内积空间$\mathcal{V}$中的向量$\mathbf{a},\mathbf{b}\in\mathcal{V}$，若$\left(\mathbf{a}|\mathbf{b}\right)=0$，则称$\mathbf{a}$与$\mathbf{b}$是\emph{正交的（orthogonal）}。若$S$是$\mathcal{V}$的一个子集，且$S$中的向量两两正交，则称$S$是$\mathcal{V}$的一个\emph{正交集（orthogonal set）}。若$\mathcal{V}$还是一个赋范向量空间，且$\mathcal{V}$的一个正交集$S$中的向量均满足$\left\|\hat{\mathbf{e}}\right\|=1\forall\hat{\mathbf{e}}\in S$，则称$S$是\emph{规范正交集（orthonormal set）}。
 \end{definition}
 

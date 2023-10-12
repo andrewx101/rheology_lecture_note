@@ -1,5 +1,5 @@
 \documentclass[main.tex]{subfiles}
-% 正规算符及其谱分解
+% 正规算符
 \begin{document}
 \begin{definition}[正规算符]\label{def:II.2.24}
     设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，如果$\mathbf{TT}^*=\mathbf{T}^*\mathbf{T}$，则称$\mathbf{T}$是\emph{正规算符（normal operator）}。
@@ -15,7 +15,7 @@
 
 结合此定理与定理\ref{thm:II.2.28}可知，正规算符必可幺正地对角化。
 
-其逆命题也成立，即可幺正地对角化的算符必为正规算符。因为说一个线性算符$\mathbf{T}$可幺正地对角化，就是说存在一组规范正交基$B$满足$\left(T\right)_B=\mathrm{diag}\left(\lambda_1,\cdots,\lambda_n\right)$，其中$\left\{\lambda_i\right\}$是$\mathbf{T}$的特征值。若$Q$是从$B$到另一规范正交基$B^\prime$的过度矩阵，则$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^{-1}$。易验$\left(\mathbf{T}\right)_{B^\prime}\overline{\left(\mathbf{T}\right)^\intercal_{B^\prime}}=\overline{\left(\mathbf{T}\right)^\intercal_{B^\prime}}\left(\mathbf{T}\right)_{B^\prime}$，亦即$\mathbf{TT}^*=\mathbf{T}^*\mathbf{T}$，故$\mathbf{T}$为正规算符。
+其逆命题也成立，即可幺正地对角化的算符必为正规算符。因为说一个线性算符$\mathbf{T}$可幺正地对角化，就是说存在一组规范正交基$B$满足$\left(T\right)_B=\mathrm{diag}\left(\lambda_1,\cdots,\lambda_n\right)$，其中$\left\{\lambda_i\right\}$是$\mathbf{T}$的特征值。若$Q$是从$B$到另一规范正交基$B^\prime$的过渡矩阵，则$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^{-1}$。易验$\left(\mathbf{T}\right)_{B^\prime}\overline{\left(\mathbf{T}\right)^\intercal_{B^\prime}}=\overline{\left(\mathbf{T}\right)^\intercal_{B^\prime}}\left(\mathbf{T}\right)_{B^\prime}$，亦即$\mathbf{TT}^*=\mathbf{T}^*\mathbf{T}$，故$\mathbf{T}$为正规算符。
 
 还有两个定理不是关于正规算符的，但却需要引入正规算符及其谱定理才可证明，本讲义无法详细介绍。不过，这两个定理使得复数域上的线性算符很像复数。比如，厄米算符的所有特征值都是实数，因此类比于“实数”，我们可以给厄米算符定义“正”或“非负”的概念如下。
 
@@ -36,7 +36,7 @@
 以下定理则类似于：任一复数$z$可分解为$z=\rho e^{i\theta}$，其中$\rho$是非负实数，表示伸缩；$\left|e^{i\theta}\right|=1$，表示旋转。对于复数，这叫“极坐标分解”。对于线性算符，这叫极分解。
 
 \begin{theorem}[极分解]\label{thm:II.2.37}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则总存在幺正算符$\mathbf{Q}$和唯一一个非负算符$\mathbf{N}$满足$\mathbf{T}=\mathbf{UN}$，称为$\mathbf{T}$的极分解（polar decomposition）。如果$\mathbf{T}$可逆，则连$\mathbf{Q}$也是唯一的。如果$\mathbf{T}$是正规算符，则$\mathbf{QN}=\mathbf{NQ}$。
+    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则总存在幺正算符$\mathbf{Q}$和唯一一个非负算符$\mathbf{N}$满足$\mathbf{T}=\mathbf{UN}$，称为$\mathbf{T}$的一个\emph{极分解（polar decomposition）}。如果$\mathbf{T}$可逆，则连$\mathbf{Q}$也是唯一的。如果$\mathbf{T}$是正规算符，则$\mathbf{QN}=\mathbf{NQ}$。
 \end{theorem}
 
 值得注意的是，对于非正规算符$\mathbf{T}$，可极分解为$\mathbf{T}=\mathbf{N}_1\mathbf{Q}=\mathbf{QN}_2$，且一般地$\mathbf{N}_1\neq\mathbf{N}_2$。

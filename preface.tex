@@ -6,46 +6,46 @@
 
 讲义主要内容分两部分。第一部分是必要的数学基础。第二部分是流变学的物理理论基础。关于数学基础部分的内容深度和广度，我作了如下考虑：
 \begin{enumerate}
-    \item 从集合论开始介绍。
+      \item 从集合论开始介绍。
 
-          在物理学中，数学不仅用于表示数量关系，还用于传达\emph{物理概念}\footnote{A perhaps unorthodox feature of this book is its use of mathematics as a conceptual tool rather than merely as a device to express complex numerical relations.---Coleman, Markovitz and Noll (1966)\cite{Coleman1966}.}，因此我们才需要采用近世的、基于集合论的语言来铺叙流变学原理。有些困惑，使用简单的数学语言确实是无法回答的；数学语言太简单本身就是导致这些困惑的原因。另一方面，数学语言的抽象化、一般化是无止境的；我们不盲目追求这个。一个起码的数学语言深度应当是要恰好能满足物理思想的准确表达。近几年工科大学的高等数学教学以为集合论知识已下沉到中学，就普遍不再作正面介绍\footnote{例如同济大学《高等数学（第七版）》详见其前言。此外，一般工科数学还修《概率论与数理统计》可能会在学习“概率的抽象定义”时再涉及到一些集合论基础。但是化学专业不修该课的也很普遍。}。笔者不完全调查发现也不是所有中学都教了集合论；就算教了，内容也非常浅。因此本讲义从集合论开始介绍。
-    \item 以化学类工科专业大一学习的微积分和线性代数为基础。
+            在物理学中，数学不仅用于表示数量关系，还用于传达\emph{物理概念}\footnote{A perhaps unorthodox feature of this book is its use of mathematics as a conceptual tool rather than merely as a device to express complex numerical relations.---Coleman, Markovitz and Noll (1966)\cite{Coleman1966}.}，因此我们才需要采用近世的、基于集合论的语言来铺叙流变学原理。有些困惑，使用简单的数学语言确实是无法回答的；数学语言太简单本身就是导致这些困惑的原因。另一方面，数学语言的抽象化、一般化是无止境的；我们不盲目追求这个。一个起码的数学语言深度应当是要恰好能满足物理思想的准确表达。近几年工科大学的高等数学教学以为集合论知识已下沉到中学，就普遍不再作正面介绍\footnote{例如同济大学《高等数学（第七版）》详见其前言。此外，一般工科数学还会修《概率论与数理统计》课程，可能会在学习“概率的抽象定义”时再涉及到一些集合论基础。但是化学专业不修该课的也很普遍。}。笔者不完全调查发现也不是所有中学都教了集合论；就算教了，内容也非常浅。因此本讲义从集合论开始介绍。
+      \item 以化学类工科专业大一学习的微积分和线性代数为基础。
 
-          具体地，我假定读者已完整地、熟练地掌握华南理工大学数学系编著的《高等数学（上、下册）》和《线性代数与解析几何》，故只介绍上述课本中没有涉及到的数学知识。我在讲义中尽可能多地提示了所介绍的新内容跟上述课本中已经介绍过哪些内容相关（精确到章节和小标题）。
-    \item 采用不依赖坐标的表达风格（不介绍也不使用求和约定）。
+            具体地，我假定读者已完整地、熟练地掌握华南理工大学数学系编著的《高等数学（上、下册）》和《线性代数与解析几何》，故只介绍上述课本中没有涉及到的数学知识。我在讲义中尽可能多地提示了所介绍的新内容跟上述课本中已经介绍过哪些内容相关（精确到章节和小标题）。
+      \item 采用不依赖坐标的表达风格（不介绍也不使用求和约定）。
 
-          我希望这种做法本身能彰显流变学理论的创立者所希望保证的\emph{物理客观性}；即材料的响应规律不依赖包括坐标系的选择在内的任何来自观察者的主观选择而变化。向量空间、线性变换和曲线坐标系等知识的纳入和介绍方式，如果说与其他类似的教材有所不同，那么主要也是为了在数学语言上保证正确描述这一物理观念。
-    \item 不正式介绍张量。
+            我希望这种做法本身能彰显流变学理论的创立者所希望保证的\emph{物理客观性}；即材料的响应规律不依赖包括坐标系的选择在内的任何来自观察者的主观选择而变化。向量空间、线性变换和曲线坐标系等知识的纳入和介绍方式，如果说与其他类似的教材有所不同，那么主要也是为了在数学语言上保证正确描述这一物理观念。
+      \item 不正式介绍张量。
 
-          在本讲义中，使用“张量”一词时仅为与其他力学资料用词一致，实际在本讲义中所有“张量”仅具有“线性算符”的特殊意义。因为流变学中涉及到的张量都仅是3维欧几里得空间上的场函数的一阶导数及其衍生物，无需上升到多重线性形式。
-    \item 不区分“协变”、“逆变”。
+            在本讲义中，使用“张量”一词时仅为与其他力学资料用词一致，实际在本讲义中所有“张量”仅具有“线性算符”的特殊意义。因为流变学中涉及到的张量都仅是3维欧几里得空间上的场函数的一阶导数及其衍生物，无需上升到多重线性形式。
+      \item 不区分“协变”、“逆变”。
 
-          首先本讲义正式介绍了对偶空间，在数学上不需要再引入“协变”、“逆变”。其次在讲义的物理学内容范围内没有区分它们的必要。面向微分几何的张量和协变性概念是相对论力学才使用的，这超出了本讲义面向的专业背景——化学——的需求。
-    \item 仅为了证明某定理所需的数学概念和引理，要么不正式介绍、要么放在附录中介绍。定理的证明过程使用浅灰色，仅供有兴趣的读者参考，故未必都提供。不提供时，我尽可能提出其他提供了证明过程的参考资料。
-    \item 本讲义的物理部分用不到的数学知识，尽量不作介绍。只因本讲义的目标是要向化学专业的读者补充看懂流变学理论的最少必要的数学知识，而不是要为物理系学生的未来发展打基础。
+            首先本讲义正式介绍了对偶空间，在数学上不需要再引入“协变”、“逆变”。其次在讲义的物理学内容范围内没有区分它们的必要。面向微分几何的张量和协变性概念是相对论力学才使用的，这超出了本讲义面向的专业背景——化学——的需求。
+      \item 仅为了证明某定理所需的数学概念和引理，要么不正式介绍、要么放在附录中介绍。定理的证明过程使用浅灰色，仅供有兴趣的读者参考，故未必都提供。不提供时，我尽可能提出其他提供了证明过程的参考资料。
+      \item 本讲义的物理部分用不到的数学知识，尽量不作介绍。只因本讲义的目标是要向化学专业的读者补充看懂流变学理论的最少必要的数学知识，而不是要为物理系学生的未来发展打基础。
 \end{enumerate}
 
 概念在被定义时会通过字体的改变来突出。例如，\emph{集合（set）}是具有某种特性的事物的整体。有时，定义是以带编号的方式独立列出的，有时则在正文叙述当中引入。定义是极其重要的。它在文中只出现一次，因此难免要经常反复回顾。有时我不采用带编号式的定义，只是因为需要定义的概念很多。如果每个定义都带编号定义将会严重打断行文的流畅性，让本来就抽象的内容更难以阅读。但是这么做的代价则是使定义失去了引用链接的便利，故在此敬请读者在学习时贴上标签，不厌其烦地翻阅回顾定义。
 
 如同许多不尽人意的教科书那般，我在前言中宣称要做的事，可能恰恰做得特别差。水平有限请见谅！请同学们学习时不要只信一本书，要带着质疑同时看几本书，并让它们相互“对质”，以防被不学无术的作者坑害！下列书籍是在同类主题的书中我特别推荐的，包括了数学、力学和流变学。如能直接看懂这些书，就完全不必使用本讲义（序号同时代表着建议的学习顺序）。
 \begin{enumerate}
-    \item P. Halmos (1960), \textit{Naive Set Theory}, D. Van Nostrand Company, Inc.
-    \item K. Hoffman \& R. Kunze (1971), \textit{Linear Algebra, 2nd ed.}, Prentice-Hall Inc.
-    \item R. Williamson, R. Crowell \& H. Trotter (1972), \textit{Calculus of Vector Functions, 3rd ed.}, Prentice-Hall Inc.
-    \item D. Smith (1993), \textit{An Introduction to Continuum Mechanics---after Truesdell and Noll}, Springer
-    \item A. Murdoch (2012), \textit{Physical Foundations of Continuum Mechanics}, Cambridge University Press
-    \item W. Schowalter (1978), \textit{Mechanics of Non-Newtonian Fluids}, Pergamon Press
-    \item R. Tanner (2000), \textit{Engineering Rheology, 2nd ed.}, Oxford University Press
-    \item 许元泽（1988），\emph{高分子结构流变学}，四川教育出版社
-    \item 王玉忠、郑长义（1993），\emph{高聚物流变学导论}，四川大学出版社
+      \item P. Halmos (1960), \textit{Naive Set Theory}, D. Van Nostrand Company, Inc.
+      \item K. Hoffman \& R. Kunze (1971), \textit{Linear Algebra, 2nd ed.}, Prentice-Hall Inc.
+      \item R. Williamson, R. Crowell \& H. Trotter (1972), \textit{Calculus of Vector Functions, 3rd ed.}, Prentice-Hall Inc.
+      \item D. Smith (1993), \textit{An Introduction to Continuum Mechanics---after Truesdell and Noll}, Springer
+      \item A. Murdoch (2012), \textit{Physical Foundations of Continuum Mechanics}, Cambridge University Press
+      \item W. Schowalter (1978), \textit{Mechanics of Non-Newtonian Fluids}, Pergamon Press
+      \item R. Tanner (2000), \textit{Engineering Rheology, 2nd ed.}, Oxford University Press
+      \item 许元泽（1988），\emph{高分子结构流变学}，四川教育出版社
+      \item 王玉忠、郑长义（1993），\emph{高聚物流变学导论}，四川大学出版社
 \end{enumerate}
 
 感谢我的博士生导师童真教授在我工作后的继续庇护，为我营造了（一定程度上）不用理会“科研产出”的宽松环境！这样的环境也离不开钱，故也应感谢国家的资助。
 
 这个讲义还没写完。更多说明和致谢将在讲义完成之后补充。
 \begin{flushright}
-    孙尉翔\\
-    \today
+      孙尉翔\\
+      \today
 \end{flushright}
 \end{document}
 
