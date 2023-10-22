@@ -44,11 +44,11 @@
 
 现在我们说说定理\ref{thm:II.2.33}的第3、4条。回顾线性变换的坐标变换公式（定理\ref{thm:II.2.22}）。在那里，我们只考虑在两组一般的基之间的变换公式。现设$B=\left\{\mathbf{\hat{e}}_i\right\}$、$B^\prime=\left\{\mathbf{\hat{e}}^\prime_i\right\}$是数域$\mathbb{F}$上的$n$维内积空间$\mathcal{V}$的两组\emph{规范正交基}。$Q$是由$B$到$B^\prime$的过渡矩阵，即$Q$满足$\mathbf{\hat{e}}^\prime_j=\sum_{i=1}^nQ_{ij}\mathbf{\hat{e}}_i,\quad j=1,\cdots,n$。如果$Q$是某线性算符$\mathbf{Q}$在基$\mathbf{B}$下的坐标矩阵，那么$\mathbf{Q}$满足定理\ref{thm:II.2.33}的第3条，于是$\mathbf{Q}$是幺正算符且满足定理\ref{thm:II.2.33}的其他几条命题。对于$\mathcal{V}$上的另一任意线性算符$\mathbf{T}$，我们有坐标变换公式：$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^{-1}$。但由于$\mathbf{Q}$是幺正算符，$QQ^*=I$，因此有$\left(\mathbf{T}\right)_{B^\prime}=Q\left(\mathbf{T}\right)_{B}Q^*$。
 
-我们再联系定理\ref{thm:II.2.32}的第4条：若$\mathbf{T}$是厄米算符，则$\mathcal{V}$中存在一组规范正交基——不妨记为$B$——恰为$\mathbf{T}$的特征向量。因此，任一厄米矩阵$T\equiv\left(\mathbf{T}\right)_{B^\prime}$与它的对角矩阵$D\equiv\mathrm{diag}\left(\lambda_1,\cdots,\lambda_n\right)$之间就相差一个形如$T=QDQ^*$的形式，其中$Q$是一个幺正矩阵\cite[\S 5.3 定理3.6]{周胜林2012线性代数}。我们把对某一矩阵进行对角化时所使用的可逆矩阵同时是幺正矩阵的情况称作\emph{幺正地对角化（unitarily diagonalization）}。因此可以说，可逆厄米算符跟一般可对角化的算符的区别是：与后者相比，前者不仅是可对角化的，还是可幺正地对角化的。
+我们再联系定理\ref{thm:II.2.32}的第4条：若$\mathbf{T}$是厄米算符，则$\mathcal{V}$中存在一组规范正交基——不妨记为$B$——恰为$\mathbf{T}$的特征向量。因此，任一厄米矩阵$T\equiv\left(\mathbf{T}\right)_{B^\prime}$与它的对角矩阵$D\equiv\mathrm{diag}\left(\lambda_1,\cdots,\lambda_n\right)$之间就相差一个形如$T=QDQ^*$的形式，其中$Q$是一个幺正矩阵\cite[\S 5.3 定理3.6]{周胜林2012线性代数}。我们把对某一矩阵进行对角化时所使用的可逆矩阵同时是幺正矩阵的情况称作\emph{幺正地对角化（unitarily diagonalization）}。因此可以说，可逆厄米算符跟一般可对角化的算符的区别是：与后者相比，前者不仅是可对角化的，还是可幺正地对角化的。特别地，在有限维\emph{实}内积空间上，一个线性算符是对称算符当且仅当该内积空是中有一组规范正交基是该算符的特征向量。也就是说，定理\ref{thm:II.2.32}命题“4”在复数域上作为厄米算符时逆命题不成立，但在实际数域上作为对称算符时逆命题也成立。
 
 最后我们关心一下幺正算符在特征值分解时的性质\footnote{在大一的线性代数课中只介绍了考虑实数域上的正交矩阵的对角化\cite[§5.3 定理 3.7]{周胜林2012线性代数}，得到一系列性质。但是这些性
     质需要在复数域的更一般情况下得到确认。}——
-\begin{theorem}
+\begin{theorem}\label{thm:II.2.34}
     设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维内积空间，$\mathbf{Q}$是$\mathcal{V}$上的一个线性算符，$\left\{\lambda_1,\cdots,\lambda_n\right\}$是其特征值。若$\mathbf{Q}$是幺正算符，则$\left|\lambda_i\right|=1, i=1,\cdots,n$。
 \end{theorem}
 \begin{proof}

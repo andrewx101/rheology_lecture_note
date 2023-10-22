@@ -19,10 +19,11 @@
 \begin{definition}[线性变换]\label{def:II.2.11}
     设$\mathcal{V}$和$\mathcal{W}$是$\mathbb{F}$上的向量空间。如果从$\mathcal{V}$到$\mathcal{W}$的映射$T:\mathcal{V}\rightarrow\mathcal{W}$满足
     \[T\left(\alpha\mathbf{a}+\beta\mathbf{b}\right)=\alpha T\left(\mathbf{a}\right)+\beta T\left(\mathbf{b}\right)\]
-    则称$T$是从$\mathcal{V}$到$\mathcal{W}$的线性变换（linear transformation），常写成算符的形式：$T\left(\mathbf{a}\right)=\mathbf{Ta}$。如果两个线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$和$\mathbf{U}:\mathcal{V}\rightarrow\mathcal{W}$满足$\mathbf{Ta}=\mathbf{Ua}\forall\mathbf{a}\in\mathcal{V}$则称这两个线性变换相等，$\mathbf{U}=\mathbf{T}$。零变换$\mathbf{T}_0:\mathcal{V}\rightarrow\mathcal{W}$定义为$\mathbf{T}_0\mathbf{a}=\mathbf{0}_\mathcal{W}\forall\mathbf{a}\in\mathcal{V}$，其中$\mathbf{0}_\mathcal{W}\in\mathcal{W}$表示$\mathcal{W}$中的零向量\footnote{此处要注意区分不同向量空间中的零向量。}。
+    则称$T$是从$\mathcal{V}$到$\mathcal{W}$的线性变换（linear transformation），常写成算符的形式：$T\left(\mathbf{a}\right)=\mathbf{Ta}$。
+    如果两个线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$和$\mathbf{U}:\mathcal{V}\rightarrow\mathcal{W}$满足$\mathbf{Ta}=\mathbf{Ua}\forall\mathbf{a}\in\mathcal{V}$则称这两个线性变换相等，$\mathbf{U}=\mathbf{T}$。零变换$\mathbf{T}_0:\mathcal{V}\rightarrow\mathcal{W}$定义为$\mathbf{T}_0\mathbf{a}=\mathbf{0}_\mathcal{W}\forall\mathbf{a}\in\mathcal{V}$，其中$\mathbf{0}_\mathcal{W}\in\mathcal{W}$表示$\mathcal{W}$中的零向量\footnote{此处要注意区分不同向量空间中的零向量。}。
 \end{definition}
 
-注意，定义\ref{def:II.2.11}除了说线性变换是向量空间上的同态映射之外，还有其他的规定。由定义\ref{def:II.2.11}，可直接证得以下结论：
+定义\ref{def:II.2.11}就是在说线性变换是向量空间上的同态映射。由定义\ref{def:II.2.11}，可直接证得以下结论：
 \begin{itemize}
     \item 任何一个线性变换都总把零向量映射为零向量。
     \item 两个向量空间之间的恒等映射是$\mathcal{V}$到其自身的线性变换$\mathbf{I}_\mathcal{V}:\mathcal{V}\rightarrow\mathcal{V},\mathbf{I}_\mathcal{V}\mathbf{a}=\mathbf{a}\forall\mathbf{a}\in\mathcal{V}$又可称为恒等线性变换。

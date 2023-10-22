@@ -118,7 +118,7 @@ sorting=none
 
 \frontmatter
 \pagenumbering{roman}
-\section*{前言}\label{sec:preface}
+\section*{临时前言}\label{sec:preface}
 \subfile{preface.tex}
 
 \tableofcontents
@@ -172,10 +172,23 @@ sorting=none
 
 %\subsection{正规算符在实数域上的几何意义}\label{sec:II.2.4.3}
 
-\chapter{向量函数微积分}
-\section{欧几里得空间}
+\chapter{欧几里得空间}
+在经典力学中,我们总假定物理事件发生欧几里得空间中。在本节我们将以集合的语言\emph{重新}引入欧几里得空间。
+\section{度量空间和等距变换}\label{sec:II.3.1}
 \subfile{Part II/II.3.1.tex}
 
+\section{欧几里得空间}\label{sec:II.3.2}
+\subfile{Part II/II.3.2.tex}
+
+\section{几种线性算符的几何意义}\label{sec:II.3.3}
+\subfile{Part II/II.3.3.tex}
+
+\section{等距变换的表示定理}\label{sec:II.3.4}
+\subfile{Part II/II.3.4.tex}
+
+
+
+\chapter{向量函数的微积分}
 \section{向量函数及其图像}
 \subfile{Part II/II.10.tex}
 
@@ -231,28 +244,37 @@ sorting=none
 %\section{积分型本构方程}
 %\section{屈服应力流体}
 
+
+\appendix
 \newpage\part{附录}
-\chapter{线性代数部分定理的证明}\label{sec:VI.1}
-\subfile{Part VI/VI.1.tex}
+\chapter{线性代数部分定理的证明}\label{sec:A}
+\section{范的定义的等价}\label{sec:A.1}
+\subfile{Part App/A.1.tex}
 
-\chapter{向量函数微积分部分的证明}\label{sec:VI.2}
-\section{$\mathbb{R}^n$空间上的一些拓扑概念}
-\subfile{Part VI/VI.2.1.tex}
+\section{内积空间中的正交投影}\label{sec:A.2}
+\subfile{Part App/A.2.tex}
 
-\section{向量函数可微分的必要条件与充分条件}
-\subfile{Part VI/VI.2.2.tex}
+\section{内积空间上的线性算符相关证明}\label{sec:A.3}
+\subfile{Part App/A.3.tex}
 
-\section{复合函数求导的链式法则}
-\subfile{Part VI/VI.2.3.tex}
+\chapter{向量函数微积分部分的证明}\label{sec:B}
+\section{$\mathbb{R}^n$空间上的一些拓扑概念}\label{sec:B.1}
+\subfile{Part App/B.1.tex}
 
-\section{反函数定理和隐函数定理}
-\subfile{Part VI/VI.2.4.tex}
+\section{向量函数可微分的必要条件与充分条件}\label{sec:B.2}
+\subfile{Part App/B.2.tex}
 
-\section{等距变换的表示定理}
-\subfile{Part VI/VI.2.5.tex}
+\section{复合函数求导的链式法则}\label{sec:B.3}
+\subfile{Part App/B.3.tex}
 
-\section{曲线坐标系}
-\subfile{Part VI/VI.4.tex}
+\section{反函数定理和隐函数定理}\label{sec:B.4}
+\subfile{Part App/B.4.tex}
+
+\section{等距变换的表示定理}\label{sec:B.5}
+\subfile{Part App/B.5.tex}
+
+\chapter{曲线坐标系}\label{sec:C}
+\subfile{Part App/C.tex}
 
 \newpage\part*{参考文献}
 \printbibliography[heading=none]

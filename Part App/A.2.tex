@@ -1,0 +1,132 @@
+\documentclass[main.tex]{subfiles}
+% 内积空间中的正交投影
+\begin{document}
+本节是\S\ref{sec:II.2.1.4}的补充知识，在不同的命题证明中将会用到。
+\subsection{线性无关子空间的直和}
+\begin{definition}[向量组的和]\label{def:A.1}
+    若$S_1,\cdots,S_k$是向量空间$\mathcal{V}$的子集，则所有$\sum_{i=1}^k\mathbf{a}_i,\mathbf{a}_i\in S_i$的集合$S$，记作$sum_{i=1}^k S_i$，称\emph{向量组$S_1,\cdots,S_k$的和（sum of the subsects）}。
+\end{definition}
+
+注意，定义\ref{def:A.1}中的$S$的元素，是从每个$S_i$中抽一个向量$\mathbf{a}_i$出来再求和的结果。求和式当然也可以写成加法：$\sum_{i=1}^k S_k=S_1+\cdots+S_k$。若$\mathcal{W}_1,\cdots,\mathcal{W}_k$是$\mathcal{V}$的子空间，则易验$\mathcal{W}=\sum_{i=1}^k\mathcal{W}_i$也是$\mathcal{V}$的一个子空间，且具体为由$\mathcal{W}_1,\cdots,\mathcal{W}_k$共同线性生成的子空间。我们还能为一系列子空间定义类似“线性无关”的概念。
+
+\begin{definition}[线性无关子空间]\label{def:A.2}
+    设$\mathcal{W}_1,\cdots,\mathcal{W}_k$是向量空间$\mathcal{V}$的子空间。若
+    \[\sum_{i=1}^k\mathbf{a}_i=\mathbf{0},\mathbf{a}_i\in\mathcal{W}_i\Leftrightarrow \mathbf{a}_i=\mathbf{0},\quad\forall i=1,\cdots,k\]
+    则称$\mathcal{W}_1,\cdots,\mathcal{W}_k$\emph{线性无关（linlearly independent）}。
+\end{definition}
+
+沿用上述符号设定，记$\mathcal{W}=\sum_{i=1}^k\mathcal{W}_i$，则任一向量$\mathbf{a}\in\mathcal{W}$可表示为$\sum_{i=1}^k\mathbf{a}_i,\mathbf{a}_i\in\mathcal{W}_i$。若$\left\{\mathcal{W}_i\right\}$是线性无关的，那么$\mathbf{a}$的这一表达式就是唯一的。因为若另有$\mathbf{b}_1,\cdots,\mathbf{b}_k$满足$\mathbf{a}=\sum_{i=1}^k\mathbf{b}_i,\mathbf{b}_i\in\mathcal{W}_i$，则
+\[\mathbf{a}-\mathbf{a}=\mathbf{0}=\sum_{i=1}^k\left(\mathbf{a}_i-\mathbf{b}_i\right)\Rightarrow\mathbf{a}_i-\mathbf{b}_i=\mathbf{0},\forall i=1,\cdots,k\]
+其中用到了$\left\{\mathcal{W}_i\right\}$线性无关的定义。换言之，若$\left\{\mathcal{W}_i\right\}$线性无关，则$\mathcal{W}=\sum_{i=1}^k$中的任一向量$\mathbf{a}$都可唯一对应于一个向量组$\left\{\mathbf{a}_i\right\},\mathbf{a}_i\in\mathcal{W}$，并由后者线性表出。但是，从线性无关的子空间$\left\{\mathcal{W}_i\right\}$中各取一个向量$\mathbf{a}_i\in\mathcal{W}_i$组成的向量组$\left\{\mathbf{a}_i\right\}$未必线性无关。因此一般地$\left\{\mathbf{a}_i\right\}$不是$\mathbf{a}$的基。
+
+在有限维向量空间下，以下定理与线性无关子空间的定义之间互为充要条件。
+\begin{theorem}\label{thm:A.2}
+    设$\mathcal{V}$是有限维向量空间，$\mathcal{W}_1,\cdots,\mathcal{W}_k$是$\mathcal{V}$的子集，且$\mathcal{W}=\sum_{i=1}^k\mathcal{W}_i$，则以下命题相互等价：
+    \begin{enumerate}
+        \item $\left\{\mathcal{W}_i\right\}$线性无关；
+        \item \[\forall j=2,\cdots,k,\quad\mathcal{W}_j\cup\sum_{i=1}^{j-1}\mathcal{W}_i=\left\{\mathbf{0}\right\}\]
+        \item 若$B_i$是$\mathcal{W}_i$的一组有序基，则$B=\left(B_1,\cdots,B_k\right)$是$\mathcal{W}$的一组有序基。
+    \end{enumerate}
+\end{theorem}
+
+我们把线性无关子空间的和称作\emph{直和（direct sum）}。记作$\mathcal{W}=\mathcal{W}_1\bigoplus\cdots\bigoplus\mathcal{W}_k$。
+
+
+
+% ===============================================================================
+\subsection{内积空间上的正交投影}
+\begin{definition}[最好近似]\label{def:A.3}
+    设$\mathcal{V}$是$\mathbb{F}$上的内积空间并自然定义了欧几里得范，$\mathcal{W}$是$\mathcal{V}$的子空间，对任一$\mathbf{b}\in\mathcal{V}$，如果$\mathbf{a}\in\mathcal{W}$满足
+    \[\left\|\mathbf{b}-\mathbf{a}\right\|\leq\left\|\mathbf{b}-\mathbf{c}\right\|,\quad\forall\mathbf{c}\in\mathcal{W},\text{当且仅当$\mathbf{c}=\mathbf{a}$时取等号}\]
+    则称$\mathbf{a}\in\mathcal{W}$是$\mathbf{b}$在$\mathcal{W}$中的\emph{最好近似（best approximation）}。
+\end{definition}
+
+向量$\mathbf{b}$在子空间上的最好近似，最直观的理解就是空间向量在平面上的投影向量。找到这一投影向量的方法是“作垂线”，且该平面上，$\mathbf{b}$的投影向量总是唯一存在。以下定理是这些直观认知的严格阐述。
+
+\begin{theorem}[最好近似的表示]\label{thm:A.3}
+    设$\mathcal{W}$是内积空间$\mathcal{V}$的子空间，$\mathcal{b}$是$\mathcal{V}$的任一向量，则
+    \begin{enumerate}
+        \item 当且仅当$\mathbf{a}\in\mathcal{W}$与$\mathbf{b}-\mathbf{a}$正交时，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。
+        \item $\mathbf{b}$在$\mathcal{W}$中总存在唯一一个最好近似。
+        \item 若$\mathcal{W}$是有限维的，$\left\{\mathbf{\hat{e}}_1,\cdots\mathbf{\hat{e}}_n\right\}$是$\mathcal{W}$的一组规范正交基，则向量
+              \[\mathbf{a}=\sum_{k=1}^n\frac{\left(\mathbf{b}|\mathbf{\hat{e}}_k\right)}{\left(\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_k\right)}\mathbf{\hat{e}}_k\]
+              是$\mathbf{b}$在$\mathcal{W}$中的唯一最小近似。
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    由极化恒等式，以下关系式总成立
+    \[\left\|\mathbf{b}-\mathbf{c}\right\|^2=\left\|\mathbf{b}-\mathbf{a}+\mathbf{a}-\mathbf{c}\right\|^2=\left\|\mathbf{b}-\mathbf{a}\right\|^2+2\mathrm{Re}\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)+\left\|\mathbf{a}-\mathbf{c}\right\|^2\]
+
+    “1”的证明：若$\mathbf{b}-\mathbf{a}$与$\mathcal{W}$的所有向量都正交，且$\mathbf{c}\in\mathcal{W},\mathbf{c}\neq\mathbf{a}$，则由三角不等式有
+    \[\left\|\mathbf{b}-\mathbf{c}\right\|^2=\left\|\mathbf{b}-\mathbf{a}\right\|^2+\left\|\mathbf{a}-\mathbf{c}\right\|^2 > \left\|\mathbf{b}-\mathbf{a}\right\|^2\]
+    因此$\mathbf{b}-\mathbf{a}$与$\mathcal{W}$的所有向量都正交$\Rightarrow\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$的最好近似。
+
+    若$\left\|\mathbf{b}-\mathbf{a}\right\|\leq\left\|\mathbf{b}-\mathbf{c}\right\|,\forall\mathbf{c}\in\mathcal{W}$，则由最开始的等式，有
+    \[\left\|\mathbf{b}-\mathbf{c}\right\|^2=\left\|\mathbf{b}-\mathbf{a}\right\|^2=2\mathrm{Re}\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)+\left\|\mathbf{a}-\mathbf{c}\right\|^2\geq0\]
+    而实际上，由于$\mathbf{c}$是$\mathcal{W}$中任意一个向量，所以$\mathbf{a}-\mathbf{c}$也是$\mathcal{W}$中任意一个向量。因此我们实际证明了，
+    \[2\mathrm{Re}\left(\mathbf{b}-\mathbf{a}|\mathbf{t}\right)+\left\|\mathbf{t}\right\|^2\geq0,\quad\forall\mathbf{t}\in\mathcal{W}\]
+    现不妨取
+    \[\mathbf{t}=-\frac{\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)}{\left\|\mathbf{a}-\mathbf{c}\right\|^2}\left(\mathbf{a}-\mathbf{c}\right)\]
+    则$\mathbf{t}$亦须满足
+    \begin{align*}
+                        & 2\mathrm{Re}\left(\mathbf{b}-\mathbf{a}|\mathbf{t}\right)+\left\|\mathbf{t}\right\|^2\geq 0                                                                                                                                                                                                                                                                  \\
+        \Leftrightarrow & 2\mathrm{Re}\left[\left(\left.\mathbf{b}-\mathbf{a}\right.\left|-\frac{\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)}{\left\|\mathbf{a}-\mathbf{c}\right\|^2}\left(\mathbf{a}-\mathbf{c}\right)\right.\right)\right]+\frac{\left|\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)\right|^2}{\left\|\mathbf{a}-\mathbf{c}\right\|^2}\geq 0 \\
+        \Leftrightarrow & -2\frac{\left|\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)\right|}{\left\|\mathbf{a}-\mathbf{c}\right\|^2}+\frac{\left|\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)\right|^2}{\left\|\mathbf{a}-\mathbf{c}\right\|^2}\geq 0                                                                                                          \\
+        \Leftrightarrow & -\left|\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)\right|^2\left\|\mathbf{a}-\mathbf{c}\right\|^{-2}\geq 0\Leftrightarrow\left(\mathbf{b}-\mathbf{a}|\mathbf{b}-\mathbf{c}\right)=0
+    \end{align*}
+    故$\left\|\mathbf{b}-\mathbf{a}\right\|\leq\left\|\mathbf{b}-\mathbf{c}\right\|,\forall\mathbf{c}\in\mathcal{W}\Rightarrow\left(\mathbf{b}-\mathbf{a}|\mathbf{a}-\mathbf{c}\right)=0,\forall\mathbf{c}\in\mathcal{W}$，注意$\mathbf{a}-\mathbf{c}$是$\mathcal{W}$中的任意向量。“1”证毕。
+
+    “2”的证明：设$\mathbf{a},\mathbf{a}^\prime\in\mathcal{W}$都是向量$\mathbf{b}\in\mathcal{V}$在$\mathcal{W}$中的最好近似，且一般地$\mathbf{b}\neq\mathbf{a},\mathbf{b}\neq\mathbf{a}^\prime$，则由最好近似的定义有$\left(\mathbf{b}-\mathbf{a}|\mathbf{a}^\prime\right)=\left(\mathbf{b}-\mathbf{a}|\mathbf{a}\right)=0$，故$\mathbf{a}^\prime=\mathbf{a}$。“2”证毕。
+
+    “3”的证明：回顾格拉姆--施密特正交化过程，若$\mathcal{V}$中有规范正交向量组$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n\right\}$，$\mathbf{b}$与它们线性无关，则“3”中的表达式，是对线性无关向量组$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n,\mathbf{b}\right\}$进行格拉姆--施密特正交化，使$\mathbf{b}-\mathbf{a}$与所有$\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n$都正交时所使用的表达式。换言之，若$\mathbf{a}$满足命题，则$\mathbf{b}-\mathbf{a}$与$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n\right\}$都正交，亦与它们线性生成的子空间（即$\mathcal{W}$）上的所有向量都正交。由“1”，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。由“2”，$\mathbf{a}$是唯一的。“3”证毕。
+\end{proof}
+
+\begin{definition}[正交补集]\label{def:A.4}
+    设$\mathcal{V}$是一个内积空间，$S$是$\mathcal{V}$的任一子集，$\mathcal{V}$中的与$S$中每个向量都正交的向量的集合记为$S^\perp$，称$S$的\emph{正交补集（orthogonal complement）}。
+\end{definition}
+
+虽然我们定义了正交补集是什么，但仍担心未必总能为任一集合找到其非空的正交补集。但由于$\mathbf{0}$与所有向量都正交，故甚至能说$\mathcal{V}$的正交补集是$\left\{\mathbf{0}\right\}$，反之$\left\{\mathbf{0}\right\}^\perp=\mathcal{V}$。
+
+$S^\perp$总是$\mathcal{V}$的一个子空间。首先$S^\perp$总是含$\mathbf{0}$。其次，若$\mathbf{a},\mathbf{b}\in S^\perp$，则$\forall\mathbf{c}\in S$，
+\[\left(\mathbf{a}+\gamma\mathbf{b}|\mathbf{c}\right)=\left(\mathbf{a}|\mathbf{c}\right)+\gamma\left(\mathbf{b}|\mathbf{c}\right)=0,\quad\forall\gamma\in\mathbb{F}\]
+其中$\mathbb{F}$是$\mathcal{V}$所在的数域。
+
+\begin{definition}[正交投影]\label{def:A.5}
+    设$\mathcal{V}$是一个内积空间，$\mathbf{b}$是$\mathcal{V}$中的一个向量，$\mathcal{W}$是$\mathcal{V}$的一个子空间。若$\mathcal{W}$中存在向量$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似，则称向量$\mathbf{a}$是\emph{向量$\mathbf{b}$在$\mathcal{W}$上的正交投影（orthogonal projection of $\mathbf{b}$ on $\mathcal{W}$）}。若$\mathcal{W}$的维数是$m\leq n$，$\left\{\mathbf{\hat{e}}_k\right\}_{k=1}^m$是$\mathcal{W}$的一组规范正交基，定义映射$\mathbf{E}:\mathcal{V}\to\mathcal{W}$,
+    \[\mathbf{Eb}=\sum_{k=1}^m\frac{\left(\mathbf{b}|\mathbf{\hat{e}}_k\right)}{\left(\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_k\right)}\mathbf{\hat{e}}_k,\quad\forall\mathbf{b}
+        \in\mathcal{V}\]
+    则称映射$\mathcal{E}$是\emph{内积空间$\mathcal{V}$到其子空间$\mathcal{W}$的正交投影（orthogonal projection of $\mathcal{V}$ to $\mathcal{W}$）}。
+\end{definition}
+
+请注意以上定义中，两种“正交投影”的对象。
+
+定理\ref{thm:A.3}成立的内积空间$\mathcal{V}$未必是有限维的，故基于定理\ref{thm:A.3}“3”的概念的正交投影映射，可以无限维内积空间向的其有限维子空间的投影。由定理\ref{thm:A.3}“3”，这样的投影映射是总存在的，作为推论如下。
+
+\begin{corollary}
+    延用定理\ref{thm:A.3}的设定，设映射$\mathbf{E^\prime}:\mathcal{V}\to\mathcal{W},\mathbf{E}^\prime\mathbf{b}=\mathbf{b}-\mathbf{Eb},\forall\mathbf{b}\in\mathcal{V}$是由$\mathcal{V}$到$\mathcal{W}^\perp$的正交投影。
+\end{corollary}
+\begin{proof}
+    由定义\ref{def:A.3}和定理\ref{thm:A.2}，$\mathbf{Eb}$就是向量$\mathbf{b}$在$\mathcal{W}$中的最好近似，因此$\mathbf{b}-\mathbf{Eb}$与所有$\mathcal{W}$正交，即$\mathbf{E}^\prime\mathbf{b}\in\mathcal{W}^\perp$。由于$\mathbf{Eb}\in\mathcal{W}$，故$\mathbf{Eb}=\mathbf{b}-\mathbf{E}\prime\mathbf{b}$与$\mathcal{W}^\perp$中的所有向量都正交。由定理\ref{thm:A.3}“1”，$\mathbf{E}^\prime\mathbf{b}$是$\mathbf{b}$在$\mathcal{W}^\perp$上的最好近似。
+\end{proof}
+
+我们把正交投影映射写成线性算符的样子，因为它确实是线性算符，作为定理如下。
+\begin{theorem}\label{thm:A.4}
+    设$\mathcal{V}$是内积空间，$\mathcal{W}$是$\mathcal{V}$的一个子空间，$\mathbf{E}$是由$\mathcal{V}$到$\mathcal{W}$的正交投影，则$\mathcal{E}$是一个正定线性算符，$\mathcal{W}^\perp$是$\mathcal{E}$的零空间，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
+\end{theorem}
+\begin{proof}
+    设$\mathbf{b}\in\mathcal{V}$，则有$\mathbf{Eb}$是$\mathcal{b}$在$\mathcal{W}$上的最好近似，$\mathbf{E}\left(\mathbf{Eb}\right)=\mathbf{Eb}$，故$\mathbf{E}^2=\mathbf{E}$。
+
+    设$\mathcal{a},\mathbf{b}\in\mathcal{V},\gamma\in\mathbb{F}$，其中$\mathbb{F}$是$\mathcal{V}$所在的数域，则向量$\mathbf{a}-\mathbf{Ea}$和$\mathbf{b}-\mathbf{Eb}$分别都与$\mathcal{W}$的所有向量正交，即这两个向量都属于$\mathcal{W}^\perp$。由于$\mathcal{W}^\perp$必是$\mathcal{V}$的子空间，故有
+    \[
+        \mathbf{a}-\mathbf{Ea}+\gamma\left(\mathbf{b}-\mathbf{Eb}\right)\in\mathcal{W}^\perp\Leftrightarrow\mathbf{a}+\gamma\mathbf{b}-\mathbf{E}\left(\mathbf{a}+\gamma\mathbf{b}\right)\in\mathcal{W}^\perp
+    \]
+    因此$\mathbf{E}$是正定线性算符。
+
+    前文说过，$\mathbf{Eb}$是$\mathcal{W}$中唯一使$\mathbf{b}-\mathbf{Eb}\in\mathcal{W}^\perp$的向量，故若$\mathbf{Eb}=\mathbf{0}$，则$\mathbf{b}-\mathbf{Eb}=\mathbf{b}\in\mathcal{W}^\perp$。反之，若$\mathbf{b}\in\mathcal{W}^\perp$，设$\mathbf{a}\in\mathcal{W}$是使$\mathbf{b}-\mathbf{a}\in\mathcal{W}^\perp$的向量，则有$\left(\mathbf{a}|\mathbf{b}\right)=0$且$\left(\mathbf{a}|\mathbf{b}-\mathbf{a}\right)=0$，故只可能$\mathbf{a}=\mathbf{0}$。而事实上$\mathbf{Eb}$是$\mathcal{W}$中唯一使$\mathbf{b}-\mathbf{Eb}\in\mathcal{W}^\perp$的向量，故$\mathbf{a}=\mathbf{Eb}=\mathbf{0}$。换言之，$\mathcal{W}^\perp$中的向量全是使$\mathbf{Eb}=\mathbf{0}$的$\mathbf{b}$，即$\mathcal{W}^\perp=\mathrm{ker}\mathbf{E}$。
+
+
+    由$\mathbf{Eb}$与$\mathbf{b}$和$\mathbf{b}-\mathbf{Eb}$的唯一性，有以下恒等式
+    \[\mathbf{b}=\mathbf{Eb}+\mathbf{b}-\mathbf{Eb}, \forall\mathbf{b}\in\mathcal{V}\]
+    说明总有$\mathcal{V}=\mathcal{W}+\mathcal{W}^\perp$。而由前面的证明又知$\mathcal{W}\cup\mathcal{W}^\perp=\left\{0\right\}$，由定理\ref{thm:A.2}有$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
+\end{proof}
+\end{document}

@@ -7,7 +7,7 @@
     设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是$\mathcal{V}$上的线性算符。若存在另一线性算符$\mathbf{T}^*\in\mathcal{L}\left(\mathcal{V}\right)$满足$\left(\mathbf{Ta}|\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{T}^*\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$，则称$\mathbf{T}^*$是$\mathbf{T}$的\emph{伴随算符（adjoint operator）}。若$\mathbf{T}=\mathbf{T}^*$，则称$\mathbf{T}$是一个\emph{自伴随（self-adjoint）}或\emph{厄米（hermitian）}算符。若$\mathbf{T}=-\mathbf{T}^*$，则称$\mathbf{T}$是一个\emph{反厄米（skew hermitian）}算符。
 \end{definition}
 
-在有限维内积空间上，每一个线性算符有且只有一个伴随算符（证明见附录\S\ref{sec:VI.1}）。
+在有限维内积空间上，每一个线性算符有且只有一个伴随算符（证明见附录\S\ref{sec:A.3}）。
 
 易验，若$\mathbf{T}$是厄米算符，则$i\mathbf{T}$就是反厄米算符。
 
@@ -56,30 +56,90 @@
 \[
     \left(\mathbf{T}^\intercal f_\mathbf{a}\right)\left(\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{Tb}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}
 \]
-
 同时$\mathbf{T}$与$\mathbf{T}^\intercal$在给定一对基$B\subset\mathcal{V}$与对偶基$B^*\subset\mathcal{V}^*$下的坐标矩阵互为矩阵的转置。而线性算符$\mathbf{T}$与其伴随算符$\mathbf{T}^*$满足
 \[
     \left(\mathbf{Ta}|\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{T}^*\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}
 \]
-且$\mathbf{T}$与$\mathbf{T}^*$在给定基$B$下的坐标矩阵之间互为矩阵的共轭转置。比较可发现，线性算符的转置与伴随似乎仅存在“是否需要共轭”的差别，这个差别来自于它们扮演的角色是放在在内积的第一个向量前面还是第二个向量前面。本讲义的内积定义规定对第二向量具有共轭线性，所以坐标矩阵需要共轭的是定义在内积的第二个向量的伴随算符。
+且$\mathbf{T}$与$\mathbf{T}^*$在给定基$B$下的坐标矩阵之间互为矩阵的共轭转置。比较可发现，线性算符的转置与伴随似乎仅存在“是否需要共轭”的差别，这个差别来自于它们扮演的角色是放在在内积的第一个向量前面还是第二个向量前面。本讲义的内积定义规定对第二向量具有共轭线性，所以坐标矩阵需要共轭的是定义在内积的第二个向量的伴随算符。但是，线性变换的转置和伴随概念根本不同。因为$\mathbf{T}^\intercal\in\mathcal{L}\left(\mathcal{V}^*\right)$而$\mathbf{T}^*\in\mathcal{L}\left(\mathcal{V}\right)$，即它们属于不同的空间，作用于不同空间中的对象。在实数域中（经典力学语境下），线性算符的伴随的概念不如在复数域中（量子力学语境下）重要。在本讲义后续内容中凡涉及到实数域上的线性算符，都暂不区分其转置和伴随，而均写成$\mathbf{T}^\intercal$。
 
-但是，线性变换的转置和伴随概念根本不同。因为$\mathbf{T}^\intercal\in\mathcal{L}\left(\mathcal{V}^*\right)$而$\mathbf{T}^*\in\mathcal{L}\left(\mathcal{V}\right)$，即它们属于不同的空间，作用于不同空间中的对象。
+此外，在以往所学习的矩阵代数中，有“对称矩阵”的概念。如果数域$\mathbb{F}$上的$n\times n$矩阵$A\in\mathbb{F}^{n\times n}$满足$A=A^\intercal$，则称矩阵$A$是\emph{对称矩阵（symmetric matrix）}；若$A=-A^\intercal$，则称矩阵$A$是\emph{斜称矩阵（skew-symmetric matrix）}。由厄米与反厄米算符的定义可知，只有在实数域$\mathbb{R}$上的内积空间上，厄米和反厄米算符在给定基于的坐标矩阵才是对称和斜称矩阵。因此，我们又把\emph{实数域上的}厄米和反厄米算符\footnote{即在实数域上的内积空间，满足定义\ref{def:II.2.22}中的内积运算性质的线性算符。}称为\emph{对称算符（symmetric operator）}和\emph{斜称算符（skew-symmetrix operator）}。
 
-在实数域中（经典力学语境下），线性算符的伴随的概念不如在复数域中（量子力学语境下）重要。在本讲义后续内容中凡涉及到实数域上的线性算符，都暂不区分其转置和伴随，而均写成$\mathbf{T}^\intercal$。
-
-此外，在以往所学习的矩阵代数中，有“对称矩阵”的概念。如果数域$\mathbb{F}$上的$n\times n$矩阵$A\in\mathbb{F}^{n\times n}$满足$A=A^\intercal$，则称矩阵$A$是\emph{对称矩阵（symmetric matrix）}；若$A=-A^\intercal$，则称矩阵$A$是\emph{斜称矩阵（skew-symmetric matrix）}。由厄米与反厄米算符的定义可知，只有在实数域$\mathbb{R}$上的内积空间上，厄米和反厄米算符在给定基于的坐标矩阵才是对称和斜称矩阵。因此，我们又把\emph{实数域上的}厄米和反厄米算符称为\emph{对称算符（symmetric operator）}和\emph{斜称算符（skew-symmetrix operator）}。
-
-最后我们关心一下厄米和反厄米算符在特征值分解时的性质\footnote{在大一的线性代数课中只介绍了考虑实数域上的对称矩阵的对角化\cite[\S 5.3 定理3.4~3.6、例3.4]{周胜林2012线性代数}，得到一系列性质。但是这些性质需要在复数域的更一般情况下得到确认。}，归入以下定理——
+最后我们关心一下厄米和反厄米算符在特征值分解时的性质。归入以下定理——
 
 \begin{theorem}\label{thm:II.2.32}
     设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维内积空间，$\mathbf{T}$是$\mathcal{V}$上的一个线性算符，则
     \begin{enumerate}
-        \item $\mathbf{T}$是厄米算符$\Rightarrow\mathbf{T}$的所有特征值都是实数
-        \item $\mathbf{T}$是反厄米算符$\Rightarrow\mathbf{T}$的所有特征值都是纯虚数或0。
-        \item $\mathbf{T}$是厄米算符$\Rightarrow$对应$\mathbf{T}$的不同特征值的特征向量间必正交
-        \item $\mathbf{T}$是厄米算符$\Rightarrow\mathcal{V}$中存在一组规范正交基恰为$\mathbf{T}$的特征向量
+        \item 若$\mathbb{F}=\mathbb{C}$，$\mathbf{T}$是厄米算符，则$\mathbf{T}$的特征值全为实数。
+        \item 若$\mathbf{T}$是厄米算符，则$\mathbf{T}$的两个不同特征值分别对应的两个特征向量正交。
+        \item 若$\mathcal{V}$是有限维的，$\mathbf{T}$是厄米算符，则$\mathbf{T}$至少有一个（非零）特征向量。
+        \item 若$\mathcal{V}$是有限维的，$\mathbf{T}$是厄米算符，则$\mathcal{V}$中存在一组规范正交基是$\mathbf{T}$的特征向量。
+        \item 若$\mathbf{F}=\mathbb{C}$，$\mathbf{T}$是反厄米算符，则$\mathbf{T}$的所有特征值都是纯虚数或0。
     \end{enumerate}
+    %\begin{enumerate}
+    %\item $\mathbf{T}$是厄米算符$\Rightarrow\mathbf{T}$至少一个特征值且它是非零实数\cite[\S 8.5 Theorem 16]{Hoffman1971}；
+    %\item $\mathbf{T}$是厄米算符$\Rightarrow\mathbf{T}$的所有特征值都是实数\cite[\S 8.5 Theorem 17]{Hoffman1971}；
+    %\item $\mathbf{T}$是反厄米算符$\Rightarrow\mathbf{T}$的所有特征值都是纯虚数或0；
+    %\item $\mathbf{T}$是厄米算符$\Rightarrow$对应$\mathbf{T}$的不同特征值的特征向量间必正交；
+    %\item $\mathbf{T}$是厄米算符$\Rightarrow\mathcal{V}$中存在一组规范正交基恰为$\mathbf{T}$的特征向量\cite[\S 8.5 Theorem 18]{Hoffman1971}；
+    %\end{enumerate}
 \end{theorem}
+\begin{proof}
+    “1”的证明：设$\lambda$是$\mathbf{T}$的任意一个特征值，$\mathbf{a}$是$\mathbf{T}$关于$\lambda$的任意一个特征向量，即$\mathbf{Ta}=\lambda\mathbf{a}$，则
+    \begin{align*}
+                        & \left(\mathbf{a}|\mathbf{Ta}\right)=\overline{\lambda}\left(\mathbf{a}|\mathbf{a}\right)=\left(\mathbf{Ta}|\mathbf{a}\right)=\lambda\left(\mathbf{a}|\mathbf{a}\right) \\
+        \Leftrightarrow & \overline{\lambda}=\lambda
+    \end{align*}
+    其中用到了$\mathbf{a}$是特征向量故$\mathbf{a}\neq\mathbf{0}$。
 
-注意这些命题的逆命题都不成立（反例可作为练习）。关于第3条，在特征值的章节中曾提到，在复数域上，对于一般向量空间上的线性算符，对应于不同特征值的特征向量\emph{线性无关}。如果这一线性算符是内积空间上的自伴随算符，那么进一步地，对应于不同特征值的特征向量是\emph{正交}的。第4条再加上定理\ref{thm:II.2.28}可知，\emph{可逆厄米算符必可对角化}。
+    “2”的证明：设$\lambda_1\neq\lambda_2$是$\mathbf{T}$的两个特征值，$\mathbf{a}_1,\mathbf{a}_2$分别是$\lambda_1,\lambda_2$对应的特征向量，则
+    \begin{align*}
+                        & \left(\mathbf{a}_1|\mathbf{Ta}_2\right)=\lambda_2\left(\mathbf{a}_1|\mathbf{a}_2\right)=\left(\mathbf{Ta}_1|\mathbf{a}_2\right)=\lambda_1\left(\mathbf{a}_1|\mathbf{a}_2\right) \\
+        \Leftrightarrow & \left(\lambda_1-\lambda_2\right)\left(\mathbf{a}_1|\mathbf{a}_2\right)=0                                                                                                        \\
+        \Leftrightarrow & \left(\mathbf{a}_1|\mathbf{a}_2\right)=0
+    \end{align*}
+    其中用到了“1”。
+
+    “3”的证明：我们建立以下联系，以便在矩阵代数的层面证有关于$\mathbf{T}$的命题。
+
+    设$\mathcal{V}$是复数域$\mathbb{C}$上的$n$维内积空间，$B=\left\{\mathbf{\hat{e}}_i\right\}$是$\mathcal{V}$的一组规范正交基。记$T_{ij}$是$\mathbf{T}$在$B$下的坐标，则矩阵$T$是厄米矩阵。
+
+    设$\mathcal{W}$是$\mathbb{C}$上所有$n\times 1$矩阵（“列向量”），并定义了内积$\left(X|Y\right)=\overline{Y}^\intercal X,\forall X,Y\in\mathcal{W}$。在$\mathcal{W}$上定义映射$U\left(X\right)\equiv TX$，则$U$是$\mathcal{W}$上的厄米算符，因为
+    \[\left(X|U\left(Y\right)\right)=\left(X|TY\right)=\left(TX|Y\right)=\left(U\left(x\right)|Y\right)\]
+    其中用到了$T=\overline{T}^\intercal$。
+
+    由“1”，矩阵$T$的特征多项式应全为实根。设$\lambda_1$是其中一个实根（即$\lambda_1$是矩阵$T$的一个特征值），则存在非零$X\in\mathcal{W},X=\left(x_1,\cdots,x_n\right)^\intercal$满足线性方程组
+    \[\left(T-\lambda_1I\right)X=\left(0,\cdots,0\right)^\intercal\]
+    则$\mathcal{V}$中有非零向量$\mathbf{x}=\sum_{i=1}^nx_i\mathbf{\hat{e}}_i$满足$\mathbf{Tx}=\lambda_1\mathbf{x}$。
+
+    若$\mathcal{V}$是实数域$\mathbb{R}$上的$n$维内积空间，由于$T$的所有特征值（包括$\lambda_1$）都是实数，在实数域上$\mathrm{det}\left(T-\lambda_1 I\right)=0$仍成立，故在实数域上，上述线性方程组仍有非零解。
+
+    “4”的证明见附录。
+
+    “5”的证明：与“1”的证明类似，略。
+\end{proof}
+
+在特征值的章节中曾提到，在复数域上，对于一般向量空间上的线性算符，对应于不同特征值的特征向量\emph{线性无关}。定理\ref{thm:II.2.32}“2”其实是这一结论中的线性算符是内积空间上的厄米算符时的延伸结论；这种情况下对应于不同特征值的特征向量不仅线性无关，还两两\emph{正交}。
+
+第4条再加上定理\ref{thm:II.2.28}可知，
+
+\begin{corollary}可逆厄米算符必可对角化。\end{corollary}
+
+\begin{corollary}
+    在实数域$\mathbb{R}$上的有限维内积空间$\mathcal{V}$上，某线性算符$\mathbf{T}$是对称算符当且仅当$\mathcal{V}$中存在一组规范正交基是$\mathbf{T}$的特征向量。
+\end{corollary}
+\begin{proof}
+    “充份性”：定理\ref{thm:2.32}“4”的证明过程并不依赖复数域的特殊性，故其结论在实数域上仍成立。
+
+    “必要性”：设$\left\{\mathbf{\hat{e}}_i\right\}$是$\mathcal{V}$的一组规范正交基且它们是$\mathbf{T}$的特征向量。记$\lambda_i\in\mathbb{R},i=1,\cdots,n$为$\mathbf{\hat{e}}_i$所对应的$\mathbf{T}$的特征值，则有$\mathbf{T\hat{e}}_i=\lambda_i\mathbf{\hat{e}}_i,i=1,\cdots,n$。故有
+    \begin{align*}
+        \left(\mathbf{T\hat{e}}_i|\mathbf{\hat{e}}_j\right)            & =\lambda_i\delta_{ij},\quad i,j=1,\cdots,n           \\
+        \left(\mathbf{T}^*\mathbf{\hat{e}}_i|\mathbf{\hat{e}}_j\right) & =\left(\mathbf{\hat{e}}_i|\mathbf{T\hat{e}}_j\right) \\
+                                                                       & =\lambda_j\delta_{ij},\quad i,j=1,\cdots,n
+    \end{align*}
+    因此在在某组基下，$\mathbf{T}^*$的坐标矩阵等于$\mathbf{T}$的坐标矩阵，故$\mathbf{T}=\mathbf{T}^*$
+\end{proof}
+
+
+
+
 \end{document}

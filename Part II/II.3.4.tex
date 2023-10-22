@@ -1,0 +1,55 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+下面我们介绍等距变换的一个重要定理：等距变换的表示定理。这个定理大致说：任一等距变换都是一个平移变换加一个旋转变换。这个定理也是后面介绍物理定律的标架变换不变性时的理论基础。
+
+\begin{theorem}[等距变换的表示定理]\label{thm:II.3.2}
+    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，选定任一点$X_0\in\mathcal{E}$，则$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{I}$都可表示为
+    \[
+        i\left(X\right)=i\left(X_0\right)+\mathbf{Q}_i\left(X-X_0\right)
+    \]
+    其中$\mathbf{Q}_i$是一个正交算符，关于$i$唯一存在。
+\end{theorem}
+\begin{proof}
+    见附录。
+\end{proof}
+
+\begin{corollary}
+    欧几里得空间上的等距变换都是双射。
+\end{corollary}
+\begin{proof}
+    定理\ref{thm:II.3.1}已经暗示欧几里得空间上的等距变换都是单射。故仅需再证明对任一$i:
+        \mathcal{E}\rightarrow\mathcal{E}$和$Y\in\mathcal{E}$总存在一个$X\in\mathcal{E}$满足$i\left(X\right)=Y$。我们可直接找出这样的$X$：
+    \[
+        X=X_0+\mathbf{Q}^{-1}\left(Y-i\left(X_0\right)\right)
+    \]
+    验证这就是满足条件的$X$：
+    \begin{align*}
+        i\left(X\right) & =i\left(X_0\right)+\mathbf{Q}\left(\mathbf{X}_0+\mathbf{Q}^{-1}\left(Y-i\left(X_0\right)\right)-X_0\right) \\
+                        & =i\left(X_0\right)+Y-i\left(X_0\right)                                                                     \\
+                        & =Y
+    \end{align*}
+\end{proof}
+
+定理\ref{thm:II.3.2}的通俗解释：给定任一等距变换$i$，仅需知道它对某一参考点$X_0$的像是哪个点，以及该变换的特征正交算符$\mathbf{Q}_i$，就可以知道它对任意点$X$的像。因此这一定理给出了等距变换的通用表达式。
+
+这里的等距变换$i$不一定是欧几里得空间$\mathcal{E}$的平移向量空间$\mathcal{V}$中的元素（前面提到过$\mathcal{V}$至多是$\mathcal{I}$的子群）。例如旋转和镜向反转都是等距变换，却不满足向量空间对向量的要求。
+
+一般$i\left(X_0\right)$是容易找到的，但是$\mathbf{Q}_i$不是直接易得的。我们可以举例认识$\mathbf{Q}_i$的一般意义。
+
+\begin{example}
+    考虑欧几里得空间$\left(\mathcal{E},d\right)$上的以下等距变换，其中$\mathbf{Q}$是一个正交算符，$X_0,C$是$\mathcal{E}$中固定的点：
+    \begin{align*}
+        i_1\left(X\right) & =X+\left(C-X_0\right)                \\
+        i_2\left(X\right) & =X_0+\mathbf{Q}\left(X-X_0\right)    \\
+        i_3\left(X\right) & =X+\mathbf{Q}^{-1}\left(C-X_0\right)
+    \end{align*}
+
+    $i_1$把任一点向固定的方向平移固定距离（$i_1\left(X\right)=X+\mathbf{u},\mathbf{u}\equiv C-X_0$）。
+
+    $i_1\circ i_2=i_2\circ i_3$（自行验证作为练习。）
+
+    当$\mathbf{Q}=\mathbf{I}$时，$i_2$是恒等映射。当$\mathbf{Q}\neq\mathbf{I}$时，由正交算符性质$\mathrm{det}\mathbf{Q}=\pm 1$。当$\mathrm{det}\mathbf{Q}=1$时，$i_2$是一种旋转操作；当$\mathrm{det}\mathbf{Q}=-1$时，由$\mathbf{Q}=\left(-\mathbf{I}\right)\left(-\mathbf{Q}\right)$和$\mathrm{det}\left(-\mathbf{Q}\right)=1$可知$i_2$是先进行了一个旋转（$-\mathbf{Q}$）再进行了反转（$-\mathbf{I}$）的操作。
+\end{example}
+
+在连续介质力学中，我们只考虑$\mathrm{det}\mathbf{Q}=1$的情况，即等距变换中的正交算符仅表旋转。在此限定下，定理\ref{thm:II.3.2}说的就是，欧几里得空间的任一等距变换（镜像除外）都是平移加旋转。
+\end{document}

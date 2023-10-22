@@ -1,11 +1,9 @@
 \documentclass[main.tex]{subfiles}
-% 线性代数部分定理证明
-\begin{document}
-%===============================================
-\section{范的等价性}\label{sec:IV.1.1}
-本节将证明有限维向量空间上的不同范的定义是等价的。
 
-\begin{lemma}\label{lem:IV.1.1}
+\begin{document}
+本节将证明\emph{有限维}向量空间上的不同范的定义是等价的。
+
+\begin{lemma}\label{lem:A.1}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$n=\mathrm{dim}\mathcal{V}$，$\left\|\cdot\right\|$是定义在$\mathcal{V}$的一个范，$\left\|\cdot\right\|_\mathrm{E}\equiv\left(\mathbf{a}|\mathbf{a}\right)^\frac{1}{2}\forall\mathbf{a}\in\mathcal{V}$是定义在$\mathcal{V}$上的欧几里得范，则总存在正实数$k>0,K>0$使得$k\left\|\mathbf{x}\right\|_\mathrm{E}\leq\left\|\mathbf{x}\right\|\leq K\left\|\mathbf{x}\right\|_\mathrm{E},\forall\mathbf{x}\in\mathcal{V}$。
 \end{lemma}
 \begin{proof}
@@ -29,7 +27,7 @@
     \end{align*}
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:A.2}
     如果存在$k>0,K>0$使得数域$\mathbb{F}$上的有限维向量空间$\mathcal{V}$上的任意两种范的定义$\left\|\cdot\right\|_1,\left\|\cdot\right\|_2$满足$k\left\|\mathbf{x}\right\|_1\leq\left\|\mathbf{x}\right\|_2\leq K\left\|\mathbf{x}\right\|_1,\forall\mathbf{x}\in\mathcal{V}$，则该不等式成立条件定义了两种范的定义之间的等价关系。
 \end{lemma}
 \begin{proof}
@@ -40,28 +38,11 @@
     传递性：设$\left\|\cdot\right\|_1,\left\|\cdot\right\|_2,\left\|\cdot\right\|_3$是$\mathcal{V}$上的三种范的定义，正实数$k,k^\prime,K,K^\prime$满足$k\left\|\mathbf{x}\right\|_1\leq\left\|\mathbf{x}\right\|_2\leq K\left\|\mathbf{x}\right\|_1,k^\prime\left\|\mathbf{x}\right\|_2\leq\left\|\mathbf{x}\right\|_3\leq K^\prime\left\|\mathbf{x}\right\|_2,\forall\mathbf{x}\in\mathcal{V}$，则总可取$0<k^{\prime\prime}=kk^\prime\leq KK^\prime=K^{\prime\prime}$使得$k^{\prime\prime}\left\|\mathbf{x}\right\|_1=kk^\prime\left\|\mathbf{x}\right|_1\leq k^\prime\left\|\mathbf{x}\right\|_2\leq\left\|\mathbf{x}\right\|_3\leq K^\prime\left\|\mathbf{x}\right\|_2\leq KK^\prime\left\|\mathbf{x}\right\|_1=K^{\prime\prime}\left\|\mathbf{x}\right\|_1$。
 \end{proof}
 
-\begin{theorem}\label{thm:VI.1.1}
+\begin{theorem}\label{thm:A.1}
     有限维向量空间上的任意两种范的定义等价。
 \end{theorem}
 \begin{proof}
     由以上两引理可知有限维向量空间上的任意一种范的定义均与欧几里得范等价。由等价关系性质本命题成立。
 \end{proof}
 
-%====================================================
-\section{伴随算符的唯一存在性}
-\begin{theorem}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，对$\mathcal{V}$上的任一线性算符$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$有且只有一个伴随算符$\mathbf{T}^*\in\mathcal{L}\left(\mathcal{V}\right)$。
-\end{theorem}
-\begin{proof}
-    给定任意向量$\mathbf{b}\in\mathcal{V}$，均可定义一个线性泛函$f\in\mathcal{V}^*,f\left(\mathbf{a}\right)\equiv\left(\mathbf{Ta}|\mathbf{b}\right),\forall\mathbf{a}\in\mathcal{V}$。由有限维Riesz表示定理（\ref{thm:II.2.19}），每一个这样的线性泛函都唯一对应一个$\mathbf{b}^\prime\in\mathcal{V}$满足$f\left(\mathbf{a}\right)=\left(\mathbf{a}|\mathbf{b}^\prime\right)$。因此，对每一个线性变换$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$，都可以定义一个映射$\mathbf{T}^*:\mathcal{V}\rightarrow\mathcal{V}$来将$\mathcal{V}$中的每一个向量$\mathcal{b}$如上所述地对应到$\mathcal{V}$中的另一个向量$\mathbf{b}^\prime$，且这个映射$\mathbf{T}^*$是一个线性算符，因为对任意$\gamma\in\mathbb{F},\mathbf{b},\mathbf{c}\in\mathcal{V}$，
-    \begin{align*}
-        \left(\mathbf{a}|\mathbf{T}^*\left(\gamma\mathbf{b}+\mathbf{c}\right)\right) & =\left(\mathbf{Ta}|\gamma\mathbf{b}+\mathbf{c}\right)                                                           \\
-                                                                                     & =\overline{\gamma}\left(\mathbf{Ta}|\mathbf{b}\right)+\left(\mathbf{Ta}|\mathbf{c}\right)                       \\
-                                                                                     & =\overline{\gamma}\left(\mathbf{a}|\mathbf{T}^*\mathbf{b}\right)+\left(\mathbf{a}|\mathbf{T}^*\mathbf{c}\right) \\
-                                                                                     & =\left(\mathbf{a}|\gamma\mathbf{T}^*\mathbf{b}+\mathbf{T}^*\mathbf{c}\right),\forall\mathbf{a}\in\mathcal{V}    \\
-        \Leftrightarrow\mathbf{T}^*\left(\gamma\mathbf{b}+\mathbf{c}\right)          & =\gamma\mathbf{T}^*\mathbf{b}+\mathbf{T}^*\mathbf{c}
-    \end{align*}
-
-    现证明$\mathbf{T}^*$是唯一的。设另一线性算符$\mathbf{U}\in\mathcal{L}\left(\mathcal{V}\right)$满足命题条件即$\left(\mathbf{Ta}|\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{T}^*\mathbf{b}\right)=\left(\mathbf{a}|\mathbf{Ub}\right)$，则$0=\left(\mathbf{a}|\mathbf{T}^*\mathbf{b}\right)-\left(\mathbf{a}|\mathbf{Ub}\right)=\left(\mathbf{a}|\left(\mathbf{T}^*-\mathbf{U}\right)\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}\Leftrightarrow\mathbf{T}^*=\mathbf{U}$，故$\mathbf{T}^*$是唯一的。
-\end{proof}
 \end{document}

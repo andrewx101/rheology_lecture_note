@@ -10,7 +10,7 @@
 \begin{document}
 % 添加“域”的简单介绍，可参考Hoffman & Kunze sec: 1.1
 
-\subsection{数域}
+\subsection{数域}\label{sec:II.2.1.1}
 读者应该已经熟悉自然数、整数、有理数、实数、复数等数集，以及定义在它们之上的四则运算。现在我们特别关心这些数的集合是否具有对四则运算的封闭性，即集合的元素经过四则运算之后的结果仍属于原集合。具体地，设$\mathbb{F}$是数的集合，且在$\mathbb{F}$上的四则运算满足以下要求：
 \begin{enumerate}
     \item 加法交换律：$x+y=y+x,\forall x,y\in\mathbb{F}$
@@ -27,7 +27,8 @@
 
 一般地，域的定义不具体规定加法和乘法的具体运算规则。只要一个集合上所谓的加法和所谓的乘法分别满足上列9个要求，它就是一个域。在这种一般性下若不作更多规定，将会允许一些奇怪的域，本讲义不深入探讨。在接下来的内容里，每当提到“数域$\mathbb{F}$”，都具体指复数域$\mathbb{C}$的任一子域。
 
-\subsection{向量空间的定义和基本性质}
+%======================================================================================================
+\subsection{向量空间的定义和基本性质}\label{sec:II.2.1.2}
 \begin{definition}[向量空间]\label{def:II.2.1}
     给定一个数域$\mathbb{F}$和一个非空集合$\mathcal{V}$，如果它们满足：
     \begin{enumerate}
@@ -101,7 +102,7 @@
 就算向量空间$\mathcal{V}$的某子集$S$因不满足封闭性而成为不了$\mathcal{V}$的子空间，$S$内的向量的所有线性组合表出的向量可以形成一个比$S$更大的集合，且满足封闭性，因而我们可以说由$S$生成了一个$\mathcal{V}$的子空间，定义如下。
 
 \begin{definition}[线性生成空间]\label{def:II.2.4}
-    若$S$是向量空间$\mathcal{V}$的非空子集，即$S\subseteq\mathcal{V},S\neq\emptyset$，那么$S$内的向量的所有线性组合的集合$\mathcal{W}_S$也是一个向量空间，称为\emph{由$S$线性生成的子空间（the subspace spanned by $S$）}。
+    若$S$是向量空间$\mathcal{V}$的非空子集，即$S\subseteq\mathcal{V},S\neq\emptyset$，那么$S$内的向量的所有线性组合的集合$\mathcal{W}_S$也是一个向量空间，称为\emph{由$S$线性生成的子空间（the subspace spanned by $S$）}，记为$\mathcal{W}_S\equiv\mathrm{span}S$。
 \end{definition}
 
 换句话说，$\mathcal{W}_S$中的向量都能由$S$的向量线性表出。一个直接的结论就是$S\subseteq\mathcal{W}_S$，因为一个向量总能被它自己线性表出。
@@ -133,7 +134,7 @@
 有了这一定理，我们就可以直接把有限维向量空间的维数定义为它的任一组基的向量个数——
 
 \begin{definition}[有限维向量空间的维数]\label{def:II.2.6}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，它的\emph{维数（dimension）}，记为$\mathrm{dim}\mathcal{V}$，是它的任一组基的向量个数。规定：零向量空间（只有一个零向量组成的向量空间）是0维。
+    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，它的\emph{维数（dimension）}，记为$\mathrm{dim}\mathcal{V}$，是它的任一组基的向量个数。规定：\emph{零向量空间（只由一个零向量组成的向量空间）是的维数是0。}
 \end{definition}
 
 由定理\ref{thm:II.2.1}还可直接得到如下推论，它们的证明与定理\ref{thm:II.2.1}的证明过程很类似，故从略。
@@ -158,7 +159,8 @@
     \end{itemize}
 \end{example}
 
-\subsection{向量的坐标}
+%============================================================================================
+\subsection{向量的坐标}\label{sec:II.2.1.3}
 到此为止，我们未具体地阐明“向量”是什么，也未具体地规定加法和标量乘法如何进行。“这种抽象性使我们可以把不同的数学对象统一到线性空间这一概念之下。”\cite[p.~167]{周胜林2012线性代数}不过，通过引入“坐标”的概念，我们又使得任一抽象向量都能用一组有序数组来唯一地表示，从而使抽象的向量之间的运算得以由具体的有序数组的运算来代替（就像我们以往在《线性代数》课中所熟悉的那样）。
 
 \begin{definition}[向量在给定有序基下的坐标]\label{def:II.2.7}若$\mathcal{V}$是一个$n$维向量空间，$\mathcal{V}$内的一组线性无关的有序向量序列$\left(\mathbf{a}_i\right)$线性生成整个$\mathcal{V}$，则称这组有序向量序列$B$为$\mathcal{V}$的一组\emph{有序基（ordered basis）}。由定义\ref{def:II.2.5}，任一向量$\mathbf{x}\in\mathcal{V}$均可表达为$\mathbf{x}=\sum_{i=1}^nx_i\mathbf{a}_i$，进而，任一$\mathbf{x}\in\mathcal{V}$在给定有序基下都唯一对应$\mathbb{F}^n$中的一个有序$n$元数组$\left(x_i\right)$\footnote{这里的唯一性可参考\cite[\S 7.2定义2.3下“(3)的证明”]{周胜林2012线性代数}。}，我们称这一有序$n$元数组$\left(x_i\right)$为向量$\mathbf{x}$在有序基$B$下的\emph{坐标（coordinate）}。
@@ -182,7 +184,7 @@
 在本讲义中，无论是$n$维向量$\mathbf{x}$本身还是其在某基的下的坐标，都一律写成$n\times 1$矩阵（列向量）；为方便，在文字段落中表示为$1\times n$矩阵（行向量）的转置，即$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$。这里的转置可直接按以前在《线性代数》课中学过的意义来理解。但本讲义会对向量转置的概念进行正式的定义。
 
 %=====================================================================================
-\subsection{向量的内积与范}
+\subsection{向量的内积与范}\label{sec:II.2.1.4}
 在本节中，我们在向量空间的基础上再增加一些性质和运算法则，使得“正交”、“单位向量”的概念得以引入，同时也介绍其他相关的概念。
 
 \begin{definition}[内积]\label{def:II.2.8}

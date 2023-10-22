@@ -1,0 +1,286 @@
+\documentclass[main.tex]{subfiles}
+% 欧几里得空间
+\begin{document}
+在经典力学中我们假设物理事件所发生的几何空间是欧几里得空间。在本节我们将以集合的语言\emph{重新}引入欧几里得空间。
+
+\subsection{度量空间和等距变换}
+
+我们把一个非空集合的元素称为“点”，然后我们为该集合中任意两个点定义“距离”。
+
+\begin{definition}[度量空间]\label{def:II.3.1}
+    设$\mathcal{E}$是一个非空集合，如果映射$d:\mathcal{E}\times\mathcal{E}\rightarrow\left[0,+\infty\right)\subset\mathbb{R}$满足
+    \begin{enumerate}
+        \item 不可区分者的同一性：$d\left(x,y\right)=0\Leftrightarrow x=y,\quad\forall x,y\in\mathcal{E}$
+        \item 对称性：$d\left(x,y\right)=d\left(y,x\right),\quad\forall x,y\in\mathcal{E}$
+        \item 三角不等式：$d\left(x,z\right)\leq d\left(x,y\right)+d\left(x,y\right),\quad\forall x,y,z\in\mathcal{E}$
+    \end{enumerate}
+    则称$d$是定义在$\mathcal{E}$上的一个\emph{度量（metric）}，有序对$\left(\mathcal{E},d\right)$是一个\emph{度量空间（metric space）}。
+\end{definition}
+
+由定义易证，度量总是非负的，即$d\left(x,y\right)\geq0,\forall x,y\in\mathcal{E}$。由第3条，$d\left(x,y\right)+d\left(y,x\right)\geq d\left(x,x\right)$；再由第2条，$d\left(x,y\right)+d\left(x,y\right)\geq d\left(x,x\right)$；最后由第一条有$2d\left(x,y\right)\geq0\Rightarrow d\left(x,y\right)\geq0$（当且仅当$x=y$时取等号）。由于这是定义\ref{def:II.3.1}中的规定能够推出的，因此就算它是我们对距离的最直观要求，但却无需写进定义\ref{def:II.3.1}中。
+
+\begin{example}\label{exp:II.3.1}
+    数域$\mathbb{F}$上的赋范向量空间$\mathcal{V}$，连同$d\left(\mathbf{a},\mathbf{b}\right)\equiv\left\|\mathbf{a}-\mathbf{b}\right\|$，构成一个度量空间$\left(\mathcal{V},d\right)$。
+\end{example}
+
+由一个度量空间到另一个度量空间的映射当中，有一类特殊的映射叫做等距变换。定义如下。
+
+\begin{definition}[等距变换]\label{def:II.3.2}
+    设$\left(A,d_A\right),\left(B,d_B\right)$是两个度量空间，若映射$i:A\rightarrow B$满足$d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right),\forall a,b\in A$，则称$i$是$\left(A,d_A\right),\left(B,d_B\right)$之间的一个\emph{等距变换（isometry）}。
+\end{definition}
+
+等距变换都是单射，因为当$a=b,d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right)=0\Rightarrow i\left(a\right)=i\left(b\right)$。
+
+\begin{example}\label{exp:II.3.2}
+    等距变换的一些例子：
+    \begin{enumerate}
+        \item 给定两个度量空间：$\left(\mathbb{R}^+,d_1\right),d_1\left(x,y\right)=\left|\mathrm{log}x-\mathrm{log}y\right|,\quad\forall x,y\in\mathbb{R}^+$，和$\left(\mathbb{R},d_2\right),d_2\left(x,y\right)=\left|x-y\right|\forall x,y\in\mathbb{R}$，则映射$\mathrm{log}:\mathbb{R}^+\rightarrow\mathbb{R}$是这两个度量空间的一个等距变换。
+        \item $\mathcal{V}$是数域$\mathbb{F}$上的赋范向量空间，度量空间$\left(\mathcal{V},\left\|\cdot\right\|\right)$到$\left(\mathcal{V},\left\|\cdot\right\|_r\right)$的映射$i:\mathcal{V}\rightarrow\mathcal{V},i\left(\mathbf{a}\right)=r^{-1}\mathbf{a},\quad\forall\mathbf{a}\in\mathcal{V}$是一个等距变换，其中$\left\|\cdot\right\|_r=r\left\|\cdot\right\|,r\in\mathbb{F}$。
+    \end{enumerate}
+\end{example}
+
+除了例\ref{exp:II.3.2}之外，在欧几里得空间中，对几何对象的平移、旋转、镜象这几种操作，都属于等距变换，因为在这些操作前后，任意两点间的距离是不变的。这几种操作都有个特点：重复一种操作多次后的结果，仍然属于这一种操作。比如平移两次之后的结果还是相当于一个平移；旋转两次之后的结果还是相当于一个旋转。在数学上，我们用“群”的概念来更加精确地描述这类情况。
+
+\begin{definition}[群]\label{def:II.3.3}
+    设$G$是一个非空集合，若为$G$的元素规定一个二元运算（binary operation），记为$x\circ y,\quad x,y\in G$\footnote{跟复合映射的符号一样，可算是一种推广意义的使用，因为映射的复合就是一种二元运算。}，且该运算具有以下性质：
+    \begin{enumerate}
+        \item 封闭性：$x\circ y\in G,\quad\forall x,y\in G$
+        \item 结合律：$\left(x\circ y\right)\circ z=x\circ\left(y\circ z\right),\quad\forall x,y,z\in G$
+        \item 单位元：$\exists e\in G,\quad e\circ x=x\circ c=x,\quad\forall x\in G$
+        \item 逆元：$\forall x\in G,\exists x^{-1}\in G,xx^{-1}=x^{-1}x=e$
+    \end{enumerate}
+\end{definition}
+
+类似定义\ref{def:II.3.3}的定义方式，我们在向量空间的定义\ref{def:II.2.1}中已经领教过了。易证，单位元和逆元总是唯一的，这跟向量空间的情况类似。一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。
+
+\begin{example}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维向量空间，$\mathcal{V}$上的所有\emph{可逆}算符的集合，基于算符的复合操作，形成一个群。我们称这个群为数域$\mathbb{F}$上的$n$维\emph{一般线性群（generalized linear group）}，记作$GL\left(n,\mathbb{F}\right)$；在所讨论的数域维持不变时，简记为$GL\left(n\right)$。
+\end{example}
+
+如果一个等距变换的值域与定义域是同一个度量空间，我们可以称其为这个度量空间上的等距变换\footnote{按定义，这样的等距变换都是满射。另外易验等距变换都是单射，故一个度量空间上的等距变换都是双射。}。一个度量空间上的所有等距变换的集合，加上映射的复合运算，形成一个群，正式定义如下——
+
+\begin{definition}[等距群]\label{def:II.3.4}
+    由一个度量空间$\left(\mathcal{E},d\right)$到其自身的所有等距变换的集合：
+    \[\mathcal{I}=\left\{i:\mathcal{E}\rightarrow\mathcal{E}|i\text{是等距变换}\right\}\]
+    加上映射的复合操作$i_1\circ i_2,\quad i_1,i_2\in\mathcal{I}$，形成一个交换群，称为\emph{等距群（isometry group）}。
+\end{definition}
+
+在能作上述定义之前，当然需要先验证为什么所称的集合是一个交换群。因此我们要按照定义\ref{def:II.3.3}检查以下条件是否满足：
+\begin{enumerate}
+    \item 封闭性：$i_1\circ i_2\in\mathcal{I},\quad\forall i_1,i_2\in\mathcal{I}$
+    \item 结合律：$i_1\circ \left(i_2\circ i_3\right)=\left(i_1\circ i_2\right)\circ i_3,\quad\forall i_1,i_2,i_3\in\mathcal{I}$
+    \item 单位元：恒等映射$\mathrm{id}_\mathcal{E}\in\mathcal{I}$满足$\mathrm{id}_\mathcal{E}\circ i=i\forall i\in\mathcal{I}$。
+    \item 逆元：对任一$i\in\mathcal{I}$存在唯一$i^{-1}\in\mathcal{I}$满足$i^{-1}\circ i=\mathrm{id}_\mathcal{E}$
+    \item 交换律：$i_1\circ i_2=i_2\circ i_1,\quad\forall i_1,i_2\in\mathcal{I}$
+
+          易验，以上条件都满足\footnote{其中“逆元”的唯一存在性，基于等距变换的双射性。严格的说这来自等距变换表示定理的推论。}，所以$\mathcal{I}$是一个交换群。现在我们为$\mathcal{I}$添加规定，把它补成一个实数域$\mathbb{R}$上的向量空间——
+
+    \item 标量乘法：$\alpha i\in\mathcal{V}$；$\alpha\left(\beta i\right)=\left(\alpha\beta\right)i$；$1i=i,\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V}$
+    \item 分配律：$\alpha\left(i_1\circ i_2\right)=\left(\alpha i_1\right)\circ\left(\alpha i_2\right)$；$\left(\alpha+\beta\right)i=\left(\alpha i\right)\circ\left(\beta i\right),\forall\alpha,\beta\in\mathbb{R},i,i_1,i_2\in\mathcal{V}$
+
+          则$\mathcal{V}$是一个向量空间。如果我们再定义一个欧几里得范：
+
+    \item $\left\|i\right\|^2=\left(i|i\right)= d^2\left(x,y\right),\forall x,y\in\mathcal{E}$其中$i$满足$i\left(x\right)=y$。
+
+          则$\mathcal{V}$就是一个赋范内积空间，且该范为欧几里得范。
+\end{enumerate}
+
+
+注意，条件1~5是可验证在所有等距变换上满足的。但条件6~8则是我们新增的要求，没有验证是否所有等距变换都满足，所以只能说$\mathcal{V}$是$\mathcal{I}$的子集。已证明，任一度量空间上的等距群最多只有一个满足上述要求向量空间子群\cite{Noll1974}。每个度量空间，都可经过上述的流程为其装配一个向量空间。我们把一个度量空间以及通过其上的等距群得到的向量空间一同称为一个欧几里得空间，定义如下——
+
+\begin{definition}[欧几里得空间]\label{def:II.3.5}
+    若度量$d:\mathcal{E}\times\mathcal{E}\rightarrow\left[0,+\infty\right)\subset\mathbb{R}$上的等距群$\mathcal{I}$有满足上述条件1到8的子群$\mathcal{V}$，则称$d$是一个\emph{欧几里得度量（Euclidean metric）}，$d$赋予集合$\mathcal{E}$以欧几里得空间的结构，或称$\mathcal{E}$是一个\emph{欧几里得空间（Euclidean space）}，内积空间$\mathcal{V}$称$\mathcal{E}$的\emph{平移空间（translation vector space）}，$\mathcal{V}$中的向量称为$\mathcal{E}$的\emph{平移向量（ translation vector）}。
+\end{definition}
+
+我们从这一定义可以看出，欧几里得空间的概念包括一个度量空间，以及通过其上的等距群得到的向量空间，完整地应该表示为有序三元组$\left(\mathcal{E},d,\mathcal{V}\right)$，但我们将简单用一个符号（如$\mathcal{E}$）表示一个欧几里得空间。显然，$n$维欧几里得空间的平移空间是数域$\mathbb{R}$上的$n$维内积空间。
+
+从此，我们把一个欧几里得空间$\mathcal{E}$的元素$X,Y,\cdots\in\mathcal{E}$称为\emph{点（point）}，并用向量的记法表示$\mathcal{E}$的平移空间$\mathcal{V}$中的等距变换$\mathbf{u},\mathbf{v},\cdots\in\mathcal{V}$，面在它们都是$\mathcal{E}$上的平移向量。一个平移向量$\mathbf{u}$作用于$\mathcal{E}$中一个点$X$，可得到另一个点$Y$，表示为$Y=X+\mathbf{u},\mathbf{u}=Y-X,X-Y=-\mathbf{u}$，故两个$\mathcal{E}$中的点“相减”的结果是$\mathcal{V}$中的一个平移向量。且由于平移向量本质上是一个等距变换，故$d\left(X,Y\right)=d\left(Y,X\right)=\left\|\mathbf{u}\right\|=\left\|Y-X\right\|=\left\|X-Y\right\|$。注意，我们没有定义两个点“相加”（“$X+Y$”）的意义。
+
+下面我们基于以上构建的概念，依次在欧几里得空间中引入角、直线、位置向量和坐标系。
+
+为了引入角，我们考虑欧几里得空间$\mathcal{E}$中的给定三个不同的点$X,O,Y\in\mathcal{E}$，由于$\mathcal{E}$的平移空间$\mathcal{V}$是一个赋范内积空间，故有极化恒等式，
+\begin{align*}
+    \left\|X-O\right\|^2+\left\|Y-O\right\|^2 & =\left\|\left(X-O\right)-\left(Y-O\right)\right\|^2+2\left(X-O|Y-O\right) \\
+                                              & =\left\|X-Y\right\|^2+2\left(X-O|Y-O\right)
+\end{align*}
+再应用柯西--施瓦茨不等式，有
+\[\left\|X-O\right\|^2\left\|Y-O\right\|^2\geq\left|\left(X-O|Y-O\right)\right|^2\Leftrightarrow-1\leq\frac{\left(X-O|Y-O\right)}{\left\|X-O\right\|\left\|Y-O\right\|}\leq1\]
+我们就做好了引入角的准备。
+
+\begin{definition}[角]\label{def:II.3.6}
+    设$\mathcal{E}$是欧几里得空间，$\mathcal{E}$中的角是一个映射$\angle:\mathcal{E}^3\rightarrow\mathbb{R}$满足
+    \[\angle XOY\equiv\cos^{-1}\frac{\left(X-O|Y-O\right)}{\left\|X-O\right\|\left\|Y-O\right\|},\quad\forall X,O,Y\in\mathcal{E},X\neq O\neq Y\]
+    称\emph{点XOY所夹的角}，或简称\emph{角XOY}。其中余弦函数$\cos:\left[0,\pi\right]\rightarrow\mathbb{R}$定义为
+    \[\cos\left(x\right)=\frac{1}{2}\left(e^{ix}+e^{-ix}\right),\quad\forall x\in\left[0,\pi\right)\]
+\end{definition}
+
+注意到，上述定义中的余弦函数是一个双射，故其逆映射$\cos^{-1}$也是双射，所以上述定义的角的取值范围是$\mathrm{ran}\angle=\left[0,\pi\right]$。同时$\angle XOY$的顺序是重要的，$\angle YOX=-\angle XOY$。
+
+%在欧几里得空间中，把3个不同的点平移相同的向量，它们的夹角不变。这一结论在上述的定义下是可验证的。设$\mathcal{V}$是欧几里得空间$\mathcal{E}的平移空间，给定任意$\mathbf{a}\in\mathcal{V}$，以及任意三个两两不同的点$X,O,Y\in\mathcal{E}$，有$\angle XOY=\angle\left(X+\mathbf{a}\right)\left(O+\mathbf{a}\right)\left(Y+\mathbF{a}\right)$。虽然这个结论直观上很容易接受，但是要严格用定义\label{def:II.3.6}证明还是比较繁琐的。
+
+设$i:\mathcal{E}\rightarrow\mathcal{E}$是一个等距变换，可验证$\angle i\left(X\right)i\left(O\right)i\left(Y\right)=\angle XOY,\forall X,O,Y\in\mathcal{E},X\neq O\neq Y$，即等距变换前后角不变。注意到，等距变换属于$\mathcal{E}$的等距群，
+
+\begin{definition}[过两点的直线]\label{def:II.3.7}
+    设$\left(\mathcal{E},d\right)$是欧几里得空间，给定两点$X,Y\in\mathcal{E},X\neq Y$，则$\mathcal{E}$的子集$L_{XY}=\left\{C|C=X+\alpha\left(Y-X\right),\alpha\in\mathbb{R}\right\}$是\emph{过}$X,Y$\emph{两点的一条直线}。如果$\angle XOY=\frac{\pi}{2}$，则直线$L_{OX}$与$L_{OY}$\emph{垂直}，记为$L_{OX}\perp L_{OY}$。
+\end{definition}
+
+由角的定义，如果$L_{OX}\perp L_{OY}$，则$\left(X-O|Y-O\right)=0$。再由内积空间的格拉姆--施密特正交化过程可知，过$\mathcal{E}$中任一点$O$的两两垂直的直线最大条数都相等且等于$\mathrm{dim}\mathcal{V}$，故欧几里得空间的维数就可被自然地定义为其平移空间的维数。
+
+$L_{XY}$又可记为$L_{XY}=\left\{C|C-X=\alpha\left(Y-X\right),\alpha\in\mathbb{R}\right\}$，它对应着平移向量空间$\mathcal{V}$的子集$L^{\mathcal{V}}_{XY}=\left\{\mathbf{u}|\mathbf{u}=\alpha\left(X-Y\right),\alpha\in\mathbb{R}\right\}$，易知该子集是$\mathcal{V}$的子空间，维数是1\footnote{这里需要实数集的完备性概念。}。
+
+我们将一个选定的原点$O\in\mathcal{E}$和$\mathcal{V}$的一组规范正交基的组合$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$称为欧几里得空间$\mathcal{E}$的一个\emph{直角坐标系（rectangular coordinates）}，又称\emph{笛卡尔坐标系（Cartesian coordinates）}。我们常常默认一个$n$维欧几里得空间必然已经自带一个直角坐标系，称为\emph{基本坐标系（common coordinates）}，从而直接采用$\mathbb{R}^n$来表示任意一点点的坐标。在基本坐标系下，原点坐标为$\left(0,\cdots,0\right)$，第$i$个基向量为$\left(0,\cdots,1,\cdots,0\right)^\intercal$，也就是除第$i$个分量为1外其他分量均为零的有序实数$n$元组。选定了原点$O$后，对任一点$X\in\mathcal{E}$可定义映射$\mathbf{r}_O:\mathcal{E}\rightarrow\mathcal{V},\mathbf{r}\left(X\right)\equiv\mathbf{r}_X=X-O,\forall X\in\mathcal{E}$，我们称这个向量值函数$\mathbf{r}_X$就是选定原点$O$下点$X$的\emph{位置向量（position vector）}。注意，当且仅当选定了原点后，欧几里得空间$\mathcal{E}$中的点才与其平移空间$\mathcal{V}$的向量通过位置向量这个映射一一对应。
+
+总而言之，一个（有限维）欧几里得空间$\left(\mathcal{E},d,O,\mathcal{V},\left\{\mathbf{\hat{e}}_i\right\}\right)$包括：
+\begin{enumerate}
+    \item 一个度量空间$\left(\mathcal{E},d\right)$
+    \item 一个实数域上的$n$维内积空间$\mathcal{V}$。它是该欧几里得空间的平移空间，意味着：
+          \begin{align*}
+              \forall\mathbf{a}\neq\mathbf{0}\in\mathcal{V}\exists!\left(X,Y\right)\in\mathcal{E}\times\mathcal{E},\mathbf{a}=Y-X \\
+              X-X=\mathbf{0}\forall X\in\mathcal{E}
+          \end{align*}
+          且$n$同时定义了该欧几里得空间的维数。
+    \item 选定了原点$O\in\mathcal{E}$
+    \item 选定了一组规范正交基$\left\{\mathbf{\hat{e}}_i\right\}\subset\mathcal{V}$
+          最后两项同时也使欧几里得空间默认带有一个直角坐标系，以及位置向量的概念。
+\end{enumerate}
+
+\subsection{等距变换的表示定理}
+上一节介绍的欧几里得空间及其平移空间，引入更正式，但效果与我们以往学习的“向量代数与几何应用”\cite[\S 6]{华工高数2009上}\cite[\S 3]{周胜林2012线性代数}没什么差别。但我们更加清晰地看到，原本我们习以为常的欧几里得空间，事实上蕴含着一个线性结构；我们使用具有一定运算规定的代数结构（实数域上$n$维内积空间）的元素，去操作几何空间上的点。基于《几何原本》的公设得到的大量欧氏几何定理仍然成立，因为这些公设的要求蕴含在了内积和度量的定义和性质中了\cite{Audin2002}。更重要的是，明确了这一线性结构后，我们能够用统一的数学语言推导出更多几何结论\cite{Berger1987}。
+
+下面我们介绍等距变换的一个重要定理：等距变换的表示定理。这个定理大致说：任一等距变换都是一个平移变换加一个旋转变换。这个定理也是后面介绍物理定律的标架变换不变性时的理论基础。
+
+\begin{theorem}[等距变换的表示定理]\label{thm:II.3.1}
+    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，选定任一点$X_0\in\mathcal{E}$，则$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{I}$都可表示为
+    \[
+        i\left(X\right)=i\left(X_0\right)+\mathbf{Q}_i\left(X-X_0\right)
+    \]
+    其中$\mathbf{Q}_i$是一个正交算符，关于$i$唯一存在。
+\end{theorem}
+\begin{proof}
+    见附录。
+\end{proof}
+
+\begin{corollary}
+    欧几里得空间上的等距变换都是双射。
+\end{corollary}
+\begin{proof}
+    定理\ref{thm:II.3.1}已经暗示欧几里得空间上的等距变换都是单射。故仅需再证明对任一$i:
+        \mathcal{E}\rightarrow\mathcal{E}$和$Y\in\mathcal{E}$总存在一个$X\in\mathcal{E}$满足$i\left(X\right)=Y$。我们可直接找出这样的$X$：
+    \[
+        X=X_0+\mathbf{Q}^{-1}\left(Y-i\left(X_0\right)\right)
+    \]
+    验证这就是满足条件的$X$：
+    \begin{align*}
+        i\left(X\right) & =i\left(X_0\right)+\mathbf{Q}\left(\mathbf{X}_0+\mathbf{Q}^{-1}\left(Y-i\left(X_0\right)\right)-X_0\right) \\
+                        & =i\left(X_0\right)+Y-i\left(X_0\right)                                                                     \\
+                        & =Y
+    \end{align*}
+\end{proof}
+
+定理\ref{thm:II.3.1}的通俗解释：给定任一等距变换$i$，仅需知道它对某一参考点$X_0$的像是哪个点，以及该变换的特征正交算符$\mathbf{Q}_i$，就可以知道它对任意点$X$的像。因此这一定理给出了等距变换的通用表达式。
+
+这里的等距变换$i$不一定是欧几里得空间$\mathcal{E}$的平移向量空间$\mathcal{V}$中的元素（前面提到过$\mathcal{V}$至多是$\mathcal{I}$的子群）。例如旋转和镜向反转都是等距变换，却不满足向量空间对向量的要求。
+
+一般$i\left(X_0\right)$是容易找到的，但是$\mathbf{Q}_i$不是直接易得的。我们可以举例认识$\mathbf{Q}_i$的一般意义。
+
+\begin{example}
+    考虑欧几里得空间$\left(\mathcal{E},d\right)$上的以下等距变换，其中$\mathbf{Q}$是一个正交算符，$X_0,C$是$\mathcal{E}$中固定的点：
+    \begin{align*}
+        i_1\left(X\right) & =X+\left(C-X_0\right)                \\
+        i_2\left(X\right) & =X_0+\mathbf{Q}\left(X-X_0\right)    \\
+        i_3\left(X\right) & =X+\mathbf{Q}^{-1}\left(C-X_0\right)
+    \end{align*}
+
+    $i_1$把任一点向固定的方向平移固定距离（$i_1\left(X\right)=X+\mathbf{u},\mathbf{u}\equiv C-X_0$）。
+
+    $i_1\circ i_2=i_2\circ i_3$（自行验证作为练习。）
+
+    当$\mathbf{Q}=\mathbf{I}$时，$i_2$是恒等映射。当$\mathbf{Q}\neq\mathbf{I}$时，由正交算符性质$\mathrm{det}\mathbf{Q}=\pm 1$。当$\mathrm{det}\mathbf{Q}=1$时，$i_2$是一种旋转操作；当$\mathrm{det}\mathbf{Q}=-1$时，由$\mathbf{Q}=\left(-\mathbf{I}\right)\left(-\mathbf{Q}\right)$和$\mathrm{det}\left(-\mathbf{Q}\right)=1$可知$i_2$是先进行了一个旋转（$-\mathbf{Q}$）再进行了反转（$-\mathbf{I}$）的操作。
+\end{example}
+
+在连续介质力学中，我们只考虑$\mathrm{det}\mathbf{Q}=1$的情况，即等距变换中的正交算符仅表旋转。在此限定下，定理\ref{thm:II.3.1}说的就是，欧几里得空间的任一等距变换（镜像除外）都是平移加旋转。
+
+%================================================================
+
+\subsection{$\mathbb{R}^3$上的线性算符的几何意义}
+我们在上一节看到，$n$欧几里得空间相当于一个实数域上的$n$内积空间；该空间上的几何性质就是向量内积的性质。\S\ref{sec:II.2.4.2}中介绍的内积空间上的线性算符（包括厄米算符、反厄米算符和幺正算符），也应具有几何意义，但是在复数域的一般情况下还不够明显。连续介质力学讨论的空间是3维实内积空间$\mathbb{R}^3$，这些算符的性质和几何意义将更直观。在$\mathbb{R}^3$上，厄米算符叫对称算符，反厄米算符叫反对称算符，幺正算符叫正交算符。
+
+以下讨论，未另外说明时，均在3维欧几里得空间$\mathcal{E}$中，其平移空间是$\mathcal{V}$。所有线性算符都是$\mathcal{V}$上的。基本坐标系就是$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$。
+
+\subsubsection{对称算符与向量的拉伸}
+由定理\ref{thm:II.2.32}，复数域上的厄米算符特征值全为实数。也就是说，厄米算符的特征多项式全为实根。因此，定理\ref{thm:II.2.32}中关于复数域上厄米算符的性质，也适用于在实数域上的对称算符，包括：特征值全都是实数\cite[\S 5.3 定理3.4]{周胜林2012线性代数}；对应于不同特征值的特征向量必正交\cite[\S 5.3 定理3.5]{周胜林2012线性代数}；必可对角化\cite[\S 5.3 定理3.6]{周胜林2012线性代数}；存在一组规范正交基是其特征向量。
+
+一个对称算符的3个特征向量两两正交。设对称算符$\mathbf{U}$的3个特征值为$\lambda_1,\lambda_2,\lambda_3$，$\mathbf{U}$的3个特征向量为$\mathbf{\hat{c}}_1,\mathbf{\hat{c}}_2,\mathbf{\hat{c}}_3$，在规范正交基$C=\left\{\mathbf{\hat{c}}_i\right\}$下，$\left(\mathbf{U}\right)_C$是一个对称矩阵
+\[
+    \left(\mathbf{U}\right)_C=\left(\begin{array}{ccc}\lambda_1&0&0\\0&\lambda_2&0\\0&0&\lambda_3\end{array}\right)
+\]
+在实际问题中我们未必方便选择$\mathbf{U}$的特征向量作为基。在其他规范正交基$B=\left\{\mathbf{\hat{e}}_i\right\}$下，$\left(\mathbf{U}\right)_B$是一个对称矩阵。
+
+算符$\mathbf{U}$的特征向量$\left\{\mathbf{c}_i\right\}$在$\mathcal{E}$中所表示的方向，称$\mathbf{U}$的\emph{主方向（principal direction）}。一组向量\footnote{在$\mathcal{E}$中，任何几何形状都是点的集合，而点又与位置向量一一对应，故任何几何形状都是一个向量组。}在对称算符的作用下的几何效果是在主方向上的拉伸。具体地，在$\mathbf{c}_i$方向的拉伸比就是是$\lambda_i$。
+
+\subsubsection{斜称算符与向量的“叉乘”}
+我们先比定理\ref{thm:II.2.32}更详细地考察斜称算符的性质。设$\mathcal{W}$是数域$\mathbb{F}$上的$n$维内积空间，$\mathbf{W}$是$\mathcal{W}$上的一个斜称算符，$\left\{\lambda_i\right\}$是$\mathbf{W}$的特征值。由定理\ref{thm:II.2.32}，$\left\{\lambda_i\right\}$是纯虚数或零。在$\mathbb{R}^n$上，当$n$是奇数时，
+\begin{align*}
+                    & \mathrm{det}\mathbf{W}^\intercal=\mathrm{det}\mathbf{W}=\mathrm{det}\left(-\mathbf{W}\right)=\left(-1\right)^n\mathrm{det}\mathbf{W}=-\mathrm{det}\mathbf{W} \\
+    \Leftrightarrow & \mathrm{det}\mathbf{W}=\prod_{i=1}^n\lambda_i=0
+\end{align*}
+故\emph{当$n$为奇数时，斜称算符必有一特征值为零}。而且，上列结果也说明，当$n$为奇数时，斜称算符不可逆（不满秩）。
+
+现考虑3维的情况，改设$\mathbf{W}$是$\mathcal{V}$上的一个斜称算符，则对任意$\mathbf{a}\in\mathcal{V}$，
+\[\left(\mathbf{Wa}|\mathbf{a}\right)=-\left(\mathbf{a}|\mathbf{a}\right)=\left(\mathbf{a}|\mathbf{Wa}\right)=-\left(\mathbf{a}|\mathbf{a}\right)\Leftrightarrow\left(\mathbf{Wa}|\mathbf{a}\right)=0\]
+故被$\mathbf{W}$作用过的向量，都被投影到了与原向量垂直的平面上。至于投影了之后，有没有伸缩或旋转，要看$\mathbf{W}$的具体取值。这十分类似于以往所学过的一个向量被另一个向量“叉乘”的效果\footnote{3维实内积空间上的“叉乘”在以前的线性代数课本中又称作“向量的外积”\cite[\S3.2]{周胜林2012线性代数}。请复习其计算方法。}。事实上，我们可以从斜称算符定义“叉乘”\footnote{在本讲义中，将保持使用“叉乘”这种不正式的表述。因为正式起来，3维实内积空间上的“叉乘”是抽象代数中的不同东西在3维实内积空间上的巧合。在连续介质力学的数学语言中出现的“叉乘”，有时真的就是本节所述的几何意义，有时则是外代数/外积/楔积（如向量场的旋度）。本讲义暂时不介绍基于外代数和微分型知识，故“叉乘”运算就都由本节引入了。}。我们可通过如下定理联系二者：
+
+\begin{theorem}
+    设$\mathcal{V}$是实数域$\mathbb{R}$上的3维内积空间，$\mathbf{W}$是$\mathcal{V}$上的一个斜称算符，$\mathbf{\hat{e}}_1$是$\mathbf{W}$的关于特征值$\lambda=0$的一个特征单位向量。$\left\{\mathbf{\hat{e}}_i\right\}$是由$\mathbf{\hat{e}}_1$生成的规范正交基。对任意$\mathbf{a}\in\mathcal{V}$，可定义“叉乘”运算
+    \[\mathbf{Wa}=\omega\mathbf{\hat{e}}_1\times\mathbf{a}\]
+    其中$\omega=\left(\mathbf{W\hat{e}}_2|\mathbf{\hat{e}}_3\right)$。
+\end{theorem}
+\begin{proof}
+    若记向量$\mathbf{W\hat{e}}_2=\sum_{i=1}^3\beta_i\mathbf{\hat{e}}_i$，即$\beta_i=\left(\mathbf{W\hat{e}}_2|\mathbf{\hat{e}}_i\right),\quad i=1,2,3$，则有
+    \begin{align*}
+        \beta_1 & =\left(\mathbf{W\hat{e}}_2|\mathbf{\hat{e}}_1\right)=-\left(\mathbf{\hat{e}}_2|\mathbf{W\hat{e}}_1\right)=\left(\mathbf{\hat{e}}_2|\mathbf{0}\right)=0     \\
+        \beta_2 & =\left(\mathbf{W\hat{e}}_2|\mathbf{\hat{e}}_2\right)=-\left(\mathbf{e}_2|\mathbf{W\hat{e}}_2\right)\Leftrightarrow\beta_2=-\beta_2\Leftrightarrow\beta_2=0 \\
+        \beta_3 & =\left(\mathbf{W\hat{e}}_2|\mathbf{\hat{e}}_3\right)=\omega
+    \end{align*}
+    因此向量$\mathbf{W\hat{e}}_2=\omega\mathbf{\hat{e}}_3$。类似的方法可得到$\mathbf{W\hat{e}}_3=-\omega\mathbf{\hat{e}}_2$。故对任意$\mathbf{a}\in\mathcal{V}$，
+    \[
+        \mathbf{Wa}=\alpha_1\mathbf{W\hat{e}}_1+\alpha_2\mathbf{W\hat{e}}_2+\alpha\mathbf{W\hat{e}}_3=\alpha_2\omega\mathbf{\hat{e}}_3-\alpha_3\omega\mathbf{\hat{e}}_2
+    \]
+    这恰为$\omega\mathbf{\hat{e}}_1\times\mathbf{a}$的结果
+\end{proof}
+要使用这个定理，就需要先已知$\mathbf{W}$，并找到$\mathbf{W}$在关于其零特征值的一个单位特征向量。如果我们先给定两个向量的“叉乘”$\mathbf{a}\times\mathbf{b}$，那么什么样的斜称算符$\mathbf{W}$满足$\mathbf{Wb}=\mathbf{a}\times\mathbf{b}$呢？答案作为\ref{thm:}的推论如下。
+
+\begin{corollary}
+    设$\left\{\mathbf{\hat{e}}_i\right\}$是3维欧几里得空间$\mathcal{E}$的基本坐标系下已给定规范正交基。给定向量$\mathbf{a}\in\mathcal{V},\mathbf{a}=\sum_{i=1}^3\alpha_i\mathbf{\hat{e}}_i$，则坐标矩阵为
+    \[\left(\begin{array}{ccc}0&\alpha_3&\alpha_2\\-\alpha_3&0&\alpha_1\\-\alpha_2&-\alpha_1&0\end{array}\right)\]
+    的斜称算符$\mathbf{W}$满足$\mathbf{Wb}=\mathbf{a}\times\mathbf{b},\forall\mathbf{b}\in\mathcal{V}$。
+\end{corollary}
+该推论可利用坐标变换公式证明，可留作练习。另外，“叉乘”的性质$\mathbf{a}\times\mathbf{b}=-\mathbf{b}\times\mathbf{a}$也可通过在给定规范正交基下的坐标矩阵运算得到验证（仅限3维）。
+
+一个斜称算符$\mathbf{W}$所对应的叉乘运算的第一个向量$\mathbf{a}$称为$\mathbf{W}$的\emph{轴向量（axial vetor）}。“叉乘”得到的向量，在坐标变换中的有特殊的性质。对任意$\mathbf{b}\in\mathcal{V}$，其在基本坐标系下的坐标是$\left(\beta_1,\beta_2,\beta_3\right)$。当我们反转各坐标轴的方向，即在$\left\{-\mathbf{\hat{e}}_i\right\}$下，$\mathbf{b}$的坐标将变号，变成$\left(-\beta_1,-\beta_2,-\beta_3\right)$，但是易验向量$\mathbf{a}\times\mathbf{b}$在坐标轴反转前后坐标不变号（请读者用坐标变换公式验证这两个结论）。同样的性质也导致“混合积”$\mathbf{a}\times\mathbf{b}\cdot\mathbf{c}$得到的“标量”，在坐标轴反转前后变号（而“真正的”标量的值不依赖坐标变换）。这是由于向量$\mathbf{a}\times\mathbf{b}$不是一个普通的、孤立的向量；它是向量$\mathbf{b}$在以$\mathbf{a}$为轴向量的斜称算符$\mathbf{W}$的操作下的结果。由“叉乘”所得到的向量看起来特殊的坐标变换的行为，实际上是这个投影操作带来的。有的资料称这种“叉乘得到的向量”为\emph{赝向量（pseudo-vector）}。
+
+\subsubsection{正交算符与向量的翻转}
+我们曾在\S \ref{sec:II.2.4}介绍过，复数域上的幺正算符作用于向量时不改变向量的“长度”，因此就只剩改变其“方向”的效果。在3维欧几里得空间中，这一点在正交算符上将表现得更直观；正交算符在3维实内积空间中表示旋转或镜象翻转操作。以下我们通过具体地分析展示这一结论。
+
+通过与定理\ref{II.2.34}类似的证明方法可知，在3维实内积空间$\mathcal{V}$，正交算符至少有一个特征值是$\pm 1$。因此，总存在非零单位向量$\mathbf{\hat{c}}_1\in\mathcal{V}$满足$\mathbf{Q\hat{c}}_1=\pm\mathbf{\hat{c}}_1$。设$\mathbf{\hat{c}}_2,\mathbf{\hat{c}}_3\in\mathcal{V}$与$\mathbf{\hat{c}}_1$形成$\mathcal{V}$的一组规范正交基$\left\{\mathbf{\hat{c}}_1,\mathbf{\hat{c}}_2,\mathbf{\hat{c}}_3\right\}$。我们将考察正交算符$\mathbf{Q}$在这组规范正交基下的坐标$Q_{ij}$。我们利用$Q_{ij}=\left(\mathbf{Q\hat{c}}_i|\mathbf{\hat{c}}_j\right)$以及正交算符的性质可得以下结论
+\[Q_{11}=\pm 1,\quad Q_{12}=Q_{13}=Q_{21}=Q_{31}=0\]
+同时还可知向量$\mathbf{Q\hat{c}}_2=Q_{22}\mathbf{\hat{c}}_2+Q_{23}\mathbf{\hat{c}}_3$，$\mathbf{Q\hat{c}}_3=Q_{32}\mathbf{\hat{c}}2+Q_{33}\mathbf{\hat{c}}_3$。故有
+\begin{align*}
+    \left\|\mathbf{Q\hat{c}}_2\right\|=\left\|\mathbf{\hat{c}}_2\right\|=1 & \Leftrightarrow Q_{22}^2+Q_{23}^2=1        \\
+    \left\|\mathbf{Q\hat{c}}_3\right\|=\left\|\mathbf{\hat{c}}_3\right\|=1 & \Leftrightarrow Q_{32}^2+Q_{33}^2=1        \\
+    \left(\mathbf{\hat{c}}_2|\mathbf{\hat{c}}_3\right)=0                   & \Leftrightarrow Q_{22}Q_{23}+Q_{32}Q{33}=0
+\end{align*}
+不妨设$Q_{22}=\cos\theta,Q_{23}=\sin\theta,Q_{32}=\cos\phi,Q_{33}=\sin\phi$，其中$\theta,\phi\in\left[0,\pi\right)$。则上列结论的第1、2条自动满足，而第3条结论则规定了$\phi=\pm\pi/2$。
+
+由上述分析，我们可以得出结论，3维实内积空间上的任一正交算符$\mathbf{Q}$，在以其某一单位特征向量为第1个基向量$\mathbf{\hat{c}}_1$的给定规范正交基$\left\{\mathbf{\hat{c}}_1,\mathbf{\hat{c}}_2,\mathbf{\hat{c}}_3\right\}$下，其坐标矩阵可用一个角度$\theta\in\left[0,\pi\right)$表示为以下种形式：
+\[
+    \left(\begin{array}{ccc}\pm 1&0&0\\0&\cos\theta&\sin\theta\\0&-\sin\theta&\cos\theta\end{array}\right)\quad\text{或}\quad\left(\begin{array}{ccc}\pm 1&0&0\\0&\cos\theta&\sin\theta\\0&\sin\theta&-\cos\theta\end{array}\right)
+\]
+我们可以看到，若把$\mathbf{\hat{c}}_3$换成$-\mathbf{\hat{c}}$，则上述两种情况互换。
+
+在欧几里得几何的讨论中规定：只采用左边的形式。这相当于规定了，当我们以$\mathbf{Q}$的某一单位特征向量为第一个基向量$\mathbf{\hat{c}}_1$，再任意找另一个与它正交的单位向量$\mathbf{\hat{c}}_2$作为第2个基向量之后，面临第3个与$\mathbf{\hat{c}}_1$和$\mathbf{\hat{c}}$都正交的单位向量的两个选择（它们反号）时，我们总是只要某一个，即那个，使$\mathbf{Q}$的坐标是上述左边而不是右边的那个。
+
+结合角度的正方向是从“第一条坐标轴打向第二条坐标轴”的规定，我们实际上规定了在3维欧几里得几何空间中总是以“右手规则”绘制坐标轴。在这一规定下，$\mathbf{Q}$作用于任一组向量的几何效果是绕$\mathbf{\hat{c}}_1$，在$\mathbf{\hat{c}}_2$和$\mathbf{\hat{c}}_3$所夹的平面上，发生了角度为$\theta$的旋转。若$Q_{11}=-1$，则还需关于$\mathbf{\hat{c}}_2$和$\mathbf{\hat{c}}_3$所夹的平面镜向反转。这些几何效果是在得出了算符$\mathbf{Q}$的坐标矩阵之后可以确定的。
+
+值得注意的是，通过对3维实内积空间上的正交算符$\mathbf{Q}$的分析所定义的“右手规则”规定，同时也使两个向量的叉乘得到的结果在3维欧几里得空间中也符合“右手规则”。
+\end{document}
