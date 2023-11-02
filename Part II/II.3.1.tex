@@ -1,15 +1,14 @@
 \documentclass[main.tex]{subfiles}
-% 欧几里得空间
+% 欧几里得空间的构建
 \begin{document}
-\subsection{度量空间和等距变换}
-我们把一个非空集合的元素称为“点”，然后我们为该集合中任意两个点定义“距离”。
+为了建立一个几何空间，我们需要先让一个集合的两个元素间有“距离”的概念。
 
 \begin{definition}[度量空间]\label{def:II.3.1}
     设$\mathcal{E}$是一个非空集合，如果映射$d:\mathcal{E}\times\mathcal{E}\rightarrow\left[0,+\infty\right)\subset\mathbb{R}$满足
     \begin{enumerate}
         \item 不可区分者的同一性：$d\left(x,y\right)=0\Leftrightarrow x=y,\quad\forall x,y\in\mathcal{E}$
         \item 对称性：$d\left(x,y\right)=d\left(y,x\right),\quad\forall x,y\in\mathcal{E}$
-        \item 三角不等式：$d\left(x,z\right)\leq d\left(x,y\right)+d\left(x,y\right),\quad\forall x,y,z\in\mathcal{E}$
+        \item 三角不等式：$d\left(x,z\right)\leq d\left(x,y\right)+d\left(y,z\right),\quad\forall x,y,z\in\mathcal{E}$
     \end{enumerate}
     则称$d$是定义在$\mathcal{E}$上的一个\emph{度量（metric）}，有序对$\left(\mathcal{E},d\right)$是一个\emph{度量空间（metric space）}。
 \end{definition}
@@ -17,26 +16,51 @@
 由定义易证，度量总是非负的，即$d\left(x,y\right)\geq0,\forall x,y\in\mathcal{E}$。由第3条，$d\left(x,y\right)+d\left(y,x\right)\geq d\left(x,x\right)$；再由第2条，$d\left(x,y\right)+d\left(x,y\right)\geq d\left(x,x\right)$；最后由第一条有$2d\left(x,y\right)\geq0\Rightarrow d\left(x,y\right)\geq0$（当且仅当$x=y$时取等号）。由于这是定义\ref{def:II.3.1}中的规定能够推出的，因此就算它是我们对距离的最直观要求，但却无需写进定义\ref{def:II.3.1}中。
 
 \begin{example}\label{exp:II.3.1}
-    数域$\mathbb{F}$上的赋范向量空间$\mathcal{V}$，连同$d\left(\mathbf{a},\mathbf{b}\right)\equiv\left\|\mathbf{a}-\mathbf{b}\right\|$，构成一个度量空间$\left(\mathcal{V},d\right)$。
+    \begin{enumerate}
+        \item 设$M=\left\{0,1\right\}$，定义$d\left(x,y\right),\forall x,y\in M$
+              \[d\left(x,y\right)=\left\{\begin{array}{ll}1,&x\neq y\\0,&x=y\end{array}\right.\]
+              则$\left(M,d\right)$是一个度量空间。把$M$改成实数集$\mathbb{R}$，结合上列定义的$d$，$\left(\mathbb{R},d\right)$也是一个度量空间。
+        \item 数域$\mathbb{F}$上的赋范向量空间$\mathcal{V}$，连同$d\left(\mathbf{a},\mathbf{b}\right)\equiv\left\|\mathbf{a}-\mathbf{b}\right\|$，构成一个度量空间$\left(\mathcal{V},d\right)$。
+        \item 在实区间$\left[0,\infty\right)$上定义的度量$d\left(x,y\right)=\left|x-y\right|$形成一个度量空间。
+    \end{enumerate}
 \end{example}
 
-由一个度量空间到另一个度量空间的映射当中，有一类特殊的映射叫做等距变换。定义如下。
+易验，若$\left(M,d\right)$是一个度量空间，$N$是$M$的一个子集，则$\left(N,d\right)$也是一个度量空间。
+
+度量空间之间的同态映射将保持距离。具体地，
 
 \begin{definition}[等距变换]\label{def:II.3.2}
-    设$\left(A,d_A\right),\left(B,d_B\right)$是两个度量空间，若映射$i:A\rightarrow B$满足$d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right),\forall a,b\in A$，则称$i$是$\left(A,d_A\right),\left(B,d_B\right)$之间的一个\emph{等距变换（isometry）}。
+    设$\left(A,d_A\right),\left(B,d_B\right)$是两个度量空间，若映射$i:A\rightarrow B$满足
+    \[d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right),\forall a,b\in A\]
+    则称$i$是由$\left(A,d_A\right)$到$\left(B,d_B\right)$的一个\emph{保距映射（distance-preserving mapping）}；若$i$是双射，则称$i$是由$\left(A,d_A\right)$到$\left(B,d_B\right)$的一个\emph{等距变换（isometry）}。若两个度量空间之间可以定义出至少一个等距变换，则称这两个度量空间是\emph{等距的（isometric）}。
 \end{definition}
 
-等距变换都是单射，因为当$a=b,d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right)=0\Rightarrow i\left(a\right)=i\left(b\right)$。
+所有保距映射都是单射，因为当$a=b,d_B\left(i\left(a\right),i\left(b\right)\right)=d_A\left(a,b\right)=0\Rightarrow i\left(a\right)=i\left(b\right)$。因此也可以说，等距变换是满射的保距映射。
+
+一个集合$M$上可以定义不止一种度量映射，而形成不同的度量空间。两个度量空间之间也可以存在不止一个保距映射或等距变换。由一个度量空间到另一个度量空间的一个映射是否保距映射或等距变换，依赖这两个度量空间的度量定义。
 
 \begin{example}\label{exp:II.3.2}
     等距变换的一些例子：
     \begin{enumerate}
-        \item 给定两个度量空间：$\left(\mathbb{R}^+,d_1\right),d_1\left(x,y\right)=\left|\mathrm{log}x-\mathrm{log}y\right|,\quad\forall x,y\in\mathbb{R}^+$，和$\left(\mathbb{R},d_2\right),d_2\left(x,y\right)=\left|x-y\right|\forall x,y\in\mathbb{R}$，则映射$\mathrm{log}:\mathbb{R}^+\rightarrow\mathbb{R}$是这两个度量空间的一个等距变换。
+        \item 给定两个度量空间：
+              \[\left(\mathbb{R}^+,d_1\right),d_1\left(x,y\right)=\left|\mathrm{log}x-\mathrm{log}y\right|,\quad\forall x,y\in\mathbb{R}^+\]
+              和
+              \[\left(\mathbb{R},d_2\right),d_2\left(x,y\right)=\left|x-y\right|\forall x,y\in\mathbb{R}\]
+              则映射$\mathrm{log}:\mathbb{R}^+\rightarrow\mathbb{R}$是这两个度量空间的一个等距变换。
         \item $\mathcal{V}$是数域$\mathbb{F}$上的赋范向量空间，度量空间$\left(\mathcal{V},\left\|\cdot\right\|\right)$到$\left(\mathcal{V},\left\|\cdot\right\|_r\right)$的映射$i:\mathcal{V}\rightarrow\mathcal{V},i\left(\mathbf{a}\right)=r^{-1}\mathbf{a},\quad\forall\mathbf{a}\in\mathcal{V}$是一个等距变换，其中$\left\|\cdot\right\|_r=r\left\|\cdot\right\|,r\in\mathbb{F}$。
+        \item 接着例\ref{exp:II.3.1}中的第1个例子，$\mathcal{V}$上的幺正算符是该例的度量空间中的等距变换。
+        \item 接着例\ref{exp:II.3.1}中的第2个例子，定义函数$f\left(x\right)=x+1,\forall x\in\left[0,\infty\right)$，则$f$是该例的度量空间中的一个等距变换。
     \end{enumerate}
 \end{example}
 
-除了例\ref{exp:II.3.2}之外，在欧几里得空间中，对几何对象的平移、旋转、镜象这几种操作，都属于等距变换，因为在这些操作前后，任意两点间的距离是不变的。这几种操作都有个特点：重复一种操作多次后的结果，仍然属于这一种操作。比如平移两次之后的结果还是相当于一个平移；旋转两次之后的结果还是相当于一个旋转。在数学上，我们用“群”的概念来更加精确地描述这类情况。
+为了建立一个几何空间，我们特别关心的是从一个度量空间$\left(M,d\right)$到其自身的等距变换（度量空间的自同态映射）。特别地，若$\left(M,d\right)$上的所有等距变换的集合$\pazocal{I}$满足：
+\begin{description}
+    \item[G1] 封闭性：$\forall i_1,i_2\in\pazocal{I},\quad i_1\circ i_2\in\pazocal{I}$
+    \item[G2] 结合律：$\forall i_1,i_2,i_3\in\pazocal{I},\quad,\left(i_1\circ i_2\right)\circ i_3=i_1\circ\left(i_2\circ i_3\right)$
+    \item[G3] 单位元：集合$M$上的恒等映射$\mathrm{id}_M:M\rightarrow M,\quad\mathrm{id}_M\left(x\right)=x,\forall x\in M$也是等距变换，即$\mathrm{id}_M\in\pazocal{I}$，且满足$\forall i\in\pazocal{I},\quad\mathrm{id}_M\circ i=i\circ\mathrm{id}_M=i$
+    \item[G4] 逆元：$\forall i\in\pazocal{I}\exists i^{-1}\in\pazocal{I}\quad i^{-1}\circ i=\mathrm{id}_M$
+\end{description}
+则称$\pazocal{I}$是度量空间$\left(M,d\right)$的\emph{等距群（isomtric group）}。事实上，条件G1至G4是群的一般定义——
 
 \begin{definition}[群]\label{def:II.3.3}
     设$G$是一个非空集合，若为$G$的元素规定一个二元运算（binary operation），记为$x\circ y,\quad x,y\in G$\footnote{跟复合映射的符号一样，可算是一种推广意义的使用，因为映射的复合就是一种二元运算。}，且该运算具有以下性质：
@@ -48,39 +72,45 @@
     \end{enumerate}
 \end{definition}
 
-类似定义\ref{def:II.3.3}的定义方式，我们在向量空间的定义\ref{def:II.2.1}中已经领教过了。易证，单位元和逆元总是唯一的，这跟向量空间的情况类似。一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。
+因此，一个度量空间上的等距群是由放放假度量空间上的等距变换基于映射的复合运算形成的群。
+
+易证，群的单位元和逆元总是唯一的，这也跟向量空间的情况类似。一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。向量空间的定义中，若去除标量乘的规定，剩下的规定实际上定义了一个交换群。
 
 \begin{example}
     设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维向量空间，$\mathcal{V}$上的所有\emph{可逆}算符的集合，基于算符的复合操作，形成一个群。我们称这个群为数域$\mathbb{F}$上的$n$维\emph{一般线性群（generalized linear group）}，记作$GL\left(n,\mathbb{F}\right)$；在所讨论的数域维持不变时，简记为$GL\left(n\right)$。
 \end{example}
 
-如果一个等距变换的值域与定义域是同一个度量空间，我们可以称其为这个度量空间上的等距变换\footnote{按定义，这样的等距变换都是满射。另外易验等距变换都是单射，故一个度量空间上的等距变换都是双射。}。一个度量空间上的所有等距变换的集合，加上映射的复合运算，形成一个群，正式定义如下——
+为了使空间两点间不仅有距离的概念，还能有“有向线段”的概念（即以往我们所习惯的，用“向量”来描述几何对象的数学语言），我们需要从一个度量空间的等距群中定义出一个向量空间。因此首先要使一个度量空间上的等距群或等距子群成为一个交换群。
 
-\begin{definition}[等距群]\label{def:II.3.4}
-    由一个度量空间$\left(\mathcal{E},d\right)$到其自身的所有等距变换的集合：
-    \[\mathcal{I}=\left\{i:\mathcal{E}\rightarrow\mathcal{E}|i\text{是等距变换}\right\}\]
-    加上映射的复合操作$i_1\circ i_2,\quad i_1,i_2\in\mathcal{I}$，形成一个交换群，称为\emph{等距群（isometry group）}。
+设$\left(\mathcal{E},d\right)$是一个度量空间，$\pazocal{I}$是$\left(\mathcal{E},d\right)$上的等距群，若$\pazocal{I}$的子群$\mathcal{V}$满足：
+\begin{description}
+    \item[G5] 交换律：$i_1\circ i_2=i_2\circ i_1,\quad \forall i_1,i_2\in\mathcal{V}$
+    \item[G6] $\mathcal{V}$在$\mathcal{E}$上的\emph{作用（action）}的传递性：$\forall X\in\mathcal{E}\exists Y\in\mathcal{E}, i\in\mathcal{V},\quad Y=i\left(X\right)$
+\end{description}
+则$\mathcal{V}$是$\pazocal{I}$的一个交换子群。一般地，度量空间上的等距群$\pazocal{I}$满足条件G5至G6的子群$\mathcal{V}$最多只有一个。
+
+接下来我们赋予$\mathcal{V}$以实数域上的标量乘法规定，即使$\mathcal{V}$具有满足以下规定的形式运算：
+\begin{description}
+    \item[S1] $\forall\alpha\in\mathbb{R},i\in\mathcal{V},\alpha i\in\mathcal{V}$。特别地，$\forall i\in\mathcal{V},1i=i$；
+    \item[S2] $\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V},\alpha\left(\beta i\right)=\left(\alpha\beta\right)i$；
+    \item[S3] $\forall\alpha\in\mathbb{R},i,j\in\mathcal{V},\quad\alpha\left(i\circ j\right)=\left(\alpha i \right)\circ\left(\alpha j\right)$
+    \item[S4] $\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V},\quad\left(\alpha+\beta\right)i=\left(\alpha i\right)\circ\left(\beta i\right)$
+\end{description}
+带有上述规定的$\mathcal{V}$形成一个实数域$\mathbb{R}$上的向量空间。
+
+向量空间$\mathcal{V}$的向量作为度量空间$\left(\mathcal{E},d\right)$上的等距变换，可天然具有一种范的定义。由条件G5和G6易验$\forall i\in\mathcal{V},X,Y\in\mathcal{E},d\left(X,i\left(X\right)\right)=d\left(Y,i\left(Y\right)\right)$，故每个等距变换自带一个特定的长度。可定义$\mathcal{V}$上的范$\left\|\cdot\right\|:\mathcal{V}\rightarrow\left[0,\infty\right)\subset\mathbb{R},$
+\[\forall i\in\mathcal{V},\left\|i\right\|=d\left(X,i\left(X\right)\right),X\in\mathcal{E}\]
+再附加一条运算的形式规定：
+\begin{description}
+    \item[N1] 调和性：$\forall\alpha\in\mathbb{R},i\in\mathcal{V},\left\|\alpha i\right\|=\left|\alpha\right|\left\|i\right\|$
+\end{description}
+则易验该范满足范的定义。再通过极化恒等式构建$\mathcal{V}$上的内积$\left(\cdot|\cdot\right):\mathcal{V}^2\rightarrow\mathbb{R},$
+\[\left(i|j\right)=\frac{1}{3}\left\|i\circ j\right\|^2-\frac{1}{4}\left\|i\circ j^{-1}\right\|^2\]
+则$\mathcal{V}$形成一个实数域上的内积空间，$\left\|\circ\right\|$是$\mathcal{V}$上的欧几里得范。
+
+\begin{definition}[欧几里得空间]
+    若一个度量空间$\left(\mathcal{E},d\right)$上的等距群可定义出满足条件G1至G6、S1至S4和N1的子群$\mathcal{V}$，则$\mathcal{V}$自然形成一个实数域上的内积空间。若$\mathcal{V}$是有限维内积空间，则称$\left(\mathcal{E},d,\mathcal{V}\right)$为\emph{欧几里得空间（Euclidean space）}。$\mathcal{E}$称为欧几里得空间的\emph{点空间（point space）}，$\mathcal{E}$的元素称为\emph{点（points）}；$\mathcal{V}$称为欧几里得空间的\emph{平移空间（translation space）}，$\mathcal{V}$中的向量称为欧几里得空间的\emph{平移向量（translation vectors）}；$\mathcal{V}$的维数就是欧几里得空间的维数。我们常简记欧几里得空间为$\mathcal{E}$。
 \end{definition}
 
-在能作上述定义之前，当然需要先验证为什么所称的集合是一个交换群。因此我们要按照定义\ref{def:II.3.3}检查以下条件是否满足：
-\begin{enumerate}
-    \item 封闭性：$i_1\circ i_2\in\mathcal{I},\quad\forall i_1,i_2\in\mathcal{I}$
-    \item 结合律：$i_1\circ \left(i_2\circ i_3\right)=\left(i_1\circ i_2\right)\circ i_3,\quad\forall i_1,i_2,i_3\in\mathcal{I}$
-    \item 单位元：恒等映射$\mathrm{id}_\mathcal{E}\in\mathcal{I}$满足$\mathrm{id}_\mathcal{E}\circ i=i\forall i\in\mathcal{I}$。
-    \item 逆元：对任一$i\in\mathcal{I}$存在唯一$i^{-1}\in\mathcal{I}$满足$i^{-1}\circ i=\mathrm{id}_\mathcal{E}$
-    \item 交换律：$i_1\circ i_2=i_2\circ i_1,\quad\forall i_1,i_2\in\mathcal{I}$
-
-          易验，以上条件都满足\footnote{其中“逆元”的唯一存在性，基于等距变换的双射性。严格的说这来自等距变换表示定理的推论。}，所以$\mathcal{I}$是一个交换群。现在我们为$\mathcal{I}$添加规定，把它补成一个实数域$\mathbb{R}$上的向量空间——
-
-    \item 标量乘法：$\alpha i\in\mathcal{V}$；$\alpha\left(\beta i\right)=\left(\alpha\beta\right)i$；$1i=i,\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V}$
-    \item 分配律：$\alpha\left(i_1\circ i_2\right)=\left(\alpha i_1\right)\circ\left(\alpha i_2\right)$；$\left(\alpha+\beta\right)i=\left(\alpha i\right)\circ\left(\beta i\right),\forall\alpha,\beta\in\mathbb{R},i,i_1,i_2\in\mathcal{V}$
-
-          则$\mathcal{V}$是一个向量空间。如果我们再定义一个欧几里得范：
-
-    \item $\left\|i\right\|^2=\left(i|i\right)= d^2\left(x,y\right),\forall x,y\in\mathcal{E}$其中$i$满足$i\left(x\right)=y$。
-
-          则$\mathcal{V}$就是一个赋范内积空间，且该范为欧几里得范。
-\end{enumerate}
-
-注意，条件1~5是可验证在所有等距变换上满足的。但条件6~8则是我们新增的要求，没有验证是否所有等距变换都满足，所以只能说$\mathcal{V}$是$\mathcal{I}$的子集。已证明，任一度量空间上的等距群最多只有一个满足上述要求向量空间子群\cite{Noll1974}。每个度量空间，都可经过上述的流程为其装配一个向量空间。我们把一个度量空间以及通过其上的等距群得到的向量空间一同称为一个欧几里得空间，详见下一节。
+最后，我们建立一个记法。设$\mathcal{E}$是欧几里得空间，$X,Y\in\mathcal{E}$，由$X,Y\in\mathcal{E}$确定的平移向量$\mathbf{u}$可记作$\mathbf{u}=Y-X$；由点$X$经平移向量$\mathbf{u}$（它是一个等距变换）平移为点$Y$的事实可记作$Y=X+\mathbf{u}$。注意，我们没有定义两个点“相加”的意义。
 \end{document}
