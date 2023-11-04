@@ -40,15 +40,15 @@
 
 接上列的第2条，给定一个关系$\sim$，记$U_\sim\equiv\bigcup_{X\in\bigcup_{X^\prime\in\sim}X^\prime}X$，遵循分类公理所构建的集合
 \[
-    \left\{a|a\in U_\sim\wedge\left(\exists b,b\in U_\sim\wedge a\sim b\right)\right\}
+    \left\{a\in U_\sim|\exists b\left(b\in U_\sim\wedge a\sim b\right)\right\}
 \]
-为关系$\sim$的\emph{定义域（domain）}，记作$\mathrm{dom}\sim$\footnote{式中的记法“$\exists b,\left(\text{关于$b$的语句}\right)$表示“存在符合关于$b$的语句的一个$b$”。例如“$\exists b,b\in U_\sim$”表示“存在一个属于集合$U_\sim$的$b$”。}。集合
+为关系$\sim$的\emph{定义域（domain）}，记作$\mathrm{dom}\sim$。集合
 \[
-    \left\{b|b\in U_\sim\wedge \left(\exists a,a\in U_\sim\wedge a\sim b\right)\right\}
+    \left\{b\in U_\sim|\exists a\left(a\in U_\sim\wedge a\sim b\right)\right\}
 \]
 为关系$\sim$的\emph{值域（range）}，记作$\mathrm{ran}\sim$。图\ref{fig:II.1.1}给出了所示关系的定义域和值域。不难留意到，对于任一集合上的等于关系，有$\left(\mathrm{dom}=\right)=\left(\mathrm{ran}=\right)$；对于任一集合上的属于关系，若$\left(\mathrm{dom}\in\right)=X$，则$\left(\mathrm{ran}\in\right)=\mathcal{P}\left(X\right)\setminus\left\{\emptyset\right\}$\footnote{因为$\emptyset\in\mathcal{P}\left(X\right)$，但没有元素能够属于$\emptyset$。}。
 
-\begin{definition}\label{def:II.1.2}
+\begin{definition}[等价关系]\label{def:II.1.2}
     设$\sim$是集合$X$上的一个关系。若
     \begin{enumerate}
         \item 对任一$x\in X$都有$x\sim x$，则称关系$\sim$是\emph{自反的（reflextive）}。
@@ -89,7 +89,7 @@
 
 若集合$\mathcal{C}$是集合$X$的一个划分，我们可以由此定义一个关系$\sim\equiv X/\mathcal{C}$\footnote{该记法与刚刚介绍完的$X/\sim$无关，是符号“$/$”的滥用。}，使得当且仅当$X$的元素$x,y$属于$\mathcal{C}$的同一个元素时，$x\sim y$。正式地，
 \begin{equation}\label{eq:relation_induced_by_partition}
-    X/\mathcal{C}=\left\{\left(x,y\right)|\left(x,y\right)\in X\times X\wedge\left(\exists A\in \mathcal{C},\left\{x,y\right\}\subset A\right)\right\}
+    X/\mathcal{C}=\left\{\left(x,y\right)\in X\times X|\exists A\left(A\in \mathcal{C}\wedge\left\{x,y\right\}\subset A\right)\right\}
 \end{equation}
 图\ref{fig:II.1.2}中，将右下所示的集合的划分中同属一个子集的元素两两连线，就能得到左上所示的关系。这一关系在给定划分$\mathcal{C}$下的唯一性由外延公理保证。
 
@@ -112,11 +112,11 @@
 
 设关系$\sim$是集合$X$上的一个等价关系，则集合$\left\llbracket x\right\rrbracket_\sim\equiv\left\{y|y\in X\wedge\left(\exists x\in X,y\sim x\right)\right\}$称$x$关于$\sim$的\emph{等价类（equivalent class）}\footnote{“类”与“集合”在概念上无实质区别。}。$X$的元素关于$\sim$的所有等价类的集合，记作$X/\sim$\footnote{注意与相对补集的符号相区别。}，称为集合$X$在等价关系$\sim$下的\emph{商集（quotient set）}\footnote{正式地，
     \[
-        X/\sim\equiv\left\{A|A\in\mathcal{P}\left(X\right)\wedge\left(\forall x\in A,\left\llbracket x\right\rrbracket_\sim = A\right)\right\}
+        X/\sim\equiv\left\{A\in\mathcal{P}\left(X\right)|\forall x\left(x\in A\wedge\left\llbracket x\right\rrbracket_\sim = A\right)\right\}
     \]
 }。如图\ref{fig:II.1.2}左上的情况所示，在一个集合上定义了等价关系。每个元素，都能通过这一等价关系的传递性联系若干个共同关联的元素，而形成$X$的一个子集。每个这样的子集，都是$X$关于这一等价关系的等价类。
 
-\begin{theorem}[等价关系基本定理]
+\begin{theorem}[等价关系基本定理]\label{thm:II.1.1}
     设$\sim\subset X\times X$是集合$X$上的一个等价关系，则$X$在$\sim$下的商集$S/\sim$是$S$的一个划分。
 \end{theorem}
 \begin{proof}

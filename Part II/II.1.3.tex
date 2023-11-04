@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{映射}
-\begin{definition}
+\begin{definition}[映射]\label{def:II.1.3}
     设$X$和$Y$是集合，如果由$X$到$Y$的关系$f$同时满足：
     \begin{enumerate}
         \item $\mathrm{dom}f=X$；
@@ -28,8 +28,8 @@
 \begin{itemize}
     \item 一般地，$Y$未必等于$\mathrm{ran}f$，集合$Y$称映射$f$的\emph{陪域（codomain）}。
     \item 若$\mathrm{ran}f=Y$则称映射$f$是\emph{满射（surjective mapping）}。图\ref{fig:II.1.3}中的第4和第5个例子都是满射。
-    \item 若$A\subset X$，则集合$\left\{y|y\in Y\wedge\left(\forall x\in A,y=f\left(x\right)\right)\right\}$称集合$A$在映射$f$下的\emph{像（image）}。常见但易产生歧义的记法是$f\left(A\right)$。这一集合可用语言描述为：由集合$A$的所有元素在映射$f$下的值组成的集合。易证它是$Y$的子集。
-    \item 若对任意$x_1,x_2\in X$，$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则称$f$是\emph{单射（injective mapping）}。可用语言描述为，“单射输出唯一地确定其输入”。图\ref{fig:II.1.3}中的第3和第5个例子都是单射。
+    \item 若$A\subset X$，则集合$\left\{y\in Y|\forall x\left(x\in A\wedge y=f\left(x\right)\right)\right\}$称集合$A$在映射$f$下的\emph{像（image）}，简记为$f\left(A\right)$。这一集合可用语言描述为：由集合$A$的所有元素在映射$f$下的值组成的集合。易证它是$Y$的子集。
+    \item 若对任意$x_1,x_2\in X$，$f\left(x_1\right)=f\left(x_2\right)\Rightarrow x_1=x_2$，则称$f$是\emph{单射（injective mapping）}。可用语言描述为，“单射的输出唯一地确定其输入”。图\ref{fig:II.1.3}中的第3和第5个例子都是单射。
     \item 如果$f$既是满射又是单射，则称$f$是一个\emph{双射（bijective mapping）}。图\ref{fig:II.1.3}中的第5个例子是双射。
     \item 若另一映射$g:Y\rightarrow Z$，可与映射$f$构成从$X$到$Z$的映射$g\circ f:X\rightarrow Z$，且
           \[
@@ -37,7 +37,7 @@
           \]
           则称$g\circ f$是$f$和$g$的\emph{复合映射（composite mapping）}。
     \item 如果$f\left(x\right)=x,\forall x\in X$，则称映射$f$是\emph{恒等映射（identity mapping）}。
-    \item 如果映射$g:Y\rightarrow X$使得复合映射$g\circ f$是恒等映射，则称映射$f$是\emph{可逆的（invertible）}，映射$g$是$f$的\emph{逆映射（inverse mapping）}。常将$f$的逆映射计作$f^{-1}$。
+    \item 如果映射$g:Y\rightarrow X$使得复合映射$g\circ f$是恒等映射，则称映射$f$是\emph{可逆的（invertible）}，映射$g$是$f$的\emph{逆映射（inverse mapping）}。常将$f$的逆映射记作$f^{-1}$。
 \end{itemize}
 
 关于逆映射，有一条重要的定理——
@@ -117,7 +117,7 @@
 % 5. 那在同一文本中，同一概念新老定义会冲突？
 % 6. 在二元的情况下两个定义得到的东西虽然不一样，但是元素一一对应。因此不造成问题。
 
-笛卡尔积的老定义与新定义是不冲突的。一般地，老定义下的笛卡尔积$X_a\times X_b$和新定义下的笛卡尔集$\prod_{i\in\left\{a,b\right\}}X_i$之间可定义一个映射$f:\prod_{i\in\left\{a,b\right\}}X_i\rightarrow X_a\times X_b,f\left(z\right)=\left(z_a,z_b\right),\forall z\equiv\left\{z_i\right\}_{i\in\left\{a,b\right\}}\in\prod_{i\in I}X_i$。记$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}}$，则按定义\ref{def:Cartesian_product_family}有$z_i\in X_i,\forall i\in\left\{a,b\right\}$。可以证明$f$是双射：
+笛卡尔积的老定义与新定义是不冲突的。一般地，老定义下的笛卡尔积$X_a\times X_b$和新定义下的笛卡尔集$\prod_{i\in\left\{a,b\right\}}X_i$之间总可以定义一个映射$f:\prod_{i\in\left\{a,b\right\}}X_i\rightarrow X_a\times X_b,f\left(z\right)=\left(z_a,z_b\right),\forall z\equiv\left\{z_i\right\}_{i\in\left\{a,b\right\}}\in\prod_{i\in I}X_i$。记$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}}$，则按定义\ref{def:Cartesian_product_family}有$z_i\in X_i,\forall i\in\left\{a,b\right\}$。可以证明$f$是双射：
 \begin{proof}
     设$z=\left\{z_i\right\}_{i\in\left\{a,b\right\}},z^\prime=\left\{z^\prime_i\right\}_{i\in\left\{a,b\right\}}$且$z_a,z^\prime_a\in X_a,z_b,z^\prime_b\in X_b$。若$z\neq z^\prime$。由映射$f$的定义，$f\left(z\right)=\left(z_a,z_b\right),f\left(z^\prime\right)=\left(z^\prime_a,z^\prime_b\right)$。由集合相等的定义，$z\neq z^\prime\Rightarrow\left(z_a,z_B\right)\neq\left(z^\prime_a,z^\prime_b\right)$，即$f\left(z\right)\neq f\left(z^\prime\right)$，即$f$是非单射。
 

@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{集合}
-集合是近代数学的基本语言。用集合与映射重述人的直观经验，是近世数学和基于其构建的理论物理的普遍特点。连续介质力学中的大量概念都是依赖集合和映射来引入的。如果不熟悉集合和映射的语言和符号，就很难读懂后面的内容。
+集合是近代数学的基本语言。用集合论重述人的直观经验，是近世数学和基于其构建的理论物理的普遍特点。连续介质力学中的大量概念都是依赖集合和映射来引入的。如果不熟悉集合和映射的语言和符号，就很难读懂后面的内容。
 
 一般资料中常见的对集合的定义方式如下：
 
@@ -26,23 +26,23 @@
 
 给定一个集合$A$，我们可以根据$A$的元素所需要满足的附加要求，构建出$A$的子集。例如，设$A$是所有偶数的集合，附加的要求是“比1大、比9小”，我们就从$A$中找出了2、4、6、8这四个元素组成的集合$B$。一般地，我们将此记作：
 \[
-    \left\{x|x\in A\wedge\left(\text{$x$需要满足的条件}\right)\right\}
+    \left\{x\in A|\text{$x$需要满足的条件}\right\}
 \]
-其中符号$\wedge$表示“且”的意思。注意，预先给定一个基本集合$A$这一步原则上是不可省略的；“$\wedge$”后的语句形式是对$A$的元素$x$的规定，而不能是其他形式。这是集合论的\emph{分类公理（axiom of specification）}。
+注意，预先给定一个基本集合$A$这一步原则上是不可省略的；“|”后的语句形式是对$A$的元素$x$的规定，而不能是其他意义。这是集合论的\emph{分类公理（axiom of specification）}。
 
-给定两个集合$A$和$B$，总存在唯一一个这样的集合$V$：只要$x\in V$，就有$x\in A$且$x\in B$；反之，若$x\in A$且$x\in B$，则有$x\in V$。集合$V$的存在性来自分类公理；$V$可表示成：
+给定两个集合$A$和$B$，总存在唯一一个这样的集合$V$：只要$x\in V$，就有$x\in A$且$x\in B$；反之，若$x\in A$且$x\in B$，则有$x\in V$。这样的集合$V$的存在性来自分类公理；$V$可表示成：
 \[
-    V=\left\{x|x\in A\wedge x\in B\right\}
+    V=\left\{x\in A|x\in B\right\}
 \]
-$V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B\right\}$且$V^\prime\neq V$，则必存在$x\in V^\prime$且$x\notin V$。若$x\in V^\prime$，则$x\in A$且$x\in B$；若$x\notin V$，则$x\notin A$或$x\notin B$，这两个推论相互矛盾\footnote{由集合定义\ref{def:II.1.1}中的“确定性”。}。因此$V^\prime=V$或$V^\prime$不存在，即$V$是唯一的。我们把这样的集合$V$称作集合$A$与$B$的\emph{交集（interset）}，记作$V=A\cap B$。
+$V$的唯一性简证如下：若另有一$V^\prime=\left\{x\in A|x\in B\right\}$且$V^\prime\neq V$，则由外延公理必存在$x\in V^\prime$且$x\notin V$。若$x\in V^\prime$，则$x\in A$且$x\in B$；若$x\notin V$，则$x\notin A$或$x\notin B$，这两个推论相互矛盾\footnote{由集合定义\ref{def:II.1.1}中的“确定性”。}。因此$V^\prime=V$或$V^\prime$不存在，即$V$是唯一的。我们把这样的集合$V$称作集合$A$与$B$的\emph{交集（interset）}，记作$V=A\cap B$。
 
 我们经常还要讨论“集合的集合”，从而有“元素的元素”。
 
 设$\mathcal{C}$是集合的集合，且$\mathcal{C}\neq\emptyset$。设$A\in\mathcal{C}$，则由分类公理存在以下集合
 \[
-    V=\left\{x|x\in A\wedge \left(x\in X\Leftrightarrow X\in\mathcal{C}\right)\right\}
+    V=\left\{x\in A|x\in X\Leftrightarrow X\in\mathcal{C}\right\}
 \]
-其中$\Leftrightarrow$是“当且仅当”的意思。这一集合$V$的唯一性可类似上一段那样得证，此略\footnote{下文构建的集合的唯一性，不作说明时，都由外延公理保证。}。我们称$V$是$\mathcal{C}$的元素的交集，记作
+其中$\Leftrightarrow$是\emph{当且仅当（if and only if，iff）}的意思。这一集合$V$的唯一性可类似上一段那样得证，此略\footnote{下文构建的集合的唯一性，不作说明时，都由外延公理保证。}。我们称$V$是$\mathcal{C}$的元素的交集，记作
 \[
     V=\bigcap_{X\in\mathcal{C}}X
 \]
@@ -62,11 +62,11 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 
 我们可以把任意两个集合$a$、$b$组成一对，变成一个新的集合，记作$\left\{a,b\right\}$，并\emph{规定}这样的集合可以存在。这是集合论的\emph{配对公理（axiom of paring）}。于是有$a\in \left\{a,b\right\}$和$b\in \left\{a,b\right\}$。特别地，一个集合$a$可与其自身“成对”，得到“$\left\{a,a\right\}$”，但由于集合的元素要满足互异性，故实际所得到的集合应是$\left\{a\right\}$。这种只有一个元素的集合，称为\emph{单元素集（singleton）}。注意理解以下事实：$\emptyset\in\left\{\emptyset\right\}$，$\left\{\emptyset\right\}\neq\emptyset$。
 
-我们可以让若干个集合形成并集。具体地，我们\emph{规定}对任意集合的集合$\mathcal{C}$，总存在一个集合$U$，它含有$\mathcal{C}$的至少一个元素的所有元素\footnote{$\mathcal{C}$的元素是集合。}。这是集合论的\emph{并集公理（axiom of unions）}。但是，由并集公理所保证存在的这个$U$，还可能包含不属于$\mathcal{C}$中任一集合的元素。我们可以再利用分类公理，把$U$收窄为恰好只包含$\mathcal{C}$中的所有元素的所有元素。具体地，给定一个集合的集合$\mathcal{C}$，由并集公理必存在上述的$U$，利用分类公理构建以下集合\footnote{符号$\exists$表示“存在”或“给定”的意思。}
+我们可以让若干个集合形成并集。具体地，我们\emph{规定}对任意集合的集合$\mathcal{C}$，总存在一个集合$U$，它含有$\mathcal{C}$的至少一个元素的所有元素\footnote{$\mathcal{C}$的元素是集合。}。这样规定存在的集合$U$，还可能包含不属于$\mathcal{C}$中任一集合的元素。但是我们总是可以再利用分类公理，把$U$收窄为恰好只包含$\mathcal{C}$中的所有元素的所有元素。具体地，给定一个集合的集合$\mathcal{C}$，由并集公理必存在上述的$U$，利用分类公理构建以下集合\footnote{符号$\exists$表示“存在一个”或“给定一个”的意思。符号$\wedge$表示“且”的意思。}
 \begin{equation*}\label{eq:set_union}
-    \left\{x|x\in U \wedge \exists X\in\mathcal{C},x\in X\right\}
+    \left\{x\in U|\exists X\left(X\in\mathcal{C}\wedge x\in X\right)\right\}
 \end{equation*}
-使得对每一$x\in U$，当且仅当$x$属于$\mathcal{C}$的某个元素，$x$才属于上列集合。因此上列集合包括且只包括$\mathcal{C}$中的集合的所有元素。我们称上列集合为$\mathcal{C}$的所有元素的\emph{并集（union）}，记作
+使得对每一$x\in U$，当且仅当$x$属于$\mathcal{C}$的某个元素$X$，$x$属于上列集合。因此上列集合包括且仅包括$\mathcal{C}$中的所有元素的所有元素。我们称上列集合为$\mathcal{C}$的所有元素的\emph{并集（union）}，记作
 \[
     \bigcup_{X\in\mathcal{C}}X
 \]
@@ -93,7 +93,7 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 \]
 依此类推，任意有限个元素的集合都可由此方法构建\footnote{至此，我们可以回过头来重新理解集合的定义\ref{def:II.1.1}中的“无序性”、“互异性”和“确定性”。头两个规定，其实是外延公理的推论。例如，若集合$A=\left\{a,b,c\right\}$，$B=\left\{c,b,a\right\}$，则由外延公理$A=B$（无序性）。若集合$A=\left\{a,a\right\}$，$B=\left\{a\right\}$，则由外延公理$A=B$（互异性）。最后，定义\ref{def:II.1.1}中的“确定性”，只是逻辑上排中律的要求。}。
 
-给定集合$A$和$B$，集合$C=\left\{x|x\in A\text{且}x\notin B\right\}$称$B$在$A$中的\emph{相对补集（relative complement of $B$ in $A$）}，记为$C=A\setminus B$。注意，此处$B$不必包含于$A$。
+给定集合$A$和$B$，集合$C=\left\{x\in A|x\notin B\right\}$称$B$在$A$中的\emph{相对补集（relative complement of $B$ in $A$）}，记为$C=A\setminus B$。注意，此处$B$不必包含于$A$。
 
 我们常在给定一个全集$E$之下讨论其子集在$E$中的相对补集。如果默认这一前提，则可简称任一$E$的子集$A\subset E$在$E$中的相对补集为$A$的补集，记为$A^\complement\equiv E\setminus A$\footnote{有时，我们使用恒等号“$\equiv$”来表示新引入的符号或者记法代表什么表达式。}。
 
@@ -113,9 +113,9 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
     \left(A\cap B\right)^\complement & =A^\complement\cup B^\complement
 \end{align*}
 
-给定一个集合$A$，我们\emph{规定}存在一个集合，暂记作$\mathcal{P}^\prime\left(A\right)$，包含所有$A$的子集。这是集合论的\emph{幂集公理（axiom of powers）}。我们于是可遵守分类公设给出恰好包括$A$的所有子集（包括空集和集合$A$本身），而不包括其他元素的集合：
+给定一个集合$A$，我们\emph{规定}存在一个集合，暂记作$\mathcal{P}^\prime\left(A\right)$，它包含所有$A$的子集。这是集合论的\emph{幂集公理（axiom of powers）}。我们于是可遵守分类公理给出恰好包括$A$的所有子集（包括空集和集合$A$本身），而不包括其他元素的集合：
 \[
-    \mathcal{P}\left(A\right)=\left\{X|X\in\mathcal{P}^\prime\left(A\right)\wedge X\subset A\right\}
+    \mathcal{P}\left(A\right)=\left\{X\in\mathcal{P}^\prime\left(A\right)|X\subset A\right\}
 \]
 我们称$\mathcal{P}\left(A\right)$为集合$A$的\emph{幂集（power set）}。
 
@@ -123,7 +123,7 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 
 注意到，若$X\in\mathcal{P}\left(E\right)$，则有$X^\complement\in\mathcal{P}\left(E\right)$。于是，默认以$E$为全集时，我们不必逐个讨论$E$的子集的补集。设$\mathcal{C}\subset\mathcal{P}\left(E\right)$，则$\mathcal{C}$中的元素的补集的集合为
 \[
-    \mathcal{D}=\left\{X|X\in\mathcal{P}\left(E\right)\wedge X^\complement\in\mathcal{C}\right\}
+    \mathcal{D}=\left\{X\in\mathcal{P}\left(E\right)|X^\complement\in\mathcal{C}\right\}
 \]
 这时，德摩根定律有如下更一般的形式：
 \begin{align*}
@@ -139,7 +139,7 @@ $V$的唯一性简证如下：若另有一$V^\prime=\left\{x|x\in A\wedge x\in B
 
 给定两个集合$A$、$B$，是否可以给出所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合？我们留意到，对任意$a\in A$和$b\in B$有$\left\{a\right\}\subset A$，$\left\{b\right\}\subset B$，$\left\{a,b\right\}\subset A\cup B$，$\left\{a\right\}\subset A\cup B$。可见，$\left\{a\right\}$和$\left\{a,b\right\}$都是集合$A\cup B$的子集，故$\left(a,b\right)\in\mathcal{P}\left(A\cup B\right)$，$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。换言之，只要$a\in A$且$b\in B$，就有$\left(a,b\right)\subset\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$。于是我们可以遵循分类公理，把所有$a\in A$且$b\in B$的有序对$\left(a,b\right)$的集合规定出来，且其唯一性由外延公理保证\footnote{
     用分类公理、并集公理、配对公理和幂集构建集合$A$与$B$的笛卡尔集的过程，用自然语言描述将十分繁琐。以下是采用\emph{合式公式（well-formed formula）}表达的结果，仅供熟悉此知识的读者参考。
-    \[A\times B=\left\{X|X\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)\vee\varphi\left(X\right)\right\}
+    \[A\times B=\left\{X\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)|\varphi\left(X\right)\right\}
     \]
     其中，$\varphi\left(X\right)$表示关于$X$的语句，
     \[

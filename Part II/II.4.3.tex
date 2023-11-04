@@ -319,14 +319,15 @@
 
 \begin{theorem}\label{thm:II.4.10}
     设函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$在$\mathbf{x}\in\mathbb{R}^n$处可微，则
-    \[\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}=\frac{d\mathbf{f}\left(x\right)}{d\mathbf{x}}\mathbf{y},\quad\forall\mathbf{y}\in\mathbb{R}^n\]
+    \[\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}=\mathbf{L}_{\mathbf{x}}\mathbf{y},\quad\forall\mathbf{y}\in\mathbb{R}^n\]
+    其中$\mathbf{L}_\mathbf{x}=\mathrm{d}_\mathbf{x}\mathbf{f}$是函数$\mathbf{f}$在$\mathbf{x}$处的导数。
 \end{theorem}
 \begin{proof}
     对$\mathbf{y}=\mathbf{0}$显然成立。若$\mathbf{y}\neq\mathbf{0}$，由全微分的近似意义，由自变量的增量$t\mathbf{y}$造成的函数增量$\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)$满足
     \begin{align*}
-        \lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\left(t\mathbf{y}\right)}{\left\|t\mathbf{y}\right\|}                  & =\mathbf{0}                                                       \\
-        \Leftrightarrow\lim_{t\to 0}\frac{1}{\left\|\mathbf{y}\right\|}\left\|\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(x\right)}{t}-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\mathbf{y}\right\| & =\mathbf{0}                                                       \\
-        \Leftrightarrow\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)}{t}                                                                                                           & =\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\mathbf{y}
+        \lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\left(t\mathbf{y}\right)}{\left\|t\mathbf{y}\right\|}                  & =\mathbf{0}                                             \\
+        \Leftrightarrow\lim_{t\to 0}\frac{1}{\left\|\mathbf{y}\right\|}\left\|\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(x\right)}{t}-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\mathbf{y}\right\| & =\mathbf{0}                                             \\
+        \Leftrightarrow\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)}{t}                                                                                                           & =\left(\mathrm{d}_\mathbf{x}\mathbf{f}\right)\mathbf{y}
     \end{align*}
 \end{proof}
 
