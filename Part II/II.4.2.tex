@@ -1,20 +1,20 @@
 \documentclass[main.tex]{subfiles}
 % 函数的极限与连续性
 \begin{document}
-我们用“$\epsilon-\delta$语言”来定义函数极限
+我们用“$\varepsilon-\delta$语言”来定义函数极限。
 
 \begin{definition}[向量函数的极限]\label{def:II.4.5}
-    给定函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$，如果对任意正实数$\varepsilon$总存在正实数$\delta$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta,\mathbf{r},\mathbf{r}_0\in D$，就总有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{y}_0\right\|<\epsilon,\mathbf{y}_0\in\mathbb{R}^m$，就称$\mathbf{y}_0$是函数$\mathbf{f}\left(\mathbf{r}\right)$在$\mathbf{r}_0$处的\emph{极限（limit）}，记为
+    给定函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$，如果对任意正实数$\varepsilon$总存在正实数$\delta$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta,\mathbf{r},\mathbf{r}_0\in D$，就总有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{y}_0\right\|<\varepsilon,\mathbf{y}_0\in\mathbb{R}^m$，就称$\mathbf{y}_0$是函数$\mathbf{f}\left(\mathbf{r}\right)$在$\mathbf{r}_0$处的\emph{极限（limit）}，记为
     \[\lim_{\mathbf{r} \to\mathbf{r}_0} \mathbf{f}\left(\mathbf{r}\right)=\mathbf{y}_0\]
 \end{definition}
 
 \begin{theorem}\label{thm:II.4.1}
-    函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in D$处存在极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a},\mathbf{a}=\left(a_i\right)\in\mathbb{R}^m$的充要条件是其坐标函数的极限$\lim_{\mathbf{r}\to\mathbf{r}_0}f_i\left(\mathbf{r}\right)=a_i,\forall i=1,\cdots,m$都存在。
+    函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in D$处存在极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a},\mathbf{a}=\left(a_i\right)\in\mathbb{R}^m$的充要条件是其坐标函数的极限$\lim_{\mathbf{r}\to\mathbf{r}_0}f_i\left(\mathbf{r}\right)=a_i,\forall i=1,\cdots,m$都存在。
 \end{theorem}
 \begin{proof}
     由向量函数定义，$\mathbf{f}$与$f_i,i=1,\cdots,m$的定义域都相同。
 
-    若已知$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}$，即对任一实数$\varepsilon>0$都存在实数$\delta>0$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta$就有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{a}\right\|<\epsilon$。那么，取同一对正实数$\varepsilon$和$\delta$，对任一$i\in\left\{1,\cdots,m\right\}$都有
+    若已知$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}$，即对任一实数$\varepsilon>0$都存在实数$\delta>0$使得只要$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta$就有$\left\|\mathbf{f}\left(\mathbf{r}\right)-\mathbf{a}\right\|<\varepsilon$。那么，取同一对正实数$\varepsilon$和$\delta$，对任一$i\in\left\{1,\cdots,m\right\}$都有
     \begin{align*}
         \left|f_i\left(\mathbf{r}\right)-\alpha_i\right| & \leq\sum_{i=1}^m\left|f_i\left(\mathbf{r}\right)-a_i\right|\quad\text{（当}m=1\text{或}f_j=a_j\forall j\neq i\text{时取等号。）} \\
                                                          & \leq\left|\sum_{i=1}^m\left(f_i\left(\mathbf{r}\right)-\alpha_i\right)\right|\quad\text{（三角不等式。）}                       \\
@@ -33,18 +33,27 @@
     这样的$\delta$是总能取到的，故由函数极限的定义，$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}$。
 \end{proof}
 
+定义\ref{def:II.4.5}表示，若$\lim_{\mathbf{x}\to\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)=\mathbf{y}_0$，则只要点$\mathbf{x}\neq\mathbf{x}_0$足够靠近$\mathbf{x}_0$，则$\mathbf{f}\left(\mathbf{x}\right)$总可以任意近地靠近点$\mathbf{y}_0$，而且$\mathbf{f}\left(\mathbf{x}_0\right)$未必等于$\mathbf{y}_0$。结合\S\ref{sec:B.1}定义的概念，点$\mathbf{r}_0$是$\mathrm{dom}\mathbf{f}$中的一个极限点，$0<\left\|\mathbf{r}-\mathbf{r}_0\right\|<\delta$是点$\mathbf{r}_0$的一个去心邻域。若$\lim_{\mathbf{x}\to\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)=\mathbf{y}_0$，则对$\mathbf{y}_0$的任一邻域$B_\varepsilon\left(\mathbf{y}_0\right)\subset\mathbb{R}^m$，总存在点$\mathbf{x}_0$的邻域$B_\delta\left(\mathbf{x}_0\right)\subset \mathbf{R}^n$，使得集合$B_\delta\left(\mathbf{x}_0\right)\cup D$在$\mathbf{f}$下的像集是$B_\varepsilon\left(\mathbf{y}_0\right)$的子集（如图\ref{fig:II.4.6}）。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/II.4.6.pdf}
+    \caption{向量函数的极限（定义\ref{def:II.4.5}）的图像化理解。}
+    \label{fig:II.4.6}
+\end{figure}
+
 \begin{definition}[函数的连续性]\label{def:II.4.6}
-    给定函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$和其定义域中一点$\mathbf{r}_0\in D$。如果极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{f}\left(\mathbf{r}_0\right)$存在，则称$\mathbf{f}\left(\mathbf{r}\right)$\emph{在$\mathbf{r}_0$处连续（continuous at $\mathbf{r}_0$）}。
+    给定函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$和其定义域中一点$\mathbf{r}_0\in D$。如果极限$\lim_{\mathbf{r}\to\mathbf{r}_0}\mathbf{f}\left(\mathbf{r}\right)=\mathbf{f}\left(\mathbf{r}_0\right)$存在，则称$\mathbf{f}\left(\mathbf{r}\right)$\emph{在$\mathbf{r}_0$处连续（continuous at $\mathbf{r}_0$）}。
 \end{definition}
 
 \begin{theorem}\label{thm:II.4.2}
-    函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in\mathbb{R}^n$处连续的充要条件是其坐标函数在$\mathbf{r}_0$处都连续。
+    函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在$\mathbf{r}_0\in D$处连续的充要条件是$\mathbf{f}$的坐标函数在$\mathbf{r}_0$处都连续。
 \end{theorem}
 \begin{proof}
     由定理\ref{thm:II.4.1}直接得证。
 \end{proof}
 
-如果一个函数在其定义域内处处都连续，我们就直接称该函数在其定义域内是连续的，或称该函数是连续函数。以下给出的定理及其推论告诉我们线性变换总是连续的。
+如果一个函数$\mathbf{f}$在其定义域$D$内处处都连续，我们就直接称函数$\mathbf{f}$\emph{在$D$内连续（continuous in $D$）}，或称函数$\mathbf{f}$是\emph{$D$上的连续函数（continuous function on $D$）}。以下给出的定理及其推论告诉我们：\emph{线性变换总是连续的}。
 
 \begin{theorem}\label{thm:II.4.3}
     设$\mathcal{V}$、$\mathcal{W}$分别是数域$\mathbb{F}$上的$n,m$维赋范向量空间，$\mathbf{L}:\mathcal{V}\rightarrow\mathcal{W}$是一个线性变换，则总存在正实数$k>0$使得$\left\|\mathbf{Lx}\right\|\leq k\left\|\mathbf{x}\right\|,\forall\mathbf{x}\in\mathcal{V}$，当且仅当$n=1$时取等号。
@@ -69,8 +78,8 @@
     由定理\ref{thm:II.4.3}，对任意$\mathbf{x},\mathbf{x}_0\in\mathcal{V}$有$\left\|\mathbf{Lx}-\mathbf{Lx}_0\right\|=\left\|\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)\right\|\leq k\left\|\mathbf{x}-\mathbf{x}_0\right\|$，故对任一$\varepsilon>0$总可取$\delta=\frac{\varepsilon}{k}$使得只要$\left\|\mathbf{x}-\mathbf{x}_0\right\|<\delta$就有$\left\|\mathbf{Lx}-\mathbf{Lx}_0\right\|\leq k\left\|\mathbf{x}-\mathbf{x}_0\right\|<k\delta=\varepsilon$。
 \end{proof}
 
-以下极限性质定理，已在本科的高等数学课中教过了。
-\begin{theorem}[极限基本性质]\label{thm:II.4.4}
+由定理\ref{thm:II.4.1}和\ref{thm:II.4.2}，向量函数的极限存在性和连续性总可以通过其坐标函数的极限存在性和连续性得到证明，使得问题回到本科高等数学课的范围内。以下函数极限的性质，也已在本科的高等数学课中教过了，在此列出而不作证明。
+\begin{theorem}[函数极限的基本性质]\label{thm:II.4.4}
     在实数域内，以下命题成立:
     \begin{enumerate}
         \item 设$a,b$是常数，则$\lim_{x\to a}b=b$。

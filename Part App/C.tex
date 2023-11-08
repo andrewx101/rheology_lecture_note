@@ -11,7 +11,7 @@
 我们在大一的数学课中已经学过二维的极坐标，三维的柱坐标、球坐标。这里就不再重复这些基本知识了。我们直接介绍一般的情况。然后以我们已经学过的柱坐标为例，来理解这些一般描述到底说了和做了什么。
 
 %==============================================
-\subsection{位置向量的变换}
+\section{位置向量的变换}
 设函数$T:\mathbb{R}^n\supset\mathcal{U}\rightarrow\mathbb{R}^n$可逆且连续可微。若$\mathbf{u}\in\mathcal{U},\mathbf{x}=T\left(\mathbf{u}\right)\in\mathcal{D}\subseteq\mathbb{R}^n$，即$\mathcal{D}=\mathrm{ran}T$，$\mathbf{u}=\left(u_1,\cdots,u_n\right)^\intercal,\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，则可以有如下记法的式子：
 
 \begin{equation*}
@@ -103,7 +103,7 @@
 \end{example}
 
 %=============================
-\subsection{场函数的导数}
+\section{场函数的导数}
 设$f:\mathcal{D}\supseteq\mathcal{N}\rightarrow\mathcal{F}$是定义在$\mathcal{D}$的子集$\mathcal{N}$上的函数。也就是说，函数$T$定义了一个参数方程规定的$n$维空间区域$\mathcal{D}$，而$f$是$\mathcal{D}$内的一个场函数。若$\mathbf{x}\in\mathcal{N}$，则$f\left(\mathbf{x}\right)\in\mathcal{F}$。在之前的讨论中我们已经知道，有了双射$T$，我们就能用参数$\mathbf{u}\in\mathcal{U}$来表示$\mathcal{D}$中的位置，故可记$f^\mathrm{u}\left(\mathbf{u}\right)\equiv f\left(T\left(\mathbf{u}\right)\right)$。$f^\mathrm{u}$与$f$的函数表达式一般是不同的（除了$T$是恒等映射的平凡情况），但在实际常见的惯例中常常不加区分地把$f^\mathrm{u}$也记成$f$。在后面的例子中我们将看到更多惯例问题。所幸$f^\mathrm{u}$与$f$是同属于一个空间$\mathcal{F}$的元素。这里的$\mathcal{F}$可以是一个标量、向量或张量的空间。
 
 我们考虑位置向量的微分$d\mathbf{x}$，如果把它写成坐标微元的向量：$d\mathbf{x}=\sum_{i=1}^3dx_i\mathbf{\hat{e}}_i$，则由函数微分定义有$d\mathbf{x}=\sum_{i=1}^n\sum_{j=1}^n\frac{\partial x_i}{\partial u_j}du_j\mathbf{\hat{e}}_i=\sum_{j=1}^n\mathbf{\hat{c}}_jh_jdu_j$。视$\mathbf{\hat{c}}_i$为另一组基的时，可进一步记为

@@ -65,14 +65,14 @@
 \begin{definition}[群]\label{def:II.3.3}
     设$G$是一个非空集合，若为$G$的元素规定一个二元运算（binary operation），记为$x\circ y,\quad x,y\in G$\footnote{跟复合映射的符号一样，可算是一种推广意义的使用，因为映射的复合就是一种二元运算。}，且该运算具有以下性质：
     \begin{enumerate}
-        \item 封闭性：$x\circ y\in G,\quad\forall x,y\in G$
-        \item 结合律：$\left(x\circ y\right)\circ z=x\circ\left(y\circ z\right),\quad\forall x,y,z\in G$
-        \item 单位元：$\exists e\in G,\quad e\circ x=x\circ c=x,\quad\forall x\in G$
-        \item 逆元：$\forall x\in G,\exists x^{-1}\in G,xx^{-1}=x^{-1}x=e$
+        \item 封闭性：$x\circ y\in G,\quad\forall x,y\in G$；
+        \item 结合律：$\left(x\circ y\right)\circ z=x\circ\left(y\circ z\right),\quad\forall x,y,z\in G$；
+        \item 单位元：$\exists e\in G,\quad e\circ x=x\circ c=x,\quad\forall x\in G$；
+        \item 逆元：$\forall x\in G,\exists x^{-1}\in G,xx^{-1}=x^{-1}x=e$。
     \end{enumerate}
 \end{definition}
 
-因此，一个度量空间上的等距群是由放放假度量空间上的等距变换基于映射的复合运算形成的群。
+因此，一个度量空间上的等距群是由该度量空间上的等距变换基于映射的复合运算形成的群。
 
 易证，群的单位元和逆元总是唯一的，这也跟向量空间的情况类似。一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。向量空间的定义中，若去除标量乘的规定，剩下的规定实际上定义了一个交换群。
 
@@ -84,15 +84,15 @@
 
 设$\left(\mathcal{E},d\right)$是一个度量空间，$\pazocal{I}$是$\left(\mathcal{E},d\right)$上的等距群，若$\pazocal{I}$的子群$\mathcal{V}$满足：
 \begin{description}
-    \item[G5] 交换律：$i_1\circ i_2=i_2\circ i_1,\quad \forall i_1,i_2\in\mathcal{V}$
-    \item[G6] $\mathcal{V}$在$\mathcal{E}$上的\emph{作用（action）}的传递性：$\forall X\in\mathcal{E}\exists Y\in\mathcal{E}, i\in\mathcal{V},\quad Y=i\left(X\right)$
+    \item[G5] 交换律：$i_1\circ i_2=i_2\circ i_1,\quad \forall i_1,i_2\in\mathcal{V}$；
+    \item[G6] $\mathcal{V}$在$\mathcal{E}$上的\emph{作用（action）}的传递性，即对$\mathcal{E}$中的任一点$X$和一点$Y$，总存在$\pazocal{I}$中的一个等距变换$i$满足$Y=i\left(x\right)$。
 \end{description}
-则$\mathcal{V}$是$\pazocal{I}$的一个交换子群。一般地，度量空间上的等距群$\pazocal{I}$满足条件G5至G6的子群$\mathcal{V}$最多只有一个。
+则$\mathcal{V}$是$\pazocal{I}$的一个交换子群。一般地，度量空间上的等距群$\pazocal{I}$的满足条件G5至G6的子群$\mathcal{V}$最多只有一个。
 
 接下来我们赋予$\mathcal{V}$以实数域上的标量乘法规定，即使$\mathcal{V}$具有满足以下规定的形式运算：
 \begin{description}
     \item[S1] $\forall\alpha\in\mathbb{R},i\in\mathcal{V},\alpha i\in\mathcal{V}$。特别地，$\forall i\in\mathcal{V},1i=i$；
-    \item[S2] $\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V},\alpha\left(\beta i\right)=\left(\alpha\beta\right)i$；
+    \item[S2] $\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V},\quad\alpha\left(\beta i\right)=\left(\alpha\beta\right)i$；
     \item[S3] $\forall\alpha\in\mathbb{R},i,j\in\mathcal{V},\quad\alpha\left(i\circ j\right)=\left(\alpha i \right)\circ\left(\alpha j\right)$
     \item[S4] $\forall\alpha,\beta\in\mathbb{R},i\in\mathcal{V},\quad\left(\alpha+\beta\right)i=\left(\alpha i\right)\circ\left(\beta i\right)$
 \end{description}
@@ -105,11 +105,13 @@
     \item[N1] 调和性：$\forall\alpha\in\mathbb{R},i\in\mathcal{V},\left\|\alpha i\right\|=\left|\alpha\right|\left\|i\right\|$
 \end{description}
 则易验该范满足范的定义。再通过极化恒等式构建$\mathcal{V}$上的内积$\left(\cdot|\cdot\right):\mathcal{V}^2\rightarrow\mathbb{R},$
-\[\left(i|j\right)=\frac{1}{3}\left\|i\circ j\right\|^2-\frac{1}{4}\left\|i\circ j^{-1}\right\|^2\]
-则$\mathcal{V}$形成一个实数域上的内积空间，$\left\|\circ\right\|$是$\mathcal{V}$上的欧几里得范。
+\[\left(i|j\right)=\frac{1}{4}\left\|i\circ j\right\|^2-\frac{1}{4}\left\|i\circ j^{-1}\right\|^2\]
+则$\mathcal{V}$形成一个实数域上的内积空间，$\left\|\cdot\right\|$是$\mathcal{V}$上的欧几里得范。
+
+引理\ref{lem:A.4}告诉我们，如果一个度量空间上的等距群存在一个满足条件G1至G6、S1至S4和N1的子群，则这样的子群只有一个。我们就已经做好正式构建欧几里得空间的准备。
 
 \begin{definition}[欧几里得空间]
-    若一个度量空间$\left(\mathcal{E},d\right)$上的等距群可定义出满足条件G1至G6、S1至S4和N1的子群$\mathcal{V}$，则$\mathcal{V}$自然形成一个实数域上的内积空间。若$\mathcal{V}$是有限维内积空间，则称$\left(\mathcal{E},d,\mathcal{V}\right)$为\emph{欧几里得空间（Euclidean space）}。$\mathcal{E}$称为欧几里得空间的\emph{点空间（point space）}，$\mathcal{E}$的元素称为\emph{点（points）}；$\mathcal{V}$称为欧几里得空间的\emph{平移空间（translation space）}，$\mathcal{V}$中的向量称为欧几里得空间的\emph{平移向量（translation vectors）}；$\mathcal{V}$的维数就是欧几里得空间的维数。我们常简记欧几里得空间为$\mathcal{E}$。
+    若一个度量空间$\left(\mathcal{E},d\right)$上的度量$d$所确定的等距群可定义出满足条件G1至G6、S1至S4和N1的子群$\mathcal{V}$，则$\mathcal{V}$自然形成一个实数域上的内积空间。若$\mathcal{V}$是有限维内积空间，则称$\left(\mathcal{E},d,\mathcal{V}\right)$为\emph{欧几里得空间（Euclidean space）}。$\mathcal{E}$称为欧几里得空间的\emph{点空间（point space）}，$\mathcal{E}$的元素称为\emph{点（points）}；$\mathcal{V}$称为欧几里得空间的\emph{平移空间（translation space）}，$\mathcal{V}$中的向量称为欧几里得空间的\emph{平移向量（translation vectors）}；$\mathcal{V}$的维数就是欧几里得空间的维数。我们常简记欧几里得空间为$\mathcal{E}$。
 \end{definition}
 
 最后，我们建立一个记法。设$\mathcal{E}$是欧几里得空间，$X,Y\in\mathcal{E}$，由$X,Y\in\mathcal{E}$确定的平移向量$\mathbf{u}$可记作$\mathbf{u}=Y-X$；由点$X$经平移向量$\mathbf{u}$（它是一个等距变换）平移为点$Y$的事实可记作$Y=X+\mathbf{u}$。注意，我们没有定义两个点“相加”的意义。

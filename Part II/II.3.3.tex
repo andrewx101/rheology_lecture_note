@@ -13,7 +13,7 @@
 
 \subsubsection{2维欧几里得平面上的几何意义}
 设$\mathcal{V}$是实数域$\mathbb{R}$上的2维内积空间，$\mathbf{Q}$是$\mathcal{V}$上的一个正交算符，其在给定某一有序规范正交基下的坐标矩阵是
-\[\left(\mathbf{Q}\right)=\left(\begin{array}{cc}Q_{11}&Q_{12}\\Q_{13}&Q_{14}\end{array}\right)\]
+\[\left(\mathbf{Q}\right)=\left(\begin{array}{cc}Q_{11}&Q_{12}\\Q_{21}&Q_{22}\end{array}\right)\]
 则由线性算符在给定基下的坐标计算式、正交算符在内积运算中的性质、以及正交算符行列式的性质可得
 \begin{align*}
     Q_{11}^2+Q_{12}^2=Q_{21}^2+Q_{22}^2 & =1     \\
@@ -57,7 +57,7 @@
 \[P=\left(\begin{array}{cc}\cos\phi&\sin\phi\\\mp\sin\phi&\pm\cos\phi\end{array}\right)\]
 事实上$\phi$是$\mathbf{\hat{e}}^\prime_1$与$\mathbf{\hat{e}}_1$的夹角。诚然，
 \begin{align*}
-    \left(\mathbf{\hat{e}}^\prime_1|\mathbf{\hat{e}}_1\right) & =\left(\sum_{k=1}^2P_{k1}\mathbf{\hat{e}}k|\mathbf{\hat{e}}_1\right)  \\
+    \left(\mathbf{\hat{e}}^\prime_1|\mathbf{\hat{e}}_1\right) & =\left(\sum_{k=1}^2P_{k1}\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_1\right) \\
                                                               & =\sum_{k=1}^2P_{1k}\left(\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_1\right) \\
                                                               & =P_{1k}\delta_{k1}=P_{11}=\cos\phi
 \end{align*}

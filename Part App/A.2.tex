@@ -44,7 +44,7 @@
 向量$\mathbf{b}$在子空间上的最好近似，最直观的理解就是空间向量在平面上的投影向量。找到这一投影向量的方法是“作垂线”，且该平面上，$\mathbf{b}$的投影向量总是唯一存在。以下定理是这些直观认知的严格阐述。
 
 \begin{theorem}[最好近似的表示]\label{thm:A.3}
-    设$\mathcal{W}$是内积空间$\mathcal{V}$的子空间，$\mathcal{b}$是$\mathcal{V}$的任一向量，则
+    设$\mathcal{W}$是内积空间$\mathcal{V}$的子空间，$\mathbf{b}$是$\mathcal{V}$的任一向量，则
     \begin{enumerate}
         \item 当且仅当$\mathbf{a}\in\mathcal{W}$与$\mathbf{b}-\mathbf{a}$正交时，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。
         \item $\mathbf{b}$在$\mathcal{W}$中总存在唯一一个最好近似。
@@ -114,9 +114,9 @@ $S^\perp$总是$\mathcal{V}$的一个子空间。首先$S^\perp$总是含$\mathb
     设$\mathcal{V}$是内积空间，$\mathcal{W}$是$\mathcal{V}$的一个子空间，$\mathbf{E}$是由$\mathcal{V}$到$\mathcal{W}$的正交投影，则$\mathcal{E}$是一个正定线性算符，$\mathcal{W}^\perp$是$\mathcal{E}$的零空间，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
 \end{theorem}
 \begin{proof}
-    设$\mathbf{b}\in\mathcal{V}$，则有$\mathbf{Eb}$是$\mathcal{b}$在$\mathcal{W}$上的最好近似，$\mathbf{E}\left(\mathbf{Eb}\right)=\mathbf{Eb}$，故$\mathbf{E}^2=\mathbf{E}$。
+    设$\mathbf{b}\in\mathcal{V}$，则有$\mathbf{Eb}$是$\mathbf{b}$在$\mathcal{W}$上的最好近似，$\mathbf{E}\left(\mathbf{Eb}\right)=\mathbf{Eb}$，故$\mathbf{E}^2=\mathbf{E}$。
 
-    设$\mathcal{a},\mathbf{b}\in\mathcal{V},\gamma\in\mathbb{F}$，其中$\mathbb{F}$是$\mathcal{V}$所在的数域，则向量$\mathbf{a}-\mathbf{Ea}$和$\mathbf{b}-\mathbf{Eb}$分别都与$\mathcal{W}$的所有向量正交，即这两个向量都属于$\mathcal{W}^\perp$。由于$\mathcal{W}^\perp$必是$\mathcal{V}$的子空间，故有
+    设$\mathbf{a},\mathbf{b}\in\mathcal{V},\gamma\in\mathbb{F}$，其中$\mathbb{F}$是$\mathcal{V}$所在的数域，则向量$\mathbf{a}-\mathbf{Ea}$和$\mathbf{b}-\mathbf{Eb}$分别都与$\mathcal{W}$的所有向量正交，即这两个向量都属于$\mathcal{W}^\perp$。由于$\mathcal{W}^\perp$必是$\mathcal{V}$的子空间，故有
     \[
         \mathbf{a}-\mathbf{Ea}+\gamma\left(\mathbf{b}-\mathbf{Eb}\right)\in\mathcal{W}^\perp\Leftrightarrow\mathbf{a}+\gamma\mathbf{b}-\mathbf{E}\left(\mathbf{a}+\gamma\mathbf{b}\right)\in\mathcal{W}^\perp
     \]

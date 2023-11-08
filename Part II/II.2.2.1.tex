@@ -146,7 +146,13 @@
 \begin{proof}
     设$\mathrm{dim}\mathcal{V}=n$，$\mathrm{nullity}\mathbf{T}=\mathrm{dim}\left(\mathrm{ker}\mathbf{T}\right)=k$，$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$是$\mathrm{ker}\mathbf{T}$的一组基。则可在$\mathcal{V}$中继续找到$\left\{\mathbf{a}_{k+1},\cdots,\mathbf{a}_{n}\right\}$与$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$合并成线性无关向量组，从而成为$\mathcal{V}$的基。
 
-    由于$\left\{\mathbf{Ta}_1,\cdots,\mathbf{Ta}_n\right\}$线性生成$\mathbf{T}$的值域$\mathrm{ran}\mathbf{T}$（由线性变换性质易证），其中由于$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}\in\mathrm{ker}\mathbf{T}$，故有$\mathbf{Ta}_j=\mathbf{0}_\mathcal{W}\forall j\leq k$，所以实际上仅$\left\{\mathbf{Ta}_{k+1},\cdots,\mathbf{Ta}_n\right\}$就线性生成$\mathrm{ran}\mathbf{T}$了。我们进一步验证它们是线性无关的。设标量$\gamma_i$满足$\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_\mathcal{W}$，即
+    由于$\left\{\mathbf{Ta}_1,\cdots,\mathbf{Ta}_n\right\}$线性生成$\mathbf{T}$的值域$\mathrm{ran}\mathbf{T}$（由线性变换性质易证），其中由于
+    \[\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}\in\mathrm{ker}\mathbf{T}\]
+    故有
+    \[\mathbf{Ta}_j=\mathbf{0}_\mathcal{W}\forall j\leq k\]
+    所以实际上仅$\left\{\mathbf{Ta}_{k+1},\cdots,\mathbf{Ta}_n\right\}$就线性生成$\mathrm{ran}\mathbf{T}$了。我们进一步验证它们是线性无关的。设标量$\gamma_i$满足
+    \[\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_\mathcal{W}\]
+    即
     \[\mathbf{T}\left(\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\right)=\mathbf{0}_\mathcal{W}\]
     即$\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\equiv\mathbf{a}\in\mathcal{N}$。向量$\mathbf{a}$在$\mathrm{ker}\mathbf{T}$的基$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$下表示为$\mathbf{a}=\sum_{i=1}^k\alpha_i\mathbf{a}_i$。故
     \[

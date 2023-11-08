@@ -4,10 +4,10 @@
 在线性代数部分的介绍中，我们知道实数域$\mathbb{R}$上的$n$维向量空间的向量在给定基下总是唯一对应于$n$维实坐标空间$\mathbb{R}^n$中的一组有序实数$n$元组。因此，如不另作说明，向量函数都直接讨论$\mathbb{R}^n$上的向量。
 
 \begin{definition}[向量函数]\label{def:II.4.1}
-    从$\mathbb{R}^n$到$\mathbb{R}^m$的映射$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$是一个\emph{向量函数（vector function）}。其变量是一个$n$维向量空间的向量$\mathbf{r}\in\mathbb{R}^n$，$\mathbf{r}=\left(r_1,\cdots,r_n\right)^\intercal$；其像（函数值）$\mathbf{f}\left(\mathbf{r}\right)$是一个$m$维向量空间的向量$\mathbf{f}\left(\mathbf{r}\right)\in\mathbb{R}^m$，$\mathbf{f}\left(\mathbf{r}\right)=\left(f_1\left(\mathbf{r}\right),\cdots,f_m\left(\mathbf{r}\right)\right)^\intercal$。$f_j:\mathbb{R}_n\rightarrow\mathbb{R},j=1,\cdots,m$称为$\mathbf{f}$的\emph{坐标函数（coordinate function）}。
+    从$\mathbb{R}^n$到$\mathbb{R}^m$的映射$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$是一个\emph{向量函数（vector function）}。其变量是一个$n$维向量空间的向量$\mathbf{r}\in\mathbb{R}^n$，$\mathbf{r}=\left(r_1,\cdots,r_n\right)^\intercal$；其像（函数值）$\mathbf{f}\left(\mathbf{r}\right)$是一个$m$维向量空间的向量$\mathbf{f}\left(\mathbf{r}\right)\in\mathbb{R}^m$，$\mathbf{f}\left(\mathbf{r}\right)=\left(f_1\left(\mathbf{r}\right),\cdots,f_m\left(\mathbf{r}\right)\right)^\intercal$。$f_j:\mathbb{R}_n\rightarrow\mathbb{R},j=1,\cdots,m$称为$\mathbf{f}$的\emph{坐标函数（coordinate function）}。
 \end{definition}
 
-严格而言，函数的记法$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$表示函数$f$的定义域$\mathrm{dom}f=D$，而不是整个$\mathbb{R}^n$。这一记法中箭头右侧则一向仅指陪域。但是在后面的讨论当中，当函数的定义域待定时，我们也常粗略记为$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$。
+
 
 \begin{example}\label{exp:II.4.1}
     函数$\mathbf{f}:\mathbb{R}^3\rightarrow\mathbb{R}^2$，
@@ -29,20 +29,21 @@
 \end{example}
 
 \begin{definition}[隐函数]\label{def:II.4.2}
-    考虑函数$\mathbf{F}:\mathbb{R}^{n+m}\rightarrow\mathbb{R}^m$，若将$\mathbb{R}^{n+m}$中的元素$\left(x_1,\cdots,x_n,y_1,\cdots,y_m\right)^\intercal$写成$\left(\mathbf{x},\mathbf{y}\right)^\intercal$，其中$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，$\mathbf{y}=\left(y_1,\cdots,y_m\right)^\intercal$，则$\mathbf{F}\left(\mathbf{r}\right),\mathbf{r}\in\mathbb{R}^{n+m}$也可写成$\mathbf{F}\left(\mathbf{x},\mathbf{y}\right)$。若函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$满足方程$\mathbf{F}\left(\mathbf{x},\mathbf{f}\left(\mathbf{x}\right)\right)=\mathbf{0},\forall\mathbf{x}\in\mathbb{R}^n$则称这一方程\emph{隐含地定义了（implicitly defined）}函数$\mathbf{f}$。用这种方式表示的函数叫\emph{隐函数（implicit function）}。
+    考虑函数$\mathbf{F}:\mathbb{R}^{n+m}\rightarrow\mathbb{R}^m$，若将$\mathbb{R}^{n+m}$中的元素$\left(x_1,\cdots,x_n,y_1,\cdots,y_m\right)^\intercal$写成$\left(\mathbf{x},\mathbf{y}\right)^\intercal$，其中$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，$\mathbf{y}=\left(y_1,\cdots,y_m\right)^\intercal$，则$\mathbf{F}\left(\mathbf{r}\right),\mathbf{r}\in\mathbb{R}^{n+m}$也可写成$\mathbf{F}\left(\mathbf{x},\mathbf{y}\right)$。若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$满足方程$\mathbf{F}\left(\mathbf{x},\mathbf{f}\left(\mathbf{x}\right)\right)=\mathbf{0},\forall\mathbf{x}\in D$则称这一方程\emph{隐含地定义了（implicitly defined）}函数$\mathbf{f}$。用这种方式表示的函数叫\emph{隐函数（implicit function）}。
 \end{definition}
 
 \begin{example}\label{exp:II.4.3}
     设函数$F\left(x,y\right)=x^2+y^2-1=0$，则“$F\left(x,f\left(x\right)\right)=x^2+\left(f\left(x\right)\right)^2-1=0,\forall x\in\mathrm{dom}f$”隐含地定义了以下任一函数：
     \begin{align*}
-        f_1\left(x\right) & =\sqrt{1-x^2},-1\leq x\leq 1                      \\
-        f_2\left(x\right) & =-\sqrt{1-x^2},-1\leq x\leq 1                     \\
+        f_1\left(x\right) & =\sqrt{1-x^2},\quad -1\leq x\leq 1                \\
+        f_2\left(x\right) & =-\sqrt{1-x^2},\quad -1\leq x\leq 1               \\
         f_3\left(x\right) & =\left\{\begin{array}{ll}
                                         \sqrt{1-x^2},  & -\frac{1}{2}\leq x\leq 0 \\
                                         -\sqrt{1-x^2}, & 0\leq x\leq 1
                                     \end{array}\right.
     \end{align*}
 \end{example}
+由例\ref{exp:II.4.3}可见，不同定义域的函数$\mathbf{f}$都可由同一函数$\mathbf{F}$隐含地定义。函数的隐含定义并不完全确定该函数。
 
 \begin{definition}[函数的图像]\label{def:II.4.3}
     函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$的\emph{图像（graph）}是指所有有序对$\left(\mathbf{r},\mathbf{f}\left(\mathbf{r}\right)\right)$的集合\cite[\S 6.4$\sim$6.7]{华工高数2009上}。
@@ -87,11 +88,11 @@
     \label{fig:II.4.3}
 \end{figure}
 \begin{example}\label{exp:II.4.7}
-    函数$f:\mathbb{R}^2\rightarrow\mathbb{R}^3,$
+    函数$f:\mathbb{R}^2\supset D\rightarrow\mathbb{R}^3,$
     \[
-        \mathbf{f}\left(\mathbf{r}\right)=\left(\begin{array}{c}f_1\\f_2\\f_3\end{array}\right)=\left(\begin{array}{c}r_1\cos r_2\\r_1\sin r_2\\r_2\end{array}\right),\quad 0\leq r_1\leq 4,\quad 0\leq r_2\leq 2\pi
+        \mathbf{f}\left(\mathbf{r}\right)=\left(\begin{array}{c}f_1\\f_2\\f_3\end{array}\right)=\left(\begin{array}{c}r_1\cos r_2\\r_1\sin r_2\\r_2\end{array}\right),\quad D: 0\leq r_1\leq 4,\leq r_2\leq 2\pi
     \]
-    该函数的图像无法作成3维欧几里得空间中的点集，但我们仍可在3维欧几里得空间中对该函数进行可视化。我们看到，$\mathbf{f}$的定义域是2维平面上的一个矩形区域。令$r_1=a$，$a$是常数。则有
+    该函数的图像无法作成3维欧几里得空间中的点集，但我们仍可在3维欧几里得空间中对该函数进行可视化。我们看到，$\mathbf{f}$的定义域是2维平面上的一个矩形区域$D$。令$r_1=a$有
     \[
         \mathbf{f}=\left(\begin{array}{c}
                 a\cos r_2 \\
@@ -99,7 +100,7 @@
                 r_2
             \end{array}\right),\quad 0\leq r_2\leq 2\pi
     \]
-    且$f_1^2+f_2^2=a^2$。有序3元组$\left(a\cos r_2,a\sin r_2,r_2\right)$是一个螺线，其在$f_1-f_2$面上的投影是以原点为圆心、半径为$a$的圆。令$r_2=\theta$，$\theta$是常数，则有
+    且$f_1^2+f_2^2=a^2$。视$a$为常数，则有序3元组$\left(a\cos r_2,a\sin r_2,r_2\right)$是一个螺线，其在$f_1-f_2$面上的投影是以原点为圆心、半径为$a$的圆。若令$r_2=\theta$，且$\theta$是常数，则有
     \[
         \mathbf{f}=\left(\begin{array}{c}
                 r_1\cos \theta \\
@@ -118,8 +119,9 @@
     \caption{由例\ref{exp:II.4.7}的参数方程定义的曲面。}
     \label{fig:II.4.4}
 \end{figure}
-\begin{definition}[函数的水平集]
-    函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$的\emph{水平集（level set）}是其定义域的子集$S=\left\{\mathbf{r}|\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}\right\}$，其中$\mathbf{a}\in\mathbb{R}^m$是某常向量\cite[\S7.1] {华工高数2009下}。
+
+\begin{definition}[函数的水平集]\label{def:II.4.4}
+    函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$的\emph{水平集（level set）}是其定义域$D$的子集$S=\left\{\mathbf{r}|\mathbf{f}\left(\mathbf{r}\right)=\mathbf{a}\right\}$，其中$\mathbf{a}\in\mathrm{ran}\mathbf{f}$是某常向量\cite[\S7.1]{华工高数2009下}。
 \end{definition}
 \begin{example}\label{exp:II.4.8}
     设函数$f:\mathbb{R}^3\rightarrow\mathbb{R},f\left(\mathbf{r}\right)=r_1r_2+r_2r_3+r_3r_1$及其一个水平集$S=\left\{\mathbf{r}|f\left(\mathbf{r}\right)=1\right\}$。以$S$的元素$\left(r_1,r_2,r_3\right)$为坐标的点集构成的三维图形是怎样的？设$r_3=0$得到方程$r_1r_2=1$，这定义了$\mathbf{\hat{e}}_1$-$\mathbf{\hat{e}}_2$平面上的一条双曲线，这条双曲线是$S$的图像与$\mathbf{\hat{e}}_1-\mathbf{\hat{e}}_2$平面的截线。类似地，$S$与$\mathbf{\hat{e}}_2-\mathbf{\hat{e}}_3$、$\mathbf{\hat{e}}_1-\mathbf{\hat{e}}_3$平面的戴线也是类似的双曲线。更一般地，$S$是一个由一系列双曲线构成的曲面（如图\ref{fig:II.4.5}所示）。但是，按定义\ref{def:II.4.3}，这不是函数$\mathbf{f}$的图像。

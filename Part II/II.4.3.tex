@@ -66,7 +66,7 @@
 因此，当我们把导数当作分数来处理时，实际是在上述的意义上视导数为两个微分作为同阶无穷小的比值。
 
 \begin{definition}[一元向量函数的导数]\label{def:II.4.9}
-    设函数$\mathbf{f}:\mathbb{R}\supseteq D\rightarrow\mathbb{R}^n$的极限
+    设函数$\mathbf{f}:\mathbb{R}\supset D\rightarrow\mathbb{R}^n$的极限
     \[
         \lim_{h\to 0}\frac{\mathbf{f}\left(t+h\right)-\mathbf{f}\left(t\right)}{h}
     \]
@@ -76,7 +76,7 @@
     \]
 \end{definition}
 
-由一元\emph{标量}函数求导的法则可证有以下一元\emph{向量}函数求导法则：对任意函数$\mathbf{f}:\mathbb{R}\supseteq D\rightarrow\mathbb{R}^n,\mathbf{g}:D\rightarrow\mathbb{R}^n$，
+由一元\emph{标量}函数求导的法则可证有以下一元\emph{向量}函数求导法则：对任意函数$\mathbf{f}:\mathbb{R}\supset D\rightarrow\mathbb{R}^n,\mathbf{g}:D\rightarrow\mathbb{R}^n$，
 \begin{itemize}
     \item $\frac{d\mathbf{c}}{dt}=0,\mathbf{c}\in\mathbb{R}^n$是常向量
     \item $\frac{d}{dt}\left(\alpha\mathbf{f}+\beta\mathbf{g}\right)=\alpha\frac{d}{dt}\mathbf{f}+\beta\frac{d}{dt}\mathbf{g},\forall \alpha,\beta\in\mathbb{R}$
@@ -86,7 +86,7 @@
 \end{itemize}
 
 \begin{definition}[多元标量值函数的偏导数]\label{def:II.4.10}
-    给定函数$f:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}$，若对某一$i\in\left\{1,\cdots,n\right\}$，极限
+    给定函数$f:\mathbb{R}^n\supset D\rightarrow\mathbb{R}$，若对某一$i\in\left\{1,\cdots,n\right\}$，极限
     \[
         \lim_{t\to0}\frac{f\left(\cdots,x_{i}+h,\cdots\right)-f\left(\cdots,x_{i},\cdots\right)}{t}
     \]
@@ -103,7 +103,7 @@
 \end{proof}
 
 \begin{definition}[向量函数的偏导数]\label{def:II.4.11}
-    函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$对第$i$个变量在$x_i=x_{i0}$处的\emph{偏导数}定义如下向量
+    函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$对第$i$个变量在$x_i=x_{i0}$处的\emph{偏导数}定义如下向量
     \[
         \left.\frac{\partial \mathbf{f}\left(\mathbf{x}\right)}{\partial x_i}\right|_{x_i=x_{i0}}\equiv\left(\begin{array}{c}
                 \left.\frac{\partial f_1\left(\mathbf{x}\right)}{\partial x_i}\right|_{x_i=x_{i0}} \\
@@ -144,9 +144,9 @@
 其中$\rho=\sqrt{\Delta x^2+\Delta y^2}$。上面的极限式是定义\ref{def:II.4.12}的等价定义式。我们其实可以不引入某个高阶无穷小$o\left(\rho\right)$，直接用使该极限式成立的$A,B$的存在性来定义函数的可微性。下面我们按照把函数微分的定义推广到一般的向量函数。
 
 \begin{definition}[向量值函数的微分]\label{def:II.4.13}
-    若函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在其定义域内某点$\mathbf{x}_0\in D$处，存在一个线性变换$\mathbf{L}:\mathbb{R}^n\rightarrow\mathbb{R}^m$使得对任意$\mathbf{x}_0$的邻域$N\left(\mathbf{x}_0\right)$中的点$\mathbf{x}\in N\left(\mathbf{x}_0\right)$，
+    若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在其定义域内某点$\mathbf{x}_0\in D$处，存在一个线性变换$\mathbf{L}:\mathbb{R}^n\rightarrow\mathbb{R}^m$使得对任意$\mathbf{x}_0$的邻域$N\left(\mathbf{x}_0\right)$中的点$\mathbf{x}\in N\left(\mathbf{x}_0\right)$，
     \[\lim_{\mathbf{x}\rightarrow\mathbf{x}_0}\frac{\mathbf{f}\left(\mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)}{\left\|\mathbf{x}-\mathbf{x}_0\right\|}=\mathbf{0}\]
-    就称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable at $\mathbf{x}_0$）}。记$d\mathbf{f}_{\mathbf{x}_0}=\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)$是\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（the differential of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是\emph{$S$上的可微函数（differentiable function on $S$）}。
+    就称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable at $\mathbf{x}_0$）}。向量$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\equiv\mathbf{Lx}-\mathbf{Lx}_0$，称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（the differential of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是\emph{$S$上的可微函数（differentiable function on $S$）}。
 \end{definition}
 
 我们可以根据向量函数的定义来看出，定义\ref{def:II.4.13}就是定义\ref{def:II.4.12}的推广。延用定义\ref{def:II.4.13}的设定，设$\mathbf{f}=\left(f_1,\cdots,f_m\right)^\intercal$，$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，$\mathbf{x}_0=\left(x_{01},\cdots,x_{0n}\right)^\intercal$，则函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的全增量是：
@@ -172,16 +172,25 @@
 \]
 若线性变换$\mathbf{L}$在标准基下的矩阵坐标就是$L_{ij}$，则上式等价于定义\ref{def:II.4.13}的极限式。
 
+我们以一个易于作图的例子说明函数微分的几何意义。函数$f:\mathbb{R}^2\rightarrow\mathbb{R}$的图像是3维欧几里得空间中的一个曲面（如图\ref{fig:II.4.7}）。$f$在点$\mathbf{x}_0$处的微分$\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}f\left(\mathbf{x}\right)\right)\left(\mathbf{x}-\mathbf{x}_0\right)$定义了该曲面在$\mathbf{x}=\mathbf{x}_0$处的切平面。随着$\mathbf{x}$接近$\mathbf{x}_0$，函数$f$的全增量$f\left(\mathbf{x}\right)-f\left(\mathbf{x}_0\right)$将比$\mathbf{x}$接近$\mathbf{x}_0$更快地接近切平面。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/II.4.7.pdf}
+    \caption{向量函数的极限（定义\ref{def:II.4.5}）的图像化理解。}
+    \label{fig:II.4.7}
+\end{figure}
+
 我们接下来考察函数可微与可导的关系，即函数可微的充分和必要条件\footnote{这部分内容可以与本科高等数学课上的相应内容对比学习，特别是关于必要非充份条件和充份非必要条件的例子（“二、全微分存在的条件”\cite[p.~20]{华工高数2009下}。）}。首先，以下定理是函数在某点处可微分的必要条件，它同时也给出了$\mathbf{L}$或其坐标矩阵$L_{ij}$的计算方法。
 
 \begin{theorem}\label{thm:II.4.7}
-    设函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
     \[
         \lim_{\Delta\mathbf{x}\to\mathbf{0}}\frac{\mathbf{f}\left(\mathbf{x}_0+\Delta \mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\Delta\mathbf{x}}{\left\|\Delta\mathbf{x}\right\|}=\mathbf{0}
     \]
     则$\mathbf{f}$的每个坐标函数在$\mathbf{x}_0$处的每个偏导数
     \[
-        \left.\frac{f_i\left(\mathbf{x}\right)}{\partial x_j}\right|_{\mathbf{x}=\mathbf{x}_0}，i=1,\cdots,m,j=1,\cdots,n
+        \left.\frac{f_i\left(\mathbf{x}\right)}{\partial x_j}\right|_{\mathbf{x}=\mathbf{x}_0},i=1,\cdots,m,j=1,\cdots,n
     \]
     都存在。若$\left\{\mathbf{\hat{e}}_1,\cdots\mathbf{\hat{e}}_n\right\},\left\{\mathbf{\hat{u}}_1,\cdots,\mathbf{\hat{u}}_m\right\}$分别是$\mathbb{R}^n,\mathbb{R}^m$的标准基，则
     \[
@@ -204,7 +213,7 @@
 以下定理解决了函数微分的线性变换$\mathbf{L}$的唯一性。
 
 \begin{theorem}\label{thm:II.4.8}
-    设函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
     \[
         \lim_{\Delta\mathbf{x}\to\mathbf{0}}\frac{\mathbf{f}\left(\mathbf{x}_0+\Delta \mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\Delta\mathbf{x}}{\left\|\Delta\mathbf{x}\right\|}=\mathbf{0}
     \]
@@ -217,7 +226,7 @@
 定理\ref{thm:II.4.7}和\ref{thm:II.4.8}共同构成了函数可微分的必要非充份条件。也就是说，并非每当函数在某点处的所有偏导数都存在，该函数就一定在该点可微\cite[“例2”,p.~21]{华工高数2009下}。不过，有了唯一性，我们至少可以把函数微分的线性变换$\mathbf{L}$定义为函数的导数，具体地——
 
 \begin{definition}[向量函数的导数]\label{def:II.4.14}
-    设函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处可微分，即存在线性变换$\mathbf{L}\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$满足
     \[
         \lim_{\Delta\mathbf{x}\to\mathbf{0}}\frac{\mathbf{f}\left(\mathbf{x}_0+\Delta \mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\Delta\mathbf{x}}{\left\|\Delta\mathbf{x}\right\|}=\mathbf{0}
     \]
@@ -235,24 +244,6 @@
 \begin{proof}
     见附录。
 \end{proof}
-
-我们看到，函数导数的定义引入了类似微商的记法，但是我们没有定义过“矢量的无穷小”和“矢量的除法”。这里我们作一些说明。若函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$在$D\subset\mathbb{R}^n$上可微分，其在某点$\mathbf{x}_0\in D$处的全微分是由点$\mathbf{x}_0$引出的函数$d\mathbf{f}_{\mathbf{x}_0}:\mathbb{R}^n\rightarrow\mathbb{R}^m,d\mathbf{f}_{\mathbf{x}_0}\left(\mathbf{x}\right)=\mathbf{L}_{\mathbf{x}_0}\mathbf{x},\forall \mathbf{x}\in\mathbf{R}^n$\footnote{为了讲述简洁这里略去了对函数$\mathbf{f}$在一点处可微分与相应的增量与该点邻域的关系问题。}，其中$\mathbf{L}_{\mathbf{x}_0}$是函数$\mathbf{f}$在$\mathbf{x}_0$处的导数。但是我们直接看到这个引出的函数就是函数的导数$\mathbf{L}_{\mathbf{x}_0}$本身。若视$\mathbf{x}\in D$为$\mathbb{R}^n$上的恒等变换，即$\mathbf{x}\left(\mathbf{p}\right)=\mathbf{p},\forall\mathbf{p}\in\mathbb{R}^n$，则由点$\mathbf{p}_0$上的全微分引出的函数$d\mathbf{x}_{\mathbf{p}_0}:\mathbb{R}^n\rightarrow\mathbb{R}^n$满足$d\mathbf{x}_{\mathbf{p}_0}\left(\mathbf{u}\right)=\mathbf{M}_{\mathbf{p}_0}\mathbf{u}=\mathbf{I}_n\mathbf{u}=\mathbf{u}$，其中$\mathbf{M}_{\mathbf{p}_0}$是$\mathbf{x}$在$\mathbf{p}_0$处的导数，显然这个导数总为恒等线性变换$\mathbf{I}_n$，故$d\mathbf{x}_{\mathbf{p}_0}$也是$\mathbb{R}^n$上的恒等映射。我们把它的分量写出来：
-\[
-    d\mathbf{x}_{\mathbf{p}_0}\left(\mathbf{u}\right)=\left(\begin{array}{c}
-            dx_{1,\mathbf{p}_0}\left(\mathbf{u}\right) \\
-            \vdots                                     \\
-            dx_{n,\mathbf{p}_0}\left(\mathbf{u}\right)\end{array}\right)=\left(\begin{array}{c}
-            u_1 \\\vdots\\u_n\end{array}\right)
-\]
-其中$dx_{i,\mathbf{p}_0}\left(\mathbf{u}\right)=u_i,i=1,\cdots,n$是取坐标函数，且它们都是当$\mathbf{u}\to\mathbf{0}$时的无穷小。因此$d\mathbf{x}_{\mathbf{p}_0}$是由这$n$个无穷小量组成的无穷小向量。现再考虑复合函数$\mathbf{f}\circ\mathbf{x}$在点$\mathbf{p}_0$处的全微分引出的函数，它满足\footnote{这里提前用到了复合函数求导法则。}
-\[
-    d\left(\mathbf{f}\circ \mathbf{x}\right)_{\mathbf{p}_0}\left(\mathbf{u}\right)=\mathbf{L}_{\mathbf{x}\left(\mathbf{p}_0\right)}\mathbf{M}_{\mathbf{p}_0}\mathbf{u}=\mathbf{L}_{\mathbf{x}\left(\mathbf{p}_0\right)}d\mathbf{x}_{\mathbf{p}_0}\left(\mathbf{u}\right),\forall\mathbf{u}\in\mathbb{R}^n\]
-由于线性变换是连续函数，故可证函数$d\left(\mathbf{f}\circ \mathbf{x}\right)_{\mathbf{p}_0}\left(\mathbf{u}\right)$与函数$\mathbf{x}_{\mathbf{p}_0}\left(\mathbf{u}\right)$当$\mathbf{u}\to\mathbf{0}$时都趋于零，且对任意$\mathbf{p}_0,\mathbf{u}\in\mathbb{R}^n$均成立，故
-可略去$\mathbf{p}_0$和$\mathbf{u}$简记为
-\[d\mathbf{f}\left(\mathbf{x}\right)=\mathbf{L}_\mathbf{x}d\mathbf{x}\]
-其中
-\[d\mathbf{x}=\left(\begin{array}{c}dx_1\\\vdots\\dx_n\end{array}\right)\]
-该式就是函数的微分的定义式，由上述的讨论我们知道这个式子表达了一个无穷小向量与另一个无穷小向量之间的线性关系。
 
 我们不把$\mathbf{L}_{\mathbf{x}}$记为$\frac{d\mathbf{f}}{d\mathbf{x}}$，因为线性变换并非“两个向量的商”。
 
@@ -278,18 +269,18 @@
     \[\left\|\mathbf{L}\right\|\equiv\mathrm{inf}\left\{k|k>0,\left\|\mathbf{Lx}\right\|\leq k\left\|\mathbf{x}\right\|\forall\mathbf{x}\right\}\]
 \end{definition}
 
-这一最大下界的存在性和唯一性是显然的。我们无需知道它具体数值。可验证，以上定义的范符合范的一般要求。又由于不同的范的定义是等价的（定理\ref{thm:VI.1.1}），故后续命题的证明过程每当需要线性变换的范的定义时都不妨通过上述这种范的定义来求证。由此定义我们可立即获得性质：$\left\|\mathbf{Lx}\right\|\leq\left\|\mathbf{L}\right\|\left\|\mathbf{x}\right\|$。
+这一最大下界的存在性和唯一性是显然的。我们无需知道它具体数值。可验证，以上定义的范符合范的一般要求。又由于不同的范的定义是等价的（定理\ref{thm:A.1}），故后续命题的证明过程每当需要线性变换的范的定义时都不妨通过上述这种范的定义来求证。由此定义我们可立即获得性质：$\left\|\mathbf{Lx}\right\|\leq\left\|\mathbf{L}\right\|\left\|\mathbf{x}\right\|$。
 
 有了向量函数的导函数的定义以及线性变换的范的定义，我们可以很容易理解导函数的连续性是什么意思。按照函数连续性的定义，若函数$\mathbf{L}:S\rightarrow\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$在$S$上连续，则对任意$\varepsilon>0$总存在$\delta>0$使得只要$\left\|\mathbf{x}-\mathbf{x}_0\right\|<\delta,\mathbf{x},\mathbf{x}_0\in S$就有$\left\|\mathbf{L}\left(\mathbf{x}\right)-\mathbf{L}\left(\mathbf{x}_0\right)\right\|<\varepsilon$。
 
 下面介绍函数“连续可微”的概念，它大致上说的是：导函数连续，则函数连续可微。准确定义如下。
 
 \begin{definition}[连续可微函数]\label{def:II.4.17}
-    若函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在开集$S\subseteq D$上有导函数$\mathbf{L}:S\rightarrow\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$，且其为$S$上的连续函数，则称函数$\mathbf{f}\left(\mathbf{x}\right)$是$S$上的\emph{连续可微（continuously differentiable）}函数。
+    若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在开集$S\subseteq D$上有导函数$\mathbf{L}:S\rightarrow\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$，且其为$S$上的连续函数，则称函数$\mathbf{f}\left(\mathbf{x}\right)$是$S$上的\emph{连续可微（continuously differentiable）}函数。若函数$\mathbf{f}$的前$k$阶导数在$S$上都存在并连续，则称$\mathbf{f}$属于$D$上的$k$阶连续可微函数的集合$\pazocal{C}^k$。
 \end{definition}
 
 \begin{corollary}
-    函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在开集$D$上连续可微当且仅当函数$\mathbf{f}$在$D$上的偏导数
+    函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在开集$D$上连续可微当且仅当函数$\mathbf{f}$在$D$上的偏导数
     \[
         \left.\frac{\partial f_i\left(\mathbf{x}\right)}{\partial x_j}\right|_{\mathbf{x}\in D},i=1,\cdots,m,j=1,\cdots,n
     \]
@@ -299,7 +290,7 @@
 结合这一推论和定理\ref{thm:II.4.9}可知函数连续可微是函数可微的充份非必要条件。
 
 %======================================================
-\subsection{对向量的导数与方向导数}
+\subsection{方向导数与梯度}
 刚才在介绍雅可比矩阵的时候，我们利用全微分的性质考虑过以下极限：
 \[
     \lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}_i\right)-\mathbf{f}\left(\mathbf{x}_0\right)}{t},i=1,\cdots,n\]
@@ -307,52 +298,88 @@
 \[
     \lim_{t\rightarrow 0}\frac{\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{e}}_i\right)-\mathbf{f}\left(\mathbf{x}_0\right)}{t},i=1,\cdots,n
 \]
-现在我们把$\mathbf{\hat{e}}_j$改为任意向量$\mathbf{y}$，引入方向导数。
+现在我们把$\mathbf{\hat{e}}_j$改为任意单位向量$\mathbf{\hat{n}}$，引入方向导数的定义。
 
-\begin{definition}[对向量的导数、方向导数]\label{def:II.4.18}
-    函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$\emph{对向量$\mathbf{y}\in\mathbb{R}^n$的导数（derivative with respect to vector $\mathbf{y}$）}是
-    \[\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}=\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)}{t}\]
-    其中作为导函数的$\frac{\partial \mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}$的定义域是原函数$\mathbf{f}$的定义域的使该导数存在的子集。特别地，函数对单位向量$\mathbf{\hat{u}}$的导数称为\emph{方向导数（directional derivative）}。
+\begin{definition}[方向导数]\label{def:II.4.18}
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$的某邻域$N$有定义，给定单位向量$\mathbf{\hat{n}}\in\mathbb{R}^n$，若极限
+    \[\lim_{t\to 0^+}\frac{\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{n}}\right)-\mathbf{f}\left(\mathbf{x}_0\right)}{t}\]
+    存在，则称此极限值为函数$\mathbf{f}\left(\mathbf{x}\right)$在点$\mathbf{x}_0$处沿方向$\mathbf{\hat{n}}$的\emph{方向导数（directional derivative）}，记作
+    \[\left.\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{\hat{n}}}\right|_{\mathbf{x}=\mathbf{x}_0}\]
 \end{definition}
 
-以下定理使得函数对任意向量的导数可用该函数的全导数来计算。
+以下定理使得函数的方向导数可用该函数的导数来计算。
 
 \begin{theorem}\label{thm:II.4.10}
-    设函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$在$\mathbf{x}\in\mathbb{R}^n$处可微，则
-    \[\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{y}}=\mathbf{L}_{\mathbf{x}}\mathbf{y},\quad\forall\mathbf{y}\in\mathbb{R}^n\]
-    其中$\mathbf{L}_\mathbf{x}=\mathrm{d}_\mathbf{x}\mathbf{f}$是函数$\mathbf{f}$在$\mathbf{x}$处的导数。
+    若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$的某邻域$N$可微分，则给任一单位向量$\mathbf{\hat{n}}\in\mathbb{R}^n$，就有
+    \[\left.\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial\mathbf{\hat{n}}}\right|_{\mathbf{x}=\mathbf{x}_0}=\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)\mathbf{\hat{n}}\]
 \end{theorem}
 \begin{proof}
-    对$\mathbf{y}=\mathbf{0}$显然成立。若$\mathbf{y}\neq\mathbf{0}$，由全微分的近似意义，由自变量的增量$t\mathbf{y}$造成的函数增量$\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)$满足
+    由函数$\mathbf{f}$的可微条件，自变量的增量$t\mathbf{\hat{n}}$造成的函数增量$\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{n}}\right)-\mathbf{f}\left(\mathbf{x}_0\right)$满足
     \begin{align*}
-        \lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\left(t\mathbf{y}\right)}{\left\|t\mathbf{y}\right\|}                  & =\mathbf{0}                                             \\
-        \Leftrightarrow\lim_{t\to 0}\frac{1}{\left\|\mathbf{y}\right\|}\left\|\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(x\right)}{t}-\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\mathbf{y}\right\| & =\mathbf{0}                                             \\
-        \Leftrightarrow\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}+t\mathbf{y}\right)-\mathbf{f}\left(\mathbf{x}\right)}{t}                                                                                                           & =\left(\mathrm{d}_\mathbf{x}\mathbf{f}\right)\mathbf{y}
+        \lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{n}}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\left(t\mathbf{\hat{n}}\right)}{\left\|t\mathbf{\hat{n}}\right\|}                  & =\mathbf{0}                                                                                         \\
+        \Leftrightarrow\lim_{t\to 0}\frac{1}{\left\|\mathbf{\hat{n}}\right\|}\left\|\frac{\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{n}}\right)-\mathbf{f}\left(x_0\right)}{t}-\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\mathbf{\hat{n}}\right\| & =\mathbf{0}                                                                                         \\
+        \Leftrightarrow\lim_{t\to 0}\frac{\mathbf{f}\left(\mathbf{x}_0+t\mathbf{\hat{n}}\right)-\mathbf{f}\left(\mathbf{x}_0\right)}{t}                                                                                                                                      & =\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)\mathbf{\hat{n}}
     \end{align*}
 \end{proof}
 
-我们比较一个函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的全微分及其在$\mathbf{x}_0$处对某向量$\mathbf{y}$的导数可以发现后者就是令前者中的$\mathbf{x}-\mathbf{x}_0=\mathbf{y}$。在全微分中，我们强调的是对任意$\mathbf{x}$（即点$\mathbf{x}_0$邻近的每处），而在对$\mathbf{y}$的导数中我们强调的是$\mathbf{x}_0$朝某个选定的向量$\mathbf{y}$的某处（$\mathbf{x}=\mathbf{x}_0+\mathbf{y}$）。留意到，函数在某点处对标准基向量的导数就是函数对该点相应分量的偏导数。
+我们比较一个函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分及其在$\mathbf{x}_0$处关于$\mathbf{\hat{n}}$的方向导数可以发现，后者就是令前者中的$\mathbf{x}-\mathbf{x}_0=\mathbf{\hat{n}}$。注意到，函数在某点处关于标准基向量的方向导数就是函数关于该点相应分量的偏导数。
 
-方向导数的几何意义是函数在某点处朝相应方向的变化率。定理\ref{thm:II.4.10}表明，拿一个函数在某点处的全导数作用于一个单位向量，就可以得该函数在该点处朝该方向的变化率。这也是函数的全导数的重要几何意义。
+方向导数的几何意义是函数在某点处朝相应方向的变化率。定理\ref{thm:II.4.10}表明，拿一个函数在某点处的导数作用于一个单位向量，就可以得该函数在该点处朝该方向的变化率。这也是函数的导数的重要几何意义。
+
+\begin{definition}[向量函数的梯度]\label{def:II.4.19}
+    若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在点$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$存在，则记
+    \[\mathbf{\nabla}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\equiv\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)^\intercal\]
+    称为函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的\emph{梯度（gradient）}。
+\end{definition}
+
+由线性变换的转置的定义，若视$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\in\mathcal{L}\left(\mathbb{R}^n,\mathbb{R}^m\right)$，则$\mathbf{\nabla}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\in\mathcal{L}\left(\mathbb{R}^{m*},\mathbb{R}^{n*}\right)$。由有限维里斯表示定理（定理\ref{thm:II.2.19}），必存在一组$\mathbb{R}^m$的规范正交基$\left\{\mathbf{\hat{e}}_i\right\}_{i=1}^m$，使得函数$\mathbf{f}\left(\mathbf{x}\right)$在点$\mathbf{x}_0$的导数和梯度满足关系
+\[\left(\mathbf{\hat{e}}_i|\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)\left(\mathbf{x}-\mathbf{x}_0\right)\right)=\left(\mathbf{\nabla}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\mathbf{\hat{e}}_i|\mathbf{x}-\mathbf{x}_0\right),\quad i=1,\cdots,m\]
+其中$\mathbf{x}\in N\left(\mathbf{x}_0\right)$，$N\left(\mathbf{x}_0\right)$是$\mathbf{x}_0$某邻域。
+
+用梯度表示定理\ref{thm:II.4.10}，则函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的关于$\mathbf{\hat{n}}$的方向导数
+\[\left.\frac{\partial\mathbf{f}\left(\mathbf{x}\right)}{\partial \mathbf{\hat{n}}}\right|_{\mathbf{x}=\mathbf{x}_0}=\left(\mathbf{\nabla}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)^\intercal\mathbf{\hat{n}}\]
 %===============================================
 \subsection{复合函数求导的链式法则、反函数定理、隐函数定理}
 \begin{theorem}[复合函数求导的链式法则]\label{thm:II.4.11}
-    如果函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^m$在$\mathbf{x}_0\in D$处可微分；函数$\mathbf{g}:\mathbb{R}^n\supset E\rightarrow\mathbb{R}^p$在$\mathbf{f}\left(\mathbf{x}_0\right)\in E\cap D$处可微分，则复合函数$\mathbf{g}\circ\mathbf{f}$在$\mathbf{x}_0$处可微分，且其导数
+    如果函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在$\mathbf{x}_0\in D$处可微分；函数$\mathbf{g}:\mathbb{R}^n\supset E\rightarrow\mathbb{R}^p$在$\mathbf{f}\left(\mathbf{x}_0\right)\in E\cap D$处可微分，则复合函数$\mathbf{g}\circ\mathbf{f}$在$\mathbf{x}_0$处可微分，且其导数
     %\[
     %\left.\frac{d\mathbf{g}\circ\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}=\left.\frac{d\mathbf{g}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}\left.\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}
     %\]
-    \[\mathbf{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{g}\circ\mathbf{f}\left(\mathbf{x}\right)=\mathrm{d}_{\mathbf{y=\mathbf{f}\left(\mathbf{x}_0\right)}}\mathbf{g}\left(\mathbf{y}\right)\mathbf{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\]
+    \[\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{g}\circ\mathbf{f}\left(\mathbf{x}\right)=\mathrm{d}_{\mathbf{y=\mathbf{f}\left(\mathbf{x}_0\right)}}\mathbf{g}\left(\mathbf{y}\right)\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\]
 \end{theorem}
 \begin{proof}
     见附录。
 \end{proof}
 
 \begin{theorem}[反函数定理]\label{thm:II.4.12}
-    设函数$\mathbf{f}:\mathbb{R}^n\supseteq D\rightarrow\mathbb{R}^n$在$D$上是连续可微函数，且其在$\mathbf{x}_0\in D$处的导数$\mathbf{L}\left(\mathbf{x}_0\right)$是可逆线性变换。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的逆函数$\mathbf{f}^{-1}$；$N$的像集$\mathbf{f}\left(N\right)$是开集；且$\mathbf{f}^{-1}$在$\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}$在$\mathbf{x}_0$的导数的逆变换，即
-    \[\left.\frac{d\mathbf{f}^{-1}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}=\left(\mathbf{L}\left(\mathbf{x}_0\right)\right)^{-1}\]
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$D$上是连续可微函数，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的逆函数$\mathbf{f}^{-1}$；$N$在函数$\mathbf{f}$下的像集$\mathbf{f}\left(N\right)$是开集；且$\mathbf{f}^{-1}\left(\mathbf{y}\right)$在$\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}=\mathbf{x}_0$的导数的逆变换，即
+    \[\mathrm{d}_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}\mathbf{f}^{-1}\left(\mathbf{y}\right)=\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)^{-1}\]
 \end{theorem}
 \begin{proof}
     见附录
+\end{proof}
+
+定理\ref{thm:II.4.12}的证明过程依赖$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是$\mathbb{R}^n$上的双射的事实。诚然，在定理\ref{thm:II.4.12}中所讨论的函数$\mathbf{f}$的定义域和陪域是维数相同的。因此$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$若存在逆变换（单射），则其必为双射。若将定理\ref{thm:II.4.12}推广至关于函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$，则当$n<m$时定理需明确要求$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射，且仅有$\mathbf{f}$存在逆函数$\mathbf{f}^{-1}$的结论，$\mathbf{f}^{-1}$未必连续可微（读者可验证$f\left(x\right)=x^3$的情况）。作为推论正式表示如下。
+
+\begin{corollary}
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$（$n<m$）在$D$上连续可微，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射线性变换，则在$\mathbf{x}_0$某邻域$N$上函数$\mathbf{f}$存在逆函数$\mathbf{f}^{-1}$。
+\end{corollary}
+\begin{proof}
+    仅列出证明概要。设$\left\{\mathbf{e}_1,\cdots\mathbf{e}_n\right\}$是$\mathbb{R}^m$上的一组有线性无关向量组，将其补全为$\mathbb{R}^m$的一组基$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n,\mathbf{e}_{n+1},\dots,\mathbf{e}_m\right\}$。定义函数$\mathbf{g}:\mathbb{R}^m\rightarrow\mathbb{R}^n,$
+    \[\mathbf{g}\left(\sum_{i=1}^m a_i\mathbf{e}_i\right)=\left(a_1,\cdots,a_n\right)\]
+    即取$\mathbb{R}^m$上任一向量在有序基$\left\{\mathbf{e}_i\right\}$下的前$n$个坐标的函数。证明：复合函数$\mathbf{g}\circ\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$满足定理\ref{thm:II.4.12}的条件。
+
+\end{proof}
+
+当$n>m$时，由线性变换的维数定理$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$必不满秩，故$\mathbf{f}$不存在逆函数。
+
+反函数定理的逆命题一般不成立（仍可通过考虑$f\left(x\right)=x^3$理解）。以下推论成立。
+
+\begin{corollary}
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$存在。若函数$\mathbf{f}$在$\mathbf{x}_0$的某邻域$N$存在逆函数$\mathbf{f}^{-1}$且其在$N$上可微，则$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。
+\end{corollary}
+\begin{proof}
+    由于函数$\mathbf{f}$和$\mathbf{f}^{-1}$都可微，可应用定理\ref{thm:II.4.11}，由$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\circ\mathbf{f}^{-1}\left(\mathbf{x}_0\right)=\mathbf{I}$自然得出结论。
 \end{proof}
 
 如果$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$由函数$\mathbf{F}:\mathbb{R}^{n+m}\rightarrow\mathbb{R}^m$隐含定义，我们常常把$\mathbf{F}$写成这样一种映射：$\mathbf{F}:\mathbb{R}^n\times\mathbb{R}^m\rightarrow\mathbb{R}^m$，$\mathbf{F}\left(\mathbf{x},\mathbf{f}\left(\mathbf{x}\right)\right)=\mathbf{0},\forall\mathbf{x}\in\mathbb{R}^n$。此时，我们记
@@ -371,8 +398,8 @@
     \end{align*}
     这时，$\mathbf{f}\left(\mathbf{g}\left(\mathbf{x}\right),\mathbf{x}\right)=\mathbf{f}\left(\mathbf{h}\left(\mathbf{x}\right)\right)$。若$\mathbf{g}$在某处可微分则$\mathbf{h}$在该处也可微分。由链式法则定理，在该处有
     \begin{align*}
-        \frac{d\mathbf{f}\left(\mathbf{g}\left(\mathbf{x}\right),\mathbf{x}\right)}{d\mathbf{x}} & =\frac{d\mathbf{h}\left(\mathbf{x}\right)}{d\mathbf{x}}                                                                                                                                                                    \\
-                                                                                                 & =\left.\frac{d\mathbf{f}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{h}\left(\mathbf{x}\right)}\frac{d\mathbf{h}\left(\mathbf{x}\right)}{d\mathbf{x}}                                                  \\
+        \mathrm{d}_\mathbf{x}\mathbf{f}\left(\mathbf{g}\left(\mathbf{x}\right),\mathbf{x}\right) & =\frac{d\mathbf{h}\left(\mathbf{x}\right)}{d\mathbf{x}}                                                                                                                                                                    \\
+                                                                                                 & =\mathrm{d}_{\mathbf{y}=\mathbf{h}\left(\mathbf{x}\right)}\mathbf{f}\left(\mathbf{y}\right)\mathrm{d}_\mathbf{x}\mathbf{h}\left(\mathbf{x}\right)                                                                          \\
                                                                                                  & =\left(\begin{array}{cccccc}
                                                                                                                   \frac{\partial f_1}{\partial h1}  & \cdots & \frac{\partial f_1}{\partial h_n} & \frac{\partial f_1}{\partial h_{n+1}} & \cdots & \frac{\partial f_1}{\partial h_{n+m}} \\
                                                                                                                   \vdots                            & \ddots & \vdots                            & \vdots                                & \ddots & \vdots                                \\
@@ -395,13 +422,13 @@
     \begin{align*}
         \frac{\partial f_i}{\partial h_k}\frac{\partial h_k}{\partial x_j}=\left\{\begin{array}{ll}
                                                                                       \frac{\partial f_i}{\partial g_k}\frac{\partial g_k}{x_j}, & k=1,\cdots,n     \\
-                                                                                      \frac{\partial f_i}{\partial x_k-n}\delta_{k-n,j},         & k=n+1,\cdots,n+m
+                                                                                      \frac{\partial f_i}{\partial x_{k-n}}\delta_{k-n,j},       & k=n+1,\cdots,n+m
                                                                                   \end{array}\right.,i=1,\cdots,p,j=1,\cdots,m
     \end{align*}
     故
     \begin{align*}
-        C_{ij}                                                                                                  & =\sum_{k=1}^{n}\frac{\partial f_i}{\partial g_k}\frac{\partial g_k}{\partial x_j}+\sum_{j=1}^m\frac{\partial f_i}{\partial x_j}                                                                                                                                                                      \\
-        \Leftrightarrow\frac{d\mathbf{f}\left(\mathbf{g}\left(\mathbf{x}\right),\mathbf{x}\right)}{d\mathbf{x}} & =\left.\frac{\partial \mathbf{f}\left(\mathbf{y},\mathbf{x}\right)}{\partial \mathbf{y}}\right|_{\mathbf{y}=\mathbf{g}\left(\mathbf{x}\right)}\frac{\partial\mathbf{g}\left(\mathbf{x}\right)}{\partial \mathbf{x}}+\frac{\partial \mathbf{f}\left(\mathbf{y},\mathbf{x}\right)}{\partial\mathbf{x}}
+        C_{ij}                                                                                                     & =\sum_{k=1}^{n}\frac{\partial f_i}{\partial g_k}\frac{\partial g_k}{\partial x_j}+\sum_{j=1}^m\frac{\partial f_i}{\partial x_j}                                                                                                                                                                      \\
+        \Leftrightarrow\mathrm{d}_{\mathbf{x}}d\mathbf{f}\left(\mathbf{g}\left(\mathbf{x}\right),\mathbf{x}\right) & =\left.\frac{\partial \mathbf{f}\left(\mathbf{y},\mathbf{x}\right)}{\partial \mathbf{y}}\right|_{\mathbf{y}=\mathbf{g}\left(\mathbf{x}\right)}\frac{\partial\mathbf{g}\left(\mathbf{x}\right)}{\partial \mathbf{x}}+\frac{\partial \mathbf{f}\left(\mathbf{y},\mathbf{x}\right)}{\partial\mathbf{x}}
     \end{align*}
 \end{example}
 
@@ -411,7 +438,7 @@
         \item $\mathbf{F}\left(\mathbf{x}_0,\mathbf{y}_0\right)=\mathbf{0}$；
         \item 导数$\left.\frac{\partial \mathbf{F}\left(\mathbf{x},\mathbf{y}\right)}{\partial \mathbf{y}}\right|_{\mathbf{x}=\mathbf{x}_0,\mathbf{y}=\mathbf{y}_0}$可逆；
     \end{itemize}
-    则$\mathbf{x}_0$的某邻域$N$存在由$\mathbf{F}$隐函定义的连续可微函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$满足$\mathbf{F}\left(\mathbf{x},\mathbf{f}\left(\mathbf{x}\right)\right))=\mathbf{0}\forall\mathbf{x}\in N$，且在$N$上有
+    则$\mathbf{x}_0$的某邻域$N$存在由$\mathbf{F}$隐函定义的连续可微函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$满足$\mathbf{F}\left(\mathbf{x},\mathbf{f}\left(\mathbf{x}\right)\right))=\mathbf{0},\forall\mathbf{x}\in N$，且在$N$上有
     \[\mathrm{d}_{\mathbf{x}}\mathbf{f}\left(\mathbf{x}\right)=-\left[\left.\frac{\partial\mathbf{F}\left(\mathbf{x},\mathbf{y}\right)}{\partial\mathbf{y}}\right|_{\mathbf{x}=\mathbf{x},\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right)}\right]^{-1}\left.\frac{\partial\mathbf{F}\left(\mathbf{x},\mathbf{y}\right)}{\partial\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x},\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right)}\]
     上式中的“$-1$”是指线性变换的逆。
 \end{theorem}
@@ -420,7 +447,7 @@
 \end{proof}
 
 \begin{example}\label{exp:II.12.2}
-    设函数$\mathbf{F}:\mathbb{R}^4\rightarrow\mathbb{R}^2$，$\mathbf{F}\left(u,v,x,y\right)=\left(F_1,F_2\right)$，$\mathbf{F}=\mathbf{0}$隐含定义了$\left(x,y\right)=\mathbf{f}\left(u,v\right),\mathbf{f}:\mathbf{R}^2\rightarrow\mathbf{R}^2$，则
+    设函数$\mathbf{F}:\mathbb{R}^4\rightarrow\mathbb{R}^2$，$\mathbf{F}\left(u,v,x,y\right)=\left(F_1,F_2\right)$，$\mathbf{F}=\mathbf{0}$隐含定义了$\left(x,y\right)=\mathbf{f}\left(u,v\right),\mathbf{f}:\mathbb{R}^2\rightarrow\mathbb{R}^2$，则
     \begin{align*}
                         & \frac{\partial \mathbf{F}}{\partial u}=\mathbf{0},\frac{\partial \mathbf{F}}{\partial v}=\mathbf{0}                                                                                                                                                                                                                                                                                                                                                                              \\
         \Leftrightarrow & \left\{\begin{array}{l}

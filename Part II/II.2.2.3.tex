@@ -5,7 +5,7 @@
 
 我们首先引入线性泛函的概念，以便定义线性变换的转置。
 
-\begin{definition}[线性泛函与对偶空间]\label{def:II.4.4}
+\begin{definition}[线性泛函与对偶空间]\label{def:II.2.14}
     设$\mathcal{V}$是数域$\mathbb{F}$上的向量空间，从$\mathcal{V}$到$\mathbb{F}$的线性变换称为向量空间$\mathcal{V}$上的\emph{线性泛函（linear functional）}，$\mathcal{V}$上的所有线性泛函的集合称为向量空间$\mathcal{V}$的\emph{对偶空间（dual space）}，记为$\mathcal{V}^*$。
 \end{definition}
 
@@ -17,7 +17,9 @@
         \item 函数$f\left(x,y,z\right)=3x+5y-z,x,y,z\in\mathbb{R}$是3维实坐标空间$\mathbb{R}^3$上的线性泛函。
         \item 函数$f\left(\mathbf{x}\right)=3\left(\mathbf{x}\cdot\mathbf{x}\right),\mathbf{x}\in\mathbb{R}^n$是$n$维实坐标空间$\mathbb{R}^n$上的线性泛函。
         \item 设$\mathbb{F}^{M\times M}$是数域$\mathbb{F}$上的$M\times M$矩阵的集合，矩阵的迹$\mathrm{tr}A=A_{11}+\cdots+A_{MM},A\in\mathbb{F}^{M\times M}$是$\mathbb{F}^{M\times M}$上的线性泛函。
-        \item 设$a_1,\cdots,a_n\in\mathbb{F}$，并定义映射$f:\mathbb{F}^n\rightarrow\mathbb{F},f\left(x_1,\cdots,x_n\right)=a_1x_1+\cdots+a_nx_n,\quad\forall\left(x_1,\cdots,x_n\right)\in\mathbb{F}$，验证$f$是$\mathbb{F}^n$上的线性泛函。这事实上既是两个$n\times 1$列向量的“点乘”，又是一个$1\times n$“行向量”与$n\times 1$“列向量”的矩阵乘。
+        \item 设$a_1,\cdots,a_n\in\mathbb{F}$，并定义映射$f:\mathbb{F}^n\rightarrow\mathbb{F},$
+              \[f\left(x_1,\cdots,x_n\right)=a_1x_1+\cdots+a_nx_n,\quad\forall\left(x_1,\cdots,x_n\right)\in\mathbb{F}\]
+              验证$f$是$\mathbb{F}^n$上的线性泛函。这事实上既是两个$n\times 1$列向量的“点乘”，又是一个$1\times n$“行向量”与$n\times 1$“列向量”的矩阵乘。
         \item $\mathcal{C}\left[a,b\right]$是区间$\left[a,b\right]$上的所有连续实值函数的集合，可验证它是数域$\mathbb{R}$上的向量空间\cite{周胜林2012线性代数}[\S 7.1 例1.3]。定义$L:\mathcal{C}\left[a,b\right]\rightarrow\mathbb{R},L\left(g\right)=\int_a^bf\left(t\right)\mathrm{d}t,\quad\forall g\in\mathcal{C}\left[a,b\right]$，验证$L$是$\mathcal{C}\left[a,b\right]$上的线性泛函。
     \end{itemize}
 \end{example}
@@ -104,6 +106,6 @@
     与之前的结果比较可得$A_{ij}=B_{ji},i=1,\cdots,m,j=1,\cdots,n$。
 \end{proof}
 
-在后面的讨论中，我们还会了解伴随算符的知识。在那里，我们就线性变换的转置作更多讨论。
+
 \end{document}
 

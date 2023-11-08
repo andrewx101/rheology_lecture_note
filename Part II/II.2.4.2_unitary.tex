@@ -1,15 +1,30 @@
 \documentclass[main.tex]{subfiles}
 % 内积空间上的线性算符
 \begin{document}
-幺正算符有许多相互等价的性质，选择哪一个作为其定义在数学上也都是等价的。本讲义仍倾向于从其在内积运算中扮演的角色来定义。
+幺正算符有许多相互等价的性质，选择哪一个作为其定义在数学上也都是等价的。本讲义仍倾向于从其在内积运算中扮演的角色——保持内积运算结果不变——来定义。
+
+\begin{lemma}\label{lem:II.2.2}
+    设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间。若双射$Q:\mathcal{V}\rightarrow\mathcal{V}$满足
+    \[\left(Q\left(\mathbf{a}\right)|Q\left(\mathbf{b}\right)\right)=\left(\mathbf{a}|\mathbf{b}\right),\quad\forall\mathbf{a},\mathbf{b}\in\mathcal{V}\]
+    （又可说$Q$\emph{保持内积}，或说$Q$是$\mathcal{V}$上的\emph{自同构映射（automorphism）}，则$Q$是$\mathcal{V}$上的线性算符。
+\end{lemma}
+\begin{proof}
+    因$Q$是双射，故对任意给定的$\mathbf{a}^\prime\in\mathcal{V}$必存在唯一$\mathbf{a}\in\mathcal{V}$满足$\mathbf{a}^\prime=Q\left(\mathbf{a}\right)$，给定任意$\mathbf{u},\mathbf{v}\in\mathcal{V}$和$\alpha\in\mathbb{F}$，有
+    \begin{align*}
+        \left(Q\left(\alpha\mathbf{u}+\mathbf{v}\right)-\alpha Q\left(\mathbf{u}\right)-Q\left(\mathbf{v}\right)|\mathbf{a}^\prime\right) & =\left(Q\left(\alpha\mathbf{u}+\mathbf{v}\right)|\mathbf{a}^\prime\right)-\alpha\left(Q\left(\mathbf{u}\right)|\mathbf{a}^\prime\right)-\left(Q\left(\mathbf{v}\right)|\mathbf{a}^\prime\right) \\
+                                                                                                                                          & =\left(\alpha\mathbf{u}+\mathbf{v}|\mathbf{a}\right)-\alpha\left(\mathbf{u}|\mathbf{a}\right)-\left(\mathbf{v}|\mathbf{a}\right)                                                                \\
+                                                                                                                                          & =0                                                                                                                                                                                              \\
+        \Rightarrow Q\left(\alpha\mathbf{u}+\mathbf{v}\right)                                                                             & =\alpha Q\left(\mathbf{u}\right)+Q\left(\mathbf{v}\right),\quad\forall\mathbf{u},\mathbf{v}\in\mathcal{V},\alpha\in\mathbb{F}
+    \end{align*}
+\end{proof}
 
 \begin{definition}[幺正算符]\label{def:II.2.23}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间，若线性算符$\mathbf{Q}\in\mathcal{L}\left(\mathcal{V}\right)$\emph{保持内积}，即$\left(\mathbf{Qa}|\mathbf{Qb}\right)=\left(\mathbf{a}|\mathbf{b}\right),\forall\mathbf{a},\mathbf{b}\in\mathcal{V}$，则称$\mathbf{Q}$是一个\emph{幺正算符（unitary operator）}。
+    设$\mathcal{V}$是数域$\mathbb{F}$上的内积空间，若映射$\mathbf{Q}:\mathcal{V}\rightarrow\mathcal{V}$是保持内积的双射，就称$\mathbf{Q}$是$\mathcal{V}$上的一个\emph{幺正算符（unitary operator）}。
 \end{definition}
 
-之前我们介绍过，保持运算结构的映射叫同态映射。因此定义\ref{def:II.2.23}又可以简洁地表述为：幺正算符是内积空间到其自身的同态映射。
+因此定义\ref{def:II.2.23}又可以简洁地表述为：内积空间上的自同构映射叫做幺正算符。
 
-幺正算符的其他等价的定义，可见以下定理
+幺正算符的其他等价的定义，可见以下定理。
 
 \begin{theorem}\label{thm:II.2.33}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{Q}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则以下命题相互等价：
