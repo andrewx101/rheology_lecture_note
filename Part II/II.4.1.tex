@@ -7,8 +7,6 @@
     从$\mathbb{R}^n$到$\mathbb{R}^m$的映射$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$是一个\emph{向量函数（vector function）}。其变量是一个$n$维向量空间的向量$\mathbf{r}\in\mathbb{R}^n$，$\mathbf{r}=\left(r_1,\cdots,r_n\right)^\intercal$；其像（函数值）$\mathbf{f}\left(\mathbf{r}\right)$是一个$m$维向量空间的向量$\mathbf{f}\left(\mathbf{r}\right)\in\mathbb{R}^m$，$\mathbf{f}\left(\mathbf{r}\right)=\left(f_1\left(\mathbf{r}\right),\cdots,f_m\left(\mathbf{r}\right)\right)^\intercal$。$f_j:\mathbb{R}_n\rightarrow\mathbb{R},j=1,\cdots,m$称为$\mathbf{f}$的\emph{坐标函数（coordinate function）}。
 \end{definition}
 
-
-
 \begin{example}\label{exp:II.4.1}
     函数$\mathbf{f}:\mathbb{R}^3\rightarrow\mathbb{R}^2$，
     \[\begin{split}\mathbf{f}\left(\mathbf{r}\right)=\left(\begin{array}{c}r_1^2+r_2^2+r_3^2\\r_1+r_2+r_3\end{array}\right)=\left(\begin{array}{c}f_1\\f_2\end{array}\right),\\f_1\leq0,f_2\in\mathbb{R}\end{split}\]
@@ -59,7 +57,7 @@
 \begin{example}\label{exp:II.4.4}
     函数$y=x^2-2$的图象是所有有序对$\left(x,y\right)$。同时，由于$\left(x,y\right)\in\mathbb{R}^2$，故这是平面上的图形。具体地，它是如图\ref{fig:II.4.1}所示的一条二次曲线。
 \end{example}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{images/II.4.1.png}
     \caption{函数$y=x^2-2$的图像。}
@@ -68,7 +66,7 @@
 \begin{example}\label{exp:II.4.5}
     函数$f:\mathbb{R}^2\rightarrow\mathbb{R},f\left(\mathbf{r}\right)=\left\|\mathbf{r}\right\|^2$的图像是有序3元组$\left(r_1,r_2,\left\|\mathbf{r}\right\|^2\right)$的集合，是3维空间的一个如图\ref{fig:II.4.2}所示的曲面。
 \end{example}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{images/II.4.2.png}
     \caption{函数$f:\mathbb{R}^2\rightarrow\mathbb{R},f\left(\mathbf{r}\right)=\left\|\mathbf{r}\right\|^2$的图像在$-2<r_1<2,-2<r_2<2$范围内的部分。}
@@ -81,7 +79,7 @@
     \]
     的图像是所有有序对$\left(t,\left(\cos t,\sin t\right)\right)$。我们把2维向量$\left(\cos t,\sin t\right)$作在实数轴上$t$对应的位置，得到图\ref{fig:II.4.3}所示的螺线。
 \end{example}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{images/II.4.3.png}
     \caption{例\ref{exp:II.4.6}函数的图象。}
@@ -113,7 +111,7 @@
 
 例\ref{exp:II.4.7}中的函数按照图\ref{fig:II.4.4}可视化时，我们称这个三维空间中的螺带曲面是由一个\emph{参数方程（parametric equation）}（即$\mathbf{f}=\mathbf{f}\left(\mathbf{r}\right)$）所定义的曲面，它的\emph{参数变量（parametric variable）}$\mathbf{r}\in\mathbb{R}^2$取值的区域就是如图\ref{fig:II.4.4}所示的矩形区域，称为\emph{参数域（domain of parameter variable）}。我们所画出来的3维曲面只是函数$\mathbf{f}$的值域$\mathrm{ran}\mathbf{f}$所形成的点集。一般地，由参数方程$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$定义的几何形状，当$n=1$时，是$m$维空间中的曲线，$m=2,3$；当$n=2$时是$m=3$维空间中的曲面。
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{images/II.4.4.png}
     \caption{由例\ref{exp:II.4.7}的参数方程定义的曲面。}
@@ -126,7 +124,7 @@
 \begin{example}\label{exp:II.4.8}
     设函数$f:\mathbb{R}^3\rightarrow\mathbb{R},f\left(\mathbf{r}\right)=r_1r_2+r_2r_3+r_3r_1$及其一个水平集$S=\left\{\mathbf{r}|f\left(\mathbf{r}\right)=1\right\}$。以$S$的元素$\left(r_1,r_2,r_3\right)$为坐标的点集构成的三维图形是怎样的？设$r_3=0$得到方程$r_1r_2=1$，这定义了$\mathbf{\hat{e}}_1$-$\mathbf{\hat{e}}_2$平面上的一条双曲线，这条双曲线是$S$的图像与$\mathbf{\hat{e}}_1-\mathbf{\hat{e}}_2$平面的截线。类似地，$S$与$\mathbf{\hat{e}}_2-\mathbf{\hat{e}}_3$、$\mathbf{\hat{e}}_1-\mathbf{\hat{e}}_3$平面的戴线也是类似的双曲线。更一般地，$S$是一个由一系列双曲线构成的曲面（如图\ref{fig:II.4.5}所示）。但是，按定义\ref{def:II.4.3}，这不是函数$\mathbf{f}$的图像。
 \end{example}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{images/II.4.5.png}
     \caption{函数$f\left(\mathbf{r}\right)=r_1r_2+r_2r_3+r_3r_1$的水平集$S=\left\{\left(x,y,z\right)|xy+yz+xz=1\right\}$。}

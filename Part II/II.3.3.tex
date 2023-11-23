@@ -38,7 +38,14 @@
 \[
     \cos\omega=\frac{\left(\mathbf{Qa}|\mathbf{a}\right)}{\left(\mathbf{a}|\mathbf{a}\right)}=\cos\theta
 \]
-注意到，在欧几里得空间中的角的定义中的余弦函数是双射，故上式$\Leftrightarrow\omega=\theta$。换言之，当$\mathrm{det}\mathbf{Q}=1$时，任一向量$\mathbf{a}$在被$\mathbf{Q}$作用之后，长度不变，方向变化角度$\theta$。若向量$\mathbf{a}$是给定了原点后点$A$的位置向量，则被$\mathbf{Q}$作用后，点$A$到原点的距离不变，绕原点旋转角度$\theta$。特别地，当$\theta=0$时，$\mathbf{Q}=\mathbf{I}$。
+注意到，在欧几里得空间中的角的定义中的余弦函数是双射，故上式$\Leftrightarrow\omega=\theta$。换言之，当$\mathrm{det}\mathbf{Q}=1$时，任一向量$\mathbf{a}$在被$\mathbf{Q}$作用之后，长度不变，方向变化角度$\theta$（如图\ref{fig:II.3.1}）。若向量$\mathbf{a}$是给定了原点后点$A$的位置向量，则被$\mathbf{Q}$作用后，点$A$到原点的距离不变，绕原点旋转角度$\theta$。特别地，当$\theta=0$时，$\mathbf{Q}=\mathbf{I}$。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/II.3.1.pdf}
+    \caption{正交算符在2维欧几里得空间中的几何意义。}
+    \label{fig:II.3.1}
+\end{figure}
 
 接下来我们考虑$\mathrm{det}\mathbf{Q}=-1$时的情况。首先，$\mathbf{Q}$的两个特征值是1和$-1$。这相当于说$\mathrm{det}\left(\mathbf{Q}\pm\mathbf{I}\right)=0$。诚然，由算符的伴随的计算性质（定理\ref{thm:II.2.30}），$\left(\mathbf{Q}\pm\mathbf{I}\right)^*=\mathbf{Q}^*\pm\mathbf{I}$。由行列式的性质，$\mathrm{det}\left(\mathbf{Q}\pm\mathbf{I}\right)^*=\mathrm{det}\left(\mathbf{Q}\pm\mathbf{I}\right)$。再由
 \begin{align*}
@@ -71,7 +78,7 @@
 
 设$\mathbf{a}=\alpha_1\mathbf{\hat{e}}^\prime_1+\alpha_2\mathbf{\hat{e}}^\prime_2$是二维欧几里得平面的任一平移向量。则$\mathbf{Qa}$在$B^\prime$下的坐标可由以下矩阵运算得到
 \[\left(\mathbf{Q}\right)_{B^\prime}\left(\alpha_1,\alpha_2\right)^\intercal=\left(\begin{array}{c}\alpha_1\cos\theta+\alpha_2\sin\theta\\-\alpha_2\cos\theta+\alpha_1\sin\theta\end{array}\right)\]
-记$\delta$为向量$\mathbf{a}$与$\mathbf{\hat{e}}^\prime_1$的夹角，则上式说明$\mathbf{Qa}$与$\mathbf{\hat{e}}^\prime_1$的夹角是$2\phi-\delta$。也就是说，在2维欧几里得平面上，任一向量被行列式为$-1$的正交算符$\mathbf{Q}$作用后的结果，是原向量关于角度为$\theta/2$的轴的镜象翻转。其中“角度”是指与所选定规范正交基的第1个单位基向量的夹角。$\theta$是$\mathbf{Q}$在所选定的规范正交基下的坐标矩阵取前文所述的表达式时的角；它是$\mathbf{Q}$本身的特性。也就是说，当$\mathrm{det}\mathbf{Q}=-1$时，$\mathbf{Q}$在2维欧几里得空间中确定了一条镜象对称轴。特别地，当$\theta=0$时，意味着我们选取的直角坐标系第一条轴恰好是$\mathbf{Q}$确定的镜象对称轴。
+记$\delta$为向量$\mathbf{a}$与$\mathbf{\hat{e}}^\prime_1$的夹角，则上式说明$\mathbf{Qa}$与$\mathbf{\hat{e}}^\prime_1$的夹角是$2\phi-\delta$。也就是说，在2维欧几里得平面上，任一向量被行列式为$-1$的正交算符$\mathbf{Q}$作用后的结果，是原向量关于角度为$\theta/2$的轴的镜象翻转。其中“角度”是指与所选定规范正交基的第1个单位基向量的夹角（图\ref{fig:II.3.1}）。$\theta$是$\mathbf{Q}$在所选定的规范正交基下的坐标矩阵取前文所述的表达式时的角；它是$\mathbf{Q}$本身的特性。也就是说，当$\mathrm{det}\mathbf{Q}=-1$时，$\mathbf{Q}$在2维欧几里得空间中确定了一条镜象对称轴。特别地，当$\theta=0$时，意味着我们选取的直角坐标系第一条轴恰好是$\mathbf{Q}$确定的镜象对称轴。
 
 \subsubsection{3维欧几里得平面上的几何意义}
 设$\mathbf{Q}$是3维实内积空间$\mathcal{V}$中的正交算符，由其行列式的基本性质$\mathrm{det}\mathbf{Q}=\pm 1$，可知其3个特征值$\lambda_i=\pm 1,i=1,2,3$。设$\left\{\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right\}$是$\mathcal{V}$的一组规范正交基，且$\mathbf{\hat{e}}_1$是$\mathbf{Q}$的一个特征向量，即$\mathbf{Q\hat{e}}_1=\pm 1$。我们考察$\mathbf{Q}$在这组规范正交基下的坐标$Q_{ij}=\left(\mathbf{Q\hat{e}}_i|\mathbf{\hat{e}}_j\right)$，有如下结论
@@ -102,11 +109,18 @@
 
 当$\mathrm{det}\mathbf{Q}=1$时，易验$\left(\mathbf{Qa}|\mathbf{\hat{e}}_1\right)=\left(\mathbf{a}|\mathbf{\hat{e}}_1\right)$，也就是说，$\mathbf{Q}$的作用不改变向量与$\mathbf{\hat{e}}_1$的夹角；$\mathbf{Qa}$与$\mathbf{a}$相比仅绕$\mathbf{\hat{e}}_1$旋转了一定的角度。具体地，设$\mathbf{a}=\sum_{i=1}^3\alpha_i\mathbf{\hat{e}}_i$，则
 \[\mathbf{Qa}=\alpha_1\mathbf{\hat{e}}_1+\left(\alpha_2\cos\theta+\alpha_3\sin\theta\right)\mathbf{\hat{e}}_2+\left(-\alpha_2\sin\theta+\alpha_3\cos\theta\right)\mathbf{\hat{e}}_3\]
-比较正交算符在2维欧几里得平面的分析结果，上式的后两项表示向量$\alpha_2\mathbf{\hat{e}}_2+\alpha_3\mathbf{\hat{e}}_3$在$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上绕原点关于$\mathbf{\hat{e}}_2$旋转了角$\theta$。联系格拉姆--施密特正交化过程可知，$\alpha_2\mathbf{\hat{e}}_2+\alpha_3\mathbf{\hat{e}}_3$就是向量$\mathbf{a}$在$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上的投影向量。因此，当$\mathrm{det}\mathbf{Q}=1$时，$\mathbf{Qa}$在3维欧几里得空间确定了一个规范正交基$\left\{\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right\}$，其中$\mathbf{\hat{e}}_1$是一个旋转轴。对任意平移向量$\mathbf{a}$，$\mathbf{Qa}$相比于$\mathbf{a}$绕旋转轴旋转角$\theta$，而$\theta$是到$\mathbf{\hat{e}}_2$的夹角。值得注意的是，$\left\{\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right\}$是由$\mathbf{Q}$的性质确定的。我们在讨论几何问题时未必恰好选择了这组特殊的规范正交基来建立直角坐标系。所以一般地，由$\mathbf{Q}$所定义的旋转轴在预先选定的直角坐标系中是“斜放”的。特别地，当$\theta=0$时，$\mathbf{Q}=\mathbf{I}$。
+比较正交算符在2维欧几里得平面的分析结果，上式的后两项表示向量$\alpha_2\mathbf{\hat{e}}_2+\alpha_3\mathbf{\hat{e}}_3$在$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上绕原点旋转了角$\theta$。联系格拉姆--施密特正交化过程可知，$\alpha_2\mathbf{\hat{e}}_2+\alpha_3\mathbf{\hat{e}}_3$就是向量$\mathbf{a}$在$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上的投影向量。因此，当$\mathrm{det}\mathbf{Q}=1$时，$\mathbf{Qa}$在3维欧几里得空间确定了一个规范正交基$\left\{\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right\}$，其中$\mathbf{\hat{e}}_1$是一个旋转轴。对任意平移向量$\mathbf{a}$，$\mathbf{Qa}$在$\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3$所张的平面上的投影相比于$\mathbf{a}$在这一平面上的投影绕旋转轴旋转角$\theta$（图\ref{fig:II.3.2}）。值得注意的是，$\left\{\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right\}$是由$\mathbf{Q}$的性质确定的。我们在讨论几何问题时未必恰好选择了这组特殊的规范正交基来建立直角坐标系。所以一般地，由$\mathbf{Q}$所定义的旋转轴在预先选定的直角坐标系中是“斜放”的。特别地，当$\theta=0$时，$\mathbf{Q}=\mathbf{I}$。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/II.3.2.pdf}
+    \caption{正交算符在3维欧几里得空间中的几何意义。}
+    \label{fig:II.3.2}
+\end{figure}
 
 当$\mathrm{det}\mathbf{Q}=-1$时，由类似的讨论可得
 \[\mathbf{Qa}=-\alpha_1\mathbf{\hat{e}}_1+\left(\alpha_2\cos\theta+\alpha_3\sin\theta\right)\mathbf{\hat{e}}_2+\left(-\alpha_3\cos\theta+\alpha_2\sin\theta\right)\mathbf{\hat{e}}_3\]
-首先，上式第一项说明，$\mathbf{Qa}$与$\mathbf{\hat{e}}_1$的夹角$\phi^\prime$跟$\mathbf{a}$与$\mathbf{\hat{e}}_1$的夹角$\phi$保持$\phi^\prime=\pi-\phi$的关系，也就是说$\mathbf{Qa}$把$\mathbf{a}$关于由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$确定的平面进行了镜象翻转。然后，比较上式后两项与2维内积空间上的正交算符的分析结果可知，它们是$\mathbf{a}$在由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上，以与$\mathbf{\hat{e}}_2$夹角为$\theta/2$的直线为对称轴进行平面内的镜向翻转的结果。总之，当$\mathrm{det}\mathbf{Q}=-1$时，$\mathbf{Q}$的几何效果就是上述两个操作的组合。$\mathbf{Q}$在3维欧几里得空间确定了一个镜面翻转的平面以及在该面内镜象翻转的一条对称轴。在已选定的直角坐标系中，这个平面和这条对称轴一般是“斜放”的。
+首先，上式第一项说明，$\mathbf{Qa}$与$\mathbf{\hat{e}}_1$的夹角$\phi^\prime$跟$\mathbf{a}$与$\mathbf{\hat{e}}_1$的夹角$\phi$保持$\phi^\prime=\pi-\phi$的关系，也就是说$\mathbf{Qa}$把$\mathbf{a}$关于由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$确定的平面进行了镜象翻转。然后，比较上式后两项与2维内积空间上的正交算符的分析结果可知，它们是$\mathbf{a}$在由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上，以与$\mathbf{\hat{e}}_2$夹角为$\theta/2$的直线为对称轴进行平面内的镜向翻转的结果（图\ref{fig:II.3.2}）。总之，当$\mathrm{det}\mathbf{Q}=-1$时，$\mathbf{Q}$的几何效果就是上述两个操作的组合。$\mathbf{Q}$在3维欧几里得空间确定了一个镜面翻转的平面以及在该面内镜象翻转的一条对称轴。在已选定的直角坐标系中，这个平面和这条对称轴一般是“斜放”的。
 
 \subsection{对称算符与向量的拉伸}
 由定理\ref{thm:II.2.32}，复数域上的厄米算符特征值全为实数。也就是说，厄米算符的特征多项式全为实根。因此，定理\ref{thm:II.2.32}中关于复数域上厄米算符的性质，也适用于在实数域上的对称算符，包括：特征值全都是实数\cite[\S 5.3 定理3.4]{周胜林2012线性代数}；对应于不同特征值的特征向量必正交\cite[\S 5.3 定理3.5]{周胜林2012线性代数}；必可对角化\cite[\S 5.3 定理3.6]{周胜林2012线性代数}；存在一组规范正交基是其特征向量。

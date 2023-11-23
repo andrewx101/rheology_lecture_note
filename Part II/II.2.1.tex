@@ -82,7 +82,7 @@
 
 向量空间定义中所要求的封闭性保证了向量可类似于我们习惯的数字那样被用作数学表达和运算。因此，封闭性是一个很重要的性质。那么，一个向量空间之内，会不会有一部分子集本身就满足了封闭性呢（就好像复数与实数之间的关系）？我们通过考察$\mathbb{C}^n$和$\mathbb{R}^n$可以举出很多正面的例子。一般地，如果一个向量空间的子集本身也满足封闭性，那么它自己也是一个向量空间（即满足定义\ref{def:II.2.1}）。
 
-\begin{definition}[子空间]\label{def:II.2.3}\cite{周胜林2012线性代数}[\S 7.1定义1.2及其后例题]
+\begin{definition}[子空间]\label{def:II.2.3}\cite[\S 7.1定义1.2及其后例题]{周胜林2012线性代数}
     令$\mathcal{V}$是数域$\mathbb{F}$上的一个向量空间，如果$\mathcal{V}$的子集$\mathcal{W}\subseteq\mathcal{V}$也是一个向量空间（并与$\mathcal{V}$采用相同的加法和标量乘定义），则称$\mathcal{W}$是$\mathcal{V}$的一个\emph{子空间（subspace）}。
 \end{definition}
 
@@ -107,7 +107,7 @@
 
 从上面的例子看到，一个向量空间与其子空间之间的关系，暗示了某种维度的概念。我们首先可以明确“一个向量空间维数”的一般意义，但需要先引入“基”的概念。
 
-\begin{definition}[向量空间的基]\label{def:II.2.5}\cite{周胜林2012线性代数}[\S 7.2定义2.4]
+\begin{definition}[向量空间的基]\label{def:II.2.5}\cite[\S 7.2定义2.4]{周胜林2012线性代数}
     如果向量空间$\mathcal{V}$是其子空间$B$的线性生成空间（即$\mathcal{V}=\mathrm{span}B$，且$B$内的所有向量线性无关，则称$B$是$\mathcal{V}$的一组\emph{基（basis）}。如果$B$含有有限个向量，则称$\mathcal{V}$是有限维向量空间。
 \end{definition}
 
@@ -295,7 +295,7 @@
 
 由定理\ref{thm:II.2.4}以及子空间、线性生成空间的定义（\ref{def:II.2.3}、\ref{def:II.2.4}），内积空间$\mathcal{V}$的任一正交集$S$总能线性生成$\mathcal{V}$的一个子空间。若内积空间$\mathcal{V}$的一组基$B$是正交集，则称$B$为$\mathcal{V}$的\emph{正交基（orthogonal basis）}。如果$\mathcal{V}$是赋范内积空间，其一组基$B$是规范正交集，则称$B$是$\mathcal{V}$的一组\emph{规范正交基（orthonormal basis）}。
 
-定理\ref{thm:II.2.4}的证明也给出了由一个赋范内积空间的任一组基经\emph{格拉姆--}\emph{施密特正交化过程}\emph{（Gram--Schmidt process）}获得一组规范正交基的方法，作为定理如下。
+定理\ref{thm:II.2.4}的证明也给出了由一个赋范内积空间的任一组基经格拉姆--施密特正交化过程（Gram--Schmidt process）获得一组规范正交基的方法，作为定理如下。
 
 \begin{theorem}\label{thm:II.2.5}
     设$\mathcal{V}$是内积空间，$\mathbf{b}_1,\cdots,\mathbf{b}_n\in\mathcal{V}$是一组线性无关向量。那么总是可以由它们构建一组两两正交的向量$\mathbf{a}_1,\cdots,\mathbf{a}_n\in\mathcal{V}$使得对于每一$k=1,\cdots,n$，向量组$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$都是由$\left\{\mathbf{b}_1,\cdots,\mathbf{b}_k\right\}$线性生成的空间的一组基。

@@ -1,7 +1,7 @@
 \documentclass[main.tex]{subfiles}
 % 曲线、曲面和积分定理
 \begin{document}
-本节的内容在大一的高等数学课中已经学过\cite[第九章]{华工高数2009下}，以下只是使用向量函数微积分的语言重新复述一次。本节默认讨论前题是在3维欧几里得空间中选取基本坐标系，使得任一点的位置向量直接可用平移空间中标准基下的坐标表示，从而与$\mathbb{R}^3$的元素一一对应。
+本节的内容在大一的高等数学课中已经学过\cite[\S 9]{华工高数2009下}，以下只是使用向量函数微积分的语言重新复述一次。本节默认讨论前题是在3维欧几里得空间中选取基本坐标系，使得任一点的位置向量直接可用平移空间中标准基下的坐标表示，从而与$\mathbb{R}^3$的元素一一对应。
 
 \subsection{曲线积分}
 设函数$\mathbf{g}:\mathbb{R}\supset I\rightarrow\mathbb{R}^3$在连通区域$I$上分段连续可微，则以$\mathbf{g}\left(t\right),t\in I$为参数方程的像集$\mathbf{g}\left(I\right)$是$\mathbb{R}^3$中的一条\emph{可求弧长（rectifiable）}的曲线，可记为曲线$\mathcal{C}$。
@@ -14,7 +14,7 @@
 \[L\left(\mathcal{C}\right)=\int_\mathcal{C}dl=\int_a^b\left\|d\mathbf{g}/dt\right\|dt
 \]
 
-如果定义在曲线$\mathcal{C}$上的函数$\mathbf{f}:\mathbb{R}\supset\mathcal{L}\rightarrow\mathbb{R}^n$是“单位弧长的性质”，则该性质在曲线$\mathcal{C}$上的总和是对弧长的曲线积分\cite[p.~133,定理9.1.1]{华工高数2009下}
+如果定义在曲线$\mathcal{C}$上的函数$\mathbf{f}:\mathbb{R}\supset\mathcal{L}\rightarrow\mathbb{R}^n$是“单位弧长的性质”，则该性质在曲线$\mathcal{C}$上的总和是对弧长的曲线积分\cite[\S 9.1,定理9.1.1]{华工高数2009下}
 \[
     \int_\mathcal{C}\mathbf{f}\left(\mathbf{g}\right)dl=\int_{a}^{b}\mathbf{f}\left(\mathbf{g}\left(t\right)\right)\left\|d\mathbf{g}/dt\right\|dt
 \]
@@ -56,18 +56,20 @@
     \int_\mathcal{S}\mathbf{f}\left(\mathbf{g}\right)d\sigma=\int_D\mathbf{f}\left(\mathbf{g}\left(\mathbf{u}\right)\right)\left\|\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right\|d\sigma_D
 \]
 
-“作用场”$\mathbf{h}:\mathbb{R}^3\supset\mathcal{S}\rightarrow\mathbb{R}^3$在曲面上的总作用是第二型曲面积分或对坐标的曲面积分\cite[p.~170,第五节]{华工高数2009下}
+“作用场”$\mathbf{h}:\mathbb{R}^3\supset\mathcal{S}\rightarrow\mathbb{R}^3$在曲面上的总作用是第二型曲面积分或对坐标的曲面积分\cite[\S 9.5]{华工高数2009下}
 \[
     \int_\mathcal{S}\mathbf{h}\cdot d\boldsymbol{\sigma}=\int_D\mathbf{h}\left(\mathbf{g}\left(\mathbf{u}\right)\right)d\sigma_D=\int_\mathcal{S}\mathbf{h}\cdot\mathbf{\hat{n}}d\sigma
 \]
 
-\subsection{积分换元公式}\footnote{本科高等数学已接触过3重积分的情况\cite[\S 8.3“五”]{华工高数2009下}。}
+\subsection{积分换元公式}
+本科高等数学已接触过3重积分的情况\cite[\S 8.3“五”]{华工高数2009下}。
+
 设$\mathcal{U}\subset\mathbb{R}^3$是由分段光滑边界包围的连通区域，则以参数方程$\mathbf{g}:\mathbb{R}^3\supset \mathcal{U}\rightarrow\Omega\subset\mathbb{R}^3$规定的像集$\Omega=\mathbf{g}\left(\mathcal{U}\right)$是一个经过形变后的三维区域。当且仅当导数$\mathrm{d}_{\mathbf{r}=\mathbf{r}_0}\mathbf{g}\left(\mathbf{r}\right)$存在且满秩时，区域$\Omega$在点$\mathbf{r}_0$处是光滑的。此时
 \[
-    \left|\frac{\partial \mathbf{g}}{\partial r_3}\cdot\left(\frac{\partial\mathbf{g}}{\partial r_1}\times\frac{\partial\mathbf{g}}{\partial r_2}\right)\right|_{\mathbf{r}=\mathbf{r}_0}\equiv\left|\mathrm{det}\mathrm{d}_{\mathbf{r}=\mathbf{r}_0}\right|
+    \left|\frac{\partial \mathbf{g}}{\partial r_3}\cdot\left(\frac{\partial\mathbf{g}}{\partial r_1}\times\frac{\partial\mathbf{g}}{\partial r_2}\right)\right|_{\mathbf{r}=\mathbf{r}_0}\equiv\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}=\mathbf{r}_0}\mathbf{g}\left(\mathbf{r}\right)\right)\right|
 \]
 是由向量$\frac{\partial\mathbf{g}}{\partial r_1},\frac{\partial\mathbf{g}}{\partial r_2},\frac{\partial\mathbf{g}}{\partial r_3}$所搭成的平行六面体的体积。$\mathcal{U}$的体积元$dV_\mathcal{U}$与$\Omega$的体积元$dV_\Omega$之间的转换关系是
-\[dV_\Omega=\left|\mathrm{det}\left(d\mathbf{g}/d\mathbf{r}\right)\right|
+\[dV_\Omega=\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}}\mathbf{g}\left(\mathbf{r}\right)\right)\right|
     dV_\mathcal{U}\]
 区域$\Omega$的体积是
 \[
