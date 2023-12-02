@@ -11,7 +11,7 @@
 
 \begin{definition}[线性无关子空间]\label{def:A.2}
     设$\mathcal{W}_1,\cdots,\mathcal{W}_k$是向量空间$\mathcal{V}$的子空间。若
-    \[\sum_{i=1}^k\mathbf{a}_i=\mathbf{0},\mathbf{a}_i\in\mathcal{W}_i\Leftrightarrow \mathbf{a}_i=\mathbf{0},\quad\forall i=1,\cdots,k\]
+    \[\sum_{i=1}^k\mathbf{a}_i=\mathbf{0},\quad\mathbf{a}_i\in\mathcal{W}_i\Leftrightarrow \mathbf{a}_i=\mathbf{0},\quad\forall i=1,\cdots,k\]
     则称$\mathcal{W}_1,\cdots,\mathcal{W}_k$\emph{线性无关（linlearly independent）}。
 \end{definition}
 
@@ -28,14 +28,45 @@
         \item 若$B_i$是$\mathcal{W}_i$的一组有序基，则$B=\left(B_1,\cdots,B_k\right)$是$\mathcal{W}$的一组有序基。
     \end{enumerate}
 \end{theorem}
+\begin{proof}
+    1$\Leftrightarrow$2：设$\mathbf{a}\in\mathcal{W}_j\cap\left(\mathcal{W}_1+\cdots+\mathcal{W}_{j-1}\right)$，则由定义\ref{def:A.1}存在$\mathbf{a}_i\in\mathcal{W}_i,i=1,\cdots,j-1$使得$\mathbf{a}=\sum_{i=1}^{j-1}\mathbf{a}_i$。故有$\sum_{i=1}^{j-1}\mathbf{a}_i-\mathbf{a}=\mathbf{0}$。若命题1成立，则$\sum_{i=1}^{j-1}\mathbf{a}_i-\mathbf{a}=\mathbf{0}\Leftrightarrow \mathbf{a}_i=\mathbf{a}=\mathbf{0}\Rightarrow$命题2成立。
+
+    若命题2成立，设$\mathbf{a}_i\in\mathcal{W}_i,i=1,\cdots,k$满足$\sum_{i=1}^k\mathbf{a}_i=\mathbf{0}$且前$j$个$\mathbf{a}_i$不为零，则有$\sum_{i=1}^j\mathbf{a}_i=\mathbf{0}$，即$-\mathbf{a}_j=\sum_{i=1}^{j-1}\mathbf{a}_i\neq\mathbf{0}$，即$\mathbf{a}_j\in\mathcal{W}_1+\cdots+\mathcal{W}_{j-1}$，故$\mathbf{a}_j\in\mathcal{W}_j\cap\left(\mathcal{W}_1,\cdots+\mathcal{W}_{j-1}\right)$，与命题2矛盾。换言之，因命题2成立，则使$\sum_{i=1}^k\mathbf{a}_i=\mathbf{0}$的任意前$j$个向量$\mathbf{a}_i$均为零，即命题1成立。
+
+    1$\Leftrightarrow$3：
+
+    设命题1成立，$B_i=\left(\mathbf{e}_{1i},\cdots,\mathbf{e}_{n_ii}\right)$是$\mathcal{W}_i$的基，$n_i=\mathrm{dim}\mathcal{W}_i$，$i=1,\cdots,k$，则对每一$\mathbf{b}\in\mathcal{W}$，都存在$\mathbf{b}_i\in\mathcal{W}_i,i=1,\cdots,k$满足$\mathbf{b}=\sum_{i=1}^k\mathbf{b}_i$且$\left\{\mathbf{b}_1,\cdots,\mathbf{b}_k\right\}$线性无关。设$\mathbf{b}_j=\sum_{i=1}^{n_i}\beta_{ji}\mathbf{e}_{ji},j=1,\cdots,k$，则$\mathbf{b}_j=\mathbf{0}\Leftrightarrow\beta_{ji}=0,\forall i=1,\cdots,n_i$，故有$\mathbf{b}=\sum_{j=1}^k\sum_{i=1}^{n_i}\beta_{ji}\mathbf{e}_{ji}=\mathbf{0}\Leftrightarrow\beta_{ji}=0,\forall i=1,\cdots,n_i,j=1,\cdots,k$，即$B=B_1\cup\cdots\cup B_k$是$\mathcal{W}$的一组基。命题3成立。
+
+    设命题3成立，由定理的大前提依然有$\forall\mathbf{b}\in\mathcal{W},\exists\mathbf{b}_i\in\mathcal{W}_i,i=1,\cdots,k,\sum_{i=1}^k\mathbf{b}_i=\mathbf{b}$。故$\mathbf{b}=\mathbf{0}\Leftrightarrow\beta_{ikj}=0,\forall i=1,\cdots,n_i,j=1,\cdots,k\Leftrightarrow\mathbf{b}_j=\mathbf{0},\forall j=1,\cdots k$，即命题1成立。
+\end{proof}
 
 我们把线性无关子空间的和称作\emph{直和（direct sum）}。记作$\mathcal{W}=\mathcal{W}_1\bigoplus\cdots\bigoplus\mathcal{W}_k$。
 
+\begin{definition}[投影算符]\label{def:A.3}
+    设$\mathcal{V}$是一个向量空间，若$\mathcal{V}$上的线性算符$\mathbf{E}$满足$\mathbf{E}^2=\mathbf{E}$，则称$\mathbf{E}$是$\mathcal{V}$的一个\emph{投影算符（projection operator）}。
+\end{definition}
+
+\begin{theorem}\label{thm:A.3}
+    若$\mathcal{V}$是一个向量空间，$\mathcal{W}_1,\cdots,\mathcal{W}_k$是$\mathcal{V}$的子空间且$\mathcal{V}=\bigoplus_{i=1}^k\mathcal{W}_i$，则$\mathcal{V}$上存在$k$个线性算符$\mathbf{E}_1,\cdots,\mathbf{E}_k$满足：
+    \begin{enumerate}
+        \item $\mathbf{E}_i^2=\mathbf{E}_i,\forall i=1,\cdots,k$
+        \item 若$i\neq j$则$\mathbf{E}_i\mathbf{E}_j=\mathbf{0}$
+        \item $\mathbf{I}=\mathbf{E}_1+\cdots+\mathbf{E}_k$
+        \item $\mathrm{ran}\mathbf{E}_i=\mathcal{W}_i$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    命题1：对每一向量$\mathbf{a}\in\mathcal{V}$，存在$\mathbf{a}_i\in\mathcal{W}_i,i=1,\cdots,k$满足$\mathbf{a}=\sum_{i=1}^k\mathbf{a}_i$。故对每一$j=1,\cdots,k$均可定义映射$\mathbf{E}:\mathcal{V}\rightarrow\mathcal{W}_j,\mathbf{E}_j\mathbf{a}=\mathbf{a}_j$。易验$\mathbf{E}_j$是线性算符，$\mathbf{E}_j^2=\mathbf{E}_j$。命题4自动得证。
+
+    命题2：由于$\mathrm{ran}\mathbf{E}_j=\mathcal{W}_j$，且$\left\{\mathcal{W}_1,\cdots,\mathcal{W}_k\right\}$线性无关（由直和的定义），故$\mathbf{E}_j\mathbf{a}=\mathbf{a}_j=\mathbf{0}=\mathbf{E}_j\sum_{i\neq j}\mathbf{a}_i=\sum_{i\neq j}\mathbf{E}_j\mathbf{E}_i\mathbf{a}\Leftrightarrow\mathbf{E}_j\mathbf{E}_i\mathbf{a}=\mathbf{0},\forall i\neq j$，由于$\mathbf{a}$可以不为零向量，故$\mathbf{E}_j\mathbf{E}_i\neq\mathbf{0},\forall  i\neq j$。
+
+    命题3：由$\mathbf{a}=\mathbf{Ia}=\sum_{i=1}^k\mathbf{a}_i=\sum_{i=1}^k\mathbf{E}_i\mathbf{a},\forall\mathbf{a}\in\mathcal{V}$可直接得证。
+\end{proof}
 
 
 % ===============================================================================
 \subsection{内积空间上的正交投影}
-\begin{definition}[最好近似]\label{def:A.3}
+\begin{definition}[最好近似]\label{def:A.4}
     设$\mathcal{V}$是$\mathbb{F}$上的内积空间并自然定义了欧几里得范，$\mathcal{W}$是$\mathcal{V}$的子空间，对任一$\mathbf{b}\in\mathcal{V}$，如果$\mathbf{a}\in\mathcal{W}$满足
     \[\left\|\mathbf{b}-\mathbf{a}\right\|\leq\left\|\mathbf{b}-\mathbf{c}\right\|,\quad\forall\mathbf{c}\in\mathcal{W},\text{当且仅当$\mathbf{c}=\mathbf{a}$时取等号}\]
     则称$\mathbf{a}\in\mathcal{W}$是$\mathbf{b}$在$\mathcal{W}$中的\emph{最好近似（best approximation）}。
@@ -43,13 +74,13 @@
 
 向量$\mathbf{b}$在子空间上的最好近似，最直观的理解就是空间向量在平面上的投影向量。找到这一投影向量的方法是“作垂线”，且该平面上，$\mathbf{b}$的投影向量总是唯一存在。以下定理是这些直观认知的严格阐述。
 
-\begin{theorem}[最好近似的表示]\label{thm:A.3}
+\begin{theorem}[最好近似的表示]\label{thm:A.4}
     设$\mathcal{W}$是内积空间$\mathcal{V}$的子空间，$\mathbf{b}$是$\mathcal{V}$的任一向量，则
     \begin{enumerate}
         \item 当且仅当$\mathbf{a}\in\mathcal{W}$与$\mathbf{b}-\mathbf{a}$正交时，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。
         \item $\mathbf{b}$在$\mathcal{W}$中总存在唯一一个最好近似。
-        \item 若$\mathcal{W}$是有限维的，$\left\{\mathbf{\hat{e}}_1,\cdots\mathbf{\hat{e}}_n\right\}$是$\mathcal{W}$的一组规范正交基，则向量
-              \[\mathbf{a}=\sum_{k=1}^n\frac{\left(\mathbf{b}|\mathbf{\hat{e}}_k\right)}{\left(\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_k\right)}\mathbf{\hat{e}}_k\]
+        \item 若$\mathcal{W}$是有限维的，$\left\{\mathbf{e}_1,\cdots\mathbf{e}_n\right\}$是$\mathcal{W}$的一组正交基，则向量
+              \[\mathbf{a}=\sum_{k=1}^n\frac{\left(\mathbf{b}|\mathbf{e}_k\right)}{\left(\mathbf{e}_k|\mathbf{e}_k\right)}\mathbf{e}_k\]
               是$\mathbf{b}$在$\mathcal{W}$中的唯一最小近似。
     \end{enumerate}
 \end{theorem}
@@ -78,10 +109,10 @@
 
     “2”的证明：设$\mathbf{a},\mathbf{a}^\prime\in\mathcal{W}$都是向量$\mathbf{b}\in\mathcal{V}$在$\mathcal{W}$中的最好近似，且一般地$\mathbf{b}\neq\mathbf{a},\mathbf{b}\neq\mathbf{a}^\prime$，则由最好近似的定义有$\left(\mathbf{b}-\mathbf{a}|\mathbf{a}^\prime\right)=\left(\mathbf{b}-\mathbf{a}|\mathbf{a}\right)=0$，故$\mathbf{a}^\prime=\mathbf{a}$。“2”证毕。
 
-    “3”的证明：回顾格拉姆--施密特正交化过程，若$\mathcal{V}$中有规范正交向量组$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n\right\}$，$\mathbf{b}$与它们线性无关，则“3”中的表达式，是对线性无关向量组$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n,\mathbf{b}\right\}$进行格拉姆--施密特正交化，使$\mathbf{b}-\mathbf{a}$与所有$\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n$都正交时所使用的表达式。换言之，若$\mathbf{a}$满足命题，则$\mathbf{b}-\mathbf{a}$与$\left\{\mathbf{\hat{e}}_1,\cdots,\mathbf{\hat{e}}_n\right\}$都正交，亦与它们线性生成的子空间（即$\mathcal{W}$）上的所有向量都正交。由“1”，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。由“2”，$\mathbf{a}$是唯一的。“3”证毕。
+    “3”的证明：回顾格拉姆--施密特正交化过程，若$\mathcal{V}$中有正交向量组$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n\right\}$，$\mathbf{b}$与它们线性无关，则“3”中的表达式，是对线性无关向量组$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n,\mathbf{b}\right\}$进行格拉姆--施密特正交化，使$\mathbf{b}-\mathbf{a}$与所有$\mathbf{e}_1,\cdots,\mathbf{e}_n$都正交时所使用的表达式。换言之，若$\mathbf{a}$满足命题，则$\mathbf{b}-\mathbf{a}$与$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n\right\}$都正交，亦与它们线性生成的子空间（即$\mathcal{W}$）上的所有向量都正交。由“1”，$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似。由“2”，$\mathbf{a}$是唯一的。“3”证毕。
 \end{proof}
 
-\begin{definition}[正交补集]\label{def:A.4}
+\begin{definition}[正交补集]\label{def:A.5}
     设$\mathcal{V}$是一个内积空间，$S$是$\mathcal{V}$的任一子集，$\mathcal{V}$中的与$S$中每个向量都正交的向量的集合记为$S^\perp$，称$S$的\emph{正交补集（orthogonal complement）}。
 \end{definition}
 
@@ -91,27 +122,25 @@ $S^\perp$总是$\mathcal{V}$的一个子空间。首先$S^\perp$总是含$\mathb
 \[\left(\mathbf{a}+\gamma\mathbf{b}|\mathbf{c}\right)=\left(\mathbf{a}|\mathbf{c}\right)+\gamma\left(\mathbf{b}|\mathbf{c}\right)=0,\quad\forall\gamma\in\mathbb{F}\]
 其中$\mathbb{F}$是$\mathcal{V}$所在的数域。
 
-\begin{definition}[正交投影]\label{def:A.5}
-    设$\mathcal{V}$是一个内积空间，$\mathbf{b}$是$\mathcal{V}$中的一个向量，$\mathcal{W}$是$\mathcal{V}$的一个子空间。若$\mathcal{W}$中存在向量$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似，则称向量$\mathbf{a}$是\emph{向量$\mathbf{b}$在$\mathcal{W}$上的正交投影（orthogonal projection of $\mathbf{b}$ on $\mathcal{W}$）}。若$\mathcal{W}$的维数是$m\leq n$，$\left\{\mathbf{\hat{e}}_k\right\}_{k=1}^m$是$\mathcal{W}$的一组规范正交基，定义映射$\mathbf{E}:\mathcal{V}\to\mathcal{W}$,
-    \[\mathbf{Eb}=\sum_{k=1}^m\frac{\left(\mathbf{b}|\mathbf{\hat{e}}_k\right)}{\left(\mathbf{\hat{e}}_k|\mathbf{\hat{e}}_k\right)}\mathbf{\hat{e}}_k,\quad\forall\mathbf{b}
+\begin{definition}[正交投影]\label{def:A.6}
+    设$\mathcal{V}$是一个内积空间，$\mathbf{b}$是$\mathcal{V}$中的一个向量，$\mathcal{W}$是$\mathcal{V}$的一个子空间。若$\mathcal{W}$中存在向量$\mathbf{a}$是$\mathbf{b}$在$\mathcal{W}$中的最好近似，则称向量$\mathbf{a}$是\emph{向量$\mathbf{b}$在$\mathcal{W}$上的正交投影（orthogonal projection of $\mathbf{b}$ on $\mathcal{W}$）}。若$\mathcal{W}$的维数是$m\leq n$，$\left\{\mathbf{e}_k\right\}_{k=1}^m$是$\mathcal{W}$的一组正交基，定义映射$\mathbf{E}:\mathcal{V}\to\mathcal{W}$,
+    \[\mathbf{Eb}=\sum_{k=1}^m\frac{\left(\mathbf{b}|\mathbf{e}_k\right)}{\left(\mathbf{e}_k|\mathbf{e}_k\right)}\mathbf{e}_k,\quad\forall\mathbf{b}
         \in\mathcal{V}\]
-    则称映射$\mathcal{E}$是\emph{内积空间$\mathcal{V}$到其子空间$\mathcal{W}$的正交投影（orthogonal projection of $\mathcal{V}$ to $\mathcal{W}$）}。
+    则称映射$\mathbf{E}$是\emph{内积空间$\mathcal{V}$到其子空间$\mathcal{W}$的正交投影算符（orthogonal projection operator of $\mathcal{V}$ to $\mathcal{W}$）}。
 \end{definition}
 
-请注意以上定义中，两种“正交投影”的对象。
-
-定理\ref{thm:A.3}成立的内积空间$\mathcal{V}$未必是有限维的，故基于定理\ref{thm:A.3}“3”的概念的正交投影映射，可以无限维内积空间向的其有限维子空间的投影。由定理\ref{thm:A.3}“3”，这样的投影映射是总存在的，作为推论如下。
+定理\ref{thm:A.4}成立的内积空间$\mathcal{V}$未必是有限维的，故基于定理\ref{thm:A.4}“3”的概念的正交投影映射，可以是无限维内积空间向其有限维子空间的投影。由定理\ref{thm:A.4}“3”，这样的投影映射是总存在的，作为推论如下。
 
 \begin{corollary}
-    延用定理\ref{thm:A.3}的设定，设映射$\mathbf{E^\prime}:\mathcal{V}\to\mathcal{W},\mathbf{E}^\prime\mathbf{b}=\mathbf{b}-\mathbf{Eb},\forall\mathbf{b}\in\mathcal{V}$是由$\mathcal{V}$到$\mathcal{W}^\perp$的正交投影。
+    延用定理\ref{thm:A.4}的设定，设映射$\mathbf{E^\prime}:\mathcal{V}\to\mathcal{W},\mathbf{E}^\prime\mathbf{b}=\mathbf{b}-\mathbf{Eb},\forall\mathbf{b}\in\mathcal{V}$是由$\mathcal{V}$到$\mathcal{W}^\perp$的正交投影。
 \end{corollary}
 \begin{proof}
-    由定义\ref{def:A.3}和定理\ref{thm:A.2}，$\mathbf{Eb}$就是向量$\mathbf{b}$在$\mathcal{W}$中的最好近似，因此$\mathbf{b}-\mathbf{Eb}$与所有$\mathcal{W}$正交，即$\mathbf{E}^\prime\mathbf{b}\in\mathcal{W}^\perp$。由于$\mathbf{Eb}\in\mathcal{W}$，故$\mathbf{Eb}=\mathbf{b}-\mathbf{E}\prime\mathbf{b}$与$\mathcal{W}^\perp$中的所有向量都正交。由定理\ref{thm:A.3}“1”，$\mathbf{E}^\prime\mathbf{b}$是$\mathbf{b}$在$\mathcal{W}^\perp$上的最好近似。
+    由定义\ref{def:A.4}和定理\ref{thm:A.2}，$\mathbf{Eb}$就是向量$\mathbf{b}$在$\mathcal{W}$中的最好近似，因此$\mathbf{b}-\mathbf{Eb}$与所有$\mathcal{W}$正交，即$\mathbf{E}^\prime\mathbf{b}\in\mathcal{W}^\perp$。由于$\mathbf{Eb}\in\mathcal{W}$，故$\mathbf{Eb}=\mathbf{b}-\mathbf{E}\prime\mathbf{b}$与$\mathcal{W}^\perp$中的所有向量都正交。由定理\ref{thm:A.4}“1”，$\mathbf{E}^\prime\mathbf{b}$是$\mathbf{b}$在$\mathcal{W}^\perp$上的最好近似。
 \end{proof}
 
 我们把正交投影映射写成线性算符的样子，因为它确实是线性算符，作为定理如下。
-\begin{theorem}\label{thm:A.4}
-    设$\mathcal{V}$是内积空间，$\mathcal{W}$是$\mathcal{V}$的一个子空间，$\mathbf{E}$是由$\mathcal{V}$到$\mathcal{W}$的正交投影，则$\mathcal{E}$是一个正定线性算符，$\mathcal{W}^\perp$是$\mathcal{E}$的零空间，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
+\begin{theorem}\label{thm:A.5}
+    设$\mathcal{V}$是内积空间，$\mathcal{W}$是$\mathcal{V}$的一个子空间，$\mathbf{E}$是由$\mathcal{V}$到$\mathcal{W}$的正交投影，则$\mathbf{E}$是一个投影算符（或称其为\emph{幂等（idempotent）}线性算符），$\mathcal{W}^\perp$是$\mathbf{E}$的零空间，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
 \end{theorem}
 \begin{proof}
     设$\mathbf{b}\in\mathcal{V}$，则有$\mathbf{Eb}$是$\mathbf{b}$在$\mathcal{W}$上的最好近似，$\mathbf{E}\left(\mathbf{Eb}\right)=\mathbf{Eb}$，故$\mathbf{E}^2=\mathbf{E}$。
@@ -120,7 +149,7 @@ $S^\perp$总是$\mathcal{V}$的一个子空间。首先$S^\perp$总是含$\mathb
     \[
         \mathbf{a}-\mathbf{Ea}+\gamma\left(\mathbf{b}-\mathbf{Eb}\right)\in\mathcal{W}^\perp\Leftrightarrow\mathbf{a}+\gamma\mathbf{b}-\mathbf{E}\left(\mathbf{a}+\gamma\mathbf{b}\right)\in\mathcal{W}^\perp
     \]
-    因此$\mathbf{E}$是正定线性算符。
+    因此$\mathbf{E}$是幂等  线性算符。
 
     前文说过，$\mathbf{Eb}$是$\mathcal{W}$中唯一使$\mathbf{b}-\mathbf{Eb}\in\mathcal{W}^\perp$的向量，故若$\mathbf{Eb}=\mathbf{0}$，则$\mathbf{b}-\mathbf{Eb}=\mathbf{b}\in\mathcal{W}^\perp$。反之，若$\mathbf{b}\in\mathcal{W}^\perp$，设$\mathbf{a}\in\mathcal{W}$是使$\mathbf{b}-\mathbf{a}\in\mathcal{W}^\perp$的向量，则有$\left(\mathbf{a}|\mathbf{b}\right)=0$且$\left(\mathbf{a}|\mathbf{b}-\mathbf{a}\right)=0$，故只可能$\mathbf{a}=\mathbf{0}$。而事实上$\mathbf{Eb}$是$\mathcal{W}$中唯一使$\mathbf{b}-\mathbf{Eb}\in\mathcal{W}^\perp$的向量，故$\mathbf{a}=\mathbf{Eb}=\mathbf{0}$。换言之，$\mathcal{W}^\perp$中的向量全是使$\mathbf{Eb}=\mathbf{0}$的$\mathbf{b}$，即$\mathcal{W}^\perp=\mathrm{ker}\mathbf{E}$。
 
@@ -129,4 +158,6 @@ $S^\perp$总是$\mathcal{V}$的一个子空间。首先$S^\perp$总是含$\mathb
     \[\mathbf{b}=\mathbf{Eb}+\mathbf{b}-\mathbf{Eb}, \forall\mathbf{b}\in\mathcal{V}\]
     说明总有$\mathcal{V}=\mathcal{W}+\mathcal{W}^\perp$。而由前面的证明又知$\mathcal{W}\cup\mathcal{W}^\perp=\left\{0\right\}$，由定理\ref{thm:A.2}有$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$。
 \end{proof}
+
+由于一个内积空间$\mathcal{V}$中的每一向量$\mathbf{b}\in\mathcal{V}$在给定的一个$\mathcal{V}$的有限维子空间$\mathcal{W}$上的正交投影是唯一的（定理\ref{thm:A.4}），故由$\mathcal{V}$到$\mathcal{W}$的正交投影算符$\mathbf{E}$（定义\ref{def:A.6}）也由所给定的这一子空间$\mathcal{W}$唯一确定。
 \end{document}

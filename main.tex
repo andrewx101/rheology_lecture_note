@@ -29,6 +29,7 @@ a4paper,
 \usepackage{subcaption}
 \usepackage{capt-of}
 \usepackage{cutwin}
+\usepackage[format=hang]{caption}
 
 % packages for page layout
 \usepackage{geometry}
@@ -126,7 +127,7 @@ sorting=none
 \mainmatter
 \pagenumbering{arabic}
 
-\part{数学部分}
+\part{数学部分}\label{sec:II}
 \begin{figure}[p]
     \centering
     \includegraphics[width=0.75\textwidth]{images/math.jpg}
@@ -172,7 +173,7 @@ sorting=none
 
 
 %\subsection{正规算符在实数域上的几何意义}\label{sec:II.2.4.3}
-\chapter{欧几里得空间}
+\chapter{欧几里得空间}\label{sec:II.3}
 在经典力学中,我们总假定物理事件发生欧几里得空间中。在本节我们将以集合的语言\emph{重新}引入欧几里得空间。
 \section{欧几里得空间的构建}\label{sec:II.3.1}
 \subfile{Part II/II.3.1.tex}
@@ -201,8 +202,8 @@ sorting=none
 \section{曲线、曲面和积分定理}\label{sec:II.4.4}
 \subfile{Part II/II.4.4.tex}
 
-\part{连续介质力学基础}
-\chapter{时空观与参考系}
+\part{连续介质力学基础}\label{sec:III}
+\chapter{时空观与参考系}\label{sec:III.5}
 在数学或物理学中，\emph{不变性（invariance）}常常用于描述一个数学或物理对象的性质在某种变换操作前后的结果不变。这是一个比较笼统地一般叙述。每个具体的“不变性”概念都需要定义清楚，具体是何种“变换操作”，以及何谓“性质的变换结果不变”。
 
 在物理学中，任意两个不同观察者对同一现象的观测记录，在了解了这两个观察者的相对状态后，就能够互相换算。这种从一个观察者的观测记录到另一个观察者的观测记录的换算操作就是一种变换操作。\emph{物理客观性（physical objectivity）}要求，一切关于客观规律的陈述必须具有不依赖观察者的不变性。
@@ -216,15 +217,18 @@ sorting=none
 在经典连续介质力学中，\emph{物质客观性（material frame indifference）}一度是本构关系理论的基本原则之一\cite[Sect.293]{Truesdell1960}\cite[Sect.19]{Truesdell2004}。这一原则被用于约束材料本构关系的数学形式，得出了十分重要的流变学理论\footnote{例如\emph{简单流体（simple fluids）}理论\cite{Noll1958}。由其导出的\emph{测粘流（viscometric flow）}理论是流变学测量得以实现的理论基础\cite{Coleman1966}\cite{Walters1975}。}。但是关于物质客观性原理的的具体含义、以及（无论在哪一种具体含义下）它是否必须作为本构关系的基本原则的讨论一直持续到今天\footnote{\cite{Gennes1983}\cite{Frewer2009}}。不管是为了理解主流连续介质力学资料，还是为了跟上这一话题的最新讨论，都需要清晰而仔细地明确时空和参考标架的构建过程。
 
 经典力学的时空观构建方式有很多版本\cite{Weatherall2022}。本讲义无意陷入到时空观的历史回顾中，仅选择W. Noll\cite{Noll1973}构建的\emph{新经典时空（neo-classical spacetime）}，原因包括但不限于：大部分连续介质力学教科书默认或明确介绍的就是这一时空观。
-\section{新经典时空}
+\section{新经典时空}\label{sec:III.5.1}
 \subfile{Part III/III.5.1.tex}
-\section{参考标架}
+\section{参考标架}\label{sec:III.5.2}
 \subfile{Part III/III.5.2.tex}
-\section{标架变换}
+\section{标架变换}\label{sec:III.5.3}
 \subfile{Part III/III.5.3.tex}
 
-%\chapter{连续物体的运动学}
-%\section{速度和加速度}
+\chapter{连续物体的运动学}\label{sec:III.6}
+\section{速度和加速度}\label{sec:III.6.1}
+\subfile{Part III/III.6.1.tex}
+\section{形变}\label{sec:III.6.2}
+\subfile{Part III/III.6.2.tex}
 
 
 

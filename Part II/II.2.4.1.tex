@@ -72,9 +72,15 @@
 读者可尝试自行推导两个线性算符的标准内积在给定基下的坐标运算公式。
 %======================================================================
 \subsubsection{线性算符的特征值}
-如果一个数域$\mathbb{F}$上的有限维向量空间$\mathcal{V}$上的线性算符$\mathbf{T}$在基$\left\{\mathbf{a}_i\right\}$下的坐标矩阵是对角矩阵，即
+我们已经知道，向量空间上的线性算符在选定某组基下，它的性质就全由其坐标矩阵决定。线性算符的特征值分析，其实是对一个线性算符的“内部结构”像对钟表那般进行解剖，搞清楚它的运作方式。
+
+尽管线性算符的特征值分析能给出很丰富的结论，但目前我们也许可以先从这样一种动机去引入线性算符的特征值定义。比如我们关心一个线性算符是否可逆，从线性变换的维数定理的角度，需要知道线性算符的秩，即其在任一选定基下的坐标矩阵的秩。从定理\ref{thm:II.2.24}的角度，需要知道线性算符的行列式，即其在任一选定基下的坐标矩阵的行列式。如果一个数域$\mathbb{F}$上的$n$维向量空间$\mathcal{V}$上的线性算符$\mathbf{T}$在基$\left\{\mathbf{a}_i\right\}$下的坐标矩阵是对角矩阵，即
 \[\left(\mathbf{T}\right)=\left(\begin{array}{ccc}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{array}\right),\lambda_i\in\mathbb{F},i=1,\cdots,n\]
-那么就有$\mathbf{Ta}_i=\lambda_i \mathbf{a}_i,i=1,\cdots,n$，$\mathbf{T}$的值域就是由$\lambda_i\neq 0$对应的$\mathbf{a}_i$线性生成的，$\lambda_i\neq 0$的个数就是$\mathrm{rank}\mathbf{T}$，$\mathbf{T}$的很多性质就能确定了。为了这一目标，我们先讨论一般的形如$\mathbf{Ta}=\lambda\mathbf{a}$的情况。
+就称线性算符$\mathbf{T}$是\emph{可对角化的（diagonalizable）}。此时有
+\[\mathbf{Ta}_i=\lambda_i \mathbf{a}_i,\quad i=1,\cdots,n\]
+$\mathbf{T}$的值域就是由$\lambda_i\neq 0$对应的$\mathbf{a}_i$线性生成的，$\lambda_i\neq 0$的个数就是$\mathrm{rank}\mathbf{T}$，要想$\mathbf{T}$可逆，必须使得$\mathrm{rank}\mathbf{T}=n$（满秩），或由$\mathrm{det}\mathbf{T}=\prod_{i=1}^n\lambda_i\neq 0$要求$\left(\mathbf{T}\right)$的对角元素全不为零。总之矩阵$\mathbf{T}$的很多性质就能确定了。
+
+为了这一目标，我们先讨论一般的形如$\mathbf{Ta}=\lambda\mathbf{a}$的情况。
 
 \begin{definition}[特征值、特征向量、特征空间]\label{def:II.2.21}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符。若存在$\mathbf{a}\neq\mathbf{0},\mathbf{a}\in\mathcal{V},\lambda\in\mathbb{F}$满足$\mathbf{Ta}=\lambda\mathbf{a}$，则称$\lambda$是$\mathbf{T}$的一个\emph{特征值（characteristic value）}，$\mathbf{a}$是$\mathbf{T}$对应于特征值$\lambda$的一个\emph{特征向量（characteristic vector）}。$\mathbf{T}$关于同一特征值$\lambda$的所有不同的特征向量的集合称为$\mathbf{T}$的\emph{特征空间（characteristic space）}。
@@ -87,7 +93,7 @@
     \label{fig:II.2.3}
 \end{figure}
 
-由特征值和特征向量的定义，一个线性算符可能有多个特征值。对应同一个特征值也可以有多个特征向量。能够证明，关于同一特下值的特征空间是向量空间的一个子空间。
+由特征值和特征向量的定义可知，复数域上的$n$维向量空间上的线性算符可以有$n$个特征值。对应于同一个特征值，可能有多个特征向量。能够证明，关于同一特征值的特征空间是向量空间的一个子空间，作为定理如下。
 
 \begin{theorem}\label{thm:II.2.26}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维向量空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则$\mathbf{T}$的特征空间是$\mathcal{V}$的子空间。
@@ -119,21 +125,24 @@
 本节开头提出的，希望线性变换在某组基下的坐标矩阵是对角矩阵，这相当于要求线性变换的特征向量直接就是一组基。我们可以从这一要求出发，找出与其等价的一系列命题，如以下定理所示。
 
 \begin{theorem}\label{thm:II.2.28}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维向量空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个可逆线性算符，则以下命题相互等价：
+    设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维向量空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，$\left\{\theta_1,\cdots,\theta_k\right\}$是$\mathbf{T}$的两两不同的特征值，$\mathcal{W}_i$是线性算符$\mathbf{T}-\theta_i\mathbf{I}$的零空间，则以下命题相互等价：
     \begin{enumerate}
-        \item $\mathcal{V}$中存在一组基恰好就是$\mathbf{T}$的特征向量
-        \item $\mathbf{T}$的特征向量中有$n$个线性无关
-        \item $\mathbf{T}$的特征向量线性生成$\mathcal{V}$
-              %\item $\mathbf{T}$的特征空间维数是$n$
-        \item $\mathbf{T}$是\emph{可对角化的（diagonalizable）}
+        \item $\mathbf{T}$是可对角化的；
+        \item $\mathbf{T}$的特征多项式是
+              \[\left(\theta-\theta_1\right)^{d_1}\cdots\left(\theta-\theta_k\right)^{d_k}\]
+              且
+              \[\mathrm{dim}\mathcal{W}_i=d_i,\quad i=1,\cdots,k\]
+        \item $\mathrm{dim}\mathcal{V}=\sum_{i=1}^k\mathrm{dim}\mathcal{W}_i$
     \end{enumerate}
 \end{theorem}
 
-以上定理中的命题之间的等价性几乎是直接的\cite[\S5.2 矩阵可对角化的条件]{周胜林2012线性代数}，其中第5条命题同时定义了何谓“可对角化的线性变换”。复数域上的向量空间上的任一线性算符必有$n$个特征值。但只有当这一线性算符可对角化时，才能从这些特征值对应的特征空间中找到$n$个线性无关的向量。如果线性算符$\mathbf{T}$可对角化，则使其坐标矩阵是对角矩阵的那组基，就是定理\ref{thm:II.2.28}中第2条的那$n$个线性无关的特征向量，且这一对角矩阵的对角元素就是$\mathbf{T}$的$n$个特征值。如果$\mathbf{T}$不可对角化，那么$\mathbf{T}$仍可以有$n$个特征值，但就无法找到任何一组基，使$\mathcal{T}$在其下的坐标矩阵是任何对角矩阵，更别说想要是以$\mathbf{T}$的特征值作为对角元素的对角矩阵了。也就是说，我们不存在这样一种情况：$\mathbf{T}$可对角化，但其对角矩阵的对角元素却不全是$\mathbf{T}$的特征值。这一结论也是证明定理\ref{thm:II.2.28}的过程中自然显见的。
+这一定理第1、2条之间的等价性可见\cite[\S 5.2 定理2.1]{周胜林2012线性代数}，第2、3条之间的等价性要参考其他线性代数教材\cite[\S 6.2]{Hoffman1971}。
 
-在复数域上，无论一个线性算符$\mathbf{T}$是否可对角化，它的$n$个特征值中都有可能有重复的（即$\mathbf{T}$的特征多项式有重根）。我们来看“特征值重不重复”有什么值得注意的差别。为此设$\theta_1,\cdots,\theta_k$为$\mathbf{T}$的两两不同特征值，第$j$个特征值重复$d_j$次。如果$\mathbb{T}$可对角化，则$\mathbf{T}$的对角化坐标矩阵可以写成
+若考察第1、2条之间等价的证明过程，我们将看到，复数域上的向量空间上的任一线性算符必有$n$个特征值。但只有当这一线性算符可对角化时，才能从这些特征值对应的特征空间中找到$n$个线性无关的向量。如果线性算符$\mathbf{T}$可对角化，它的对角坐标矩阵的对角元素就是$\mathbf{T}$的$n$个特征值。如果$\mathbf{T}$不可对角化，那么$\mathbf{T}$仍可以有$n$个特征值，但就无法找到任何一组基，使$\mathbf{T}$在其下的坐标矩阵是一个对角矩阵，更别说想要是以$\mathbf{T}$的特征值作为对角元素的对角矩阵了。也就是说，我们不存在这样一种情况：$\mathbf{T}$可对角化，但其对角矩阵的对角元素却不全是$\mathbf{T}$的特征值。
+
+若考察第2、3条之间等价的证明，我们将看到，在复数域上，无论一个线性算符$\mathbf{T}$是否可对角化，它的$n$个特征值中都有可能有重复的（即$\mathbf{T}$的特征多项式有重根）。设$\theta_1,\cdots,\theta_k$为$\mathbf{T}$的两两不同特征值，第$j$个特征值重复$d_j$次。如果$\mathbf{T}$可对角化，则$\mathbf{T}$的对角化坐标矩阵可以写成
 \[\left(\mathbf{T}\right)=\left(\begin{array}{ccc}\theta_1I_1&&\\&\ddots&\\&&\theta_kI_k\end{array}\right)\]
-其中$I_j$表示$d_j\times d_j$单位矩阵。经证明可得到一个明确的结论：每个两两不同特征值的重复次数$d_j$就是它对应的特征空间的维数，进而有$d_1+\cdots+d_k=n$[\S 6.2]\cite{Hoffman1971}。此外，对应于不同特征值的特征向量线性无关。也就是说从若干个两两不同的特征值所对应的特征空间中分别各取一个向量组成的向量组必为线性无关向量组\cite[\S 5.1 性质1.4]{周胜林2012线性代数}，但是反过来我们不能说任意两个线性无关的特征向量必对应于两个不同特征值。
+其中$I_j$表示$d_j\times d_j$单位矩阵。证明过程明确了这一结论：每个两两不同特征值的重复次数$d_j$就是它对应的特征空间的维数，进而有$d_1+\cdots+d_k=n$。此外，对应于不同特征值的特征向量线性无关。也就是说从若干个两两不同的特征值所对应的特征空间中分别各取一个向量所组成的向量组必为一个线性无关向量组\cite[\S 5.1 性质1.4]{周胜林2012线性代数}，但是反过来我们不能说任意两个线性无关的特征向量必对应于两个不同特征值。
 
 以下定理\cite[\S 5.1 性质1.1、1.2]{周胜林2012线性代数}给出了特征多项式最重要的三项的系数：
 

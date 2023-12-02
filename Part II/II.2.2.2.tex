@@ -62,4 +62,14 @@
     恒等变换$\mathbf{I}:\mathcal{V}_n\rightarrow\mathcal{V}_n$在任意一组有序基下的矩阵表示都是$n\times n$单位矩阵$I_n$。
 \end{theorem}
 据此易验，可逆线性变换（线性算符）的矩阵与其逆变换的矩阵之间也互逆，即$\left(\mathbf{T}^{-1}\right)=\left(\mathbf{T}\right)^{-1}$。
+
+在下面的讨论中我们将看到，线性变换的秩等于其坐标矩阵的秩。设$\mathcal{V}$、$\mathcal{W}$是数域$\mathbb{F}$上的两个有限维向量空间，$\mathrm{dim}\mathcal{V}=n$，$\mathrm{dim}\mathcal{W}=m$。在分别给定$\mathcal{V}$、$\mathcal{W}$的一组基$B=\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n\right\}$、$B^\prime=\left\{\mathbf{e}^\prime_1,\cdots,\mathbf{e}^\prime_m\right\}$下，若向量$\mathbf{y}\in\mathcal{W}$满足
+\[\mathbf{y}=\mathbf{Tx},\quad\mathbf{x}\in\mathcal{V}\]
+则
+\[\mathbf{y}=\sum_{i=1}^m\sum_{j=1}^nT_{ij}x_j\mathbf{e}^\prime_i\]
+其中$T_{ij}$和$x_j$是$\mathbf{T}$和$\mathbf{x}$在所选定的基下的坐标。若以$\mathbf{T}$的坐标矩阵的$n$个列为坐标形成$n$个$\mathcal{W}$的向量
+\[\mathbf{c}_j=\sum_{i=1}^mT_{ij}\mathbf{e}^\prime_i,\quad j=1,\cdots n\]
+则
+\[\mathbf{y}=\sum_{j=1}^nx_j\mathbf{c}_j\]
+这对任一$\mathbf{x}\in\mathcal{V}$都成立。也就是说，$\mathrm{ran}\mathbf{T}$中的任一向量都能被向量组$\left\{\mathbf{c}_1,\cdots,\mathbf{c}_n\right\}$线性表出，故$\mathrm{ran}\mathbf{T}=\mathrm{span}\left\{\mathbf{c}_1,\cdots,\mathbf{c}_n\right\}$。$\mathrm{dim}\left(\mathrm{ran}\mathbf{T}\right)$就是线性变换$\mathbf{T}$的秩，而$\mathrm{dim}\left(\mathrm{span}\left\{\mathbf{c}_1,\cdots,\mathbf{c}_n\right\}\right)$就是$\mathbf{T}$的坐标矩阵的列秩，矩阵的列秩就等于矩阵的秩\cite[\S 4.4 定理4.3]{周胜林2012线性代数}。再加上一个矩阵的左乘或右乘一个可逆矩阵后的秩不变\cite[\S 4.4 推论4.6]{周胜林2012线性代数}，故线性变换的坐标矩阵的秩在坐标变换下不变。我们于是可把线性变换的秩定义为它在任何选定基下的坐标矩阵的秩。
 \end{document}

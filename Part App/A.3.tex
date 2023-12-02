@@ -2,7 +2,7 @@
 \begin{document}
 %====================================================
 \subsection{伴算算符的唯一存在性}\label{sec:A.3.1}
-\begin{theorem}
+\begin{theorem}\label{thm:A.6}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，对$\mathcal{V}$上的任一线性算符$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$有且只有一个伴随算符$\mathbf{T}^*\in\mathcal{L}\left(\mathcal{V}\right)$。
 \end{theorem}
 \begin{proof}
@@ -20,21 +20,21 @@
 
 % ===================================================
 \subsection{定理\ref{thm:II.2.32}“4”的证明}
-若向量空间$\mathcal{V}$上定义了线性算符$\mathcal{T}$，则子空间$\mathcal{W}$上的向量被$\mathbf{T}$作用后可能不再属于$\mathcal{W}$，于是我们定义以下的特殊情况。
+若向量空间$\mathcal{V}$上定义了线性算符$\mathbf{T}$，则子空间$\mathcal{W}$上的向量被$\mathbf{T}$作用后可能不再属于$\mathcal{W}$，于是我们定义以下的特殊情况。
 
-\begin{definition}[子空间在线性算符的作用下不变]
+\begin{definition}[子空间在线性算符的作用下不变]\label{def:A.7}
     设$\mathbf{T}$是向量空间$\mathcal{V}$上的一个线性算符，$\mathcal{W}$是$\mathcal{V}$的一个子空间。如果$\mathbf{Ta}\in\mathcal{W},\forall\mathbf{a}\in\mathcal{W}$，则称\emph{子空间$\mathcal{W}$在线性算符$\mathbf{T}$的作用下不变（invariant under $\mathbf{T}$）}。
 \end{definition}
 
 显然，任一向一空间$\mathcal{V}$在其上的任一线性算符的作用下不变。
 
 \begin{theorem}[定理\ref{thm:II.2.32}“4”]
-    给定有限维内积空间$\mathcal{V}$上的自伴随线性算符$\mathcal{T}$，$\mathcal{V}$中总存在一组规范正交基是$\mathbf{T}$的特征向量。
+    给定有限维内积空间$\mathcal{V}$上的自伴随线性算符$\mathbf{T}$，$\mathcal{V}$中总存在一组规范正交基是$\mathbf{T}$的特征向量。
 \end{theorem}
 \begin{proof}
     数学归纳法。记$n=\mathrm{dim}\mathcal{V}$。设$\mathbf{a}_1$是$\mathbf{T}$的一个（非零）特征向量（用到了定理\ref{thm:II.2.32}“3”），则易验单位向量$\mathbf{\hat{a}}_1=\mathbf{a}_1/\left\|\mathbf{a}\right\|$与$\mathbf{a}_1$同属于一个特征空间，故当$n=1$时命题成立。
 
-    假定当维数大于1且小于$n$时命题成立，令$\mathcal{W}$为由$\mathbf{\hat{a}}_1$线性生成的1维子空间，则$\mathbf{\hat{a}}_1$是$\mathbf{T}$的一个特征向量$\Leftrightarrow\mathcal{W}$在$\mathbf{T}$的作用下不变。易验此时$\mathcal{W}^\perp$在$\mathbf{T}^*$的作用下不变。而$\mathcal{W}^\perp$是$n-1$维内积空间。设$\mathbf{U}$是$\mathbf{T}$限制在$\mathcal{W}^\perp$上的线性算符，易验$\mathbf{U}$是$\mathcal{W}^\perp$上的自伴随算符。由数学归纳法假设，$\mathcal{W}^\perp$中必有一组规范正效基$\left\{\mathbf{\hat{a}}_2,\cdots,\mathbf{a}_n\right\}$是$\mathbf{U}$的特征向量，且易验它们也都是$\mathbf{T}$的特征向量。由定理\ref{thm:A.4}，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$且$\mathbf{\hat{a}}_1\in\mathcal{W}$，故有$\mathbf{\hat{a}}_1$与$\left\{\mathbf{\hat{a}}_2,\cdots\mathbf{\hat{a}}_n\right\}$都正交，即$\left\{\mathbf{\hat{a}}_1,\cdots\mathbf{\hat{a}}_n\right\}$是一组规范正交基。
+    假定当维数大于1且小于$n$时命题成立，令$\mathcal{W}$为由$\mathbf{\hat{a}}_1$线性生成的1维子空间，则$\mathbf{\hat{a}}_1$是$\mathbf{T}$的一个特征向量$\Leftrightarrow\mathcal{W}$在$\mathbf{T}$的作用下不变。易验此时$\mathcal{W}^\perp$在$\mathbf{T}^*$的作用下不变。而$\mathcal{W}^\perp$是$n-1$维内积空间。设$\mathbf{U}$是$\mathbf{T}$限制在$\mathcal{W}^\perp$上的线性算符，易验$\mathbf{U}$是$\mathcal{W}^\perp$上的自伴随算符。由数学归纳法假设，$\mathcal{W}^\perp$中必有一组规范正效基$\left\{\mathbf{\hat{a}}_2,\cdots,\mathbf{a}_n\right\}$是$\mathbf{U}$的特征向量，且易验它们也都是$\mathbf{T}$的特征向量。由定理\ref{thm:A.5}，$\mathcal{V}=\mathcal{W}\bigoplus\mathcal{W}^\perp$且$\mathbf{\hat{a}}_1\in\mathcal{W}$，故有$\mathbf{\hat{a}}_1$与$\left\{\mathbf{\hat{a}}_2,\cdots\mathbf{\hat{a}}_n\right\}$都正交，即$\left\{\mathbf{\hat{a}}_1,\cdots\mathbf{\hat{a}}_n\right\}$是一组规范正交基。
 \end{proof}
 
 \end{document}

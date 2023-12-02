@@ -1,0 +1,65 @@
+\documentclass[main.tex]{subfiles}
+% 速度和加速度
+\begin{document}
+设物体$B$在时间段$\Upsilon$内的运动过程是$\chi$，在选定标架$\left(\mathcal{E},\phi\right)$下，时间段$\Upsilon$同构于一个实数$\mathbb{R}$的连通子集$I$。设物体$B$由$\chi$决定的相对这一标架的运动是$\kappa$，给定时刻$t\in I$，我们把$\kappa_t:B\rightarrow\mathcal{E},$
+\[\kappa_t\left(P_X\right)=\kappa\left(P_X,t\right)=X\left(t\right),\quad\forall P_X\in B, t\in I\]
+称为该时刻下的\emph{置放（placement）}映射，它把$B$的任一物质点$P_X$对应为$t$时刻下的欧几里得空间中的点$X\left(t\right)$。像集$\Omega_t=\kappa_t\left(B\right)\subset\mathcal{E}$称物体$B$在$t$时刻下的\emph{构型（configuration）}。置放和构型都是依赖所选定的标架的。我们实际可观测到的不是物体的运动$\chi$本身，而是其在我们所选定标架下的构型随时间的变化。
+
+在相对于给定标架的运动过程中，一个物体的每个物质点，在每一时刻都有不同的速度。延用上一段的设定，我们定义
+\begin{align*}
+    \mathbf{v}\left(P_X,t\right) & \equiv\lim_{s\to 0}\frac{X\left(t+s\right)-X\left(t\right)}{s} \\
+                                 & =\frac{\mathrm{d}}{\mathrm{d}t}X\left(t\right)                 \\
+                                 & =\dot{X}\left(t\right)
+\end{align*}
+为物质点$P_X$在时刻$t$下的\emph{速度（velocity）}。由这一定义可知，速度是欧几里得空间$\mathcal{E}$的平移空间$\mathcal{V}$的一个向量。我们再定义
+\begin{align*}
+    \mathbf{a}\left(P_X,t\right) & \equiv\lim_{s\to 0}\frac{\mathbf{v}\left(P_X,t+s\right)-\mathbf{v}\left(P_X,t\right)}{s} \\
+                                 & =\dot{\mathbf{v}}\left(P_X,t\right)                                                      \\
+                                 & =\ddot{X}\left(t\right)
+\end{align*}
+为物质点$P_X$在时刻$t$下的\emph{加速度（acceleration）}。
+
+速度和加速度的引入都依赖标架的选择。我们将上一节介绍的定义来考察速度和加速度是否具有标架变换下的不变性。
+
+假定有两个观察者分别选定了标架$\left(\mathcal{E},\phi\right)$和$\left(\mathcal{E}^*,\phi^*\right)$，对同一时刻的实数标记为$t,t^*\in\mathbb{R}$且$t^*=t+a$。任选$\mathcal{E}$中不依赖时间的固定一点$X_0$，由标架变换式有
+\[X^*\left(t^*\right)=X_0^*\left(t^*\right)+\mathbf{Q}_t\left(X\left(t\right)-X_0\right)\]
+其中，$X_0^*$是$X_0$作为刚体系的$\mathcal{E}$的物质点在标架$\left(\mathcal{E}^*,\phi^*\right)$下的点，它因$\mathcal{E}$相对标架$\left(\mathcal{E}^*,\phi^*\right)$的运动$\phi_t^{-1}\circ\phi_t^*$而依赖$t^*$。$X$是物质点$P_X$在标架$\left(\mathcal{E},\phi\right)$下的点，它因物体$B$相对标架$\left(\mathcal{E},\phi\right)$的运动而依赖$t$。$X^*$是物质点$P_X$在标架$\left(\mathcal{E}^*,\phi^*\right)$下的点，它因物体$B$相对标架$\left(\mathcal{E}^*,\phi^*\right)$的运动而依赖$t^*$。$\mathbf{Q}_t$是由$\mathcal{E}$的平移空间$\mathcal{V}$到$\mathcal{E}^*$的平移空间$\mathcal{V}^*$（$\mathcal{V}^*$与$\mathcal{V}$同构）的正交算符，它依赖$t$是等距变换的表示定理和标架变换的原理决定的（见上一节）。
+
+任一物质点$P_X\in B$在两个标架下的速度之间的关系，可由标架变换式代入速度的定义推出\footnote{用到了$\mathrm{d}/\mathrm{d}t^*\equiv\mathrm{d}/\mathrm{d}t$。}——
+\begin{align*}
+    \mathbf{v}^*\left(P_X,t\right) & =\dot{X}\left(t^*\right)                                                                                                 \\
+                                   & =\dot{X}_0^*\left(t^*\right)+\dot{\mathbf{Q}}_t\left(X\left(t\right)-X_0\right)+\mathbf{Q}_t\mathbf{v}\left(P_X,t\right) \\
+                                   & \neq\mathbf{Q}_t\mathbf{v}\left(P_X,t\right)
+\end{align*}
+可见，\emph{速度并不具有标架变换下的不变性}。由标架变换式，
+\[X\left(t\right)-X_0=\mathbf{Q}_t^\intercal\left(X^*\left(t^*\right)-X_0^*\left(t^*\right)\right)\]
+代入上式得（为简洁，对时间依赖略去不写了）
+\[\mathbf{v}^*=\dot{X}^*+\mathbf{A}\left(X^*-X_0^*\right)+\mathbf{Qv}\]
+其中$\mathbf{A}\left(t\right)\equiv\dot{\mathbf{Q}}_t\mathbf{Q}_t^\intercal$称标架$\left(\mathcal{E},\phi\right)$相对标架$\left(\mathcal{E}^*,\phi^*\right)$的\emph{自旋（spin）}。由定理\ref{thm:II.3.1}及其推论，$\mathbf{A}\left(t\right)$唯一地对应一个向量$\boldsymbol{\Omega}\left(t\right)$满足$\mathbf{Au}=\boldsymbol{\Omega}\times\mathbf{u}$，故上式又可写成更多资料中的形式，
+\[\mathbf{v}^*=\dot{X}^*+\boldsymbol{\Omega}\times\left(X^*-X_0^*\right)+\mathbf{Qv}\]
+上式第一项是$\mathcal{E}$相对标架$\left(\mathcal{E}^*,\phi^*\right)$的平动速度，第二项是二者的相对转动角速度。要使$\mathbf{v}^*=\mathbf{Qv}$，两标架间的相对运动必须对所有时刻都满足$\dot{X}_0^*=\mathbf{0}$和$\dot{\mathbf{Q}}_t=\mathbf{0}$，即两标架相对静止。
+
+类似地，我们可得出标架$\left(\mathcal{E}^*,\phi^*\right)$下的加速度
+\begin{align*}
+    \mathbf{a}^* & =\ddot{X}^*_0+\dot{\mathbf{A}}\left(X^*-X^*_0\right)+\mathbf{A}\left(\mathbf{v}^*-\dot{X}^*_0\right)+\dot{\mathbf{Q}}\mathbf{v}+\mathbf{Qa} \\
+                 & \neq\mathbf{Qa}
+\end{align*}
+可见，\emph{速度并不具有标架变换下的不变性}。我们对$\dot{\mathbf{Q}}\mathbf{v}$一项进行如下变化，由
+\[\mathbf{v}^*=\dot{X}^*_0+\mathbf{A}\left(X^*-X^*_0\right)+\mathbf{Qv}\]
+有
+\[\mathbf{Qv}=\mathbf{v}^*-\dot{X}^*_0-\mathbf{A}\left(X^*-X^*_0\right)\]
+两边同时（左）乘$\mathbf{A}=\dot{\mathbf{Q}}\mathbf{Q}^\intercal$得
+\[\dot{\mathbf{Q}}\mathbf{V}=\mathbf{A}\left(\mathbf{v}^*-\dot{X}^*_0\right)-\mathbf{A}^2\left(X^*-X^*_0\right)\]
+代入原式得
+\[\mathbf{a}^*=\ddot{X}_0^*+\dot{\mathbf{A}}\left(X^*-X^*_0\right)+2\mathbf{A}\left(\mathbf{v}^*-\dot{X}^*_0\right)-\mathbf{A}^*\left(X^*-X^*_0\right)+\mathbf{Qa}\]
+使用$\boldsymbol{\Omega}$的表达式为
+\[\mathbf{a}^*=\ddot{X}_0^*+\dot{\boldsymbol{\Omega}}\left(X^*-X^*_0\right)+2\boldsymbol{\Omega}\left(\mathbf{v}^*-\dot{X}_0^*\right)-\boldsymbol{\Omega}\times\left(\boldsymbol{\Omega}\times\left(X^*-X^*_0\right)\right)+\mathbf{Qa}\]
+除$\mathbf{Qa}$以外的项依次是（重新强调时间依赖性）
+\begin{itemize}
+    \item $\ddot{X}_0^*\left(t^*\right)$：$\mathcal{E}$相对$\mathcal{E}^*$的平动加速度
+    \item $\dot{\mathbf{A}}\left(t\right)\left(X^*\left(t^*\right)-X_0^*\left(t^*\right)\right)$：$\mathcal{E}$相对$\mathcal{E}^*$的转动角加速度
+    \item $2\mathbf{A}\left(t\right)\left(\mathbf{v}^*\left(P_X,t^*\right)-\dot{X}_0^*\left(t^*\right)\right)$：\emph{科里奥利（Coriolis）加速度}
+    \item $-\mathbf{A}^2\left(t\right)\left(X^*\left(t^*\right)-X^*_0\left(t^*\right)\right)$：\emph{向心（centripetal）加速度}\footnote{其反号称\emph{离心（centrifugal）加速度}。}
+\end{itemize}
+要使$\mathbf{a}^*=\mathbf{Qa}$，两标架的相对运动需要对任意时刻满足$\ddot{X}^*\left(t^*\right)=\mathbf{0}$且$\dot{\mathbf{Q}}_t=\mathbf{0}$，即两标架作相对的匀速直线运动。我们把这种特殊的标架变换称作\emph{伽俐略变换（Galilean transform）}。速度在伽俐略变换下并不具有不变性。所有两两之间是伽俐略变换的标架所组成的集合形成一个以标架变换为群操作的群，称为\emph{伽俐略群（Galilean group）}，群元素称\emph{惯性参考标架（inertial frame of reference）}。
+\end{document}

@@ -6,7 +6,7 @@
 
 本节我们讨论这三种算符在实内积空间上的特殊性质和由此得出的几何意义。
 
-\subsection{正交算符}
+\subsection{正交算符}\label{sec:II.3.3.1}
 首先，通过与定理\ref{thm:II.2.34}类似的证明方法可知，在$n$维实内积空间上，正交算符的行列式要么是$1$要么是$-1$。于是正交算符可按此分为两类，需要分开讨论。
 
 我们先在2维的情况上认识正交算符。
@@ -122,7 +122,7 @@
 \[\mathbf{Qa}=-\alpha_1\mathbf{\hat{e}}_1+\left(\alpha_2\cos\theta+\alpha_3\sin\theta\right)\mathbf{\hat{e}}_2+\left(-\alpha_3\cos\theta+\alpha_2\sin\theta\right)\mathbf{\hat{e}}_3\]
 首先，上式第一项说明，$\mathbf{Qa}$与$\mathbf{\hat{e}}_1$的夹角$\phi^\prime$跟$\mathbf{a}$与$\mathbf{\hat{e}}_1$的夹角$\phi$保持$\phi^\prime=\pi-\phi$的关系，也就是说$\mathbf{Qa}$把$\mathbf{a}$关于由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$确定的平面进行了镜象翻转。然后，比较上式后两项与2维内积空间上的正交算符的分析结果可知，它们是$\mathbf{a}$在由$\left(\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$所确定的平面上，以与$\mathbf{\hat{e}}_2$夹角为$\theta/2$的直线为对称轴进行平面内的镜向翻转的结果（图\ref{fig:II.3.2}）。总之，当$\mathrm{det}\mathbf{Q}=-1$时，$\mathbf{Q}$的几何效果就是上述两个操作的组合。$\mathbf{Q}$在3维欧几里得空间确定了一个镜面翻转的平面以及在该面内镜象翻转的一条对称轴。在已选定的直角坐标系中，这个平面和这条对称轴一般是“斜放”的。
 
-\subsection{对称算符与向量的拉伸}
+\subsection{对称算符与向量的拉伸}\label{sec:II.3.3.2}
 由定理\ref{thm:II.2.32}，复数域上的厄米算符特征值全为实数。也就是说，厄米算符的特征多项式全为实根。因此，定理\ref{thm:II.2.32}中关于复数域上厄米算符的性质，也适用于在实数域上的对称算符，包括：特征值全都是实数\cite[\S 5.3 定理3.4]{周胜林2012线性代数}；对应于不同特征值的特征向量必正交\cite[\S 5.3 定理3.5]{周胜林2012线性代数}；必可对角化\cite[\S 5.3 定理3.6]{周胜林2012线性代数}；存在一组规范正交基是其特征向量。
 
 一个对称算符的3个特征向量两两正交。设对称算符$\mathbf{U}$的3个特征值为$\lambda_1,\lambda_2,\lambda_3$，$\mathbf{U}$的3个特征向量为$\mathbf{\hat{c}}_1,\mathbf{\hat{c}}_2,\mathbf{\hat{c}}_3$，在规范正交基$C=\left\{\mathbf{\hat{c}}_i\right\}$下，$\left(\mathbf{U}\right)_C$是一个对称矩阵
@@ -135,7 +135,7 @@
 
 特别地，当$\lambda_i=\pm 1,i=1,2,3$时，对称算符不改变形状的尺寸，但仍可能使形状发生翻转；因为此时对称算符要么是恒等算符，要么是行列式为$-1$的正交算符。
 
-\subsection{斜称算符与向量的“叉乘”}
+\subsection{斜称算符与向量的“叉乘”}\label{sec:II.3.3.3}
 我们先比定理\ref{thm:II.2.32}更详细地考察斜称算符的性质。设$\mathcal{W}$是数域$\mathbb{F}$上的$n$维内积空间，$\mathbf{W}$是$\mathcal{W}$上的一个斜称算符，$\left\{\lambda_i\right\}$是$\mathbf{W}$的特征值。由定理\ref{thm:II.2.32}，$\left\{\lambda_i\right\}$是纯虚数或零。在$\mathbb{R}^n$上，当$n$是奇数时，
 \begin{align*}
                     & \mathrm{det}\mathbf{W}^\intercal=\mathrm{det}\mathbf{W}=\mathrm{det}\left(-\mathbf{W}\right)=\left(-1\right)^n\mathrm{det}\mathbf{W}=-\mathrm{det}\mathbf{W} \\
