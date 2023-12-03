@@ -1,18 +1,11 @@
 \documentclass[main.tex]{subfiles}
-% 速度和加速度
+% 形变
 \begin{document}
 在给定标架$\left(\mathcal{E},\phi\right)$下，设物体$B$在两时刻$t_1,t_2\in\mathbb{R}$下的构型分别为
 \[\Omega_{t_1}=\kappa_{t_1}\left(B\right),\quad\Omega_{t_2}=\kappa_{t_2}\left(B\right)\]
 则复合映射
 \[\mu_{t_1\to t_2}:\Omega_{t_1}\rightarrow\Omega_{t_2},\quad\mu_{t_1\to t_2}=\kappa_{t_2}\circ\kappa_{t_1}^{-1}\]
 称为物体$B$由$t_1$到$t_2$的\emph{形变（deformation）}。我们规定形变映射是可逆的；通常情况下还是任意所需阶光滑的。
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics{images/III.6.1.pdf}
-    \caption{物体$B$是物质点$X,Y,\dots$的集合，它只有在发生某种运动时，才能形成一系列物理事件，并在我们所选定的参考标架$\left(\mathcal{E},\phi\right)$下的欧几里得空间中表现出来。在参考时刻$t_0$，置放映射$\kappa_0$将物体$B$的每一物质点$X$映射为参考构型$\Omega_0$中的一点$\mathbf{X}$。在当前时刻$t$，置放映射$\kappa_t$将同一物质点$X\in B$映射为当前构型$\Omega_t$中的一点$\mathbf{x}\left(t\right)$。观察者只能观测到从参考构型到当前构型的变化，由形变映射$\mu_t=\kappa_t\circ\kappa_0^{-1}$描述。}
-    \label{fig:III.6.1}
-\end{figure}
 
 如图\ref{fig:III.6.2}所示，我们常选定一个固定的时刻$t_0\in\mathbb{R}$作为\emph{参考时刻（reference instant）}，$t_0$时物体$B$的构型$\Omega_0$称该物体的\emph{参考构型（reference configuration）}，任一时刻$t$下物体$B$的构型称为\emph{当前构型（current configuration）}。在默认选定了参考构型的讨论中，我们依照以下记号惯例：
 \begin{itemize}
@@ -21,6 +14,13 @@
     \item 当前构型的位置向量：$\mathbf{x}\left(t\right)=\kappa_t\left(X\right)=\mu_t\left(\mathbf{X}\right),\mathbf{y\left(t\right)}=\kappa_t\left(Y\right)=\mu_t\left(\mathbf{Y}\right),\cdots\in\Omega_t$
 \end{itemize}
 在上列记法中，使用同一字母，表示来自同一物质点。置放映射的像本应是欧几里得空间的点，使用向量来表示置放映射的像，是指它在基本坐标系下的位置向量。形变映射$\mu$的下标可以只写当前时刻$t$，有时我们也把时间依赖性明显地表示出来，即$\mu\left(\cdot,t\right)\equiv\mu_t\left(\cdot\right)$。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{images/III.6.1.pdf}
+    \caption{物体$B$是物质点$X,Y,\dots$的集合，它只有在发生某种运动时，才能形成一系列物理事件，并在我们所选定的参考标架$\left(\mathcal{E},\phi\right)$下的欧几里得空间中表现出来。在参考时刻$t_0$，置放映射$\kappa_0$将物体$B$的每一物质点$X$映射为参考构型$\Omega_0$中的一点$\mathbf{X}$。在当前时刻$t$，置放映射$\kappa_t$将同一物质点$X\in B$映射为当前构型$\Omega_t$中的一点$\mathbf{x}\left(t\right)$。观察者只能观测到从参考构型到当前构型的变化，由形变映射$\mu_t=\kappa_t\circ\kappa_0^{-1}$描述。}
+    \label{fig:III.6.1}
+\end{figure}
 
 在选定了坐标系后，欧几里得空间$\mathcal{E}$中的任一位置都唯一对应$\mathbb{R}^3$的一个有序实数3元组。形变映射$\mu_t$的自变量和取值都是欧几里得空间中的点。在不同的坐标系选取方式下，同一形变$\mu_t$将会是不同的$\mathbb{R}^3$上的向量函数。以欧几里得空间$\mathcal{E}$的基本直角坐标系为例，若$\mathbf{X}=\left(X_1,X_2,X_3\right)$、$\mathbf{x}\left(t\right)=\left(x_1\left(t\right),x_2\left(t\right),x_3\left(t\right)\right)$，则映射$\mu_t$可由以下关系式完整确定
 \[
@@ -99,14 +99,5 @@
     \mathbf{E}\left(\mathbf{X},t\right) & \equiv\frac{1}{2}\left(\mathbf{C}\left(\mathbf{X},t\right)-\mathbf{I}\right)                   \\
     \mathbf{e}\left(\mathbf{X},t\right) & \equiv\frac{1}{2}\left(\mathbf{I}-\left(\mathbf{B}\left(\mathbf{X},t\right)^{-1}\right)\right)
 \end{align*}
-分别称\emph{格林应变张量（Green strain tensor）}和\emph{阿尔曼西应变张量（Almansi strain tensor）}\footnote{注意区分两种不同意义的“逆”的记号：$\mathbf{B}^{-1}\left(\mathbf{X},t\right)$表示关于自变量$\left(\mathbf{X},t\right)$的逆映射，$\left(\mathbf{B}\left(\mathbf{X},t\right)\right)^{-1}$表示作为函数值的线性算符的逆变换。}。
-
-
-
-
-
-
-
-
-
+分别称\emph{格林应变张量（Green strain tensor）}和\emph{阿尔曼西应变张量（Almansi strain tensor）}\footnote{注意区分两种不同意义的“逆”的记号：$\mathbf{B}^{-1}\left(\mathbf{X},t\right)$表示关于自变量$\left(\mathbf{X},t\right)$的逆映射，$\left(\mathbf{B}\left(\mathbf{X},t\right)\right)^{-1}$表示作为函数值的线性算符的逆变换。}。这些应变的量度都常用于表示材料的本构关系。
 \end{document}

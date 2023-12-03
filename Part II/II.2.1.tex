@@ -1,21 +1,27 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \subsection{数域}\label{sec:II.2.1.1}
-读者应该已经熟悉自然数、整数、有理数、实数、复数等数集，以及定义在它们之上的四则运算。现在我们特别关心这些数的集合是否具有对四则运算的封闭性，即集合的元素经过四则运算之后的结果仍属于原集合。具体地，设$\mathbb{F}$是数的集合，且在$\mathbb{F}$上的四则运算满足以下要求：
-\begin{enumerate}
-    \item 加法交换律：$x+y=y+x,\forall x,y\in\mathbb{F}$
-    \item 加法结合律：$x+\left(y+z\right)=\left(x+y\right)+z,\forall x,y,z\in\mathbb{F}$
-    \item 零：$\mathbb{F}$中存在一个零元素$0$，使得$x+0=x,\forall x\in\mathbb{F}$
-    \item 对相反数封闭：对任一$x\in\mathbb{F}$，总存在唯一$\mathbb{F}$的元素，记作$-x$，满足$x+\left(-x\right)=0$
-    \item 乘法交换律：$xy=yx,\forall x,y\in\mathbb{F}$
-    \item 乘法结合律：$x\left(yz\right)=\left(xy\right)z,\forall x,y,z\in\mathbb{F}$
-    \item 单位元：$\mathbb{F}$中存在一个非零元素壹$1$，满足$x1=x,\forall x\in\mathbb{F}$
-    \item 对倒数封闭：对$\mathbb{F}$中的任一非零元素$x$，总存在唯一元素，记作$x^{-1}$或$1/x$，满足$xx^{-1}=1$
-    \item 乘法对加法的分配律：$x\left(y+z\right)=xy+xz,\forall x,y,z\in\mathbb{F}$
-\end{enumerate}
-则称集合$\mathbb{F}$是一个\emph{域（field）}。易验复数$\mathbb{C}$、实数$\mathbb{R}$和有理数$\mathbb{Q}$是域。整数$\mathbb{Z}$、自然数$\mathbb{N}$不是域。如果一个域$\mathbb{F}$的子集$\mathbb{F}^\prime$也是域，则称$\mathbb{F}^\prime$是$\mathbb{F}$的\emph{子域（subfield）}。例如，$\mathbb{C}$是$\mathbb{C}$的子域；$\mathbb{R}$是$\mathbb{C}$的子域；所有形如$x+y\sqrt{2},x,y\in\mathbb{C}$的复数集合是$\mathbb{C}$的子域。
+读者应该已经熟悉自然数、整数、有理数、实数、复数等数的集合，以及定义在它们之上的四则运算法则。现在我们特别关心这些数的集合是否具有对四则运算的封闭性，即集合的元素经过四则运算之后的结果仍属于原集合。
 
-一般地，域的定义不具体规定加法和乘法的具体运算规则。只要一个集合上所谓的加法和所谓的乘法分别满足上列9个要求，它就是一个域。在这种一般性下若不作更多规定，将会允许一些奇怪的域，本讲义不深入探讨。在接下来的内容里，每当提到“数域$\mathbb{F}$”，都具体指复数域$\mathbb{C}$的任一子域。
+具体地，设$\mathbb{F}$是一个集合，且在$\mathbb{F}$上的两种二元“$+$”、“$\times$”满足以下要求：
+\begin{enumerate}
+    \item 加法交换律：\[x+y=y+x,\quad\forall x,y\in\mathbb{F}\]
+    \item 加法结合律：\[x+\left(y+z\right)=\left(x+y\right)+z,\quad\forall x,y,z\in\mathbb{F}\]
+    \item 加法的单位元（零）：$\mathbb{F}$中存在一个零元素$0\in\mathbb{F}$，使得\[x+0=x,\quad\forall x\in\mathbb{F}\]
+    \item 对相反数封闭：对任一$x\in\mathbb{F}$，总存在唯一$\mathbb{F}$的元素，记作$-x$，满足$x+\left(-x\right)=0$
+    \item 乘法交换律：\[x\times y=y\times x,\quad\forall x,y\in\mathbb{F}\]
+    \item 乘法结合律：\[x\times\left(y\times z\right)=\left(x\times y\right)\times z,\quad\forall x,y,z\in\mathbb{F}\]
+    \item 乘法的单位元（壹）：$\mathbb{F}$中存在一个非零元素$1\in\mathbb{F}$，满足\[x\times 1=x,\quad\forall x\in\mathbb{F}\]
+    \item 对倒数封闭：对$\mathbb{F}$中的任一非零元素$x$，总存在唯一元素，记作$x^{-1}$或$1/x$，满足$x\times x^{-1}=1$
+    \item 乘法对加法的分配律：\[x\times\left(y+z\right)=x\times y+x\times z,\quad\forall x,y,z\in\mathbb{F}\]
+\end{enumerate}
+则称集合$\mathbb{F}$是一个\emph{域（field）}。例如，复数$\mathbb{C}$、实数$\mathbb{R}$和有理数$\mathbb{Q}$是域。整数$\mathbb{Z}$、自然数$\mathbb{N}$不是域。
+
+我们常将$a+\left(-b\right)$记为$a-b$，将$a\times b$记为$ab$。
+
+如果一个域$\mathbb{F}$的子集$\mathbb{F}^\prime$也是域，则称$\mathbb{F}^\prime$是$\mathbb{F}$的\emph{子域（subfield）}。例如，$\mathbb{C}$是$\mathbb{C}$的子域；$\mathbb{R}$是$\mathbb{C}$的子域；所有形如$x+y\sqrt{2},x,y\in\mathbb{C}$的复数集合是$\mathbb{C}$的子域。
+
+只要一个集合上所谓的加法和所谓的乘法分别满足上列9个要求，它就是一个域。在这种一般性下若不作更多规定，将会允许一些奇怪的域，本讲义不深入探讨。在接下来的内容里，每当提到“数域$\mathbb{F}$”，都具体指复数域$\mathbb{C}$的任一子域。
 %======================================================================================================
 \subsection{向量空间的定义和基本性质}\label{sec:II.2.1.2}
 \begin{definition}[向量空间]\label{def:II.2.1}
