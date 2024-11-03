@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 % 欧几里得空间的构建
 \begin{document}
 为了建立一个几何空间，我们需要先让一个集合的两个元素间有“距离”的概念。
@@ -10,14 +10,14 @@
         \item 对称性：$d\left(x,y\right)=d\left(y,x\right),\quad\forall x,y\in\mathcal{E}$
         \item 三角不等式：$d\left(x,z\right)\leq d\left(x,y\right)+d\left(y,z\right),\quad\forall x,y,z\in\mathcal{E}$
     \end{enumerate}
-    则称$d$是定义在$\mathcal{E}$上的一个\emph{度量（metric）}，有序对$\left(\mathcal{E},d\right)$是一个\emph{度量空间（metric space）}。
+    则称：$\mathcal{E}$的元素是\emph{点（point）}，$d$是定义在$\mathcal{E}$上的一个\emph{度量（metric）}，有序对$\left(\mathcal{E},d\right)$是一个\emph{度量空间（metric space）}。
 \end{definition}
 
 由定义易证，度量总是非负的，即$d\left(x,y\right)\geq0,\forall x,y\in\mathcal{E}$。由第3条，$d\left(x,y\right)+d\left(y,x\right)\geq d\left(x,x\right)$；再由第2条，$d\left(x,y\right)+d\left(x,y\right)\geq d\left(x,x\right)$；最后由第一条有$2d\left(x,y\right)\geq0\Rightarrow d\left(x,y\right)\geq0$（当且仅当$x=y$时取等号）。由于这是定义\ref{def:II.3.1}中的规定能够推出的，因此就算它是我们对距离的最直观要求，但却无需写进定义\ref{def:II.3.1}中。
 
 \begin{example}\label{exp:II.3.1}
     \begin{enumerate}
-        \item 设$M=\left\{0,1\right\}$，定义$d\left(x,y\right),\forall x,y\in M$
+        \item 离散度量（discrete metric）：设$M=\left\{0,1\right\}$，定义$d\left(x,y\right),\forall x,y\in M$
               \[d\left(x,y\right)=\left\{\begin{array}{ll}1,&x\neq y\\0,&x=y\end{array}\right.\]
               则$\left(M,d\right)$是一个度量空间。把$M$改成实数集$\mathbb{R}$，结合上列定义的$d$，$\left(\mathbb{R},d\right)$也是一个度量空间。
         \item 数域$\mathbb{F}$上的赋范向量空间$\mathcal{V}$，连同$d\left(\mathbf{a},\mathbf{b}\right)\equiv\left\|\mathbf{a}-\mathbf{b}\right\|$，构成一个度量空间$\left(\mathcal{V},d\right)$。
@@ -25,7 +25,7 @@
     \end{enumerate}
 \end{example}
 
-易验，若$\left(M,d\right)$是一个度量空间，$N$是$M$的一个子集，则$\left(N,d\right)$也是一个度量空间。
+易验，若$\left(M,d\right)$是一个度量空间，且$N$是$M$的一个子集，则$\left(N,d\right)$也是一个度量空间。
 
 度量空间之间的同态映射将保持距离。具体地，
 
@@ -72,9 +72,11 @@
     \end{enumerate}
 \end{definition}
 
-因此，一个度量空间上的等距群是由该度量空间上的等距变换基于映射的复合运算形成的群。
+易证，群的单位元和逆元总是唯一的，这也跟向量空间的情况类似。
 
-易证，群的单位元和逆元总是唯一的，这也跟向量空间的情况类似。一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。向量空间的定义中，若去除标量乘的规定，剩下的规定实际上定义了一个交换群。
+其实，G1至G4规定，都是可被证明总能满足的。它们的证明比较简单，可以留作练习。因此，任一度量空间上的所有等距变换的集合，总能形成一个等距群。
+
+一般地，群的定义不包括交换律。满足交换率的群叫\emph{交换群（commutative group）}。交换群的二元操作比较像平时的“加法”。向量空间的定义中，若去除标量乘的规定，剩下的规定实际上定义了一个交换群。
 
 \begin{example}
     设$\mathcal{V}$是数域$\mathbb{F}$上的$n$维向量空间，$\mathcal{V}$上的所有\emph{可逆}算符的集合，基于算符的复合操作，形成一个群。我们称这个群为数域$\mathbb{F}$上的$n$维\emph{一般线性群（generalized linear group）}，记作$GL\left(n,\mathbb{F}\right)$；在所讨论的数域维持不变时，简记为$GL\left(n\right)$。
@@ -85,9 +87,9 @@
 设$\left(\mathcal{E},d\right)$是一个度量空间，$\pazocal{I}$是$\left(\mathcal{E},d\right)$上的等距群，若$\pazocal{I}$的子群$\mathcal{V}$满足：
 \begin{description}
     \item[G5] 交换律：$i_1\circ i_2=i_2\circ i_1,\quad \forall i_1,i_2\in\mathcal{V}$；
-    \item[G6] $\mathcal{V}$在$\mathcal{E}$上的\emph{作用（action）}的传递性，即对$\mathcal{E}$中的任一点$X$和一点$Y$，总存在$\pazocal{I}$中的一个等距变换$i$满足$Y=i\left(x\right)$。
+    \item[G6] $\mathcal{V}$在$\mathcal{E}$上的\emph{作用（action）}的传递性，即对$\mathcal{E}$中的任一点$X$和一点$Y$，总存在$\pazocal{I}$中的一个等距变换$i$满足$Y=i\left(X\right)$。
 \end{description}
-则$\mathcal{V}$是$\pazocal{I}$的一个交换子群。一般地，度量空间上的等距群$\pazocal{I}$的满足条件G5至G6的子群$\mathcal{V}$最多只有一个。
+则$\mathcal{V}$是$\pazocal{I}$的一个交换子群。
 
 接下来我们赋予$\mathcal{V}$以实数域上的标量乘法规定，即使$\mathcal{V}$具有满足以下规定的形式运算：
 \begin{description}

@@ -20,6 +20,8 @@ a4paper,
 \usepackage{calrsfs}
 \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 \usepackage{stmaryrd}
+\usepackage{upgreek}
+
 
 
 % packages for graphics
@@ -110,11 +112,12 @@ sorting=none
 
 \usepackage{datetime2}
 
-%\title{流变学}
-%\author{孙尉翔\\mswxsun@scut.edu.cn}
+\title{流变学}
+\author{孙尉翔\\mswxsun@scut.edu.cn}
 
 %=====================================================================================================================
 \begin{document}
+\maketitle
 
 \frontmatter
 \pagenumbering{roman}
@@ -124,6 +127,11 @@ sorting=none
 \tableofcontents
 \mainmatter
 \pagenumbering{arabic}
+
+\part{引言}
+\chapter{需要建立的一些基本观念}\label{sec:I}
+\section{本构关系的概念}\label{sec:I.1}
+\subfile{Part I/I.1.1.tex}\label{sec:I.1.1}
 
 \part{数学部分}\label{sec:II}
 % \begin{figure}[ht]
@@ -228,6 +236,8 @@ sorting=none
 \section{形变}\label{sec:III.6.2}
 \subfile{Part III/III.6.2.tex}
 
+\part{非线性粘弹性流体力学}
+\part{流变测量学}
 
 
 %\section{物体的运动}

@@ -1,9 +1,9 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 % 欧几里得空间的几何对象
 \begin{document}
 本节我们依次在欧几里得空间中引入角、直线、位置向量和坐标系。
 
-为了引入角，我们考虑欧几里得空间$\mathcal{E}$中的给定三个不同的点$X,O,Y\in\mathcal{E}$，由于$\mathcal{E}$的平移空间$\mathcal{V}$是一个赋范内积空间，故有极化恒等式，
+为了引入角，我们考虑欧几里得空间$\mathcal{E}$中的给定三个不同的点$X,O,Y\in\mathcal{E}$，由于$\mathcal{E}$的平移空间$\mathcal{V}$是一个赋范内积空间，故有以下极化恒等式，
 \begin{align*}
     \left\|X-O\right\|^2+\left\|Y-O\right\|^2 & =\left\|\left(X-O\right)-\left(Y-O\right)\right\|^2+2\left(X-O|Y-O\right) \\
                                               & =\left\|X-Y\right\|^2+2\left(X-O|Y-O\right)
@@ -13,23 +13,22 @@
 我们就做好了引入角的准备。
 
 \begin{definition}[角]\label{def:II.3.6}
-    设$\mathcal{E}$是欧几里得空间，$\mathcal{E}$中的角是一个映射$\angle:\mathcal{E}^3\rightarrow\mathbb{R}$满足
-    \[\angle XOY\equiv\cos^{-1}\frac{\left(X-O|Y-O\right)}{\left\|X-O\right\|\left\|Y-O\right\|},\quad\forall X,O,Y\in\mathcal{E},X\neq O\neq Y\]
-    称\emph{点XOY所夹的角}，或简称\emph{角XOY}。其中余弦函数$\cos:\left[0,\pi\right]\rightarrow\mathbb{R}$定义为
-    \[\cos\left(x\right)=\frac{1}{2}\left(e^{ix}+e^{-ix}\right),\quad\forall x\in\left[0,\pi\right)\]
+    设$\mathcal{E}$是欧几里得空间，$\mathcal{E}$中的角是一个映射$\angle:\mathcal{E}^3\rightarrow\mathbb{R}$，满足
+    \[\angle XOY\equiv\mathrm{Arccos}\left[\frac{\left(X-O|Y-O\right)}{\left\|X-O\right\|\left\|Y-O\right\|}\right],\quad\forall X,O,Y\in\mathcal{E},X\neq O\neq Y\]
+    称\emph{点XOY所夹的角}，或简称\emph{角XOY}。
 \end{definition}
 
-注意到，上述定义中的余弦函数是一个双射，故其逆映射$\cos^{-1}$也是双射，所以上述定义的角的取值范围是$\mathrm{ran}\angle=\left[0,\pi\right]$。同时$\angle XOY$的顺序是重要的，$\angle YOX=-\angle XOY$。
+在定义\ref{def:II.3.6}中，取主值的反余弦函数$\mathrm{Arccos}$用首字母大写表示。它的值域是$\left[0,\pi\right]$，且为双射。注意到，在实数域上，内积满足交换律，因此$\angle XOY$的顺序是不重要的，$\angle YOX=\angle XOY$。
 
 %在欧几里得空间中，把3个不同的点平移相同的向量，它们的夹角不变。这一结论在上述的定义下是可验证的。设$\mathcal{V}$是欧几里得空间$\mathcal{E}的平移空间，给定任意$\mathbf{a}\in\mathcal{V}$，以及任意三个两两不同的点$X,O,Y\in\mathcal{E}$，有$\angle XOY=\angle\left(X+\mathbf{a}\right)\left(O+\mathbf{a}\right)\left(Y+\mathbF{a}\right)$。虽然这个结论直观上很容易接受，但是要严格用定义\label{def:II.3.6}证明还是比较繁琐的。
 
-设$i:\mathcal{E}\rightarrow\mathcal{E}$是一个等距变换，可验证$\angle i\left(X\right)i\left(O\right)i\left(Y\right)=\angle XOY,\forall X,O,Y\in\mathcal{E},X\neq O\neq Y$，即等距变换前后角不变。
+设$i:\mathcal{E}\rightarrow\mathcal{E}$是一个等距变换，可验证$\angle i\left(X\right)i\left(O\right)i\left(Y\right)=\angle XOY,\forall X,O,Y\in\mathcal{E},X\neq O\neq Y$，即等距变换前后角不变。这一结论不限于平移空间$\mathcal{V}$中的等距变换。
 
 \begin{definition}[过两点的直线]\label{def:II.3.7}
-    设$\left(\mathcal{E},d\right)$是欧几里得空间，给定两点$X,Y\in\mathcal{E},X\neq Y$，则$\mathcal{E}$的子集$L_{XY}=\left\{C\in\mathcal{E}|\forall \alpha\left(\alpha)\in\mathbb{R}\wedge C=X+\alpha\left(Y-X\right)\right)\right\}$是\emph{过}$X,Y$\emph{两点的一条直线}。如果$\angle XOY=\frac{\pi}{2}$，则直线$L_{OX}$与$L_{OY}$\emph{垂直}，记为$L_{OX}\perp L_{OY}$。
+    设$\left(\mathcal{E},d\right)$是欧几里得空间，给定两点$X,Y\in\mathcal{E},X\neq Y$，则$\mathcal{E}$的子集$L_{XY}=\left\{C\in\mathcal{E}|\forall \alpha\left(\alpha\in\mathbb{R}\wedge C=X+\alpha\left(Y-X\right)\right)\right\}$是\emph{过}$X,Y$\emph{两点的一条直线}。如果$\angle XOY=\frac{\pi}{2}$，则直线$L_{OX}$与$L_{OY}$\emph{垂直}，记为$L_{OX}\perp L_{OY}$。
 \end{definition}
 
-由角的定义，如果$L_{OX}\perp L_{OY}$，则$\left(X-O|Y-O\right)=0$。再由内积空间的格拉姆--施密特正交化过程可知，过$\mathcal{E}$中任一点$O$的两两垂直的直线最大条数都相等且等于$\mathrm{dim}\mathcal{V}$，故欧几里得空间的维数就可被自然地定义为其平移空间的维数。
+由角的定义，如果$L_{OX}\perp L_{OY}$，则$\left(X-O|Y-O\right)=0$。再由内积空间的格拉姆--施密特正交化过程可知，过$\mathcal{E}$中任一点$O$的两两垂直的直线最大条数都相等且等于$\mathrm{dim}\mathcal{V}$，故欧几里得空间的维数就可被自然地定义为其平移空间的维数——正如我们已经在定义\ref{def:II.3.4}中所做的。
 
 $L_{XY}$又可记为$L_{XY}=\left\{C\in\mathcal{E}|\forall\alpha\left(\alpha\in\mathbb{R}\wedge C-X=\alpha\left(Y-X\right)\right)\right\}$，它对应着平移向量空间$\mathcal{V}$的子集$L^{\mathcal{V}}_{XY}=\left\{\mathbf{u}\in\mathcal{V}|\forall\alpha\left(\alpha\in\mathbb{R}\wedge\mathbf{u}=\alpha\left(X-Y\right)\right)\right\}$，易知该子集是$\mathcal{V}$的子空间，维数是1\footnote{这里需要实数集的完备性概念。}。
 

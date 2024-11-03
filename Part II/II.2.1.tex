@@ -346,7 +346,7 @@
     \]
     只有唯一解$x_1=x_2=x_3=0$。
 
-    通过格拉姆--斯密特正交化过程可由$\mathbf{b}_1,\mathbf{b}_2,\mathbf{b}_3$得到$\mathbf{R}^3$的一组正交基：
+    通过格拉姆--斯密特正交化过程可由$\mathbf{b}_1,\mathbf{b}_2,\mathbf{b}_3$得到$\mathbb{R}^3$的一组正交基：
     \begin{align*}
         \mathbf{a}_1 & =\left(3,0,4\right)^\intercal                                                                                                                                                                                                                                                                                                                                        \\
         \mathbf{a}_2 & =\left(-1,0,7\right)^\intercal-\frac{\left(-1,0,7\right)^\intercal\cdot\left(3,0,4\right)^\intercal}{\left(3,0,4\right)^\intercal\cdot\left(3,0,4\right)^\intercal}\left(3,0,4\right)^\intercal                                                                                                                                                                      \\
@@ -356,11 +356,11 @@
                      & =\left(2,9,11\right)^\intercal-2\left(3,0,4\right)^\intercal-\left(-4,0,3\right)^\intercal                                                                                                                                                                                                                                                                           \\
                      & =\left(0,9,0\right)^\intercal
     \end{align*}
-    可见$\mathbf{a}_1,\mathbf{a}_2,\mathbf{a}_3$均为非零向量，故它们是$\mathbb{R}^3$的一组正交基。归一化后得到$\mathbf{\hat{a}}_1=\frac{1}{5}\mathbf{a}_1,\mathbf{\hat{a}}_2=\frac{1}{5}\mathbf{a}_2,\mathbf{\hat{a}}_3=\left(0,1,0\right)^\intercal$是一组规范正交基。任一向量$\mathbf{x}=\left(x_1,x_2,x_3\right)^\intercal\in\mathbb{R}^3$在基$\left\{\mathbf{a}_1,\mathbf{a}_2,\mathbf{a}_3\right\}$下的坐标为：
-    \[\left(x_1,x_2,x_3\right)^\intercal=\frac{3x_1+4x_3}{25}\mathbf{a}_1+\frac{-4x_1+3x_3}{25}\mathbf{a}_2+\frac{x_2}{9}\mathbf{a}_3\]
+    可见$\mathbf{a}_1,\mathbf{a}_2,\mathbf{a}_3$均为非零向量，故它们是$\mathbb{R}^3$的一组正交基。归一化后得到$\mathbf{\hat{a}}_1=\frac{1}{5}\mathbf{a}_1,\mathbf{\hat{a}}_2=\frac{1}{5}\mathbf{a}_2,\mathbf{\hat{a}}_3=\left(0,1,0\right)^\intercal$是一组规范正交基。任一向量$\mathbf{x}=\left(x_1,x_2,x_3\right)^\intercal\in\mathbb{R}^3$在基$\left\{\mathbf{\hat{a}}_1,\mathbf{\hat{a}}_2,\mathbf{\hat{a}}_3\right\}$下的坐标表达式为：
+    \[\left(x_1,x_2,x_3\right)^\intercal=\frac{3x_1+4x_3}{25}\mathbf{\hat{a}}_1+\frac{-4x_1+3x_3}{25}\mathbf{\hat{a}}_2+\frac{x_2}{9}\mathbf{\hat{a}}_3\]
 
-    由格拉姆--斯密特正交化过程可知，一般地，对于规范正交基$\left\{\mathbf{a}_i\right\}$有
-    \[\mathbf{a}_i\cdot\mathbf{a}_j=\delta_{ij}\]
+    由格拉姆--斯密特正交化过程可知，一般地，对于规范正交基$\left\{\mathbf{\hat{a}}_i\right\}$有
+    \[\mathbf{\hat{a}}_i\cdot\mathbf{\hat{a}}_j=\delta_{ij}\]
     其中
     \[\delta_{ij}=\left\{\begin{array}{ll}
             1, & i=j     \\

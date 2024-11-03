@@ -22,7 +22,7 @@
 \begin{definition}\label{def:II.2.25}
     设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{T}$是$\mathcal{V}$上的自伴随算符。
     \begin{enumerate}
-        \item 如果$\left(\mathbf{Ta}|\mathbf{a}\right)\leq 0,\quad\forall\mathbf{a}\in\mathcal{V}$，则称$\mathbf{T}$为\emph{非负（non-negative）}算符；
+        \item 如果$\left(\mathbf{Ta}|\mathbf{a}\right)\geq 0,\quad\forall\mathbf{a}\in\mathcal{V}$，则称$\mathbf{T}$为\emph{非负（non-negative）}算符；
         \item 如果$\left(\mathbf{Ta}|\mathbf{a}\right)> 0,\quad\forall\mathbf{a}\in\mathcal{V}$，则称$\mathbf{T}$为\emph{正（positive）}算符。
     \end{enumerate}
 \end{definition}
@@ -36,7 +36,7 @@
 以下定理则类似于：任一复数$z$可分解为$z=\rho e^{i\theta}$，其中$\rho$是非负实数，表示伸缩；$\left|e^{i\theta}\right|=1$，表示旋转。对于复数，这叫“极坐标分解”。对于线性算符，这叫极分解。
 
 \begin{theorem}[极分解]\label{thm:II.2.37}
-    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则总存在幺正算符$\mathbf{Q}$和唯一一个非负算符$\mathbf{N}$满足$\mathbf{T}=\mathbf{UN}$，称为$\mathbf{T}$的一个\emph{极分解（polar decomposition）}。如果$\mathbf{T}$可逆，则连$\mathbf{Q}$也是唯一的。如果$\mathbf{T}$是正规算符，则$\mathbf{QN}=\mathbf{NQ}$。
+    设$\mathcal{V}$是数域$\mathbb{F}$上的有限维内积空间，$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}\right)$是一个线性算符，则总存在幺正算符$\mathbf{Q}$和唯一一个非负算符$\mathbf{N}$满足$\mathbf{T}=\mathbf{QN}$，称为$\mathbf{T}$的一个\emph{极分解（polar decomposition）}。如果$\mathbf{T}$可逆，则连$\mathbf{Q}$也是唯一的。如果$\mathbf{T}$是正规算符，则$\mathbf{QN}=\mathbf{NQ}$。
 \end{theorem}
 
 值得注意的是，对于非正规算符$\mathbf{T}$，可极分解为$\mathbf{T}=\mathbf{N}_1\mathbf{Q}=\mathbf{QN}_2$，且一般地$\mathbf{N}_1\neq\mathbf{N}_2$。
