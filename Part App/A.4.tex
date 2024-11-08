@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 \begin{document}
 我们先引入关于子群的共轭子群的概念。
 
@@ -6,24 +6,50 @@
     设$G$是一个群，对任意$a,b\in G$，记其群操作为$a\circ b$，单位元为$e$，$a$的逆元为$a^{-1}$。若$G$中存在一个$i\in G$使$G$中的两个元素$a,b\in G$满足$b=i\circ a\circ i^{-1}$，则称$b$为$a$的一个\emph{共轭（conjugate）}。
 \end{definition}
 
-给定$i\in G$，设关系$\sim\subset G\times G$满足$b=i\circ a\circ i^{-1},\forall\left(a,b\right)\in\sim$，则易证$\sim$是一个等价关系。给定一个$G$的元素$a$，由关系$\sim$可形成一个等价类$\left\llbracket a\right\rrbracket_\sim$，称$a$的\emph{共轭类（conjugacy class）}。
+其实，对于$a\in G$，选不同的元素$i\in G$都可以为$a$找到一个共轭元素。我们可以更仔细地称$b=i\circ a\circ i^{-1}$为元素$a$通过元素$i$获得的共轭。但是，任意给定$G$的两个元素$a,b$，并不一定总能找到一个$i\in G$使$b=i\circ a\circ i^{-1}$。事实上，两个群元素的共轭作为一个关系，是一个等价关系。与给定元素共轭的所有元素将构成一个等价类。不同元素的共轭等价类分割了整个群$G$。
+
+我们简短地证明为什么共轭是一个等价类，就不单独列为引理了。设关系$\sim\in G\times G$满足：$a\sim b\Leftrightarrow\exists i\in G,b=i\circ a\circ i^{-1}$。我们需要证明$\sim$满足等价关系的三个性质：自反性、对称性和传递性。首先，自反性要求$a\sim a$，即存在$i\in G$使$a=i\circ a\circ i^{-1}$。取$i=e$即可。其次，对称性要求$a\sim b\Rightarrow b\sim a$。若存在$i\in G$使$b=i\circ a\circ i^{-1}$，则取$i^{-1}$即可。最后，传递性要求$a\sim b,b\sim c\Rightarrow a\sim c$。若存在$i,j\in G$使$b=i\circ a\circ i^{-1},c=j\circ b\circ j^{-1}$，则有$c=j\circ i\circ a\circ i^{-1}\circ j^{-1}$，取$i^\prime=j\circ i$即可。故共轭是一个等价关系。给定任一$G$的元素$a$，由共轭关系$\sim$可形成一个等价类$\left\llbracket a\right\rrbracket_\sim$，称$a$的\emph{共轭类（conjugacy class）}。
+
+另一个更加平凡的事实是，对每一$G$的元素$a$，通过给定元素$i\in G$，有且只有一个共轭$b=i\circ a\circ i^{-1}$。这是因为，给定的$a, i\in G$是确定的，而且对每一$i\in G$有且只有一个$i^{-1}\in G$，故整个表达式$b=i\circ a\circ i^{-1}$是唯一的。这是下面的引理\ref{lem:A.3}中我们之所以能够定义里面的映射$Q$的基础。
 
 \begin{lemma}\label{lem:A.3}
-    设$G$是一个群，对任意$a,b\in G$，记其群操作为$a\circ b$，单位元为$e$，$a$的逆元为$a^{-1}$。若$V$是$G$的一个子群。给定$i\in G$，定义映射$Q:\mathcal{V}\rightarrow G,$
+    设$G$是一个群，对任意$a,b\in G$，记其群操作为$a\circ b$，单位元为$e$，$a$的逆元为$a^{-1}$。若$V$是$G$的一个子群。给定$i\in G$，定义映射$Q:V\rightarrow G,$
     \[Q\left(v\right)=i\circ v\circ i^{-1},\quad\forall v\in V\]
     则集合$V^*\equiv\mathrm{ran}Q$是$G$的一个子群，且映射$Q$是由$V$到$V^*$的同构映射。
 \end{lemma}
+\begin{proof}
+    首先，$V^*$是$G$的子集。对任意$v_1,v_2\in V$，有$Q\left(v_1\right)=i\circ v_1\circ i^{-1},Q\left(v_2\right)=i\circ v_2\circ i^{-1}$，则有
+    \[Q\left(v_1\right)\circ Q\left(v_2\right)=i\circ v_1\circ i^{-1}\circ i\circ v_2\circ i^{-1}=i\circ v_1\circ v_2\circ i^{-1}=Q\left(v_1\circ v_2\right)\in V^*\]
+    其中由$V$的封闭性，$v_1\circ v_2$也是$V$的元素，故也能被$Q$映射到$V^*$。这证明了，任意两个$V^*$中的元素的群运算结果也在$V^*$中，即$V^*$满足封闭性。
 
-该引理的证明是直接的，留作练习。
+    其次，我们将看到，$e\in V^*$。由$V$是$G$的子群，故$e\in V$。由$Q$的定义，有$Q\left(e\right)=i\circ e\circ i^{-1}=e\in V^*$。故$V^*$包含单位元。
+
+    再次，我们将看到，$V^*$包含逆元。对任意$v\in V$，有$Q\left(v\right)=i\circ v\circ i^{-1}$，同时也有
+    \[Q\left(v\right)^{-1}=i\circ v^{-1}\circ i^{-1}=Q\left(v^{-1}\right)\in V^*\]
+    其中由$V$的封闭性，$v^{-1}$也是$V$的元素，故也能被$Q$映射到$V^*$。故$V^*$包含逆元。
+
+    综上，$V^*$是一个群。结合$V^*$是$G$的子集的事实，就有$V^*$是$G$的子群。
+
+    以下证明$Q$是由$V$到$V^*$的同构映射。之前已经证明了$Q\left(v_1\right)\circ Q\left(v_1\right)=Q\left(v_1\circ v_2\right)$即$Q$是$V$上的同态映射，只需证明$Q$是由$V$到$V^*$的双射。首先，由于$V^*=\mathrm{ran}Q$，故$Q$是由$V$到$V^*$的满射。其次，$Q$是单射：$\forall v_1,v_2\in V$，若$Q\left(v_1\right)=Q\left(v_2\right)$，则有
+    \[\begin{aligned}
+                            & i\circ v_1\circ i^{-1}  =i\circ v_2\circ i^{-1}                                      \\
+            \Leftrightarrow & i^{-1}\circ i\circ v_1\circ i^{-1}=i^{-1}\circ i\circ v_2\circ i^{-1}                \\
+            \Leftrightarrow & i^{-1}\circ i\circ v_1\circ i^{-1}\circ i= i^{-1}\circ i\circ v_2\circ i^{-1}\circ i \\
+            \Leftrightarrow & v_1=v_2
+        \end{aligned}\]
+    因此$Q$是由$V$到$V^*$的双射，即是同构映射。
+\end{proof}
 
 \begin{definition}[共轭子群]\label{def:A.9}
-    设$G$是一个群，对任意$a,b\in G$，记其群操作记为$a\circ b$，单位元为$e$，$a$的逆元为$a^{-1}$。若$V$是$G$的一个子群。给定$i\in G$，定义映射$Q:\mathcal{V}\rightarrow G,$
-    \[Q\left(v\right)=i\circ v\circ i^{-1}\]
-    则称$\mathcal{V}^*$是$\mathcal{V}$的一个共轭子群。
+    设$G$是一个群，对任意$a,b\in G$，记其群操作记为$a\circ b$，单位元为$e$，$a$的逆元为$a^{-1}$。若$V$是$G$的一个子群。给定$i\in G$，定义映射$Q:V\rightarrow G,$
+    \[Q\left(v\right)=i\circ v\circ i^{-1},\quad\forall v\in V\]
+    则称$V^*\equiv\mathrm{ran}Q$是子群$V$通过元素$i$形成的共轭子群。
 \end{definition}
 
+我们从引理\ref{lem:A.3}和定义\ref{def:A.9}可见，现在我们讨论的焦点放在给定元素$i\in G$，它能为任一$G$的子群中的元素指定其共轭（即通过$i$构建的映射$Q$）而生成一个共轭子群$V^*$。这是对$G$的任一元素$i$，针对$G$的任一子群$V$，都能享有的事实。
+
 \begin{lemma}\label{lem:A.4}
-    设$\left(\mathcal{E},d\right)$是一个度量空间，若其上的等距群存在一个满足条件G1至G6、S1至S4和N1的子群$\mathcal{V}$，则这样的子群只有一个。
+    设$\left(\mathcal{E},d\right)$是一个度量空间，若其上的等距群$\mathcal{I}$中存在一个满足条件G1至G6、S1至S4和N1的子群$\mathcal{V}$，则这样的子群只有一个。
 \end{lemma}
 \begin{proof}
     设$\mathcal{V}^\prime$也是满足上述条件的子群，则给定任意两点$X,Y\in\mathcal{E}$，$\mathcal{V}$中必存在唯一一个等距变换$\mathbf{u}$、$\mathcal{V}^\prime$中必存在唯一一个等距变换$\mathbf{u}^\prime$，分别满足$\mathbf{u}=Y-X,\mathbf{u}^\prime=Y-^\prime X$，其中$-$和$-^\prime$分别是由$\mathcal{V}$和$\mathcal{V}^\prime$的传递性所定义的记号。相应地有$Y=X+\mathbf{u}=X+^\prime\mathbf{u}^\prime$。
@@ -33,10 +59,10 @@
     易证$f$是双射且$f\left(\mathbf{0}\right)=\mathbf{0}$，其中$\mathbf{0}$是$\mathcal{E}$上的恒等变换，故它同时是$\mathcal{V}$和$\mathcal{V}^\prime$的单位元。
 
     $f$是由$\mathcal{V}$到$\mathcal{V}^\prime$的同构映射：对任意$\mathbf{u},\mathbf{v}\in\mathcal{V}$和$X_0\in\mathcal{V}$必存在$X,Y\in\mathcal{V}$满足
-    \[X=X_0+\mathbf{u},Y=X_0+\mathbf{v}=X+\mathbf{v}-\mathbf{u}\]
+    \[X=X_0+\mathbf{u},\quad Y=X_0+\mathbf{v}=X+\mathbf{v}-\mathbf{u}\]
     若记$\mathbf{u}^\prime=f\left(\mathbf{u}\right),\mathbf{v}^\prime=f\left(\mathbf{v}\right)$，则亦有
-    \[X=X_0+^\prime\mathbf{u}^\prime,Y=X+^\prime\mathbf{u}^\prime-\mathbf{v}^\prime\]
-    由$\mathcal{V}$和$\mathcal{V}^\prime$上的范的定义方式都来自同一度量$d$，故有
+    \[X=X_0+^\prime\mathbf{u}^\prime,\quad Y=X+^\prime\mathbf{u}^\prime-\mathbf{v}^\prime\]
+    由于$\mathcal{V}$和$\mathcal{V}^\prime$上的范的定义方式都来自同一度量$d$，故有
     \[\left\|\mathbf{v}-\mathbf{u}\right\|=\left\|\mathbf{v}^\prime-\mathbf{u}^\prime\right\|\]
     特别地，当$\mathbf{u}=\mathbf{0}$时，$\mathbf{u}^\prime=\mathbf{0}$，上式说明$\left\|\mathbf{v}\right\|=\left\|\mathbf{v}^\prime\right\|$对任意$\mathbf{v}\in\mathcal{V}$成立。故
     \begin{align*}
@@ -47,7 +73,7 @@
     \end{align*}
     即$f$保持内积。由类似引理\ref{lem:II.2.2}的证明过程可知$f$是由$\mathcal{V}$到$\mathcal{V}^\prime$的同构线性变换。
 
-    由外延公理，如果两个集合$A$和$B$之间存在一个双映射$f$满足$f\left(x\right)=x,\forall x\in A$则$A=B$。对任意$X\in\mathcal{E}$和$\mathbf{v}\in\mathcal{V}$，设$\mathbf{u}=X-X_0,X_0\in\mathcal{E}$，则
+    由外延公理，如果两个集合$A$和$B$之间存在一个双射$f$满足$f\left(x\right)=x,\forall x\in A$则$A=B$。现在对任意$X\in\mathcal{E}$和$\mathbf{v}\in\mathcal{V}$，设$\mathbf{u}=X-X_0,X_0\in\mathcal{E}$，则
     \begin{align*}
         X+\mathbf{v} & =X_0+\mathbf{u}+\mathbf{v}                                     \\
                      & =X_0+^\prime f\left(\mathbf{u}+\mathbf{v}\right)               \\
@@ -59,18 +85,18 @@
 \end{proof}
 
 \begin{theorem*}[等距变换的表示定理\ref{thm:II.3.2}]
-    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，选定任一点$X_0\in\mathcal{E}$，则$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{V}$都可表示为
+    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，选定任一点$X_0\in\mathcal{E}$，则$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{I}$都可表示为
     \[
         i\left(X\right)=i\left(X_0\right)+\mathbf{Q}_i\left(X-X_0\right)
     \]
-    其中$\mathbf{Q}_i$是一个正交算符，由$i$唯一确定。
+    其中$\mathbf{Q}_i$是$\mathcal{V}$上的一个正交算符，由$i$唯一确定。
 \end{theorem*}
 \begin{proof}
-    由引理\ref{lem:A.3}、\ref{lem:A.4}和\ref{lem:II.2.2}，给定任一$\mathcal{E}$上的等距变换$i$，$\mathcal{V}$的共轭子群都是它自己，且每个$i$引出的共轭映射$\mathbf{Q}_i\mathbf{v}=i\circ\mathbf{v}\circ i^{-1}$就是$\mathcal{V}$上的自同构映射，故$\mathbf{Q}$是$\mathcal{V}$上的正交算符。
+    由引理\ref{lem:A.3}、\ref{lem:A.4}和\ref{lem:II.2.2}，给定任一$\mathcal{E}$上的等距变换$i\in\mathcal{I}$，$\mathcal{V}$在$\mathcal{I}$中的共轭子群都是它自己，且每个由$i$引出的共轭映射$\mathbf{Q}_i\mathbf{v}=i\circ\mathbf{v}\circ i^{-1}$就是$\mathcal{V}$上的自同构映射，故$\mathbf{Q}$是$\mathcal{V}$上的正交算符（由定义\ref{def:II.2.23}，幺正算符就是内积空间上的自同构映射）。
 
     注意到$i\circ\mathbf{v}=\mathbf{Q}_i\mathbf{v}\circ i$，则对任一$X_0\in\mathcal{E}$，有
-    \[i\circ \mathbf{v}\left(X_0\right)=i\left(X+0+\mathbf{v}\right),\quad \mathbf{Q}_i\mathbf{v}\circ i\left(X_0\right)=i\left(X_0\right)+\mathbf{Q}_i\mathbf{v}\]
-    令$X=X_0+\mathbf{v}$，则有
+    \[i\circ \mathbf{v}\left(X_0\right)=i\left(X_0+\mathbf{v}\right),\quad \mathbf{Q}_i\mathbf{v}\circ i\left(X_0\right)=i\left(X_0\right)+\mathbf{Q}_i\mathbf{v}\]
+    令$X=X_0+\mathbf{v}$，就有
     \[
         i\left(X\right)=i\left(X_0\right)+\mathbf{Q}_i\left(X-X_0\right)
     \]

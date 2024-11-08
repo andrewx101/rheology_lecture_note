@@ -3,7 +3,7 @@
 在一个欧几里得空间中，任一针对点空间的点的等距变换结果都是相对某另一点的平移再叠加一个正交变换。这个定理也是后面介绍物理定律的标架变换不变性时的理论基础。我们把它正式表述如下：
 
 \begin{theorem}[等距变换的表示定理]\label{thm:II.3.2}
-    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，选定任一点$X_0\in\mathcal{E}$，则$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{V}$都可表示为
+    设$\mathcal{E}$是一个欧几里得空间，$\mathcal{V}$是其平移空间，$\mathcal{I}$就$\mathcal{E}$的等距群。选定任一点$X_0\in\mathcal{E}$，$\mathcal{E}$上的任一等距变换$i:\mathcal{E}\rightarrow\mathcal{E},i\in\mathcal{I}$都可表示为
     \[
         i\left(X\right)=i\left(X_0\right)+\mathbf{Q}_i\left(X-X_0\right)
     \]
@@ -13,7 +13,7 @@
     见附录。
 \end{proof}
 
-由定理\ref{thm:II.3.2}，给定欧几里得空间上的任一等距变换$i$，则仅需知道$i$关于某一参考点$X_0$的像是哪个点，以及由$i$确定的某特征正交算符$\mathbf{Q}_i$的取值，就可以知道$i$对任意一点$X\in\mathcal{E}$的像。享有表示定理的等距变换$i$未必需要是$\mathcal{V}$中的向量，但由于任意两点的“差”唯一对应一个$\mathcal{V}$中的平移向量，故$i\left(X\right)-i\left(X_0\right)$和$X-X_0$分别表示由点$i\left(X_0\right)$到点$i\left(X\right)$和点$X_0$到点$X$的平移向量。由等距变换的表示定理，这两个平移向量只相差由正交算符$\mathbf{Q}_i$规定的几何变换，具体可见\S\ref{sec:II.3.3}。
+由定理\ref{thm:II.3.2}，给定欧几里得空间上的任一等距变换$i$，仅需知道$i$关于某一参考点$X_0$的像是哪个点$i\left(X_0\right)$，以及由$i$确定的某特征正交算符$\mathbf{Q}_i$的取值，就可以知道$i$对任意一点$X\in\mathcal{E}$的像$i\left(X\right)$。享有表示定理的等距变换$i$未必需要是$\mathcal{V}$中的向量，但由于任意两点的“差”唯一对应一个$\mathcal{V}$中的平移向量，故$i\left(X\right)-i\left(X_0\right)$和$X-X_0$分别表示由点$i\left(X_0\right)$到点$i\left(X\right)$和点$X_0$到点$X$的平移向量。由等距变换的表示定理，这两个平移向量只相差由正交算符$\mathbf{Q}_i$规定的几何变换，具体是什么几何变换，可回顾\S\ref{sec:II.3.3}。
 
 \begin{example}\label{exp:II.3.4}
     考虑欧几里得空间$\left(\mathcal{E},d\right)$上的以下等距变换，其中$\mathbf{Q}$是一个正交算符，$X_0,C$是$\mathcal{E}$中固定的点：
@@ -36,6 +36,6 @@
     \centering
     \includegraphics[width=0.5\textwidth]{images/II.3.3.pdf}
     \caption{翻转变换在纸面画法上相当于左、右手规则之差别。}
-    \label{fig:II.3.3}
+    \label{fig:II.3.4}
 \end{figure}
 \end{document}

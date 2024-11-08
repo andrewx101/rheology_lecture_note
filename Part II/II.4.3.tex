@@ -146,7 +146,7 @@
 \begin{definition}[向量值函数的微分]\label{def:II.4.13}
     若函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在其定义域内某点$\mathbf{x}_0\in D$处，存在一个线性变换$\mathbf{L}:\mathbb{R}^n\rightarrow\mathbb{R}^m$使得对任意$\mathbf{x}_0$的邻域$N\left(\mathbf{x}_0\right)$中的点$\mathbf{x}\in N\left(\mathbf{x}_0\right)$，
     \[\lim_{\mathbf{x}\rightarrow\mathbf{x}_0}\frac{\mathbf{f}\left(\mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)}{\left\|\mathbf{x}-\mathbf{x}_0\right\|}=\mathbf{0}\]
-    就称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable at $\mathbf{x}_0$）}。向量$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\equiv\mathbf{Lx}-\mathbf{Lx}_0$，称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（the differential of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是\emph{$S$上的可微函数（differentiable function on $S$）}。
+    就称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable at $\mathbf{x}_0$）}。自变量增量的线性主部$\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)$称为\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（differential of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。其中线性变换$\mathbf{L}$记作$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是\emph{$S$上的可微函数（differentiable function on $S$）}。
 \end{definition}
 
 我们可以根据向量函数的定义来看出，定义\ref{def:II.4.13}就是定义\ref{def:II.4.12}的推广。延用定义\ref{def:II.4.13}的设定，设$\mathbf{f}=\left(f_1,\cdots,f_m\right)^\intercal$，$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，$\mathbf{x}_0=\left(x_{01},\cdots,x_{0n}\right)^\intercal$，则函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的全增量是：
@@ -230,10 +230,10 @@
     \[
         \lim_{\Delta\mathbf{x}\to\mathbf{0}}\frac{\mathbf{f}\left(\mathbf{x}_0+\Delta \mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)-\mathbf{L}\Delta\mathbf{x}}{\left\|\Delta\mathbf{x}\right\|}=\mathbf{0}
     \]
-    则称线性变换$\mathbf{L}$是\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的导数（derivative of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}，记为
+    则称线性变换$\mathbf{L}$是\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的导数（derivative of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。在定义\ref{def:II.4.13}中已引入记号
     %\[\mathbf{L}\equiv\left.\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}\]
     \[\mathbf{L}\equiv \mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\]
-    $\mathbf{L}$在标准基下的坐标矩阵称为函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的\emph{雅可比矩阵（Jacobian matrix）}，$\mathbf{L}$的行列式$\mathrm{det}\mathbf{L}$称函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的\emph{雅可比行列式（Jacobian determinant）}。
+    $\mathbf{L}$在标准基下的坐标矩阵称为函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的\emph{雅可比矩阵（Jacobian matrix）}。
 \end{definition}
 
 下面我们给出一个函数在某点处可微的充分非必要条件（即未必一定要满足该条件函数才可微，但满足该条件函数必可微）\cite[“例3”,p.~23]{华工高数2009下}。
@@ -245,7 +245,7 @@
     见附录。
 \end{proof}
 
-我们不把$\mathbf{L}_{\mathbf{x}}$记为$\frac{d\mathbf{f}}{d\mathbf{x}}$，因为线性变换并非“两个向量的商”。
+我们不把$\mathbf{L}$记为$\frac{d\mathbf{f}}{d\mathbf{x}}$，因为线性变换并非“两个向量的商”。
 
 %================================================================
 \subsection{向量函数的导函数、连续可微函数}
@@ -254,7 +254,7 @@
     %\[
     %\mathbf{L}\left(\mathbf{x}\right)\equiv\left.\frac{d\mathbf{f}\left(\mathbf{x}^\prime\right)}{d\mathbf{x}^\prime}\right|_{\mathbf{x}^\prime=\mathbf{x}},\forall\mathbf{x}\in S
     %\]
-    \[\mathbf{L}\left(\mathbf{x}\right)\equiv d_{\mathbf{x}^\prime=\mathbf{x}}\mathbf{f}\left(\mathbf{x}^\prime\right),\quad\forall\mathbf{x}\in S\]
+    \[\mathbf{L}\left(\mathbf{x}\right)\equiv \mathrm{d}_{\mathbf{x}^\prime=\mathbf{x}}\mathbf{f}\left(\mathbf{x}^\prime\right),\quad\forall\mathbf{x}\in S\]
 \end{definition}
 
 注意，向量函数的导函数的函数值是线性变换。向量函数在不同点上的导数是不同的线性变换。在上述定义中的“$\mathbf{L}\left(\mathbf{x}\right)$”，不是指一个线性变换作用于一个向量，而是一个线性变换值函数及其自变量。此时$\mathbf{L}\left(\mathbf{x}\right)$可以作用于一个向量$\mathbf{u}$得到另一个向量$\mathbf{v}=\mathbf{L}\left(\mathbf{x}\right)\mathbf{u}$。到底$\mathbf{L}$后面的括号表示哪种意义，在记法上无法区分，但是大多数情况下可根据语境区分。本讲义在必要处会说明一种记法到底表示哪种意义。
@@ -339,7 +339,7 @@
 %===============================================
 \subsection{复合函数求导的链式法则、反函数定理、隐函数定理}
 \begin{theorem}[复合函数求导的链式法则]\label{thm:II.4.11}
-    如果函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在$\mathbf{x}_0\in D$处可微分；函数$\mathbf{g}:\mathbb{R}^n\supset E\rightarrow\mathbb{R}^p$在$\mathbf{f}\left(\mathbf{x}_0\right)\in E\cap D$处可微分，则复合函数$\mathbf{g}\circ\mathbf{f}$在$\mathbf{x}_0$处可微分，且其导数
+    如果函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$在$\mathbf{x}_0\in D$处可微分；函数$\mathbf{g}:\mathbb{R}^m\supset E\rightarrow\mathbb{R}^p$在$\mathbf{f}\left(\mathbf{x}_0\right)\in E\cap \mathrm{ran}\mathbf{f}$处可微分，则复合函数$\mathbf{g}\circ\mathbf{f}$在$\mathbf{x}_0$处可微分，且其导数
     %\[
     %\left.\frac{d\mathbf{g}\circ\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}=\left.\frac{d\mathbf{g}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}\left.\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}
     %\]
@@ -350,17 +350,17 @@
 \end{proof}
 
 \begin{theorem}[反函数定理]\label{thm:II.4.12}
-    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$D$上是连续可微函数，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的逆函数$\mathbf{f}^{-1}$；$N$在函数$\mathbf{f}$下的像集$\mathbf{f}\left(N\right)$是开集；且$\mathbf{f}^{-1}\left(\mathbf{y}\right)$在$\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}=\mathbf{x}_0$的导数的逆变换，即
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$D$上是连续可微函数，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。则在$\mathbf{x}_0$的某邻域$N$上，函数$\mathbf{f}$有连续可微的反函数$\mathbf{f}^{-1}$；$N$在函数$\mathbf{f}$下的像集$\mathbf{f}\left(N\right)$是开集；且$\mathbf{f}^{-1}\left(\mathbf{y}\right)$在$\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)$处的导数是$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}=\mathbf{x}_0$的导数的逆变换，即
     \[\mathrm{d}_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}_0\right)}\mathbf{f}^{-1}\left(\mathbf{y}\right)=\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)^{-1}\]
 \end{theorem}
 \begin{proof}
     见附录
 \end{proof}
 
-定理\ref{thm:II.4.12}的证明过程依赖$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是$\mathbb{R}^n$上的双射的事实。诚然，在定理\ref{thm:II.4.12}中所讨论的函数$\mathbf{f}$的定义域和陪域是维数相同的。因此$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$若存在逆变换（单射），则其必为双射。若将定理\ref{thm:II.4.12}推广至关于函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$，则当$n<m$时定理需明确要求$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射，且仅有$\mathbf{f}$存在逆函数$\mathbf{f}^{-1}$的结论，$\mathbf{f}^{-1}$未必连续可微（读者可验证$f\left(x\right)=x^3$的情况）。作为推论正式表示如下。
+定理\ref{thm:II.4.12}的证明过程依赖$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是$\mathbb{R}^n$上的双射的事实。诚然，在定理\ref{thm:II.4.12}中所讨论的函数$\mathbf{f}$的定义域和陪域是维数相同的。因此$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$若存在逆变换（单射），则其必为双射。若将定理\ref{thm:II.4.12}推广至关于函数$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$，则当$n<m$时定理需明确要求$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射，且仅有$\mathbf{f}$存在反函数$\mathbf{f}^{-1}$的结论，$\mathbf{f}^{-1}$未必连续可微（读者可验证$f\left(x\right)=x^3$的情况）。作为推论正式表示如下。
 
 \begin{corollary}
-    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$（$n<m$）在$D$上连续可微，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射线性变换，则在$\mathbf{x}_0$某邻域$N$上函数$\mathbf{f}$存在逆函数$\mathbf{f}^{-1}$。
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$（$n<m$）在$D$上连续可微，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是双射线性变换，则在$\mathbf{x}_0$某邻域$N$上函数$\mathbf{f}$存在反函数$\mathbf{f}^{-1}$。
 \end{corollary}
 \begin{proof}
     仅列出证明概要。设$\left\{\mathbf{e}_1,\cdots\mathbf{e}_n\right\}$是$\mathbb{R}^m$上的一组有线性无关向量组，将其补全为$\mathbb{R}^m$的一组基$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n,\mathbf{e}_{n+1},\dots,\mathbf{e}_m\right\}$。定义函数$\mathbf{g}:\mathbb{R}^m\rightarrow\mathbb{R}^n,$
@@ -369,12 +369,12 @@
 
 \end{proof}
 
-当$n>m$时，由线性变换的维数定理$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$必不满秩，故$\mathbf{f}$不存在逆函数。
+当$n>m$时，由线性变换的维数定理$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$必不满秩，故$\mathbf{f}$不存在反函数。
 
 反函数定理的逆命题一般不成立（仍可通过考虑$f\left(x\right)=x^3$理解）。以下推论成立。
 
 \begin{corollary}
-    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$存在。若函数$\mathbf{f}$在$\mathbf{x}_0$的某邻域$N$存在逆函数$\mathbf{f}^{-1}$且其在$N$上可微，则$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。
+    设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$在$\mathbf{x}_0\in D$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$存在。若函数$\mathbf{f}$在$\mathbf{x}_0$的某邻域$N$存在反函数$\mathbf{f}^{-1}$且其在$N$上可微，则$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是可逆线性变换。
 \end{corollary}
 \begin{proof}
     由于函数$\mathbf{f}$和$\mathbf{f}^{-1}$都可微，可应用定理\ref{thm:II.4.11}，由$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\circ\mathbf{f}^{-1}\left(\mathbf{x}_0\right)=\mathbf{I}$自然得出结论。

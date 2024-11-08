@@ -1,0 +1,107 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+代数基本定理是一个非常重要的定理，它告诉我们任何一个非常数的复系数多项式都有至少一个复根。这个定理的证明是比较长的。完整的证明过程可参见其他文献\cite{Schreier1961}。此外，多项式的因式分解定理告诉我们，任何一个复系数多项式都可以分解为一次因式的乘积。这个定理的证明可以参见维基百科。
+
+\begin{definition}[初等对称函数]\label{def:A.10}
+    设$a,b\in\mathbb{Z}$且$a\leq b$；$U$是$n=b-a+1$个数的集合，$U=\{x_a,x_{a+1},\cdots,x_b\}$；$m\in\mathbb{Z}$且$m>0$。记
+    \[e_m\left(U\right)=\sum_{a\leq j_1<\cdots<j_m\leq b}\left(\prod_{i=1}^m x_{j_i}\right)\]
+    我们则称$e_m\left(U\right)$为$U$的一个\emph{$m$次初等对称函数}（elementary symmetric function of degree $m$）。
+\end{definition}
+
+我们常不妨令$a=1$、$b=n$，则$e_m\left(U\right)=e_m\left(\left\{x_1,\cdots,x_n\right\}\right)$。定义\ref{def:A.10}中的求和式的直观意义是$\left\{x_1,\cdots,x_n\right\}$中所有$m$个不同元素的积的和。具体地，当——
+\begin{itemize}
+    \item $m=0$时，$e_0\left(\left\{x_1,\cdots,x_n\right\}\right)=1$；
+    \item $m=1$时，$e_1\left(\left\{x_1,\cdots,x_n\right\}\right)=x_1+\cdots+x_n$；
+    \item $m=2$时，
+          \[\begin{aligned}
+                  e_1\left(\left\{x_1,\cdots,x_n\right\}\right)=x_1x_2+ & x_1x_3+\cdots+x_1x_n \\
+                  +                                                     & x_2x_3+\cdots+x_2x_n \\
+                  +                                                     & \cdots+x_{n-1}x_n
+              \end{aligned}\]
+    \item $m=n$时，$e_n\left(\left\{x_1,\cdots,x_n\right\}\right)=x_1x_2\cdots x_n$。
+\end{itemize}
+
+\begin{lemma}[初等对称函数的递归性质]\label{lem:A.5}
+    设$\left\{z_1,\cdots,z_{n+1}\right\}$是$n+1$个数的集合，允许有重复的取值。对任一$m\in\mathbb{Z},1\leq m\leq n$有
+    \[e_m\left(\left\{z_1,\cdots,z_n,z_{n+1}\right\}\right)=z_{n+1}e_{m-1}\left(\left\{z_1,\cdots,z_n\right\}\right)+e_m\left(\left\{z_1,\cdots,z_n\right\}\right)\]
+\end{lemma}
+\begin{proof}
+    当$m=1$时，命题等号左边是
+    \[e_1\left(\left\{z_1,\cdots,z_n,z_{n+1}\right\}\right)=z_1+\cdots+z_n+z_{n+1}\]
+    等号右边是
+    \[z_{n+1}e_0\left(\left\{z_1,\cdots,z_n\right\}\right)+e_1\left(\left\{z_1,\cdots,z_n\right\}\right)=z_{n+1}+z_1+\cdots+z_n\]
+    命题成立。现在讨论$2\leq m\leq n$的情况。构建以下集合。
+    设$A$是$\left\{1,2,\cdots,n+1\right\}$的$m$个元素的子集$\left\{p_1,\cdots,p_m\right\}$的集合，
+    \[A=\left\{\left\{p_1,\cdots,p_m\right\}:1\leq p_1<\cdots<\_m\leq n+1\right\}\]
+    $B$是$\left\{1,2,\cdots,n+1\right\}$的$m$个元素——其中保证最大元素是$n+1$——的子集$\left\{p_1,\cdots,p_{m-1},n+1\right\}$的集合，
+    \[B=\left\{\left\{p_1,\cdots,p_{m-1},n+1\right\}:1\leq p_1<\cdots<p_{m-1}\leq n\right\}\]
+    $C$是$\left\{1,2,\cdots,n\right\}$的$m$个元素的子集$\left\{p_1,\cdots,p_m\right\}$的集合，
+    \[C=\left\{\left\{p_1,\cdots,p_m\right\}:1\leq p_1<\cdots<p_m\leq n\right\}\]
+    $D$是$\left\{1,2,\cdots,n\right\}$的$m-1$个元素的子集$\left\{p_1,\cdots,p_{m-1}\right\}$的集合，
+    \[D=\left\{\left\{p_1,\cdots,p_{m-1}\right\}:1\leq p_1<\cdots<p_{m-1}\leq n\right\}\]
+    注意到$A=B\cup B$且$B\cap C=\emptyset$。这可以通过观察集合的定义直观地看出。严格的集合论证明从略。
+
+    集合$A,B,C,D$能方便我们重写求和式。具体地，我们有
+    \[e_m\left(\left\{z_1,\cdots,z_{n+1}\right\}\right)=\sum_A z_{p_1}z_{p_2}\cdots z_{p_m}\]
+    其中求和号的下标$A$表示，按集合$A$中的每个元素$\left\{p_1,\cdots,p_m\right\}$来获得求和项$z_{p_1}z_{p_2}\cdots z_{p_m}$。既然$A=B\cup C$且$B\cap C=\emptyset$，在集合$A$上的求和可以分解为在集合$B$和$C$上的求和之和。即
+    \[\begin{aligned}
+            e_m\left(\left\{z_1,\cdots,z_{n+1}\right\}\right) & =\sum_Bz_{p_1}z_{p_2}\cdots z_{p_{m-1}}z_{n+1}+\sum_Cz_{p_1}z_{p_2}\cdots z_{p_m}                       \\
+                                                              & =z_{n+1}\sum_Dz_{p_1}z_{p_2}\cdots z_{p_{m-1}}+\sum_Cz_{p_1}z_{p_2}\cdots z_{p_m}                       \\
+                                                              & =z_{n+1}e_{m-1}\left(\left\{z_1,\cdots,z_n\right\}\right)+e_m\left(\left\{z_1,\cdots,z_n\right\}\right)
+        \end{aligned}
+    \]
+\end{proof}
+
+\begin{theorem}[韦达公式（Vièta's formula）]\label{thm:A.7}
+    设$P\left(x\right)=a_0+a_1x+\cdots+a_nx^n,a_n=1,a_0\neq 0$是一个首一$n$次多项式。对任意$m\in\mathbb{Z},1\leq m\leq n$，有
+    \[e_m\left(\left\{z_1,\cdots,z_n\right\}\right)=\left(-1\right)^m a_{n-m}\]
+    其中$z_1,\cdots,z_n$是$P\left(x\right)$的所有根。
+\end{theorem}
+\begin{proof}
+    由多项式的因式定理，我们有
+    \[P\left(x\right)=\prod_{j=1}^n\left(x-z_j\right)\]
+    故原命题等价于，对任意$n$个数$\left\{z_1,\cdots,z_n\right\}$（可能有重复取值），以下等式成立
+    \[\prod_{j=1}^n\left(x-z_j\right)=\sum_{j=1}^n\left(-1\right)^je_j\left(\left\{z_1,\cdots,z_n\right\}x^{n-j}\right)\]
+
+    我们用数学归纳法证明这个等式。当$n=1$时，等式显然成立。现在假设$n=k$时等式成立，即对任意$k$个数$\left\{z_1,\cdots,z_k\right\}$（可能有重复取值），有
+    \[\prod_{j=1}^k\left(x-z_j\right)=\sum_{j=0}^k\left(-1\right)^j e_j\left(\left\{z_1,\cdots,z_k\right\}\right)x_{k-j}\]
+    考虑
+    \[\begin{array}{rcl}
+            \prod_{j=1}^{k+1}\left(x-z_j\right) & = & \left(x-z_{k+1}\right)\prod_{j=1}^k\left(x-z_j\right)                                                                                                                                               \\
+                                                & = & \left(x-z_{k+1}\right)\sum_{j=0}^k\left(-1\right)^j e_j\left(\left\{z_1,\cdots,z_k\right\}\right)x^{k-j}                                                                                            \\
+                                                & = & \sum_{j=0}^k\left(-1\right)^j e_j\left(\left\{z_1,\cdots,z_k\right\}\right)x^{k+1-j}                                                                                                                \\
+                                                &   & +\sum_{j=0}^k\left(-1\right)^j e_j\left(\left\{z_1,\cdots,z_k\right\}\right)x^{k-j}z_{k+1}                                                                                                          \\
+                                                & = & x^{k+1}+\sum_{j^\prime=0}^{k-1}\left(-1\right)^{j^\prime+1}e_{j^\prime+1}\left(\left\{z_1,\cdots,z_k\right\}\right)x^{k-j^\prime}                                                                   \\
+                                                &   & +\sum_{j=0}^{k-1}\left(-1\right)^j e_j\left(\left\{z_1,\cdots,z_k\right\}\right)x^{k-j}z_{k+1}-\left(-1\right)^ke_k\left(\left\{z_1,\cdots,z_k\right\}\right)z_{k+1}                                \\
+                                                & = & x^{k+1}                                                                                                                                                                                             \\
+                                                &   & +\sum_{j=0}^{k-1}\left(-1\right)^j x^{k-j}\left(-1\right)\left[e_{j+1}\left(\left\{z_1,\cdots,z_k\right\}\right)+e_j\left(\left\{z_1,\cdots,z_k\right\}\right)z_{k+1}\right]                        \\
+                                                &   & -\left(-1\right)^ke_{k+1}\left(\left\{z_1,\cdots,z_{k+1}\right\}\right)                                                                                                                             \\
+                                                & = & x^{k+1}                                                                                                                                                                                             \\
+                                                &   & +\sum_{j^\prime=1}^k\left(-1\right)^{j^\prime}e_{j^\prime}\left(\left\{z_1,\cdots,z_{k+1}\right\}\right)x^{k+1-j^\prime}+\left(-1\right)^{k+1}e_{k+1}\left(\left\{z_1,\cdots,z_{k+1}\right\}\right) \\
+                                                & = & \sum_{j=0}^{k+1}\left(-1\right)^je_j\left(\left\{z_1,\cdots,z_{k+1}\right\}\right)x^{k+1-j}
+        \end{array}\]
+    其中使用了两次变换求和下标操作，又利用了引理\ref{lem:A.5}。故由数学归纳法，定理得证。
+\end{proof}
+
+\begin{theorem}[共轭复根定理]\label{thm:A.8}
+    设$P\left(x\right)=a_0+a_1x+\cdots+a_nx^n,a_0\neq 0$是一个$n$次实系数多项式。如果$z_0$是$P\left(x\right)$的一个复根，则其共轭复数$\overline{z_0}$也是$P\left(x\right)$的一个复根。
+\end{theorem}
+\begin{proof}
+    由条件$z_0$是$P\left(x\right)$的一个复根，我们有
+    \[P\left(z_0\right)=0\]
+    两边共轭有
+    \[\begin{aligned}
+            \overline{P\left(z_0\right)}                                              & =0 \\
+            \Leftrightarrow\overline{P\left(x\right)}=\sum_{i=0}^na_i\overline{z_0}^i & =0 \\
+            \Leftrightarrow P\left(\overline{z_0}\right)                              & =0
+        \end{aligned}\]
+    也就是说$\overline{z_0}$也是$P\left(x\right)$的一个复根。
+\end{proof}
+
+\begin{corollary}
+    如果实系数多项式$P\left(x\right)=\sum_{i=0}^n a_ix^i,a_0\neq 0$的阶数$n$是奇数，则$P\left(x\right)$至少有一个实根。
+\end{corollary}
+\begin{proof}
+    如果$P\left(x\right)$没有实根，则所有根都是共轭复数对。一对共轭复数有且只有两种情况：如果它们不相等，则它们是两个共轭的非实数；如果它们相等，则它们是同一个实数。由于$n$是奇数，就算所有$n-1$个根都组成了$\left(n-1\right)/2$对不等共轭复数对，仍剩下一个根，由定理\ref{thm:A.8}它的共轭也是根，但已没有更多的根了，所以这个共轭根就是它本身，故该根是实根。
+\end{proof}
+\end{document}

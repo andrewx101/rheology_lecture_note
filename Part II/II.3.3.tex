@@ -146,16 +146,19 @@
 给定任一向量$\mathbf{a}$，若它在基$C$下的坐标表示为$\mathbf{a}=\sum_{i=1}^3\alpha_i\mathbf{\hat{c}}_i$，则有$\mathbf{Ua}=\sum_{i=1}^3\lambda_i\alpha_i\mathbf{\hat{c}}_i$。也就是说，与原向量$\mathbf{a}$相比，$\mathbf{Ua}$是分别在各$\mathbf{\hat{c}}_i$方向进行了比例为$\lambda_i$的拉伸或压缩，其中$i=1,2,3$。因此，一个对称算符$\mathbf{U}$在3维欧几里得空间中确定了1套（3个）两两正交的拉伸方向，以及在相应方向的拉伸比。我们把对称算符$\mathbf{U}$的这组单位特征向量$\left\{\mathbf{c}_i\right\}$在欧几里得空间$\mathcal{E}$中所表示的方向称为该对称算符$\mathbf{U}$的\emph{主方向（principal direction）}。一组向量\footnote{在$\mathcal{E}$中，任何几何形状都是点的集合，而点又与位置向量一一对应，故任何几何形状都是一个向量组。}在对称算符的作用下的几何效果是在各主方向上的相应倍数的拉伸形变。具体地，在$\mathbf{c}_i$方向的拉伸比就是$\lambda_i$。在预先选定的直角坐标系$B^\prime=\left(\mathbf{\hat{e}}^\prime_1,\mathbf{\hat{e}}^\prime_2,\mathbf{\hat{e}}^\prime_3\right)$中，对称算符的主方向可能是“斜放”的。
 
 \subsection{斜称算符与向量的“叉乘”}\label{sec:II.3.3.3}
-由定理\ref{thm:II.2.32}第5条，在复数域上，反厄米算符的特征值是纯虚数或零。那么，若是在实数域上（称为斜称算符），当内积空间的维数$n$是奇数时，设$\mathbf{W}$是一个斜称算符，则有以下结果
-\begin{align*}
-                    & \mathrm{det}\mathbf{W}^\intercal=\mathrm{det}\mathbf{W}=\mathrm{det}\left(-\mathbf{W}\right)=\left(-1\right)^n\mathrm{det}\mathbf{W}=-\mathrm{det}\mathbf{W} \\
-    \Leftrightarrow & \mathrm{det}\mathbf{W}=\prod_{i=1}^k\lambda_i=0
-\end{align*}
-其中我们用到了行列式的一般性质（定理\ref{thm:II.2.24}）和斜称（反厄米）算符的定义\ref{def:II.2.22}。所以我们可以得到一个推论：\emph{在实数域上，当$n$为奇数时，斜称算符必有一特征值为零}。而且，上列结果也说明，当$n$为奇数时，斜称算符一定不可逆。
+由定理\ref{thm:II.2.32}第5条，在复数域上，反厄米算符的特征值是纯虚数或零。简单证明如下：设$\mathcal{V}$是复数域上的$n$维内积空间，$\mathbf{W}$是$\mathcal{V}$上的一个反厄米算符。如果$\lambda$就$\mathbf{W}$的一个特征值，则对任意向量$\mathbf{a}\in\mathcal{V}$，有
+\[\begin{aligned}
+        \left(\mathbf{a}|\mathbf{Wa}\right) & =\left(\mathbf{a}|\lambda\mathbf{a}\right)=\overline{\lambda}\left(\mathbf{a}|\mathbf{a}\right)                                                                            \\
+                                            & =\left(\mathbf{W}^*\mathbf{a}|\mathbf{a}\right)=\left(-\mathbf{Wa}|\mathbf{a}\right)=\left(-\lambda\mathbf{a}|\mathbf{a}\right)=-\lambda\left(\mathbf{a}|\mathbf{a}\right) \\
+        \Leftrightarrow\lambda              & =-\overline{\lambda}
+    \end{aligned}\]
+因此$\lambda$是虚数或零。
+
+如果$\mathcal{V}$是在实数域上的$n$维内积空间，$\mathbf{W}$是$\mathcal{V}$上的一个斜称算符。那么，算符$\mathbf{W}$的特征多项式将是一个实系数多项式。它至少有一实根，剩下的偶数个根以共轭复数对出现（见定理\ref{thm:A.8}及其推论）。而我们又知道，在更一般的复数域上，反厄米算符的特征值是纯虚数或零。因此，在实数域上也应如此。所以，我们可以得到一个推论：\emph{在实数域上，斜称算符必有一特征值为零}。
 
 现具体考虑3维欧几里得空间$\mathcal{E}$的情况，改设$\mathbf{W}$是$\mathcal{E}$的平移空间$\mathcal{V}$上的一个斜称算符，则对任意$\mathbf{a}\in\mathcal{V}$，
-\[\begin{aligned}\left(\mathbf{Wa}|\mathbf{a}\right)                & =\left(\mathbf{a}|\mathbf{W}^*\mathbf{a}\right)=\left(\mathbf{a}|-\mathbf{Wa}\right)=-\left(\mathbf{a}|\mathbf{Wa}\right) \\
-                                                                  & =-\left(\mathbf{W}^*\mathbf{a}|\mathbf{a}\right)=-\left(-\mathbf{Wa}|\mathbf{a}\right)                                    \\
+\[\begin{aligned}\left(\mathbf{Wa}|\mathbf{a}\right)                & =\left(\mathbf{a}|\mathbf{W}^\intercal\mathbf{a}\right)=\left(\mathbf{a}|-\mathbf{Wa}\right)=-\left(\mathbf{a}|\mathbf{Wa}\right) \\
+                                                                  & =\overline{-\left(\mathbf{Wa}|\mathbf{a}\right)}=              -\left(\mathbf{Wa}|\mathbf{a}\right)                               \\
                \Leftrightarrow\left(\mathbf{Wa}|\mathbf{a}\right) & =0
     \end{aligned}\]
 故被$\mathbf{W}$作用过的向量，都被投影到了与原向量垂直的平面上。至于投影了之后，有没有伸缩或旋转，要看$\mathbf{W}$的具体取值。这十分类似于以往所学过的一个向量被另一个向量“叉乘”的效果\footnote{3维实内积空间上的“叉乘”在以前的线性代数课本中又称作“向量的外积”\cite[\S3.2]{周胜林2012线性代数}。请复习其计算方法。}。事实上，我们可以从斜称算符定义“叉乘”\footnote{在本讲义中，将保持使用“叉乘”这种不正式的表述。因为正式起来，3维实内积空间上的“叉乘”是抽象代数中的不同东西在3维实内积空间上的巧合。在连续介质力学的数学语言中出现的“叉乘”，有时真的就是本节所述的几何意义，有时则是外代数/外积/楔积（如向量场的旋度）。本讲义暂时不介绍基于外代数和微分型知识，故“叉乘”运算就都由本节引入了。}。我们可通过如下定理联系二者：
@@ -188,4 +191,15 @@
 该推论可利用坐标变换公式证明，留作练习。“叉乘”的性质$\mathbf{a}\times\mathbf{b}=-\mathbf{b}\times\mathbf{a}$也可通过在给定规范正交基下的坐标矩阵运算得到验证（仅限3维）。
 
 $\mathbf{Wb}$所对应的叉乘运算$\mathbf{a}\times\mathbf{b}$的第一个向量$\mathbf{a}$是由算符$\mathbf{W}$本身确定的，称为$\mathbf{W}$的\emph{轴向量（axial vetor）}。“叉乘”的结果得到的向量，在坐标变换中的有特殊的性质。对任意$\mathbf{b}\in\mathcal{V}$，其在基本坐标系下的坐标是$\left(\beta_1,\beta_2,\beta_3\right)$。当我们反转各坐标轴的方向，即在$\left\{-\mathbf{\hat{e}}_i\right\}$下，$\mathbf{b}$的坐标将变号，变成$\left(-\beta_1,-\beta_2,-\beta_3\right)$，但是易验向量$\mathbf{a}\times\mathbf{b}$在坐标轴反转前后坐标不变号（请读者用坐标变换公式验证这两个结论）。同样的性质也导致“混合积”$\left(\mathbf{a}\times\mathbf{b}\right)\cdot\mathbf{c}$这一“标量”在坐标轴反转前后变号，而“真正的”标量的值不依赖坐标变换（定理\ref{thm:II.2.23}）。这是由于向量$\mathbf{a}\times\mathbf{b}$不是一个任意给定的孤立的向量；它是向量$\mathbf{b}$在以$\mathbf{a}$为轴向量的斜称算符$\mathbf{W}$的操作下的结果。由“叉乘”所得到的向量的特殊的坐标变换性质，实际上是这个投影操作带来的。有的资料称这种“叉乘得到的向量”为\emph{赝向量（pseudo-vector）}（但这不是该概念的正式定义）。
+
+除了3个基向量都反号的反转变换外，更常讨论的是一个平面镜象变换。例如若基$B=\left(\mathbf{\hat{e}}_1,\mathbf{\hat{e}}_2,\mathbf{\hat{e}}_3\right)$，则关于与$\mathbf{\hat{e}}_2$、$\mathbf{\hat{e}}_3$平行的平面的镜象变换对应的过度矩阵$S$是
+\[S=\left(\begin{array}{ccc}1&0&0\\0&-1&0\\0&0&-1\end{array}\right)\]
+镜象后的基是$B^\prime=\left(\mathbf{\hat{e}}_1,-\mathbf{\hat{e}}_2,-\mathbf{\hat{e}}_3\right)$。常规向量和叉乘结果在这种坐标变换下的差别，可通过坐标变换公式发现，此略。在力学中，有些物理量是用常规向量表示的，比如位移、速度、加速度、力等。而有些物理量是赝向量，例如力矩、角动量、磁场等。用常规向量表示的物理事实，无论是在平面镜向前后都是相同的。例如，物体A相对物体B的运动的速度，无论在镜子内还是镜子外，都是相同的。而用赝向量表示的物理量，其大小是用来表示旋转速度，其方向是用来表示绕轴旋转方向的（即按左手规则还是右手规则）。绕轴旋转方向在坐标系镜象后会发生反转（可以想象一个旋转的物体在镜子里的镜像）。所以用赝向量表示的物理量，在坐标系镜象后，方向会发生反转。例如：如图\ref{fig:II.3.3}所示，在镜子外，一个电流为$I$的导线圈，将按右手规则产生一个磁场，而在镜子里，导线圈电流方向反向，但电磁作用的物理定律不变（电磁作用宇称守恒\footnote{宇称守恒即镜子内外的物理定律不变。这件事在大部分物理基本理论中都是默认的。宇称守恒的物理基本理论包括：经典力学——牛顿定律，电磁学——麦克斯韦方程组，强相互作用——量子色动力学，广义相对论。目前的理论体系中，只弱相互作用是宇称不守恒的且被实验证实。}），故镜内的导线圈产生的磁场方向也应反向。其实，运动电荷产生磁场，在物理学上就是用叉乘来表示的。这也是为什么磁场是赝向量的原因。
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/BIsAPseudovector.pdf}
+    \caption{一根黑色的电流环，载有电流$I$，产生蓝色的磁场$B$，它相对地面朝上。如果将电流环的位置和电流映射到虚线所示的镜子里面后，它的方向将反转，它产生的磁场相对镜外的磁长方向是相反的，但地面在镜内没有翻转，所以在镜内，磁场方向相对地面朝下。}
+    \label{fig:II.3.3}
+\end{figure}
 \end{document}
