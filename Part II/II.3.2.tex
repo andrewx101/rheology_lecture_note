@@ -28,11 +28,18 @@
     设$\left(\mathcal{E},d\right)$是欧几里得空间，给定两点$X,Y\in\mathcal{E},X\neq Y$，则$\mathcal{E}$的子集$L_{XY}=\left\{C\in\mathcal{E}|\forall \alpha\left(\alpha\in\mathbb{R}\wedge C=X+\alpha\left(Y-X\right)\right)\right\}$是\emph{过}$X,Y$\emph{两点的一条直线}。如果$\angle XOY=\frac{\pi}{2}$，则直线$L_{OX}$与$L_{OY}$\emph{垂直}，记为$L_{OX}\perp L_{OY}$。
 \end{definition}
 
-由角的定义，如果$L_{OX}\perp L_{OY}$，则$\left(X-O|Y-O\right)=0$。再由内积空间的格拉姆--施密特正交化过程可知，过$\mathcal{E}$中任一点$O$的两两垂直的直线最大条数都相等且等于$\mathrm{dim}\mathcal{V}$，故欧几里得空间的维数就可被自然地定义为其平移空间的维数——正如我们已经在定义\ref{def:II.3.4}中所做的。
+由角的定义，如果$L_{ZX}\perp L_{ZY}$，则$\left(X-Z|Y-Z\right)=0$。再由内积空间的格拉姆--施密特正交化过程可知，过$\mathcal{E}$中任一点$Z$的两两垂直的直线的最大条数都相等且等于$\mathrm{dim}\mathcal{V}$，故欧几里得空间的维数就可被自然地定义为其平移空间的维数——正如我们已经在定义\ref{def:II.3.4}中所做的。
 
-$L_{XY}$又可记为$L_{XY}=\left\{C\in\mathcal{E}|\forall\alpha\left(\alpha\in\mathbb{R}\wedge C-X=\alpha\left(Y-X\right)\right)\right\}$，它对应着平移向量空间$\mathcal{V}$的子集$L^{\mathcal{V}}_{XY}=\left\{\mathbf{u}\in\mathcal{V}|\forall\alpha\left(\alpha\in\mathbb{R}\wedge\mathbf{u}=\alpha\left(X-Y\right)\right)\right\}$，易知该子集是$\mathcal{V}$的子空间，维数是1\footnote{这里需要实数集的完备性概念。}。
+如果选择$\mathcal{E}$中固定的一点$O\in\mathcal{E}$作为\emph{原点（origin）}，则对任意$X\in\mathcal{E}$，我们可以定义向量$\mathbf{r}_X=X-O$，称为$X$的\emph{位置向量（position vector）}。这样，欧几里得空间$\mathcal{E}$中的点就与其平移空间$\mathcal{V}$的向量一一对应（双射）。诚然，对任一点$X\in\mathcal{E}$，都能对应$\mathcal{V}$中的一个向量$\mathbf{r}_X=X-O$；反之，对任一向量$\mathbf{u}\in\mathcal{V}$，都能对应$\mathcal{E}$中的一个点$X=O+\mathbf{u}$。我们把由原点$O$到点$X$的平移向量$\mathbf{r}_X$称作点$X$的\emph{位置向量（position vector）}。
 
-我们将一个选定的原点$O\in\mathcal{E}$和$\mathcal{V}$的一组规范正交基的组合$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$称为欧几里得空间$\mathcal{E}$的一个\emph{直角坐标系（rectangular coordinates）}，又称\emph{笛卡尔坐标系（Cartesian coordinates）}。我们常常默认一个$n$维欧几里得空间必然已经自带一个直角坐标系，称为\emph{基本坐标系（common coordinates）}，从而直接采用$\mathbb{R}^n$来表示任意一点的坐标。在基本坐标系下，原点坐标为$\left(0,\cdots,0\right)$，第$i$个基向量为$\left(0,\cdots,1,\cdots,0\right)^\intercal$，也就是除第$i$个分量为1外其他分量均为零的有序实数$n$元组。选定了原点$O$后，对任一点$X\in\mathcal{E}$可定义映射$\mathbf{r}_O:\mathcal{E}\rightarrow\mathcal{V},\mathbf{r}\left(X\right)\equiv\mathbf{r}_X=X-O,\forall X\in\mathcal{E}$，我们称这个向量值函数$\mathbf{r}_X$就是选定原点$O$下点$X$的\emph{位置向量（position vector）}。注意，当且仅当选定了原点后，欧几里得空间$\mathcal{E}$中的点才与其平移空间$\mathcal{V}$的向量通过位置向量这个映射一一对应。
+位置向量是平移空间$\mathcal{V}$中的向量。选定$\mathcal{V}$的任一组基$\left\{\mathbf{a}_i\right\}$，每一个$\mathcal{V}$的向量$\mathbf{r}_X$又都能唯一地对应一组有序实数$\left(x_1,\cdots,x_n\right)\in\mathbb{R}^n$，且$\mathbb{R}^n$中的第一个有序实数$\left(y_1,\cdots,y_n\right)$都唯一对应一个$\mathcal{V}$中的向量$\mathbf{r}_Y=\sum_{i=1}^ny_i\mathbf{a}_i$。因此，至少通过选定原点$O$和$\mathcal{V}$的一组基$\left\{\mathbf{a}_i\right\}$，我们总是可以把欧几里得空间$\mathcal{E}$中的点唯一对应为一组有序实数。
+
+一般地，欧几里得空间$\mathcal{E}$的\emph{坐标系（coordinate system）}，是把欧几里得空间中的任一点$X\in\mathcal{E}$唯一地对应到一组有序实数$\left(x_1,\cdots,x_n\right)\in\mathbb{R}^n$的对应关系。上述的，通过选定$\mathcal{V}$的一组基，用任何一个点的位置向量在这组基下的坐标作为该点的坐标的方法，只是坐标系中的一种。我们特别地定义，由选定的原点$O\in\mathcal{E}$和$\mathcal{V}$的一组规范正交基$\left\{\mathbf{\hat{e}}_i\right\}$组成的组合$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$，称为欧几里得空间中的一个\emph{直角坐标系}或称\emph{笛卡尔坐标系（Cartesian coordinate system）}。如果所选择的$\mathcal{V}$的基不是规范正交基，我们就一般地称这样的一种组合为一个\emph{斜坐标系（oblique coordinates）}。同一个点$X$在选择同一原点以及$\mathcal{V}$中不同的基下，所得到的不同坐标之间的关系，就是前面的相关章节介绍过的向量空间中的坐标变换关系。
+
+无论是在直角坐标系还是斜坐标系下，我们都是选择$\mathcal{V}$中的固定一组基来表出不同位置向量的坐标。我们将会在后面的相关章节了解到，在曲线坐标系中，用于表示不同位置向量的基是随着位置向量的变化而变化的。但这些坐标系仍然满足把欧几里得空间中的点唯一对应到一组有序实数的要求。而且，同一个点，在同原点的不同曲线坐标系下的坐标之间，也有明确的变换关系。
+
+为了讨论方便，我们规定，只要提到了一个欧几里得空间，就默认已经建立了一个直角座标系$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$，称为欧几里得空间的\emph{基本坐标系（common coordinate）}。
+
 
 总而言之，一个（有限维）欧几里得空间$\left(\mathcal{E},d,O,\mathcal{V},\left\{\mathbf{\hat{e}}_i\right\}\right)$包括：
 \begin{enumerate}
@@ -45,7 +52,7 @@ $L_{XY}$又可记为$L_{XY}=\left\{C\in\mathcal{E}|\forall\alpha\left(\alpha\in\
           最后两项同时也使欧几里得空间默认带有一个直角坐标系，$\mathcal{V}$的向量是$\mathcal{E}$的点在此直角坐标系下的位置向量。
 \end{enumerate}
 
-明确了欧几里得空间的完整概念之后，为了简便我们仍只用$\mathcal{E}$表示一个欧几里得空间。
+明确了欧几里得空间的完整概念之后，为了简便我们仍只用$\mathcal{E}$表示一个欧几里得空间\footnote{基于《几何原本》的公设得到的大量欧氏几何定理仍然成立，因为这些公设的要求已蕴含在了实数域的向量内积的性质以及度量的性质中了\cite{Audin2002}。更重要的是，明确了这一线性结构后，我们能够用统一的数学语言推导出更多几何结论\cite{Berger1987}。}
 
-基于《几何原本》的公设得到的大量欧氏几何定理仍然成立，因为这些公设的要求已蕴含在了实数域的、向量内积的性质以及度量的性质中了\cite{Audin2002}。更重要的是，明确了这一线性结构后，我们能够用统一的数学语言推导出更多几何结论\cite{Berger1987}。
+在这里我们回应本章开头的话。为什么要如此\emph{重新}引入欧几里得空间？本章开头说过，我们总假定物理事件发生在一个欧几里得空间中。也就是说，不同的位置之间的几何关系，遵循欧几里得几何。如果不想停留在“画在纸上”的概念——点、直线、圆……，而想要用代数的语言去描述这些几何关系，就需要建立坐标系，给每个点赋予一个坐标。从此，不同的有序实数组，就表示空间中不同的点。这是我们在中学就已经习惯的做法。但更重要的是，物理事件是客观的。描述物理事件及其规律的数学表述也应该具有这种客观性。当不同的观察者用这套数学语言来描述\emph{同一物理事件}发生的位置时，这个位置理应是欧几里得空间中的\emph{同一个点}$X\in\mathcal{E}$。但是，不同的观察者可能选择不同的坐标系，因此给出的\emph{坐标可能不同}。也就是说，“点”是客观的，但它的坐标是相对的。因此我们重新引入欧几里得空间时，$\mathcal{E}$的集合就是客观的点的集合，而不直接是有序实数的集合$\mathbb{R}^n$。一个点如何对应一组有序实数，自然有具体的规则；同一个点在不同坐标系下的坐标之间，也自然有其变换关系。物理事件发生的位置用点而非坐标来表示，保证了我们用于描述物理的数学语言能够满足物理上要求的客观性。
 \end{document}

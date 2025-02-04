@@ -15,6 +15,7 @@ a4paper,
 
 % packages for fonts and symbols
 \usepackage{amsmath}
+\allowdisplaybreaks
 \usepackage{amssymb}
 \usepackage{bm}
 \usepackage{calrsfs}
@@ -74,6 +75,9 @@ sorting=none
 ]{biblatex}
 \addbibresource{./ref/ref.bib}
 
+% packages for tablae
+\usepackage{longtable}
+
 % packages for definitions, theorems, proofs.
 \usepackage{amsthm}
 
@@ -91,9 +95,6 @@ sorting=none
 \theoremstyle{plain}
 \newtheorem{example}{例}
 
-
-
-
 % counter controlling
 \usepackage{chngcntr}
 \counterwithin{figure}{chapter}
@@ -110,7 +111,9 @@ sorting=none
 
 \usepackage{datetime2}
 
-\title{流变学}
+
+
+\title{流变学的数学和物理基础}
 \author{孙尉翔\\mswxsun@scut.edu.cn}
 
 %=====================================================================================================================
@@ -191,8 +194,6 @@ sorting=none
 \section{等距变换的表示定理}\label{sec:II.3.4}
 \subfile{Part II/II.3.4.tex}
 
-
-
 \chapter{向量函数的微积分}\label{sec:II.4}
 \section{向量函数及其可视化}\label{sec:II.4.1}
 \subfile{Part II/II.4.1.tex}
@@ -203,8 +204,23 @@ sorting=none
 \section{向量函数的微分与导数}\label{sec:II.4.3}
 \subfile{Part II/II.4.3.tex}
 
-\section{曲线、曲面和积分定理}\label{sec:II.4.4}
+\section{向量函数的积分}\label{sec:II.4.4}
 \subfile{Part II/II.4.4.tex}
+
+\chapter{场论简介}\label{sec:II.5}
+\section{概述}\label{sec:II.5.1}
+\subfile{Part II/II.5.1.tex}
+
+\section{曲线坐标系}\label{sec:II.5.2}
+\subfile{Part II/II.5.2.tex}
+
+\section{向量场函数的导数在曲线坐标系下的坐标矩阵}\label{sec:II.5.3}
+\subfile{Part II/II.5.3.tex}
+
+\section{3维欧几里得空间上的曲线和曲面}\label{sec:II.5.4}
+\subfile{Part II/II.5.4.tex}
+
+\section{3维欧几里得空间上的向量场的散度、旋度及其定理}
 
 \part{连续介质力学基础}\label{sec:III}
 \chapter{时空观与参考系}\label{sec:III.5}
@@ -311,9 +327,9 @@ sorting=none
 %\section{等距变换的表示定理}\label{sec:B.5}
 %\subfile{Part App/B.5.tex}
 
-\chapter{曲线坐标系（未完成）}\label{sec:C}
+%\chapter{曲线坐标系（未完成）}\label{sec:C}
 %\subfile{Part App/C.1.tex}
-\subfile{Part App/C.tex}
+%\subfile{Part App/C.tex}
 
 \newpage\part*{参考文献}
 \printbibliography[heading=none]

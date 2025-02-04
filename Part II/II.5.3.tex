@@ -1,0 +1,58 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+设$\mathcal{E}$是$N$维欧几里得空间，$\mathcal{V}_\mathcal{E}$是其平移空间。考虑一个$N$向量场函数$\mathbf{f}:\mathcal{E}\supset\Omega\rightarrow\mathcal{V}$，其中$\mathcal{V}$的维数也是$N$（$N^n$维且$n=1$）。由于$\mathcal{V}$与$\mathcal{V}_\mathcal{E}$是同维数的，因此这两个向量空间是同构的。我们可以把$\mathbf{f}$的值看作$\mathcal{V}_\mathcal{E}$中的一个向量，即$\mathcal{E}$中的一个平移向量。在作图时，我们常将$\mathbf{f}\left(X\right)$以某平移向量的形式，画在点$X$处（如图\ref{fig:II.5.1}所示）。若$\mathcal{E}$的基本坐标系是$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$，则任一点$X\in\Omega$的位置向量$\mathbf{r}_X=\sum_{i=1}^N x_i \mathbf{\hat{e}}_i$，其中$\left(x_1,\cdots,x_N\right)$是点$X$在基本直角坐标系下的坐标。场函数$\mathbf{f}\left(X\right)$的值，现作为$\mathcal{V}_\mathcal{E}$中的一个向量，也具有在$\left\{\mathbf{\hat{e}}_i\right\}$下的坐标函数$\mathbf{f}\left(X\right)=\sum_{i=1}^N f_i \left(X\right) \mathbf{\hat{e}}_i$。设某曲线坐标系的基是$\left\{\mathbf{\hat{c}}_i\right\}$，则位置向量$\mathbf{r}_X$和场函数值$\mathbf{f}\left(X\right)$都可以写成点关于点$X$的$\left\{\mathbf{\hat{c}}_i\right\}$下的坐标（记得，曲线坐标系的基是依赖点$X$变化的），$\left(x_1^\mathrm{c},\cdots,x_N^\mathrm{c}\right)$和$\left(f_1^\mathrm{c},\cdots,f_N^\mathrm{c}\right)$。场函数的导数$\mathrm{D}\mathbf{f}\left(X\right)$在直角坐标系下的坐标矩阵和在曲线坐标系下的坐标矩阵之间，具有一般的的转换关系。本节将推导这个转换关系。
+
+首先考虑由点$X\in\mathcal{E}$出发的某平移$X^\prime-X$，它是一个平移向量，它可以用$\mathcal{V}_\mathcal{E}$的基$\left\{\mathbf{\hat{e}}_i\right\}$表示为$X-X_0=\sum_{i=1}^N\left(x_i^\prime-x_i\right)\mathbf{\hat{e}}_i$。由于在给定直角坐标系下，欧几里得空间中的点与其在该直角坐标系下的坐标之间是双射关系，所以若视$X$为$\left(x_1,\cdots,x_n\right)$的函数，则由微分的定义，有
+\[X^\prime-X=\sum_{i=1}^N\left(x_i^\prime-x_i\right)\mathbf{\hat{e}}_i=\sum_{i=1}^N \mathrm{d}x_i\mathbf{\hat{e}}_i+\sum_{i=1}^No\left(\left|\Delta x_i\right|\right)\mathbf{\hat{e}}_i\]
+其中$\Delta x_i\equiv x_i^\prime-x_i$，$o\left(x\right)$表示$x\rightarrow 0$时$x$的高阶无穷小，且在这里显然$o\left(x\right)\equiv 0$，故记号$\mathrm{d}x_i \equiv \Delta x_i$。我们记$\mathbb{R}^n$中的一个向量$\mathbf{x}=\left(x_1,\cdots,x_n\right)$为它所对应的点$X\in\mathcal{E}$的在直角坐标系$\left(O,\left\{\mathbf{\hat{e}}_i\right\}\right)$下的坐标，则$\mathbf{x}$亦是点$X$的位置向量$\mathbf{r}_X\in\mathcal{V}_\mathcal{E}$在基$\left\{\mathbf{\hat{e}}_i\right\}$。我们进一步记上式等号右边的向量$\sum_{i=1}^N\mathrm{d}x_i\mathbf{\hat{e}}_i$为$\mathrm{d}\mathbf{x}$，我们可以说$\mathrm{d}\mathbf{x}$在$\left\{\mathbf{\hat{e}}_i\right\}$下的坐标是$\mathrm{d}x_i$。值得注意的是，这些概念都是在关于具体某点$X\in\mathcal{E}$的讨论之下的。
+
+如果选择了一个曲线坐标系，它的参数映射是$T:\mathbb{R}^N\supset\mathcal{U}\rightarrow\mathbb{R}^N$，即对任一点$X\in\mathcal{E}$，总有唯一一组$\left(u_1,\cdots,u_N\right)\in\mathcal{U}$与之对应，则$\left(x_1,\cdots,x_N\right)=T\left(u_1,\cdots,u_N\right)$。若记$x_i$在映射$T$下关于$\left(u_1,\cdots,u_N\right)$的分量函数为$x_i\left(u_1,\cdots,u_N\right)$，则按照全微分的定义和写法有
+\[
+    \begin{aligned}
+        \mathrm{d}x_i        & =\sum_{j=1}^N\frac{\partial x_i}{\partial u_j}\mathrm{d}u_j,\quad i=1,\cdots,N,                      \\
+        \mathrm{d}\mathbf{x} & =\sum_{i=1}^N\sum_{j=1}^N\frac{\partial x_i}{\partial u_j}\mathrm{d}u_j\mathbf{\hat{e}}_i            \\
+                             & =\sum_{i=1}^N\sum_{j=1}^Nh_j^{-1}h_j\frac{\partial x_i}{\partial u_j}\mathrm{d}u_j\mathbf{\hat{e}}_i \\
+                             & =\sum_{j=1}^Nh_j\mathrm{d}u_j\mathbf{\hat{c}}_j
+    \end{aligned}
+\]
+其中$h_i$是曲线坐标系在点$X$处的拉梅系数，$\mathbf{\hat{c}}_i$是曲线坐标系在点$X$处的基向量。 可见在每一点$X$处，向量$\mathrm{d}\mathbf{x}$在曲线坐标系的基下的坐标是$\left(h_1\mathrm{d}u_1,\cdots,h_N\mathrm{d}u_N\right)$。若记$\mathrm{d}\mathbf{x}=\sum_{i=1}^N\mathrm{d}x_i^\mathrm{c}\mathbf{\hat{c}}_i$，则有坐标变换公式
+\[\mathrm{d}x_i^{c}=h_i\mathrm{d}u_i,\quad i=1,\cdots,N\]
+
+现在我们考虑向量场函数$\mathbf{f}\left(X\right)$的导数在直角坐标系和曲线坐标系下的坐标。函数$\mathbf{f}$在点$X$处的微分是$\mathrm{D}\mathbf{f}\left(X\right)\left(X^\prime-X\right)$，它是一个$\mathcal{V}_\mathcal{E}$中的向量，我们记为$\mathrm{d}\mathbf{f}$。我们记$\mathbf{f}\left(X\right)$的导数为$\mathbf{L}=\mathrm{D}f\left(X\right)$，则$\mathbf{L}\in\mathcal{L}\left(\mathcal{V}_\mathcal{E}\right)$是$\mathcal{V}_\mathcal{E}$上的一个线性算符。再利用之前的记法$\mathrm{d}\mathbf{x}=X^\prime-X$，我们有
+\[\mathrm{d}\mathbf{f}=\mathbf{L}\mathrm{d}\mathbf{x}\]
+我们关心的是$\mathbf{L}$在直角坐标系下的坐标矩阵分量$L_{ij}$和在曲线坐标系下的坐标矩阵分量$L_{ij}^\mathrm{c}$之间的关系。由于$\mathrm{d}\mathbf{f}$是同一个向量，因此它由基$\left\{\mathbf{\hat{e}}_i\right\}$的线性表出等于由基$\left\{\mathbf{\hat{c}}_i\right\}$的线性表出。即
+\[\mathrm{d}\mathbf{f}=\sum_{i=1}^N\sum_{j=1}^N L_{ij}\mathrm{d}x_j\mathbf{\hat{e}}_i=\sum_{i=1}^N\sum_{j=1}^NL_{ij}^\mathrm{c}\mathrm{d}x_j^\mathrm{c}\mathbf{\hat{c}}_i\]
+若记$S$是由基$\left\{\mathbf{\hat{e}}_i\right\}$到基$\left\{\mathbf{\hat{c}}_i\right\}$的过渡矩阵，则由定理\ref{thm:II.2.22}有
+\[L_{ij}^\mathrm{c}=\sum_{k,l=1}^N S_{ik}^\mathrm{inv}L_{kl}S_{lj},\quad i,j=1,\cdots,N\]
+我们已经知道，$L_{ij}=\partial f_i/\partial x_j$，视$x_j=x_j\left(u_1,\cdots,u_N\right)$为映射$T$的分量函数，以及$S_{ij}$的表达式，上式可以进一步写成
+\[L_{ij}^\mathrm{c}=\sum_{k,l=1}^NS_{ik}^\mathrm{inv}\frac{\partial f_k}{\partial x_l}h_j^{-1}\frac{\partial x_l}{\partial u_j}\]
+再由坐标变换公式$f_i=\sum_{j=1}^N f_j^\mathrm{c}S_{ij}$，代入上式得
+\[
+    \begin{aligned}
+        L_{ij}^\mathrm{c} & =\sum_{k,l=1}^NS_{ik}^\mathrm{inv}\frac{\partial}{\partial x_l}\left(\sum_{m=1}^N S_{km}f_m^\mathrm{c}\right)h_j^{-1}\frac{\partial x_l}{\partial u_j}                                                                                             \\
+                          & =\sum_{k,l,m=1}^NS_{ik}^\mathrm{inv}\left(\frac{\partial S_{km}}{\partial x_l}f_m^\mathrm{c}+\frac{\partial f_m^\mathrm{c}}{\partial x_l}S_{km}\right)h_j^{-1}\frac{\partial x_l}{\partial u_j}                                                    \\
+                          & =\sum_{k,l,m=1}^N\left(h_j^{-1}S_{ik}^\mathrm{inv}\frac{\partial S_{km}}{\partial x_l}\frac{\partial x_l}{\partial u_j}f_m^\mathrm{c}+h_j^{-1}S_{ik}^\mathrm{inv}S_{km}\frac{f_m^\mathrm{c}}{\partial x_l}\frac{\partial x_l}{\partial u_j}\right) \\
+                          & =\sum_{k,l=1}^Nh_j^{-1}S_{ik}^\mathrm{inv}\frac{\partial S_{kl}}{\partial u_j}f_l^\mathrm{c}+\sum_{k=1}^Nh_j^{-1}\frac{\partial f_i^\mathrm{c}}{\partial u_j},\quad i,j=1,\cdots,N
+    \end{aligned}
+\]
+记上式第二项中的
+\[\Gamma_{lj}^i=h_j^{-1}\sum_{k=1}^N\frac{\partial S_{kl}}{\partial u_j}S_{ik}^\mathrm{inv},\quad i,j,l=1,\cdots,N\]
+称为该曲线坐标系的\emph{克里斯托菲尔符号（Christoffel symbols）}\footnote{这里的克氏符号与有些文献中所说的第二类克氏符号定义相同。}。我们可以把$\mathbf{L}$在直角坐标系和曲线坐标系下的坐标矩阵之间的关系总结为
+\[L_{ij}^\mathrm{c}=h_j^{-1}\frac{\partial f_i^\mathrm{c}}{\partial u_j}+\sum_{l=1}^N\Gamma_{lj}^if_l^\mathrm{c},\quad i,j=1,\cdots,N\]
+只要我们把某向量场物理性质视为欧几里得空间的平移向量，那么它的导数在曲线坐标系下的矩阵就必须满足上式。我们将会在本讲义的后面看到，有些向量场并不能简单视为平移向量，它们的导数在曲线坐标系下的矩阵就并不满足上式，而需根据这些向量场的物理定义来具体推算。
+
+\begin{example}[柱坐标系和球坐标系的克氏符号]\label{exp:II.5.3}
+    我们由例\ref{exp:II.5.2}给出的$S_\mathrm{cyl}$和$S_\mathrm{sph}$可以写出三维（$N=3$）柱坐标系和球坐标系的克氏符号。柱坐标系的克氏符号为
+    \[
+        \Gamma^\rho     =\left(\begin{array}{ccc}0&0&0\\0&-\frac{1}{\rho}&0\\0&0&0\end{array}\right),\quad
+        \Gamma^\varphi  =\left(\begin{array}{ccc}0&\frac{1}{\rho}&0\\0&0&0\\0&0&0\end{array}\right),\quad
+        \Gamma^z        =\left(\begin{array}{ccc}0&0&0\\0&0&0\\0&0&0\end{array}\right)
+    \]
+    球坐标系的克氏符号为
+    \[
+        \Gamma^r         =\left(\begin{array}{ccc}0&0&0\\0&-\frac{1}{r}&0\\0&0&-\frac{1}{r}\end{array}\right)   ,\quad
+        \Gamma^\vartheta  =\left(\begin{array}{ccc}0&\frac{1}{r}&0\\0&0&0\\0&\frac{\cot\varphi}{r}&0\end{array}\right)  ,\quad
+        \Gamma^\varphi    =\left(\begin{array}{ccc}0&0&\frac{1}{r}\\0&-\frac{\cot\varphi}{r}&0\\0&0&0\end{array}\right)
+    \]
+\end{example}
+\end{document}

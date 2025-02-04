@@ -1,130 +1,43 @@
-\documentclass[main.tex]{subfiles}
-% 曲线、曲面和积分定理
+\documentclass[../main.tex]{subfiles}
 \begin{document}
-本节的内容在大一的高等数学课中已经学过\cite[\S 9]{华工高数2009下}，以下只是使用向量函数微积分的语言重新复述一次。本节默认讨论前题是在3维欧几里得空间中选取基本坐标系，使得任一点的位置向量直接可用平移空间中标准基下的坐标表示，从而与$\mathbb{R}^3$的元素一一对应。
+我们在本科的高等数学课上已经学过二重积分和三重积分\cite[\S 8]{华工高数2009下}。在这里我们它的定义推广至$n$维。在正式定义之前，先要明确一系列概念和术语。
 
-\subsection{曲线积分}
-设函数$\mathbf{g}:\mathbb{R}\supset I\rightarrow\mathbb{R}^3$在连通区域$I$上分段连续可微，则以$\mathbf{g}\left(t\right),t\in I$为参数方程的像集$\mathbf{g}\left(I\right)$是$\mathbb{R}^3$中的一条\emph{可求弧长（rectifiable）}的曲线，可记为曲线$\mathcal{C}$。
+考虑$\mathbb{R}^n$上的“矩形”区域，它具体是$\mathbb{R}^n$的一个子集$R$，任一$\left(x_1,\cdots,x_n\right)^\intercal\in R$满足$a_i\leq x_i\leq b_i$，其中$a_i,b_i\in\mathbb{R}$，$i=1,\cdots,n$。我们称这个区域$R$是一个\emph{$n$维矩形闭区域}。如果所有的$\leq$号都换成$<$号，则称$R$是一个\emph{$n$维矩形开区域}。$R$的体积记作$V\left(R\right)$，
+\[V\left(R\right)=\prod_{i=1}^n\left(b_i-a_i\right)\]
+我们知道当$n=2$时$V\left(R\right)$称为面积，当$n=1$时$V\left(R\right)$称为长度。如果对于某一$i$，$a_i=b_i$，则称$V\left(R\right)=0$，我们称$R$是\emph{退化（degenerate）的}。
 
-导数$\left.\frac{d\mathbf{g}\left(t\right)}{dt}\right|_{t=t_0}$是曲线$\mathcal{C}$在点$\mathbf{g}\left(t_0\right)$处的切向量。可定义$\mathbf{\hat{t}}\equiv\frac{d\mathbf{g}/dt}{\left\|d\mathbf{g}/dt\right\|}$为曲线$\mathcal{C}$的\emph{单位切向量（unit tangent vector）}。
+若$\mathbb{R}^n$的子集$B$满足：$\exists k\in\mathbb{R},k>0,\left\|\mathbf{x}\right\|<k,\forall\mathbf{x}\in B$，则称$B$是$\mathbb{R}^n$的\emph{有界（bounded）}子集。
 
-曲线有两种弧微元：$d\mathbf{l}\equiv\left(d\mathbf{g}/dt\right)dt$是曲线的弧向量微元；$dl\equiv\left\|d\mathbf{g}/dt\right\|dt$是弧长微元。它们的关系是$d\mathbf{l}=\mathbf{\hat{t}}dl$。
+$\mathbb{R}^n$中的若干个$\left(n-1\right)$维矩形区域可被称为一套\emph{网格（grid）}。任一套网格可把$\mathbb{R}^n$\emph{分割}成有限个有界闭矩形区域$R_1,\cdots,R_r$和有限个无界区域$R_{r+1},\cdots,R_s$。我们称这个分割是\emph{有限的}。若某区域$B\subset\mathbb{R}^n$在闭合区域$R_1,\cdots,R_r$的并集之内，由称$B$被这套网格\emph{覆盖（covered）}。显然$B$必须有界才可以被一个有限分割$\mathbb{R}^n$的网格所覆盖。我们称一套网格的所有闭合有界区域$R_1,\cdots,R_r$的边长的最大值$\lambda$称为这套网格的\emph{网眼（mesh）}。
 
-曲线的长度
-\[L\left(\mathcal{C}\right)=\int_\mathcal{C}dl=\int_a^b\left\|d\mathbf{g}/dt\right\|dt
-\]
+现在我们已经做好定义积分准备。
 
-如果定义在曲线$\mathcal{C}$上的函数$\mathbf{f}:\mathbb{R}\supset\mathcal{C}\rightarrow\mathbb{R}^n$是“单位弧长的性质”，则该性质在曲线$\mathcal{C}$上的总和是对弧长的曲线积分\cite[\S 9.1,定理9.1.1]{华工高数2009下}
-\[
-    \int_\mathcal{C}\mathbf{f}\left(\mathbf{g}\right)dl=\int_{a}^{b}\mathbf{f}\left(\mathbf{g}\left(t\right)\right)\left\|d\mathbf{g}/dt\right\|dt
-\]
-例如，曲线$\mathcal{C}$的线密度是函数$\rho\left(\mathbf{g}\right)$，则曲线$\mathcal{C}$的总质量
-\[
-    m\left(\mathcal{C}\right)=\int_\mathcal{C}\rho dl=\int_a^b\rho\left(\mathbf{g}\left(t\right)\right)\left\|d\mathbf{g}/dt\right\|dt
-\]
+\begin{definition}[$n$重积分的黎曼定义]\label{def:II.4.20}
+    设函数$f:\mathbb{R}^n\supset D\rightarrow\mathbb{R}$，$B\subset D$且$B$是有界闭区域，$f$在$B$上有界。由函数$f$可构造一个判断某点$\mathbf{x}\in\mathbb{R}$是否在$B$内的特征函数$\chi_B\left(\mathbf{x}\right)$，即
+    \[
+        \chi_B\left(\mathbf{x}\right)=\left\{\begin{array}{ll}1,&\mathbf{x}\in B\\0,&\mathbf{x}\notin B\end{array}\right.
+    \]
+    令$G$是一套覆盖$B$的网格，$R_1,\cdots,R_r$是$G$的闭合有界区域，$\lambda$是$G$的网眼。在每个有界闭区域$R_i$上取一点$\mathbf{x}_i$，则以下求和
+    \[\sum_{i=1}^r \chi_B\left(\mathbf{x}_i\right)V\left(R_i\right)
+    \]
+    称为函数$f$在区域$B$上的一个\emph{黎曼和（Riemann sum）}。它的值依赖网格$G$和点$\mathbf{x}_i$的选取。如果无论我们如何选取网格$G$和点$\mathbf{x}_i$，当$\lambda\rightarrow 0$时，黎曼和的极限
+    \[\lim_{\lambda\to 0}\sum_{i=1}^r \chi_B\left(\mathbf{x}_i\right)V\left(R_i\right)\]
+    都存在，且其值与网格$G$和点$\mathbf{x}_i$的选取无关而唯一确定，我们就把该极限值称为\emph{函数$f$在区域$B$上的积分（integral of $f$ on region $B$）}，记作
+    \[\int_B f\left(\mathbf{x}\right)\mathrm{d}\mathbf{x}\]
+    并称函数$f$\emph{在区域$B$上是可积的（integrable on region $B$）}。
+\end{definition}
 
-如果定义在曲线$\mathcal{C}$上的函数$\mathbf{h}:\mathbb{R}^3\supset\mathcal{C}\rightarrow\mathbb{R}^3$是“作用在弧上的量”，则曲线$\mathcal{C}$所受的总作用是对坐标的曲线积分\cite[p.~140,定理9.2.1]{华工高数2009下}
-\[
-    \int_\mathcal{C}\mathbf{h}\left(\mathbf{g}\right)\cdot d\mathbf{l}=\int_a^b\mathbf{h}\left(\mathbf{g}\left(t\right)\right)\cdot\frac{d\mathbf{g}}{dt}dt=\int_\mathcal{C}\mathbf{h}\cdot\mathbf{\hat{t}}dl
-\]
-可见，曲线上的函数对坐标的曲线积分是这个函数与切向量点乘后对弧长的曲线积分。换句话说，作用$\mathbf{h}$在曲线$\mathcal{C}$上的总量是其在曲线每点的切方向上的投影分量的总和。例如，曲线$\mathcal{C}$是一个质点的运动轨迹，力场$\mathbf{F}\left(\mathbf{r},t\right)$对该质点做的总功
-\[W\left(\mathcal{C}\right)=\int_\mathcal{C}\mathbf{F}\cdot d\mathbf{l}=\int_a^b\mathbf{F}\left(\mathbf{g}\left(t\right),t\right)\cdot \frac{d\mathbf{g}}{dt}dt
-\]
+定义只负责告诉我们，如果一个东西存在，那么如何称呼它。我们还需要证明这个东西的存在性。具体到函数积分，我们需要证明的是黎曼积分的存在定理。
 
-\subsection{曲面积分}
-设函数$\mathbf{g}:\mathbb{R}^2\supset D\rightarrow\mathbb{R}^3$在由分段连续边界包围的连通区域$D$上连续可微，则以$\mathbf{g}\left(\mathbf{u}\right),\mathbf{u}\in D$为参数方程的像集$\mathbf{g}\left(D\right)$是$\mathbb{R}^3$中的一个可求面积的曲面，记为曲面$\mathcal{S}$。
+\begin{theorem}[黎曼积分的存在定理]\label{thm:II.4.14}
+    设函数$f:\mathbb{R}^n\supset D\rightarrow\mathbb{R}$在有界区域$B\subset D$上有界，且$B$被有限多个光滑曲面覆盖。如果在$B$上，函数$f$除在有限多个光滑集上之外，是连续的，则$f$在$B$上是可积的，且函数$f$在$B$上的积分值不随光滑曲面的选取而改变。
+\end{theorem}
+\begin{proof}
+    见其他资料\cite[Appendix 8]{Williamson1972}。
+\end{proof}
 
-当且仅当导数$\mathrm{d}_{\mathbf{u}=\mathbf{u}_0}\mathbf{g}\left(\mathbf{u}\right)$存在且满秩时，曲面$\mathcal{S}$在点$\mathbf{g}\left(\mathbf{u}_0\right)$处有切平面，或称曲面在此处是\emph{光滑的（smooth）}。此时
-\[
-    \left.\left(\frac{\partial \mathbf{g}}{\partial u_1}\times\frac{\partial \mathbf{g}}{\partial u_2}\right)\right|_{\mathbf{u}=\mathbf{u}_0}
-\]
-是曲面$\mathcal{S}$在点$\mathbf{g}\left(\mathbf{u}_0\right)$处的法向量，
-\[
-    \mathbf{\hat{n}}\equiv\left.\left(\frac{\frac{\partial \mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}}{\left\|\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right\|}\right)\right|_{\mathbf{u}=\mathbf{u}_0}
-\]
-是曲面$\mathcal{S}$在点$\mathbf{g}\left(\mathbf{u}_0\right)$处的单位法向量。
+这个定理的证明是很长的。在本科的《高等数学》课本中，这个证明往往是从略的\footnote{例如定理8.1.1和定义8.3.1下面的“可以证明，……”\cite[\S 8]{华工高数2009下}。}。在这里我们只需理解定理的通俗意思。这个定理告诉我们，只要函数$f$在其定义域的某个子区域$B$上没有无穷大或无穷小的取值（有界），而这个区域$B$的边界是“分段光滑”的（被包含在有限多个光滑曲面上），那么$f$在$B$上是可积的。
 
-曲面有两种面微元：$d\boldsymbol{\sigma}=\left(\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right)d\sigma_D$是有向曲面微元；$d\sigma=\left\|\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right\|d\sigma_D$是面积微元。它们的关系是$d\boldsymbol{\sigma}=\mathbf{\hat{n}}d\sigma$。其中$d\sigma_D=du_1du_2$是参数域$D$上的二重积分微元。
-
-曲面$\mathcal{S}$的面积
-\[
-    A\left(\mathcal{S}\right)=\int_\mathcal{S}d\sigma=\int_D\left\|\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right\|d\sigma_D
-\]
-
-“单位面积的性质”$\mathbf{f}:\mathbb{R}^3\supset \mathcal{S}\rightarrow\mathbb{R}^n$在曲面$\mathcal{S}$上的总和是第一型曲面积分\cite[p.~165,定理9.4.1]{华工高数2009下}
-\[
-    \int_\mathcal{S}\mathbf{f}\left(\mathbf{g}\right)d\sigma=\int_D\mathbf{f}\left(\mathbf{g}\left(\mathbf{u}\right)\right)\left\|\frac{\partial\mathbf{g}}{\partial u_1}\times\frac{\partial\mathbf{g}}{\partial u_2}\right\|d\sigma_D
-\]
-
-“作用场”$\mathbf{h}:\mathbb{R}^3\supset\mathcal{S}\rightarrow\mathbb{R}^3$在曲面上的总作用是第二型曲面积分或对坐标的曲面积分\cite[\S 9.5]{华工高数2009下}
-\[
-    \int_\mathcal{S}\mathbf{h}\cdot d\boldsymbol{\sigma}=\int_D\mathbf{h}\left(\mathbf{g}\left(\mathbf{u}\right)\right)d\sigma_D=\int_\mathcal{S}\mathbf{h}\cdot\mathbf{\hat{n}}d\sigma
-\]
-
-\subsection{积分换元公式}
-本科高等数学已接触过3重积分的情况\cite[\S 8.3“五”]{华工高数2009下}。
-
-设$\mathcal{U}\subset\mathbb{R}^3$是由分段光滑边界包围的连通区域，则以参数方程$\mathbf{g}:\mathbb{R}^3\supset \mathcal{U}\rightarrow\mathbb{R}^3$规定的像集$\Omega=\mathbf{g}\left(\mathcal{U}\right)$是一个经过形变后的三维区域。当且仅当导数$\mathrm{d}_{\mathbf{r}=\mathbf{r}_0}\mathbf{g}\left(\mathbf{r}\right)$存在且满秩时，区域$\Omega$在点$\mathbf{r}_0$处是光滑的。此时
-\[
-    \left|\frac{\partial \mathbf{g}}{\partial r_3}\cdot\left(\frac{\partial\mathbf{g}}{\partial r_1}\times\frac{\partial\mathbf{g}}{\partial r_2}\right)\right|_{\mathbf{r}=\mathbf{r}_0}\equiv\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}=\mathbf{r}_0}\mathbf{g}\left(\mathbf{r}\right)\right)\right|
-\]
-是由向量$\frac{\partial\mathbf{g}}{\partial r_1},\frac{\partial\mathbf{g}}{\partial r_2},\frac{\partial\mathbf{g}}{\partial r_3}$所搭成的平行六面体的体积。$\mathcal{U}$的体积元$dV_\mathcal{U}$与$\Omega$的体积元$dV_\Omega$之间的转换关系是
-\[dV_\Omega=\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}}\mathbf{g}\left(\mathbf{r}\right)\right)\right|
-    dV_\mathcal{U}\]
-区域$\Omega$的体积是
-\[
-    V\left(\Omega\right)=\int_\Omega dV_\Omega=\int_\mathcal{U}\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}}\mathbf{g}\left(\mathbf{r}\right)\right)\right|dV_\mathcal{U}
-\]
-“单位体积的性质”$\mathbf{f}:\mathbb{R}^3\supset\mathcal{U}\rightarrow\mathbb{R}^3$在区域$\Omega$的总和为
-\[
-    \mathbf{F}\left(\Omega\right)=\int_\Omega\mathbf{f}\left(\mathbf{g}\right)dV_\Omega=\int_\mathcal{U}\mathbf{f}\left(\mathbf{g}\left(\mathbf{r}\right)\right)\left|\mathrm{det}\left(\mathrm{d}_{\mathbf{r}}\mathbf{g}\left(\mathbf{r}\right)\right)\right|dV_\mathcal{U}
-\]
-上式其实就是积分换元公式。
-
-\subsection{积分定理}
-给定函数$P,Q:\mathbb{R}^2\supset D\rightarrow\mathbb{R}$和边界分段光滑的单连通区域$D$，格林公式：
-\[\int_D\left(\frac{\partial Q}{\partial x_1}-\frac{\partial P}{\partial x_2}\right)d\sigma_D=\int_{\partial D}Pdx_1+Qdx_2
-\]
-可改写成
-\[
-    \int_D\mathrm{curl}\mathbf{F}d\sigma_D=\int_{\partial D}\mathbf{F}\cdot d\mathbf{l}
-\]
-其中函数$\mathbf{F}:\mathbb{R}^2\supset D\rightarrow\mathbb{R}^2$在标准基下的坐标函数是$\mathbf{F}\left(\mathbf{x}\right)=\left(P\left(\mathbf{x}\right),Q\left(\mathbf{x}\right)\right)$。一般地，在标准基下函数$\mathbf{F}\left(\mathbf{x}\right)=\left(F_1\left(\mathbf{x}\right),F_2\left(\mathbf{x}\right)\right)$的旋度为
-\[\mathrm{curl}\mathbf{F}=\frac{\partial F_2\left(\mathbf{x}\right)}{\partial x_1}-\frac{\partial F_1\left(\mathbf{x}\right)}{\partial x_2}\]
-其中$\mathbf{x}=\left(x_1,x_2\right)$。
-
-由格林公式又有，
-\[
-    \int_D\left(\frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}\right)d\sigma_D=\int_{\partial D}-F_2dx_1+F_1dx_2
-\]
-该式可改写成
-\[
-    \int_D\mathrm{div}\mathbf{F}d\sigma_D=\int_{\partial D}\mathbf{F}\cdot d\boldsymbol{\sigma}
-\]
-一般地，在标准基下函数$\mathbf{F}\left(\mathbf{x}\right)=\left(F_1\left(\mathbf{x}\right),F_2\left(\mathbf{x}\right)\right)$函数$\mathbf{F}$的散度为
-\[
-    \mathrm{div}\mathbf{F}=\frac{\partial F_1\left(\mathbf{x}\right)}{\partial x_1}+\frac{\partial F_2\left(\mathbf{x}\right)}{\partial x_2}
-\]
-其中$\mathbf{x}=\left(x_1,x_2\right)$。
-
-以上2维空间的例子可推广到3维。在标准基下函数$\mathbf{F}:\mathbb{R}^3\supset \mathcal{U}\rightarrow\mathbb{R}^3$的旋度
-\[
-    \mathrm{curl}\mathbf{F}=\left(\frac{\partial F_3}{\partial x_2}-\frac{\partial F_2}{\partial x_3},\frac{\partial F_1}{\partial x_3}-\frac{\partial F_3}{\partial x_1},\frac{\partial F_2}{\partial x_1}-\frac{\partial F_1}{\partial x_2}\right)^\intercal
-\]
-若函数$\mathbf{F}$在$D$上连纪可导且$\mathcal{U}$是开集则$\mathcal{U}$也是旋度函数$\mathrm{curl}\mathbf{F}\left(\mathbf{x}\right)$的定义域。
-
-设$\mathcal{S}$是$\mathbb{R}^3$中的光滑曲面，$\mathbf{g}:\mathbb{R}^2\supset D\rightarrow\mathbb{R}^3$二阶连续可微，$D$是由分段光滑边界围成的单连通区域，$\mathbf{F}:\mathbb{R}^3\supset\mathcal{S}\rightarrow\mathbb{R}^3$是作用在曲面$\mathcal{S}$上的连续可微向量场，则有斯托克斯定理
-\[\int_\mathcal{S}\mathrm{curl}\mathbf{F}\cdot d\boldsymbol{\sigma}=\int_{\partial \mathcal{S}}\mathbf{F}\cdot d\mathbf{g}
-\]
-
-在标准基下函数$\mathbf{F}:\mathbb{R}^3\supset \mathcal{U}\rightarrow\mathbb{R}^3$的散度
-\[
-    \mathrm{div}\mathbf{F}=\frac{\partial F_1}{\partial x_1}+\frac{\partial F_2}{\partial x_2}+\frac{\partial F_3}{\partial x_3}
-\]
-若函数$\mathbf{F}$在$D$上连纪可导且$\mathcal{U}$是开集则$\mathcal{U}$也是散度函数$\mathrm{curl}\mathbf{F}\left(\mathbf{x}\right)$的定义域。
-
-设$\Omega$是$\mathbb{R}^3$中可数个简单区域的并集，由分段光滑边界围成。$\mathbf{F}:\mathbb{R}^3\supset\Omega\rightarrow\mathbb{R}^3$是存在于$\Omega$中的连续可微向量场，，则有高斯定理
-\[
-    \int_\Omega\mathrm{div}\mathbf{F}dV_\Omega=\int_{\partial \Omega}\mathbf{F}\cdot d\boldsymbol{\sigma}
-\]
+拿定义\ref{def:II.4.20}与本科《高等数学》中的二重、三重积分的定义相对比，就会发现它们很相似。这是因为定义\ref{def:II.4.20}是对二重、三重积分的推广。《高等数学》中的重积分的所有性质，都能直接推广到$n$重积分上。这里不再赘述。在这里我们只需要简单说明什么是向量函数的积分。若$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$的坐标函数是$f_1,\cdots,f_m$，区域$B\subset D$，且对每个$i=1,\cdots,m$，$f_i$在$B$上是可积的，则$\mathbf{f}$在$B$上的积分定义为
+\[\int_B\mathbf{f}\left(\mathbf{x}\right)\mathrm{d}\mathbf{x}=\left(\int_B f_1\left(\mathbf{x}\right)\mathrm{d}\mathbf{x},\cdots,\int_B f_m\left(\mathbf{x}\right)\mathrm{d}\mathbf{x}\right)^\intercal\]
 \end{document}

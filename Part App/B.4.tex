@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 % VI.2.4 反函数定理和隐函数定理
 \begin{document}
 \begin{lemma}\label{thm:inv_func_l1}
@@ -11,9 +11,9 @@
 \end{proof}
 
 \begin{lemma}\label{thm:inv_func_l2}
-    设$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$是可微函数，且在$\mathbf{x}_0$处连续可微。再假设$\mathbf{f}$在$\mathbf{x}_0$处的导数$\left.\frac{d\mathbf{f}\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}_0}$是单射。则存在$\delta>0$和$M>0$使得只要$\left\|\mathbf{x}-\mathbf{x}_0\right\|<\delta$就有
+    设$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$是可微函数，且在$\mathbf{x}_0$处连续可微。再假设$\mathbf{f}$在$\mathbf{x}_0$处的导数$\mathrm{D}\mathbf{f}\left(\mathbf{x}_0\right)$是单射。则存在$\delta>0$和$M>0$使得只要$\left\|\mathbf{x}-\mathbf{x}_0\right\|<\delta$就有
     \[
-        \left\|\left(\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)\right)\mathbf{y}\right\|\geq M\left\|\mathbf{y}\right\|,\quad\forall\mathbf{y}\in\mathbb{R}^n
+        \left\|\left(\mathrm{D}\mathbf{f}\left(\mathbf{x}_0\right)\right)\mathbf{y}\right\|\geq M\left\|\mathbf{y}\right\|,\quad\forall\mathbf{y}\in\mathbb{R}^n
     \]
 \end{lemma}
 \begin{proof}
@@ -36,7 +36,7 @@
 \end{proof}
 
 \begin{lemma}\label{thm:inv_func_l3}
-    设$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$是可微函数，且在$\mathbf{x}_0$处连续可微。再假设$\mathbf{f}$在$\mathbf{x}_0$处的导数$\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$是单射，则存在正实数$\delta>0$和$M>0$使得只要$\left\|\mathbf{x}^\prime-\mathbf{x}_0\right\|<\delta$就有$\left\|\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{f}\left(\mathbf{x}\right)\right\|\leq M\left\|\mathbf{x}^\prime-\mathbf{x}\right\|$。
+    设$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^m$是可微函数，且在$\mathbf{x}_0$处连续可微。再假设$\mathbf{f}$在$\mathbf{x}_0$处的导数$\mathrm{D}\mathbf{f}\left(\mathbf{x}_0\right)$是单射，则存在正实数$\delta>0$和$M>0$使得只要$\left\|\mathbf{x}^\prime-\mathbf{x}_0\right\|<\delta$就有$\left\|\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{f}\left(\mathbf{x}\right)\right\|\leq M\left\|\mathbf{x}^\prime-\mathbf{x}\right\|$。
 \end{lemma}
 \begin{proof}
     记函数$\mathbf{f}$的导函数为$\mathbf{L}$。由引理\ref{thm:inv_func_l1}，存在$m>0$使得$\left\|\mathbf{L}\left(\mathbf{x}_0\right)\mathbf{y}\right\|\geq m\left\|\mathbf{y}\right\|\forall\mathbf{y}\in\mathbb{R}^n$。
@@ -89,11 +89,10 @@
 有了上面三个引理，我们可正式给出反函数定理的证明。
 % =============== the theorem =========================
 \begin{theorem}[反函数定理]
-    设$\mathbf{f}:\mathbb{R}^n\rightarrow\mathbb{R}^n$是连续可微函数，记函数$\mathbf{f}$的导函数为$\mathbf{L}\left(\mathbf{x}\right)\equiv\mathrm{d}_{\mathbf{x}=\mathbf{x}_0}\mathbf{f}\left(\mathbf{x}\right)$。若$\mathbf{L}\left(\mathbf{x}_0\right)$是单射，则总存在$\mathbf{x}_0$的一个邻域$N$使得$\mathbf{f}$在$N$上有连续可导的逆函数$\mathbf{f}^{-1}$；$\mathbf{f}$的像的集合$\mathbf{f}\left(N\right)$也是开集；对$N$内任意一点$\mathbf{x}$都有
+    设$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$是开集$D$上的连续可微函数，记函数$\mathbf{f}$在$D$上的导函数为$\mathbf{L}\left(\mathbf{x}\right)\equiv\mathrm{D}\mathbf{f}\left(\mathbf{x}\right),\quad\forall\mathbf{x}\in D$。若$\mathbf{L}\left(\mathbf{x}_0\right)$是单射，则总存在$\mathbf{x}_0$的一个邻域$N$使得$\mathbf{f}$在$N$上有连续可导的逆函数$\mathbf{f}^{-1}$；$\mathbf{f}$的像的集合$\mathbf{f}\left(N\right)$也是开集；对$N$内任意一点$\mathbf{x}$都有
     \[
-        \mathrm{d}_{\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right)}\mathbf{f}^{-1}\left(\mathbf{y}\right)=\mathbf{L}^{-1}\left(\mathbf{x}\right)
+        \mathrm{D}\mathbf{f}^{-1}\left(\mathbf{f}\left(\mathbf{x}\right)\right)=\mathbf{L}^{-1}\left(\mathbf{x}\right)
     \]
-    其中$\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right)$。
 \end{theorem}
 \begin{proof}
     我们先列出引理\ref{thm:inv_func_l2}和\ref{thm:inv_func_l3}的结论。由于$\mathbf{f}$在$\mathbf{x}_0$处连续可微，且$\mathbf{L}\left(\mathbf{x}_0\right)$是单射，故：
@@ -152,8 +151,8 @@
     \ref{thm:inv_func_sub2_sub2}的证明：设到$\mathbf{y}$的距离平方函数
     \[
         g\left(\mathbf{x}\right)=\left\|\mathbf{f}\left(\mathbf{x}\right)-\mathbf{y}\right\|^2=\left(\mathbf{f}\left(\mathbf{x}\right)-\mathbf{y}\right)\cdot\left(\mathbf{f}\left(\mathbf{x}\right)-\mathbf{y}\right)\]
-    则$\mathbf{x}^\prime$应使得该函数的一阶导数等于零，即$\left.\frac{dg\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}^\prime}=\mathbf{0}$（零变换）。由零变换性质和链式法则，对任一$\mathbf{z}\in\mathbb{R}^n$，
-    \[0=\left.\frac{dg\left(\mathbf{x}\right)}{d\mathbf{x}}\right|_{\mathbf{x}=\mathbf{x}^\prime}\mathbf{z}=2\left(\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}\right)\cdot\left(\mathbf{L}\left(\mathbf{x}^\prime\right)\mathbf{z}\right)\]
+    则$\mathbf{x}^\prime$应使得该函数的一阶导数等于零，即$\mathrm{D}g\left(\mathbf{x}\right)=\mathbf{0}$（零变换）。由零变换性质和链式法则，对任一$\mathbf{z}\in\mathbb{R}^n$，
+    \[0=\mathrm{D}g\left(\mathbf{x}^\prime\right)\mathbf{z}=2\left(\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}\right)\cdot\left(\mathbf{L}\left(\mathbf{x}^\prime\right)\mathbf{z}\right)\]
     由于$\mathbf{L}\left(\mathbf{x}\right)$在$N$上的每个值都是双射（同构）线性变换，故有且只有一个向量$\mathbf{z}\in\mathbb{R}^n$满足$\mathbf{L}\left(\mathbf{x}^\prime\right)\mathbf{z}=\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}$。故上式$\Leftrightarrow$
     \[0=2\left(\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}\right)\cdot\left(\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}\right)\Leftrightarrow\mathbf{f}\left(\mathbf{x}^\prime\right)-\mathbf{y}=\mathbf{0}\]
     即，只要$\mathbf{x}^\prime\in N$是使$\mathbf{y}^\prime=\mathbf{f}\left(\mathbf{x}^\prime\right)$到任一$\mathbf{y}\in \mathbf{f}\left(N\right)$的距离最短的点，则$\mathbf{f}\left(\mathbf{x}^\prime\right)=\mathbf{y}^\prime=\mathbf{y}$。\ref{thm:inv_func_sub2_sub2}证毕。\ref{thm:inv_func_sub2}证毕。
@@ -183,10 +182,10 @@
     由于一个有界函数与一个有极限的函数的积的极限等于那个有极限的函数的极限\footnote{这个基本定理可由极限的$\delta-\epsilon$语言证明，很多地方有，此略。}，故$\lim_{\mathbf{x}^\prime\to\mathbf{x}}\mathbf{s}=\mathbf{0}$。又由于当$\mathbf{x}^\prime\to\mathbf{x}$时$\mathbf{f}\left(\mathbf{x}^\prime\right)\to\mathbf{f}\left(\mathbf{x}\right)$，由$\mathbf{s}$的形式有$\lim_{\mathbf{x}^\prime\to\mathbf{x}}\mathbf{s}=\mathbf{0}\Leftrightarrow\lim_{\mathbf{f}\left(\mathbf{x}^\prime\right)\to\mathbf{f}\left(\mathbf{x}\right)}\mathbf{s}=\mathbf{0}$。\ref{thm:inv_func_sub3}证毕。
 
     \ref{thm:inv_func_sub4}的证明：要证$\mathbf{f}^{-1}$的导函数连续，即对任一$\mathbf{x}_1\in N, \mathbf{y}_1=\mathbf{f}\left(\mathbf{x}_1\right)$有
-    \[\lim_{\mathbf{y}\to\mathbf{y}_1}\left.\frac{d\mathbf{f}^{-1}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{y}}=\left.\frac{d\mathbf{f}^{-1}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{y}_1}\]
+    \[\lim_{\mathbf{y}\to\mathbf{y}_1}\mathbf{D}\mathbf{f}^{-1}\left(\mathbf{y}\right)=\mathrm{D}\mathbf{f}^{-1}\left(\mathbf{y}_1\right)\]
     由\ref{thm:inv_func_sub3}的证明我们已经有
     \[
-        \left.\frac{d\mathbf{f}^{-1}\left(\mathbf{y}\right)}{d\mathbf{y}}\right|_{\mathbf{y}=\mathbf{y}}=\mathbf{L}^{-1}\left(\mathbf{x}\right),\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right),\forall\mathbf{x}\in N\]
+        \mathrm{D}\mathbf{f}^{-1}\left(\mathbf{y}\right)=\mathbf{L}^{-1}\left(\mathbf{x}\right),\quad \mathbf{y}=\mathbf{f}\left(\mathbf{x}\right),\forall\mathbf{x}\in N\]
     故只需证
     \[\lim_{\mathbf{x}\to\mathbf{x}_1}\mathbf{L}^{-1}\left(\mathbf{x}\right)=\mathbf{L}^{-1}\left(\mathbf{x}_1\right)\]
 

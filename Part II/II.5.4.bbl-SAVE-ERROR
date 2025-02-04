@@ -1,0 +1,82 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{华工高数2009下}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=d720add01973d745d56f4025368ac3ca}{%
+           family={王全迪},
+           familyi={王\bibinitperiod}}}%
+        {{hash=880f8cf326ba203b808eb2f4b275ef04}{%
+           family={郭艾},
+           familyi={郭\bibinitperiod}}}%
+        {{hash=c7bae0c893993dca3dd58bccbd764347}{%
+           family={杨立洪},
+           familyi={杨\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=d720add01973d745d56f4025368ac3ca}{%
+           family={王全迪},
+           familyi={王\bibinitperiod}}}%
+        {{hash=880f8cf326ba203b808eb2f4b275ef04}{%
+           family={郭艾},
+           familyi={郭\bibinitperiod}}}%
+        {{hash=c7bae0c893993dca3dd58bccbd764347}{%
+           family={杨立洪},
+           familyi={杨\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{publisher}{1}{%
+        {高等教育出版社}%
+      }
+      \strng{namehash}{bc14610c620fe1abe388b55b9666cc6e}
+      \strng{fullhash}{916e925e850376203edc22d2c9b935ea}
+      \strng{fullhashraw}{916e925e850376203edc22d2c9b935ea}
+      \strng{bibnamehash}{916e925e850376203edc22d2c9b935ea}
+      \strng{authorbibnamehash}{916e925e850376203edc22d2c9b935ea}
+      \strng{authornamehash}{bc14610c620fe1abe388b55b9666cc6e}
+      \strng{authorfullhash}{916e925e850376203edc22d2c9b935ea}
+      \strng{authorfullhashraw}{916e925e850376203edc22d2c9b935ea}
+      \strng{nameabibnamehash}{916e925e850376203edc22d2c9b935ea}
+      \strng{nameanamehash}{bc14610c620fe1abe388b55b9666cc6e}
+      \strng{nameafullhash}{916e925e850376203edc22d2c9b935ea}
+      \strng{nameafullhashraw}{916e925e850376203edc22d2c9b935ea}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9787040266436}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{高等数学（下册）}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \keyw{华工高数2009下}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
