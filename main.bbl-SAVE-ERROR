@@ -1218,6 +1218,63 @@
       \endverb
       \keyw{Noll1973}
     \endentry
+    \entry{何春雄2012}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=03b9f9df9de0b8a0bdc23e0fe1f93a7e}{%
+           family={何春雄},
+           familyi={何\bibinitperiod}}}%
+        {{hash=6277f6620647970d95e7f2214d13ff95}{%
+           family={龙卫江},
+           familyi={龙\bibinitperiod}}}%
+        {{hash=c0d0763f84a5c7ada957e5ad878090f5}{%
+           family={朱锋峰},
+           familyi={朱\bibinitperiod}}}%
+      }
+      \name{namea}{3}{}{%
+        {{hash=03b9f9df9de0b8a0bdc23e0fe1f93a7e}{%
+           family={何春雄},
+           familyi={何\bibinitperiod}}}%
+        {{hash=6277f6620647970d95e7f2214d13ff95}{%
+           family={龙卫江},
+           familyi={龙\bibinitperiod}}}%
+        {{hash=c0d0763f84a5c7ada957e5ad878090f5}{%
+           family={朱锋峰},
+           familyi={朱\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{publisher}{1}{%
+        {高等教育出版社}%
+      }
+      \strng{namehash}{24ae5948ed272ac55b26ed63711bb6d6}
+      \strng{fullhash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{fullhashraw}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{bibnamehash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{authorbibnamehash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{authornamehash}{24ae5948ed272ac55b26ed63711bb6d6}
+      \strng{authorfullhash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{authorfullhashraw}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{nameabibnamehash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{nameanamehash}{24ae5948ed272ac55b26ed63711bb6d6}
+      \strng{nameafullhash}{afaee81b8dde4ec75d260ee6207d4bee}
+      \strng{nameafullhashraw}{afaee81b8dde4ec75d260ee6207d4bee}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-7-04-034020-4}
+      \field{langid}{english}
+      \field{languageid}{chinese}
+      \field{lansortorder}{1}
+      \field{title}{概率论与数理统计}
+      \field{usera}{M}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \keyw{何春雄2012}
+    \endentry
     \entry{Schreier1961}{book}{}{}
       \name{author}{4}{}{%
         {{hash=a808c147769b1f4afba61316161fd6d0}{%

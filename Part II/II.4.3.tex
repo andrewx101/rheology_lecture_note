@@ -149,7 +149,9 @@
     就称\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处可微分（differentiable at $\mathbf{x}_0$）}。自变量增量的线性主部$\mathbf{L}\left(\mathbf{x}-\mathbf{x}_0\right)$称为\emph{函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的微分（differential of $\mathbf{f}\left(\mathbf{x}\right)$ at $\mathbf{x}_0$）}。如果函数$\mathbf{f}\left(\mathbf{x}\right)$在开集$S\subseteq D$内的每一点上都可微分，则称函数是\emph{$S$上的可微函数（differentiable function on $S$）}。
 \end{definition}
 
-我们可以根据向量函数的定义来看出，定义\ref{def:II.4.13}就是定义\ref{def:II.4.12}的推广。延用定义\ref{def:II.4.13}的设定，设$\mathbf{f}=\left(f_1,\cdots,f_m\right)^\intercal$，$\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal$，$\mathbf{x}_0=\left(x_{01},\cdots,x_{0n}\right)^\intercal$，则函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的全增量是：
+我们可以根据向量函数的定义来看出，定义\ref{def:II.4.13}就是定义\ref{def:II.4.12}的推广。延用定义\ref{def:II.4.13}的设定，设
+\[\mathbf{f}=\left(f_1,\cdots,f_m\right)^\intercal,\quad\mathbf{x}=\left(x_1,\cdots,x_n\right)^\intercal,\quad\mathbf{x}_0=\left(x_{01},\cdots,x_{0n}\right)^\intercal\]
+则函数$\mathbf{f}\left(\mathbf{x}\right)$在$\mathbf{x}_0$处的全增量是：
 \[
     \mathbf{f}\left(\mathbf{x}\right)-\mathbf{f}\left(\mathbf{x}_0\right)=\left(
     \begin{array}{c}
@@ -362,7 +364,9 @@
     设函数$\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^m$（$n<m$）在$D$上连续可微，且其在$\mathbf{x}_0\in D$处的导数$\mathrm{D}\mathbf{f}\left(\mathbf{x}_0\right)$是双射线性变换，则在$\mathbf{x}_0$某邻域$N$上函数$\mathbf{f}$存在反函数$\mathbf{f}^{-1}$。
 \end{corollary}
 \begin{proof}
-    仅列出证明概要。设$\left\{\mathbf{e}_1,\cdots\mathbf{e}_n\right\}$是$\mathbb{R}^m$上的一组有线性无关向量组，将其补全为$\mathbb{R}^m$的一组基$\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n,\mathbf{e}_{n+1},\dots,\mathbf{e}_m\right\}$。定义函数$\mathbf{g}:\mathbb{R}^m\rightarrow\mathbb{R}^n,$
+    仅列出证明概要。设$\left\{\mathbf{e}_1,\cdots\mathbf{e}_n\right\}$是$\mathbb{R}^m$上的一组有线性无关向量组，将其补全为$\mathbb{R}^m$的一组基
+    \[\left\{\mathbf{e}_1,\cdots,\mathbf{e}_n,\mathbf{e}_{n+1},\dots,\mathbf{e}_m\right\}\]
+    定义函数$\mathbf{g}:\mathbb{R}^m\rightarrow\mathbb{R}^n,$
     \[\mathbf{g}\left(\sum_{i=1}^m a_i\mathbf{e}_i\right)=\left(a_1,\cdots,a_n\right)\]
     即取$\mathbb{R}^m$上任一向量在有序基$\left\{\mathbf{e}_i\right\}$下的前$n$个坐标的函数。证明：复合函数$\mathbf{g}\circ\mathbf{f}:\mathbb{R}^n\supset D\rightarrow\mathbb{R}^n$满足定理\ref{thm:II.4.12}的条件。
 

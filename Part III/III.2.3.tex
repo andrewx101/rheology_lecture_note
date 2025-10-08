@@ -1,0 +1,102 @@
+\documentclass[../main.tex]{subfiles}
+% 物体的质量
+\begin{document}
+我们之前说过，物体$B$是一个非空集合，它的元素叫做物质点$X,Y,\cdots\in B$。现在我们要为物体的概念增加必要的细节，以便引入物体的质量和其他物理性质的概念。
+
+在经典力学中，质量是定义在任一物体上的正实数，我们要求质量满足：
+\begin{enumerate}
+    \item 给定一个物体，它的总质量是它各部分质量的和；
+    \item 一个物体的质量总是不变的（质量不灭），无论物体及其部分如何位移、加速或形变，物体的质量都不变；
+    \item 物体的质量与其形状和尺寸没有唯一的关联。
+\end{enumerate}
+
+以上只是列出了我们希望如何定义物体质量的基本精神。在对物体的质量作出正式定义前，我们先要对物体及其部分作出严格的定义，以便物体不同部分的质量能恰当地加和，得到物体的总质量。
+
+借助测度空间的概念，我们可将物体定义为可分割成任意多部分的集合。虽然我们没有系统性地学习过测度论，但是在《概率论与数理统计》\cite{何春雄2012}课程中关于“概率的公理化定义”中已经接触过测度的概念。以下仅需要第\ref{sec:II.1}章介绍的内容。
+
+\begin{definition}[物体的部分]\label{def:III.2.1}
+    给定一个物体$B$，$\mathcal{P}\left(B\right)$是$B$的子集的集合，且其满足：
+    \begin{enumerate}
+        \item $B\in\mathcal{P}\left(B\right)$；
+        \item 若$P\in\mathcal{P}\left(B\right)$，则$P^\complement\equiv B\setminus P\in\mathcal{P}\left(B\right)$；
+        \item $\mathcal{P}\left(B\right)$的元素$P_1,P_2,\cdots$的可数个并集$\bigcup_{i=1}^\infty P_i\in\mathcal{P}\left(B\right)$。
+    \end{enumerate}
+    则称$\mathcal{P}\left(B\right)$的元素为物体$B$的\emph{部分（part）}，$\mathcal{P}\left(B\right)$为物体$B$的所有部分的集合。
+\end{definition}
+
+上列定义已充份给出$\emptyset\in\mathcal{P}\left(B\right)$。由德摩根定律又可推出$\mathcal{P}\left(B\right)$的元素$P_1,P_2,\cdots$的可数个交集$\bigcap_{i=1}^\infty P_i\in\mathcal{P}\left(B\right)$。
+
+定义\ref{def:III.2.1}中的第1条相当于说，任一物体$B$是它自己的一个部分。这等于说，任一物体也必须满足定义\ref{def:III.2.1}的3条规定及其衍生规定。这又等于说，一个物体的任一部分也是一个物体。如果$P$是物体$B$的一个部分，则$P$自己作为一个物体的任一部分也是$B$的部分。
+
+我们发现，定义\ref{def:III.2.1}与《概率论与数理统计》中关于“事件域”的定义\cite{何春雄2012}[定义1.2.4, p.9]是几乎相同的。
+
+物体的概念是客观的。物体$B$及其部分$\mathcal{P}\left(B\right)$都定义在抽象的“物体世界”中。某观察者主观选定某参考标架$\phi$后，所观察到的是物体$B$及其部分$\mathcal{P}\left(B\right)$于某时刻$t$置放在欧几里得空间后的构形：
+\begin{align*}
+    \Omega_0 & =\kappa_0^\phi\left(B\right),\quad\Omega_{P,0}=\kappa_0^\phi\left(P\right),                                    \\
+    \Omega_t & =\kappa_t^\phi\left(B\right),\quad\Omega_{P,t}=\kappa_t^\phi\left(P\right),\quad P\in\mathcal{P}\left(B\right)
+\end{align*}
+而我们观察到的物体运动其实是形变映射$\mu_t\equiv\kappa_t^\phi\circ\left(\kappa_0^{\phi}\right)^{-1}$。在\S\ref{sec:III.1.2}中我们已经规定过，世界线不相交，因此在一个参考构形为一个连通区域的部分$P$，在任意时刻的构形仍为一个连通区域。若允许断裂、空穴形成或自由表面“颈缩—断裂”等拓扑变化，则可能在某时刻把同一部分$P$置放为若干个（通常假设为有限个）彼此不交的区域，类似液滴的分裂；反之，也可能发生聚并，允许这种特殊运动的连续介质理论需要更详细的篇幅，本讲义暂不包含这种情况。
+
+现在我们已做好定义物体的质量的准备。
+
+\begin{definition}[连续介质物体的质量]\label{def:III.2.2}
+    设物体$B$的所有部分的集合是$\mathcal{P}\left(B\right)$，则$B$的任一部分$P\in\mathcal{P}\left(B\right)$的\emph{质量（mass）}是$\mathcal{P}\left(B\right)$上的非负实数值映射
+    \[m:\mathcal{P}\left(B\right)\rightarrow\left[0,\infty\right)\]
+    并且满足\emph{可列可加性（countable additivity）}，即：若$P_1,P_2,\cdots\in\mathcal{P}\left(B\right)$两两不交，
+    \[P_i\cap P_j=\emptyset,\forall i\neq j,\quad i,j=1,2,\cdots,\quad P_i, P_j\in\mathcal{P}\left(B\right)\]
+    则$m\left(\bigcup_{i=1}^\infty P_i\right)=\sum_{i=1}^\infty m\left(P_i\right)$。此外，任一物体$B$的总质量有限：$m\left(B\right)<\infty$。
+\end{definition}
+
+我们发现，定义\ref{def:III.2.2}与《概率论与数理统计》中关于“概率测度”的定义\cite{何春雄2012}[定义1.2.5, p.10]是很类似的，不同之处只在于概率测度还要求归一化，而质量只要求有界。
+
+定义\ref{def:III.2.2}已充份地给出：
+\begin{enumerate}
+    \item 若$P\in\mathcal{P}\left(B\right)$，则$P=\emptyset\Rightarrow m\left(P\right)=0$，但反之则未必，例如单个质量点的质量在这一定义下都为零；
+    \item 若$P\subset Q$，则
+          \[m\left(P\right)\leq m\left(Q\right),\quad m\left(P\cup Q\right)\leq m\left(P\right)+m\left(Q\right)\]
+\end{enumerate}
+
+在我们的物理概念中，单个物质点也有质量，也具有可加性，但这无法包括在定义\ref{def:III.2.2}之内，这里我们另外阐述一下单个物质点的质量的类似性质。具体地，物体$B$的元素$X_1,X_2,\cdots\in B$形成的单元素集合都是该物体的部分，即$\left\{X_1\right\},\left\{X_2\right\},\cdots\in\mathcal{P}\left(B\right)$，且它们的可数交、并集$\left\{X_{i_1},X_{i_2},\cdots\right\}\in\mathcal{P}\left(B\right)$也是物体$B$的部分，它们的质量$m\left(\left\{X_{i_1},X_{i_2},\cdots\right\}\right)=\sum_j m\left(X_{i_j}\right)$，此处我们把$m\left(\left\{X\right\}\right)$简写成了$m\left(X\right)$，$\forall X\in\mathcal{B}$。其实这些概念在关于质点的经典力学中早以熟悉。本讲义仅基于连续介质物体的质量。或者可以这么说：连续介质力学不考虑原子论下的多原子体系的情况。
+
+我们注意到，物体的质量$m$作为一个映射，是定义在抽象的物体世界上的，其定义域是物体的所有部分。因此，对物体$B$的任一部分$P\in\mathcal{P}\left(B\right)$，其质量$m\left(P\right)$均独立于$P$在任一选定参考标架下的构形。也就是说，质量的定义暗示了
+\begin{enumerate}
+    \item 物体的质量具有标架变换不变性。选定两个标架$\phi,\phi^*$，则任意时刻$t$下有
+          \[m\left(P\right)=m\left(\kappa_t^{-1}\left(\Omega_t\right)\right)=m\left(\kappa_t^{*-1}\left(\Omega_t^*\right)\right)\]
+          其中$\Omega_t=\kappa_t\left(P\right)$，$\Omega_t^*=\kappa_t^*\left(P\right)$。
+    \item 质量不灭，即物体在运动中质量守恒。
+\end{enumerate}
+由此我们也基本实现了本节一开头关于如何定义物体质量的精神。
+
+定义\ref{def:III.2.2}规定了，对于一个物体$B$，其质量是其所有部分的集合$\mathcal{P}\left(B\right)$上的一个\emph{勒贝格积分（Lebesgue integral）}，它与我们在高等数学中学过的\emph{黎曼积分（Riemann integral）}一般是不同的，但在连续介质力学中我们假定使它们等价的条件总成立，因此我们可以按以往对积分的理解，为一个物体的质量定义密度的概念——
+
+\begin{definition}[连续介质物体的质量密度]
+    对任一物体$B$及其部分$\mathcal{P}\left(B\right)$，在置放
+    \[\kappa_t:B\rightarrow\mathbb{R}^3\]下，存在唯一可积函数
+    \[\rho:\kappa_t\left(B\right)\rightarrow\left[0,\infty\right)\]
+    满足
+    \[m\left(P\right)=\int_{\kappa_t\left(P\right)}\rho\left(\mathbf{r},t\right)\mathrm{d}V,\quad P\in\mathcal{P}\left(B\right)\]
+    称为该部分$P$的\emph{质量密度（mass density）}，常简称密度。
+\end{definition}
+该定义中$\rho$的唯一存在性是由测度论中的拉东--尼科迪姆定理（Radon--Nikodym theorem）保证的，这里不作正式介绍了，它依赖的条件可粗略地表述为连续介质物体质量分布的绝对连续性。很多连续介质力学课本都会有类似：
+\[\rho=\lim_{\Delta V\to 0}\frac{\Delta m}{\Delta V}\]
+的表述，这个极限式总成立，实际上也表达了质量在物体中连续分布的意思。如果依从严格的测度论，$\rho$的这个唯一存在性应至多是在每时刻构形$\Omega_t$\emph{几乎}上处处成立。
+
+类似物体的质量，讨论一个物体或其部份的任一广度性质$Q$时，我们也假定$Q$满足质量$m$的一切规定，除了$Q$的值可以是标量（未必非负）、向量或张量。尽管如此$Q$的“大小”（绝对值或范数）仍应总是有界的。同时广度性质$Q$总唯一对应它的密度场$q$，满足质量密度$\rho$的定义。正式地，
+\begin{definition}[广度性质及其密度场]
+    给定物体$B$及其部分族$\mathcal{P}\left(B\right)$，若映射
+    \[Q:\mathcal{P}\left(B\right)\rightarrow\mathcal{V}\]
+    满足
+    \begin{enumerate}
+        \item $Q\left(\emptyset\right)=0$；
+        \item 可列可加性：若$\left\{P_i\right\}\subset \mathcal{P}\left(B\right)$两两不交且$\bigcup_i P_i\in\mathcal{P}\left(B\right)$，则
+              \[Q\left(\bigcup_{i=1}^\infty P_i\right)=\sum_{i=1}^\infty Q\left(P_i\right)\]
+        \item 有界：$\left\|Q\left(B\right)\right\|<\infty$
+    \end{enumerate}
+    则称$Q$是物体$B$的一个\emph{广度性质（extensive property）}。这里$\mathcal{V}$可以是标量、向量或张量的空间。同时，对于性质$Q$唯一存在密度场$q$满足
+    \[Q\left(P\right)=\int_{\kappa_t\left(P\right)}q\left(\mathbf{r},t\right)\mathrm{d}V\]
+    其中$\kappa_t:B\rightarrow\Omega_t\subset \mathbb{R}^3$是时刻$t$的置放。
+\end{definition}
+$q$相对于给定$Q$的唯一存在性的前提条件与质量密度$\rho$是类似的，不再重复。有的资料常常习惯从$Q$的密度场提出一个质量密度来，只讨论$q^\prime\equiv q/\rho$（当然，此处指$\rho>0$的情况），阅读时需注意。
+\end{document}
+
+

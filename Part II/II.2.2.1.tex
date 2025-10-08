@@ -20,13 +20,13 @@
     设$\mathcal{V}$和$\mathcal{W}$是$\mathbb{F}$上的向量空间。如果从$\mathcal{V}$到$\mathcal{W}$的映射$T:\mathcal{V}\rightarrow\mathcal{W}$满足
     \[T\left(\alpha\mathbf{a}+\beta\mathbf{b}\right)=\alpha T\left(\mathbf{a}\right)+\beta T\left(\mathbf{b}\right)\]
     则称$T$是从$\mathcal{V}$到$\mathcal{W}$的线性变换（linear transformation），常写成算符的形式：$T\left(\mathbf{a}\right)=\mathbf{Ta}$。
-    如果两个线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$和$\mathbf{U}:\mathcal{V}\rightarrow\mathcal{W}$满足$\mathbf{Ta}=\mathbf{Ua}\forall\mathbf{a}\in\mathcal{V}$则称这两个线性变换相等，$\mathbf{U}=\mathbf{T}$。零变换$\mathbf{T}_0:\mathcal{V}\rightarrow\mathcal{W}$定义为$\mathbf{T}_0\mathbf{a}=\mathbf{0}_\mathcal{W}\forall\mathbf{a}\in\mathcal{V}$，其中$\mathbf{0}_\mathcal{W}\in\mathcal{W}$表示$\mathcal{W}$中的零向量\footnote{此处要注意区分不同向量空间中的零向量。}。
+    如果两个线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$和$\mathbf{U}:\mathcal{V}\rightarrow\mathcal{W}$满足$\mathbf{Ta}=\mathbf{Ua}\forall\mathbf{a}\in\mathcal{V}$则称这两个线性变换相等，$\mathbf{U}=\mathbf{T}$。零变换$\mathbf{T}_0:\mathcal{V}\rightarrow\mathcal{W}$定义为$\mathbf{T}_0\mathbf{a}=\mathbf{0}_{\mathcal{W}}\forall\mathbf{a}\in\mathcal{V}$，其中$\mathbf{0}_{\mathcal{W}}\in\mathcal{W}$表示$\mathcal{W}$中的零向量\footnote{此处要注意区分不同向量空间中的零向量。}。
 \end{definition}
 
 定义\ref{def:II.2.11}就是在说线性变换是向量空间上的同态映射。由定义\ref{def:II.2.11}，可直接证得以下结论：
 \begin{itemize}
     \item 任何一个线性变换都总把零向量映射为零向量。
-    \item 两个向量空间之间的恒等映射是$\mathcal{V}$到其自身的线性变换$\mathbf{I}_\mathcal{V}:\mathcal{V}\rightarrow\mathcal{V},\mathbf{I}_\mathcal{V}\mathbf{a}=\mathbf{a}\forall\mathbf{a}\in\mathcal{V}$又可称为恒等线性变换。
+    \item 两个向量空间之间的恒等映射是$\mathcal{V}$到其自身的线性变换$\mathbf{I}_{\mathcal{V}}:\mathcal{V}\rightarrow\mathcal{V},\mathbf{I}_{\mathcal{V}}\mathbf{a}=\mathbf{a}\forall\mathbf{a}\in\mathcal{V}$又可称为恒等线性变换。
 \end{itemize}
 
 正如由定义\ref{def:II.2.1}所定义的向量那般，定义\ref{def:II.2.11}定义的线性变换也是抽象概念。在例\ref{exp:II.2.1}中的向量空间上都可以建立线性变换。
@@ -56,7 +56,7 @@
     给定数域$\mathbb{F}$上的两个向量空间$\mathcal{V},\mathcal{W}$，所有由$\mathcal{V}$到$\mathcal{W}$的线性变换的集合是一个数域$\mathbb{F}$上的向量空间，记为$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$，零变换是该向量空间的零向量。
 \end{corollary}
 \begin{proof}
-    前一句由定理\ref{thm:II.2.6}易证。设$\mathbf{T}_0$是由$\mathcal{V}$到$\mathcal{W}$的零变换，对任一$\mathbf{T}\in\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$和$\mathbf{a}\in\mathcal{V}$，$\left(\mathbf{T}_0+\mathbf{T}\right)\mathbf{a}=\mathbf{T}_0\mathbf{a}+\mathbf{Ta}=\mathbf{0}_\mathcal{W}+\mathbf{Ta}=\mathbf{Ta}$，即$\mathbf{T}_0+\mathbf{T}=\mathbf{T}\forall\mathbf{T}\in\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$。
+    前一句由定理\ref{thm:II.2.6}易证。设$\mathbf{T}_0$是由$\mathcal{V}$到$\mathcal{W}$的零变换，对任一$\mathbf{T}\in\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$和$\mathbf{a}\in\mathcal{V}$，$\left(\mathbf{T}_0+\mathbf{T}\right)\mathbf{a}=\mathbf{T}_0\mathbf{a}+\mathbf{Ta}=\mathbf{0}_{\mathcal{W}}+\mathbf{Ta}=\mathbf{Ta}$，即$\mathbf{T}_0+\mathbf{T}=\mathbf{T}\forall\mathbf{T}\in\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$。
 \end{proof}
 
 请读者按照向量空间的定义验证，线性变换的空间$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$作为一个向量空间，拥有一切向量空间的一般性质。注意：在记法$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$中，括号表示有序对。
@@ -64,10 +64,10 @@
 接下来，我们先考察$\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$的基和维数。不关心证明的读者可直接朗读定理\ref{thm:II.2.7}。
 
 \begin{lemma}\label{lem:II.2.1}
-    设$\mathcal{V}_N$是数域$\mathbb{F}$上的$N$维向量空间，$B_\mathcal{V}=\left\{\mathbf{e}_i\right\}_{i=1}^N$是$\mathcal{V}_N$的一组基，$\mathcal{W}$是同数域上的另一向量空间。对$\mathcal{W}$中给定的任意一组$N$个不同向量$\left\{\mathbf{b}_i\right\}_{i=1}^N\in\mathcal{W}$，有且只有一个线性变换$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W}$满足$\mathbf{Te}_i=\mathbf{b}_i,i=1,\cdots,N$。
+    设$\mathcal{V}_N$是数域$\mathbb{F}$上的$N$维向量空间，$B_{\mathcal{V}}=\left\{\mathbf{e}_i\right\}_{i=1}^N$是$\mathcal{V}_N$的一组基，$\mathcal{W}$是同数域上的另一向量空间。对$\mathcal{W}$中给定的任意一组$N$个不同向量$\left\{\mathbf{b}_i\right\}_{i=1}^N\in\mathcal{W}$，有且只有一个线性变换$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W}$满足$\mathbf{Te}_i=\mathbf{b}_i,i=1,\cdots,N$。
 \end{lemma}
 \begin{proof}
-    存在性的证明，只需找出这一线性变换。任一$\mathbf{a}\in\mathcal{V}_N$可用基$B_\mathcal{V}$表示成
+    存在性的证明，只需找出这一线性变换。任一$\mathbf{a}\in\mathcal{V}_N$可用基$B_{\mathcal{V}}$表示成
     \[\mathbf{a}=\sum_{i=1}^N\alpha_i\mathbf{e}_i,\alpha_i\in\mathbb{F},i=1,\cdots,N\]
     特别地，
     \[\mathbf{e}_i=\sum_{j=1}^N\delta_{ij}\mathbf{e}_j,i=1,\cdots,N\]
@@ -93,16 +93,16 @@
 \begin{proof}
     证明的过程，相当于找出$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基\footnote{我们在例\ref{exp:II.2.6}中找过数域$\mathbb{F}$上的$n\times n$矩阵空间的一组规范正交基$\left\{E^{pq}\right\}_{p,q=1}^n$。定理\ref{thm:II.2.7}的证明过程与例\ref{exp:II.2.6}很类似。}
 
-    设$B_\mathcal{V}=\left\{\mathbf{e}_i\right\}_{i=1}^N,B_\mathcal{W}=\left\{\mathbf{f}_j\right\}_{j=1}^M$分别为$\mathcal{V}_N,\mathcal{W}_M$的基。对于每一对整数$\left(p,q\right),1\leq p\leq N,1\leq q\leq M$，定义一个线性变换$\mathbf{E}^{pq}:\mathcal{V}_N\rightarrow\mathcal{W}_M$
+    设$B_{\mathcal{V}}=\left\{\mathbf{e}_i\right\}_{i=1}^N,B_{\mathcal{W}}=\left\{\mathbf{f}_j\right\}_{j=1}^M$分别为$\mathcal{V}_N,\mathcal{W}_M$的基。对于每一对整数$\left(p,q\right),1\leq p\leq N,1\leq q\leq M$，定义一个线性变换$\mathbf{E}^{pq}:\mathcal{V}_N\rightarrow\mathcal{W}_M$
     \[
         \mathbf{E}^{pq}\mathbf{e}_i=\left\{\begin{array}{cc}
-            \mathbf{0}_\mathcal{W}, & i\neq p \\
-            \mathbf{f}_q,           & i=p
+            \mathbf{0}_{\mathcal{W}}, & i\neq p \\
+            \mathbf{f}_q,             & i=p
         \end{array}\right.
     \]
     给定任一线性变换$\mathbf{T}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，且令
     \[\mathbf{Te}_i=\sum_{q=1}^MA_{qi}\mathbf{f}_q\]
-    由引理\ref{lem:II.2.1}，对$\left\{\mathbf{f}_j\right\}_{j=1}^M$，满足上式的$\mathbf{T}$是唯一的，且根据向量的坐标表达式，上式中的$A_{qi}$就是向量$\mathbf{Te}_i$在有序基$B_\mathcal{W}$下的坐标。
+    由引理\ref{lem:II.2.1}，对$\left\{\mathbf{f}_j\right\}_{j=1}^M$，满足上式的$\mathbf{T}$是唯一的，且根据向量的坐标表达式，上式中的$A_{qi}$就是向量$\mathbf{Te}_i$在有序基$B_{\mathcal{W}}$下的坐标。
 
     下面我们证明$\mathbf{T}$能被$\left\{\mathbf{E}^{pq}\right\}$线性表出。定义$\mathbf{U}\in\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$，$\mathbf{Ue}_i=\sum_p\sum_qA_{qp}\mathbf{E}^{pq}\mathbf{e}_i$，则
     \begin{align*}
@@ -114,7 +114,7 @@
     则可见$\mathbf{U}=\mathbf{T}$，同时有
     \[\mathbf{T}=\sum_{p=1}^N\sum_{q=1}^MA_{qp}\mathbf{E}^{pq}\]
     由于$\mathbf{T}$是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$中的任意一个线性变换，故$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$是$\left\{\mathbf{E}^{pq}\right\}$的线性生成空间。由基的定义\ref{def:II.2.5}，现在我们只需再证$\left\{\mathbf{E}^{pq}\right\}$是线性无关的，它们就是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的基了。按照线性无关的定义，设$\mathbf{T}$是零变换，由于$\left\{\mathbf{f}_j\right\}_{j=1}^M$是线性无关的，故有
-    \[\mathbf{T}=\mathbf{0}=\sum_{p=1}^N\sum_{q=1}^MA_{qp}\mathbf{E}^{pq}\Leftrightarrow\mathbf{Te}_i=\sum_q A_{qi}\mathbf{f}_q=\mathbf{0}_\mathcal{W}\Leftrightarrow A_{qi}=0\forall q=1,\cdots,M,i=1,\cdots,N\]
+    \[\mathbf{T}=\mathbf{0}=\sum_{p=1}^N\sum_{q=1}^MA_{qp}\mathbf{E}^{pq}\Leftrightarrow\mathbf{Te}_i=\sum_q A_{qi}\mathbf{f}_q=\mathbf{0}_{\mathcal{W}}\Leftrightarrow A_{qi}=0\forall q=1,\cdots,M,i=1,\cdots,N\]
     即$\left\{\mathbf{E}^{pq}\right\}$线性无关。故$\left\{\mathbf{E}^{pq}\right\}$是$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的一组基，$\mathcal{L}\left(\mathcal{V}_N,\mathcal{W}_M\right)$的维数就是$M\times N$。
 \end{proof}
 
@@ -123,7 +123,7 @@
 讨论完线性变换本身作为向量的性质——它所在向量空间的基与维数，我们接下来转而考虑线性变换作为映射的性质：单射、满射、双射……。线性变换作为映射的性质与它所映射的两个向量空间的维数有关，这是线性代数最重要的定理之一——线性变换的维数定理。下面我们先为该定理的引入介绍一些必要概念。
 
 \begin{definition}[零空间、零化度、秩]\label{def:II.2.12}
-    （如图\ref{fig:II.2.1}所示）设$\mathcal{V}$和$\mathcal{W}$是数域$\mathbb{F}$上的向量空间。线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$的\emph{零空间（null space）}或\emph{核空间（kernel）}是所有满足$\mathbf{Ta}=\mathbf{0}_\mathcal{W}$的向量$\mathbf{a}$的集合，记作$\mathrm{ker}\mathbf{T}$。零空间的维数称为该线性变换的\emph{零化度（nullity）}，记作$\mathrm{nullity}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ker}\mathbf{T}\right)$。如果$\mathcal{V}$是有限维向量空间，则$\mathbf{T}$的\emph{秩（rank）}是$\mathbf{T}$的值域的维数，记作$\mathrm{rank}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ran}\mathbf{T}\right)$。特别地，如果$\mathrm{nullity}\mathbf{T}=0$，即$\mathbf{T}$的零空间只有零向量$\mathbf{0}_\mathcal{V}$一个元素，则称$\mathbf{T}$是\emph{非奇异的（non-singular）}。
+    （如图\ref{fig:II.2.1}所示）设$\mathcal{V}$和$\mathcal{W}$是数域$\mathbb{F}$上的向量空间。线性变换$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$的\emph{零空间（null space）}或\emph{核空间（kernel）}是所有满足$\mathbf{Ta}=\mathbf{0}_{\mathcal{W}}$的向量$\mathbf{a}$的集合，记作$\mathrm{ker}\mathbf{T}$。零空间的维数称为该线性变换的\emph{零化度（nullity）}，记作$\mathrm{nullity}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ker}\mathbf{T}\right)$。如果$\mathcal{V}$是有限维向量空间，则$\mathbf{T}$的\emph{秩（rank）}是$\mathbf{T}$的值域的维数，记作$\mathrm{rank}\mathbf{T}\equiv\mathrm{dim}\left(\mathrm{ran}\mathbf{T}\right)$。特别地，如果$\mathrm{nullity}\mathbf{T}=0$，即$\mathbf{T}$的零空间只有零向量$\mathbf{0}_{\mathcal{V}}$一个元素，则称$\mathbf{T}$是\emph{非奇异的（non-singular）}。
 \end{definition}
 
 \begin{figure}[htbp]
@@ -149,11 +149,11 @@
     由于$\left\{\mathbf{Ta}_1,\cdots,\mathbf{Ta}_n\right\}$线性生成$\mathbf{T}$的值域$\mathrm{ran}\mathbf{T}$（由线性变换性质易证），其中由于
     \[\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}\in\mathrm{ker}\mathbf{T}\]
     故有
-    \[\mathbf{Ta}_j=\mathbf{0}_\mathcal{W}\forall j\leq k\]
+    \[\mathbf{Ta}_j=\mathbf{0}_{\mathcal{W}}\forall j\leq k\]
     所以实际上仅$\left\{\mathbf{Ta}_{k+1},\cdots,\mathbf{Ta}_n\right\}$就线性生成$\mathrm{ran}\mathbf{T}$了。我们进一步验证它们是线性无关的。设标量$\gamma_i$满足
-    \[\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_\mathcal{W}\]
+    \[\sum_{i=k+1}^n\gamma_i\mathbf{Ta}_i=\mathbf{0}_{\mathcal{W}}\]
     即
-    \[\mathbf{T}\left(\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\right)=\mathbf{0}_\mathcal{W}\]
+    \[\mathbf{T}\left(\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\right)=\mathbf{0}_{\mathcal{W}}\]
     即$\sum_{i=k+1}^n\gamma_i\mathbf{a}_i\equiv\mathbf{a}\in\mathcal{N}$。向量$\mathbf{a}$在$\mathrm{ker}\mathbf{T}$的基$\left\{\mathbf{a}_1,\cdots,\mathbf{a}_k\right\}$下表示为$\mathbf{a}=\sum_{i=1}^k\alpha_i\mathbf{a}_i$。故
     \[
         \mathbf{a}=\sum_{i=1}^k\alpha_i\mathbf{a}_i=\sum_{j=k+1}^n\gamma_j\mathbf{a}_j
@@ -173,13 +173,13 @@
     \end{enumerate}
 \end{theorem}
 \begin{proof}
-    $1\Leftrightarrow 2$：设$\mathbf{T}$是非奇异的（即有$\mathbf{Ta}=\mathbf{0}_\mathcal{W}\Leftrightarrow\mathbf{a}=\mathbf{0}_\mathcal{V}\forall\mathbf{a}\in\mathcal{V}$），则对任意$\mathbf{a},\mathbf{b}\in\mathcal{V}$，$\mathbf{Ta}=\mathbf{Tb}\Leftrightarrow\mathbf{T}\left(\mathbf{a}-\mathbf{b}\right)=\mathbf{0}_\mathcal{W}\Leftrightarrow\mathbf{a}-\mathbf{b}=\mathbf{0}_\mathcal{V}\Leftrightarrow\mathbf{a}=\mathbf{b}$。
+    $1\Leftrightarrow 2$：设$\mathbf{T}$是非奇异的（即有$\mathbf{Ta}=\mathbf{0}_{\mathcal{W}}\Leftrightarrow\mathbf{a}=\mathbf{0}_{\mathcal{V}}\forall\mathbf{a}\in\mathcal{V}$），则对任意$\mathbf{a},\mathbf{b}\in\mathcal{V}$，$\mathbf{Ta}=\mathbf{Tb}\Leftrightarrow\mathbf{T}\left(\mathbf{a}-\mathbf{b}\right)=\mathbf{0}_{\mathcal{W}}\Leftrightarrow\mathbf{a}-\mathbf{b}=\mathbf{0}_{\mathcal{V}}\Leftrightarrow\mathbf{a}=\mathbf{b}$。
 
     $1\Leftrightarrow 3$：设$\mathbf{T}$是非奇异的。令$S$是$\mathcal{V}$的一个线性无关向量组，如果向量$\mathbf{a}_1,\cdots,\mathbf{a}_k\in S$，则
     \[
-        \sum_{i=1}^kc_i\left(\mathbf{Ta}_i\right)=\mathbf{0}_\mathcal{W}\Leftrightarrow\mathbf{T}\sum_{i=1}^kc_i\mathbf{a}_i=\mathbf{0}_\mathcal{W}\Leftrightarrow\sum_{i=1}^kc_i\mathbf{a}_i=\mathbf{0}_\mathcal{W}\Leftrightarrow c_i=0\forall i
+        \sum_{i=1}^kc_i\left(\mathbf{Ta}_i\right)=\mathbf{0}_{\mathcal{W}}\Leftrightarrow\mathbf{T}\sum_{i=1}^kc_i\mathbf{a}_i=\mathbf{0}_{\mathcal{W}}\Leftrightarrow\sum_{i=1}^kc_i\mathbf{a}_i=\mathbf{0}_{\mathcal{V}}\Leftrightarrow c_i=0\forall i
     \]
-    假设$\mathbf{T}$总把$\mathcal{V}$的一组线性无关向量映射为$\mathcal{W}$的一组线性无关向量，令$\mathbf{a}\neq\mathbf{0}_\mathcal{V}$是$\mathcal{V}$的一个非零向量，则只含$\mathbf{a}$的向量组$\left\{\mathbf{a}\right\}$是线性无关向量组，这时$\mathbf{Ta}$必不为$\mathbf{0}_\mathcal{W}$，因为单一个零向量的向量组是线性相关的，违反了假设。因此$\mathbf{T}$只能把$\mathbf{0}_\mathcal{V}$映射为$\mathbf{0}_\mathcal{W}$，即为非奇异的。
+    假设$\mathbf{T}$总把$\mathcal{V}$的一组线性无关向量映射为$\mathcal{W}$的一组线性无关向量，令$\mathbf{a}\neq\mathbf{0}_{\mathcal{V}}$是$\mathcal{V}$的一个非零向量，则只含$\mathbf{a}$的向量组$\left\{\mathbf{a}\right\}$是线性无关向量组，这时$\mathbf{Ta}$必不为$\mathbf{0}_{\mathcal{W}}$，因为单一个零向量的向量组是线性相关的，违反了假设。因此$\mathbf{T}$只能把$\mathbf{0}_{\mathcal{V}}$映射为$\mathbf{0}_{\mathcal{W}}$，即为非奇异的。
 
     $1\Leftrightarrow 4$：由定理\ref{thm:II.2.8}可直接得到。
 \end{proof}
@@ -215,7 +215,7 @@
     数域$\mathbb{F}$上的两个向量空间同构，当且仅当它们维数相等。
 \end{theorem}
 \begin{proof}
-    由“两个向量空间同构”的定义，需要证明两个维数相同的向量空间中存在一个双射线性变换。设$\mathcal{V}_N$、$\mathcal{W}_N$是数域$\mathbb{F}$上的两个$N$维向量空间。分别给定$\mathcal{V}_N,\mathcal{W}_N$的各一组有序基$B_\mathcal{V}=\left\{\mathbf{e}_i\right\}_{i=1}^N, B_\mathcal{W}=\left\{\mathbf{f}_i\right\}_{i=1}^N$，构建一个线性变换$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W}_N$，对$\mathcal{V}_N$中的任一向量$\mathbf{a}=\sum_{i=1}^N\alpha_i\mathbf{e}_i$，$\mathbf{Ta}=\sum_{i=1}^N\alpha_i\mathbf{f}_i$。易验$\mathbf{a}=\mathbf{0}_\mathcal{V}\Leftrightarrow\mathbf{Ta}=\mathbf{0}_\mathcal{W}$，即$\mathbf{T}$是单射。由定理\ref{thm:II.2.9}及其推论可知$\mathbf{T}$是双射。
+    由“两个向量空间同构”的定义，需要证明两个维数相同的向量空间中存在一个双射线性变换。设$\mathcal{V}_N$、$\mathcal{W}_N$是数域$\mathbb{F}$上的两个$N$维向量空间。分别给定$\mathcal{V}_N,\mathcal{W}_N$的各一组有序基$B_{\mathcal{V}}=\left\{\mathbf{e}_i\right\}_{i=1}^N, B_{\mathcal{W}}=\left\{\mathbf{f}_i\right\}_{i=1}^N$，构建一个线性变换$\mathbf{T}:\mathcal{V}_N\rightarrow\mathcal{W}_N$，对$\mathcal{V}_N$中的任一向量$\mathbf{a}=\sum_{i=1}^N\alpha_i\mathbf{e}_i$，$\mathbf{Ta}=\sum_{i=1}^N\alpha_i\mathbf{f}_i$。易验$\mathbf{a}=\mathbf{0}_{\mathcal{V}}\Leftrightarrow\mathbf{Ta}=\mathbf{0}_{\mathcal{W}}$，即$\mathbf{T}$是单射。由定理\ref{thm:II.2.9}及其推论可知$\mathbf{T}$是双射。
 \end{proof}
 
 \begin{corollary}
@@ -231,10 +231,10 @@
     用$\mathbf{UT}$作用于$\gamma\mathbf{a}+\mathbf{b}$，其中$\mathbf{a},\mathbf{b}\in\mathcal{V},\gamma\in\mathbb{F}$是任意的，证明$\gamma\left(\mathbf{UT}\right)\mathbf{a}+\left(\mathbf{UT}\right)\mathbf{b}$即可，留作练习。
 \end{proof}
 
-由此定理易得推论：向量空间上的恒等映射必是一个同构线性变换，我们称之为\emph{恒等线性变换}或\emph{恒等变换}，记为$\mathbf{I}_\mathcal{V}$，其中$\mathcal{V}$是这个恒等变换所作用的向量空间。通过验证下例，可以注意到恒等线性变换需要注明所作用的向量空间；作用于不同向量空间上的恒等变换是不同的东西。
+由此定理易得推论：向量空间上的恒等映射必是一个同构线性变换，我们称之为\emph{恒等线性变换}或\emph{恒等变换}，记为$\mathbf{I}_{\mathcal{V}}$，其中$\mathcal{V}$是这个恒等变换所作用的向量空间。通过验证下例，可以注意到恒等线性变换需要注明所作用的向量空间；作用于不同向量空间上的恒等变换是不同的东西。
 
 \begin{example}
-    设$\mathcal{V},\mathcal{W}$是数域$\mathbb{F}$上的向量空间，$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$是同构线性变换。则$\mathbf{T}^{-1}\mathbf{T}=\mathbf{I}_\mathcal{V},\mathbf{TT}^{-1}=\mathbf{I}_\mathcal{W}$。
+    设$\mathcal{V},\mathcal{W}$是数域$\mathbb{F}$上的向量空间，$\mathbf{T}:\mathcal{V}\rightarrow\mathcal{W}$是同构线性变换。则$\mathbf{T}^{-1}\mathbf{T}=\mathbf{I}_{\mathcal{V}},\mathbf{TT}^{-1}=\mathbf{I}_{\mathcal{W}}$。
 \end{example}
 
 我们实际经常面临的是从一个向量空间\emph{到其自身}的线性变换，故我们特别给这种线性变换起个名字，正式定义如下。

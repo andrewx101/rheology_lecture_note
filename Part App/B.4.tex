@@ -7,7 +7,7 @@
 \begin{proof}
     如果$\mathbf{L}$不是单射，则存在$\mathbf{x}_0\neq\mathbf{0}$满足$\mathbf{Lx}_0=\mathbf{0}$，即有$\left\|\mathbf{Lx}_0\right\|=0<m\left\|\mathbf{x}\right\|$。故其逆否命题成立。
 
-    如果$\mathbf{L}$是单射，则其存在逆$\mathbf{L}^{-1}$满足$\mathbf{L}^{-1}\mathbf{L}=\mathbf{I}_\mathcal{V}$且$\mathbf{L}^{-1}$也是线性变换。由定理\ref{thm:II.4.3}，$\exists k>0, \left\|\mathbf{L}^{-1}\mathbf{y}\right\|\leq k\left\|\mathbf{y}\right\|\forall\mathbf{y}\in\mathcal{W}_m$。令$p=1/k$则有$p\left\|\mathbf{x}\right\|=m\left\|\mathbf{L}^{-1}\mathbf{Lx}\right\|\leq pk\left\|\mathbf{Lx}\right\|=\left\|\mathbf{Lx}\right\|$
+    如果$\mathbf{L}$是单射，则其存在逆$\mathbf{L}^{-1}$满足$\mathbf{L}^{-1}\mathbf{L}=\mathbf{I}_{\mathcal{V}}$且$\mathbf{L}^{-1}$也是线性变换。由定理\ref{thm:II.4.3}，$\exists k>0, \left\|\mathbf{L}^{-1}\mathbf{y}\right\|\leq k\left\|\mathbf{y}\right\|\forall\mathbf{y}\in\mathcal{W}_m$。令$p=1/k$则有$p\left\|\mathbf{x}\right\|=m\left\|\mathbf{L}^{-1}\mathbf{Lx}\right\|\leq pk\left\|\mathbf{Lx}\right\|=\left\|\mathbf{Lx}\right\|$
 \end{proof}
 
 \begin{lemma}\label{thm:inv_func_l2}
@@ -118,7 +118,9 @@
         \item 由于函数$\mathbf{f}$存在逆函数$\mathbf{f}^{-1}$，故$\mathbf{x}\in N\Leftrightarrow N\ni \mathbf{x}= \mathbf{f}^{-1}\left(\mathbf{f}\left(\mathbf{x}\right)\right)\mathbf{f}^{-1}\left(\mathbf{y}\right)\forall \mathbf{y}\in\mathbf{f}\left(N\right)=\left\{\mathbf{y}|\mathbf{y}=\mathbf{f}\left(\mathbf{x}\right),\mathbf{x}\in N\right\}$。即给定任一$\mathbf{y}_1\in\mathbf{f}\left(N\right)$有且只有一个$\mathbf{x}_1\in N$满足$\mathbf{f}\left(\mathbf{x}_1\right)=\mathbf{y}_1$。
     \end{itemize}
 
-    要证明$\mathbf{f}\left(N\right)$是开集，就是要证明，对任一$\mathbf{y}_1\in\mathbf{f}\left(N\right)$，总能找到足够小的$\widetilde{M}>0$使得开集$C=\left\{\mathbf{y}|\left\|\mathbf{y}-\mathbf{y}_1\right\|<\widetilde{M}\right\}$在$\mathbf{f}\left(N\right)$的内部。
+    要证明$\mathbf{f}\left(N\right)$是开集，就是要证明，对任一$\mathbf{y}_1\in\mathbf{f}\left(N\right)$，总能找到足够小的$\widetilde{M}>0$使得开集
+    \[C=\left\{\mathbf{y}|\left\|\mathbf{y}-\mathbf{y}_1\right\|<\widetilde{M}\right\}\]
+    在$\mathbf{f}\left(N\right)$的内部。
 
     如何由已知条件来找到这个$\widetilde{M}$呢？由于$N$是开集，我们通过$\mathbf{x}_1=\mathbf{f}^{-1}\left(\mathbf{y}_1\right)\in N$，可以找到使得闭集$B=\left\{\mathbf{x}|\left\|\mathbf{x}-\mathbf{x}_1\right\|\leq\delta_1\right\}$在$N$的内部的一个正实数$\delta_1$。
 
